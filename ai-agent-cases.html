@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI Agent 场景案例与产品介绍 - WorkBuddy实战案例、热门场景、CodeBuddy产品介绍">
+<title>AI Agent 场景案例 - 小饭的 AI 实战笔记</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-primary-50: rgba(20, 184, 166, 0.08);
+  --color-primary-100: rgba(20, 184, 166, 0.15);
+  --color-primary-400: #2DD4BF;
+  --color-primary-600: #14B8A6;
+  --color-primary-800: #0F766E;
+  --c-teal: #14B8A6;
+  --c-blue: #38BDF8;
+  --c-coral: #FB923C;
+  --c-purple: #F472B6;
+  --c-green: #34D399;
+  --c-amber: #FBBF24;
+  --bg: #FAFAF9;
+  --bg-card: #FFFFFF;
+  --bg-soft: #F5F5F4;
+  --bg-hero: linear-gradient(135deg, #F0FDFA 0%, #ECFEFF 30%, #F0F9FF 60%, #FDF4FF 100%);
+  --text-primary: #292524;
+  --text-secondary: #57534E;
+  --text-tertiary: #A8A29E;
+  --border: #E7E5E4;
+  --border-light: #F5F5F4;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 12px 40px rgba(20, 184, 166, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
+  --topbar-h: 56px;
+  --font-serif: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--color-primary-600); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--color-primary-800); }
+
+/* Topbar */
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  height: var(--topbar-h);
+  display: flex; align-items: center;
+}
+.topbar-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 0 24px;
+}
+.blog-logo {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-serif); font-size: 16px; font-weight: 500;
+  color: var(--text-primary); text-decoration: none; white-space: nowrap;
+}
+.blog-logo:hover { color: var(--color-primary-600); }
+.blog-logo .logo-icon { font-size: 20px; }
+.nav-links { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.nav-links a {
+  padding: 6px 14px; border-radius: var(--radius-sm);
+  font-size: 13px; color: var(--text-secondary);
+  transition: all 0.2s;
+}
+.nav-links a:hover { background: var(--color-primary-50); color: var(--color-primary-600); }
+.nav-links a.active { background: var(--color-primary-100); color: var(--color-primary-600); font-weight: 500; }
+.back-btn {
+  padding: 6px 16px !important;
+  background: var(--c-teal) !important;
+  color: #fff !important;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.back-btn:hover { background: var(--color-primary-800) !important; color: #fff !important; }
+
+/* Hero */
+.hero {
+  background: var(--bg-hero);
+  padding: 64px 24px 48px;
+  text-align: center;
+}
+.hero-icon { font-size: 48px; margin-bottom: 16px; }
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 32px; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 12px;
+}
+.hero-subtitle {
+  font-size: 15px; color: var(--text-secondary);
+  max-width: 640px; margin: 0 auto; line-height: 1.8;
+}
+.hero-stats {
+  display: flex; justify-content: center; gap: 40px;
+  margin-top: 32px; flex-wrap: wrap;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: var(--font-serif); font-size: 28px; font-weight: 600;
+  color: var(--color-primary-600);
+}
+.hero-stat-label { font-size: 12px; color: var(--text-tertiary); margin-top: 4px; }
+
+/* Container */
+.container {
+  max-width: 960px; margin: 0 auto; padding: 48px 24px;
+}
+
+/* Tab nav */
+.tab-nav {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 40px; padding: 8px;
+  background: var(--bg-card); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm); position: sticky;
+  top: calc(var(--topbar-h) + 8px); z-index: 50;
+}
+.tab-btn {
+  padding: 10px 20px; border-radius: var(--radius-md);
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  border: none; background: transparent;
+  color: var(--text-secondary); transition: all 0.2s;
+  white-space: nowrap;
+}
+.tab-btn:hover { background: var(--color-primary-50); color: var(--color-primary-600); }
+.tab-btn.active { background: var(--color-primary-600); color: #fff; }
+
+/* Tab content */
+.tab-content { display: none; animation: fadeIn 0.4s ease; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Section heading */
+.section-heading {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 24px; padding-bottom: 16px;
+  border-bottom: 2px solid var(--border);
+}
+.section-heading .icon { font-size: 28px; }
+.section-heading h2 {
+  font-family: var(--font-serif); font-size: 22px; font-weight: 600;
+  color: var(--text-primary);
+}
+.section-heading .badge {
+  margin-left: auto; padding: 4px 12px;
+  background: var(--color-primary-50); color: var(--color-primary-600);
+  border-radius: 20px; font-size: 12px; font-weight: 500;
+}
+
+/* Content blocks */
+.content-block { margin-bottom: 32px; }
+.content-block h3 {
+  font-size: 17px; font-weight: 600; color: var(--text-primary);
+  margin-bottom: 12px; padding-left: 12px;
+  border-left: 3px solid var(--c-teal);
+}
+.content-block p { color: var(--text-secondary); margin-bottom: 12px; line-height: 1.9; }
+.content-block ul, .content-block ol { margin: 12px 0 12px 24px; color: var(--text-secondary); }
+.content-block li { margin-bottom: 6px; line-height: 1.9; }
+
+/* Case card */
+.case-card {
+  background: var(--bg-card); border-radius: var(--radius-lg);
+  padding: 24px; margin-bottom: 20px;
+  box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.case-card:hover { box-shadow: var(--shadow-md); border-color: var(--border-hover, #99F6E4); }
+.case-card-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+}
+.case-card-icon { font-size: 24px; }
+.case-card-title { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+.case-card-tag {
+  margin-left: auto; padding: 3px 10px; border-radius: 12px;
+  font-size: 11px; font-weight: 500;
+}
+.tag-office { background: rgba(20,184,166,0.1); color: var(--c-teal); }
+.tag-dev { background: rgba(56,189,248,0.1); color: var(--c-blue); }
+.tag-mkt { background: rgba(251,146,60,0.1); color: var(--c-coral); }
+.tag-mgmt { background: rgba(244,114,182,0.1); color: var(--c-purple); }
+.tag-creative { background: rgba(52,211,153,0.1); color: var(--c-green); }
+
+.case-card-body { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.case-pain, .case-solution {
+  padding: 16px; border-radius: var(--radius-md); font-size: 13px;
+}
+.case-pain { background: #FEF2F2; border: 1px solid #FECACA; }
+.case-solution { background: #F0FDFA; border: 1px solid #99F6E4; }
+.case-pain h4 { color: #DC2626; font-size: 13px; margin-bottom: 8px; }
+.case-solution h4 { color: var(--c-teal); font-size: 13px; margin-bottom: 8px; }
+.case-pain p, .case-solution p { font-size: 12px; line-height: 1.7; margin: 0; }
+
+.case-result {
+  margin-top: 16px; padding: 12px 16px;
+  background: var(--bg-soft); border-radius: var(--radius-md);
+  display: flex; gap: 24px; flex-wrap: wrap;
+}
+.case-result-item { text-align: center; }
+.case-result-num { font-size: 20px; font-weight: 700; color: var(--c-teal); }
+.case-result-label { font-size: 11px; color: var(--text-tertiary); }
+
+@media (max-width: 700px) {
+  .case-card-body { grid-template-columns: 1fr; }
+}
+
+/* Scenario grid */
+.scenario-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px; margin-bottom: 24px;
+}
+.scenario-item {
+  background: var(--bg-card); border-radius: var(--radius-md);
+  padding: 20px; border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.scenario-item:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.scenario-item-icon { font-size: 28px; margin-bottom: 8px; }
+.scenario-item h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.scenario-item p { font-size: 12px; color: var(--text-secondary); line-height: 1.7; }
+.scenario-item .metric {
+  margin-top: 8px; padding: 4px 10px; border-radius: 8px;
+  background: var(--color-primary-50); color: var(--color-primary-600);
+  font-size: 12px; font-weight: 600; display: inline-block;
+}
+
+/* Timeline */
+.timeline { position: relative; padding-left: 32px; margin: 24px 0; }
+.timeline::before {
+  content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+  width: 2px; background: var(--border);
+}
+.timeline-item { position: relative; margin-bottom: 24px; }
+.timeline-item::before {
+  content: ''; position: absolute; left: -28px; top: 6px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--c-teal); border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--c-teal);
+}
+.timeline-year {
+  font-family: var(--font-serif); font-size: 14px; font-weight: 600;
+  color: var(--color-primary-600); margin-bottom: 4px;
+}
+.timeline-content { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+/* Stat cards */
+.stat-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px; margin: 24px 0;
+}
+.stat-card {
+  background: var(--bg-card); border-radius: var(--radius-md);
+  padding: 24px; text-align: center; border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.stat-card-num {
+  font-family: var(--font-serif); font-size: 32px; font-weight: 700;
+  color: var(--color-primary-600); margin-bottom: 4px;
+}
+.stat-card-label { font-size: 12px; color: var(--text-tertiary); }
+
+/* Feature list */
+.feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.feature-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 16px; background: var(--bg-card);
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+}
+.feature-item .check { color: var(--c-teal); font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+.feature-item span:last-child { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+@media (max-width: 700px) { .feature-list { grid-template-columns: 1fr; } }
+
+/* Comparison table */
+.compare-table {
+  width: 100%; border-collapse: collapse; margin: 16px 0;
+  border-radius: var(--radius-md); overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.compare-table th {
+  background: var(--color-primary-600); color: #fff;
+  padding: 12px 16px; text-align: left; font-size: 13px; font-weight: 500;
+}
+.compare-table td {
+  padding: 12px 16px; border-bottom: 1px solid var(--border);
+  font-size: 13px; color: var(--text-secondary);
+}
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table tr:nth-child(even) td { background: var(--bg-soft); }
+
+/* Callout */
+.callout {
+  padding: 16px 20px; border-radius: var(--radius-md);
+  margin: 16px 0; font-size: 13px; line-height: 1.8;
+}
+.callout-info { background: #EFF6FF; border-left: 4px solid var(--c-blue); color: #1E40AF; }
+.callout-success { background: #F0FDFA; border-left: 4px solid var(--c-teal); color: var(--color-primary-800); }
+.callout-warning { background: #FFFBEB; border-left: 4px solid var(--c-amber); color: #92400E; }
+
+/* Domain badge */
+.domain-badge {
+  display: inline-block; padding: 4px 12px; border-radius: 8px;
+  font-size: 12px; font-weight: 500; margin: 4px 4px 4px 0;
+}
+.domain-design { background: rgba(244,114,182,0.1); color: #BE185D; }
+.domain-dev { background: rgba(56,189,248,0.1); color: #0284C7; }
+.domain-test { background: rgba(251,146,60,0.1); color: #C2410C; }
+.domain-ops { background: rgba(52,211,153,0.1); color: #047857; }
+
+/* Footer */
+.site-footer {
+  background: var(--text-primary); color: #A8A29E;
+  padding: 48px 24px 32px; text-align: center; margin-top: 64px;
+}
+.footer-inner { max-width: 600px; margin: 0 auto; }
+.footer-qr {
+  width: 200px; height: 296px; margin: 0 auto 16px;
+  border-radius: var(--radius-md); overflow: hidden;
+  border: 1px solid var(--border); box-shadow: var(--shadow-md);
+}
+.footer-qr img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.footer-text h3 { font-size: 16px; color: #fff; margin-bottom: 8px; }
+.footer-text p { font-size: 13px; margin-bottom: 4px; }
+.footer-contact {
+  margin-top: 16px; padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; flex-direction: column; gap: 8px; align-items: center;
+}
+.footer-contact-title { font-size: 14px; color: #fff; font-weight: 500; }
+.footer-contact-item { font-size: 13px; }
+.footer-contact-item .label { color: #A8A29E; }
+.footer-contact-item .value { color: #fff; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .topbar-inner { padding: 0 12px; }
+  .nav-links { gap: 2px; }
+  .nav-links a { padding: 4px 8px; font-size: 12px; }
+  .hero { padding: 40px 16px 32px; }
+  .hero-title { font-size: 24px; }
+  .hero-stats { gap: 24px; }
+  .container { padding: 32px 16px; }
+  .tab-nav { position: static; }
+  .tab-btn { padding: 8px 12px; font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="blog-logo">
+      <span class="logo-icon">🔧</span>
+      <span>小饭的 AI 实战笔记</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="part1.html">使用手册</a>
+      <a href="part2.html">案例篇</a>
+      <a href="part3.html">进阶篇</a>
+      <a href="part4.html">岗位落地</a>
+      <a href="skills.html">Skills</a>
+      <a href="xiaoe-agent-blog.html">小鹅通</a>
+      <a href="ai-agent-cases.html" class="active">AI案例</a>
+      <a href="index.html" class="back-btn">← 返回首页</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-icon">🤖</div>
+  <h1 class="hero-title">AI Agent 场景案例与产品介绍</h1>
+  <p class="hero-subtitle">
+    汇集 WorkBuddy 真实客户案例、五大热门场景矩阵、产品架构深度解读、以及腾讯云 CodeBuddy 研效实践，
+    覆盖办公提效、研发提效、营销提效、管理提效、AI漫剧生产全链路。
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">5</div>
+      <div class="hero-stat-label">核心资料</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">30+</div>
+      <div class="hero-stat-label">提效落地点</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">76K+</div>
+      <div class="hero-stat-label">技能生态</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">95%</div>
+      <div class="hero-stat-label">工程师使用率</div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<div class="container">
+
+  <!-- Tab Navigation -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('tab1', this)">📋 场景案例</button>
+    <button class="tab-btn" onclick="switchTab('tab2', this)">🔥 热门场景</button>
+    <button class="tab-btn" onclick="switchTab('tab3', this)">🏗️ 产品架构</button>
+    <button class="tab-btn" onclick="switchTab('tab4', this)">💼 客户宣讲</button>
+    <button class="tab-btn" onclick="switchTab('tab5', this)">💻 CodeBuddy</button>
+  </div>
+
+  <!-- Tab 1: AI Agent 场景案例 -->
+  <div id="tab1" class="tab-content active">
+
+    <div class="section-heading">
+      <span class="icon">📋</span>
+      <h2>AI Agent 场景案例 — 真实客户落地</h2>
+      <span class="badge">18页 · 多行业</span>
+    </div>
+
+    <p>以下案例均来自 WorkBuddy 真实客户落地实践，覆盖金属贸易、人力资源、税务师事务所、物流、教育等多个行业。</p>
+
+    <!-- Case 1: 合同/报价单 -->
+    <div class="case-card">
+      <div class="case-card-header">
+        <span class="case-card-icon">📝</span>
+        <span class="case-card-title">合同撰写 → 报价单生成 → 审核 → 文档处理</span>
+        <span class="case-card-tag tag-office">办公提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>某金属贸易公司，日常存在大量合同、报价单生成和审核工作，文书工作繁重，经常出错。人工编写、审核错误率高，需交叉复审。资料梳理、归档、总结、查阅效率低下。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 合同生成：根据客户名等信息生成定制化合同<br>
+          ② 方案编写：根据客户需求定制产品方案，可自学习更新<br>
+          ③ 智能审核：审核贸易流程文书是否符合规范<br>
+          ④ 资料梳理：整理公司资料，归档总结，高效查阅</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">+100%</div><div class="case-result-label">合同编写自动化</div></div>
+        <div class="case-result-item"><div class="case-result-num">-90%</div><div class="case-result-label">错误率</div></div>
+        <div class="case-result-item"><div class="case-result-num">10人</div><div class="case-result-label">办公团队</div></div>
+      </div>
+    </div>
+
+    <!-- Case 2: 报表生成 -->
+    <div class="case-card">
+      <div class="case-card-header">
+        <span class="case-card-icon">📊</span>
+        <span class="case-card-title">报表生成 → 办公材料自动生成 → 发送邮件</span>
+        <span class="case-card-tag tag-office">办公提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>某人力资源公司面临合同、简历、发票等文档多而杂，人力整合压力大，手动录入易出错。人工整理材料进度缓慢，日常耗时增加2-3H。投递信息分散在各个平台，整理费力费时。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 需求读取：根据项目需求生成不同需求计划<br>
+          ② 材料撰写：生成各类总结分析材料和招聘信息<br>
+          ③ 数据搜集：自动收集各平台信息，做数据整合<br>
+          ④ 报表整理：分类整理各类数据，准确率高速度快</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">+60%</div><div class="case-result-label">办公效率</div></div>
+        <div class="case-result-item"><div class="case-result-num">-50%</div><div class="case-result-label">人力投入</div></div>
+        <div class="case-result-item"><div class="case-result-num">30+</div><div class="case-result-label">行政人事</div></div>
+      </div>
+    </div>
+
+    <!-- Case 3: 单据识别 -->
+    <div class="case-card">
+      <div class="case-card-header">
+        <span class="case-card-icon">🧾</span>
+        <span class="case-card-title">单据识别 → AI自动识别提取字段 → 录入效率提升10倍</span>
+        <span class="case-card-tag tag-office">办公提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>某税务师事务所处理出口退税业务，涉及大量发票、报关单、装箱单。传统模式依赖人工逐张录入、手工核对金额，10-20人团队每日重复操作耗时长、出错率高。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy 提效方案 · 4步完成税务数字化</h4>
+          <p>① 单据拍照上传：自动识别发票、报关单、装箱单关键数据<br>
+          ② 数据自动汇总：按退税类型、客户、时间维度汇总<br>
+          ③ 智能校验：自动核对金额、税号等信息<br>
+          ④ 报表生成：输出结构化Excel报表和分析报告</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">10x</div><div class="case-result-label">录入效率</div></div>
+        <div class="case-result-item"><div class="case-result-num">10-20人</div><div class="case-result-label">团队规模</div></div>
+        <div class="case-result-item"><div class="case-result-num">99%+</div><div class="case-result-label">识别准确率</div></div>
+      </div>
+    </div>
+
+    <!-- Case 4: 研发提效 -->
+    <div class="case-card">
+      <div class="case-card-header">
+        <span class="case-card-icon">💻</span>
+        <span class="case-card-title">代码生成 → Bug定位 → 代码审查 → 数据库优化</span>
+        <span class="case-card-tag tag-dev">研发提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>研发团队被模板代码拖累，Bug定位耗时30min+，代码审查依赖人工覆盖不全，数据库优化需要DBA介入响应慢，研发效率ROI无法量化。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy 提效方案</h4>
+          <p>① 编码补全：AI辅助编码，效率提升60%<br>
+          ② Bug定位：耗时30min→5min<br>
+          ③ 代码审查：覆盖80%风险<br>
+          ④ 数据库优化：7×24 DBA在线支持<br>
+          ⑤ 研效度量：研发效率ROI可量化</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">↑60%</div><div class="case-result-label">研发效率</div></div>
+        <div class="case-result-item"><div class="case-result-num">5min</div><div class="case-result-label">Bug定位</div></div>
+        <div class="case-result-item"><div class="case-result-num">80%</div><div class="case-result-label">风险覆盖</div></div>
+      </div>
+    </div>
+
+    <!-- Case 5: 营销提效 -->
+    <div class="case-card">
+      <div class="case-card-header">
+        <span class="case-card-icon">📱</span>
+        <span class="case-card-title">素材生成 → 内容创作 → 客户互动 → 投放优化</span>
+        <span class="case-card-tag tag-mkt">营销提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>营销素材手搓4小时起步，数据不可靠决策无据，客服7×24人力成本高，多平台适配费时费力，投放ROI无法最大化。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy 提效方案</h4>
+          <p>① 素材生成：秒级出图，手搓4h→30min<br>
+          ② 智能洞察：数据可靠，决策有据<br>
+          ③ 客户互动：7×24智能客服<br>
+          ④ 内容创作：多平台适配，创意无限<br>
+          ⑤ 投放优化：ROI最大化</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">30min</div><div class="case-result-label">素材生成</div></div>
+        <div class="case-result-item"><div class="case-result-num">7×24</div><div class="case-result-label">智能客服</div></div>
+        <div class="case-result-item"><div class="case-result-num">↑ROI</div><div class="case-result-label">投放优化</div></div>
+      </div>
+    </div>
+
+    <!-- Case 6: 管理提效 -->
+    <div class="case-card">
+      <div class="case-card-header">
+        <span class="case-card-icon">⚙️</span>
+        <span class="case-card-title">集群管理 → SSO权限 → ROI度量 → 法务合规</span>
+        <span class="case-card-tag tag-mgmt">管理提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>IT/法务/管理层深陷事务性工作，租户管理分散，权限同步繁琐，效能无法量化，法务合规效率低，跨系统对接困难。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy 提效方案</h4>
+          <p>① 集群管理：批量租户管控<br>
+          ② SSO权限：一键同步组织权限<br>
+          ③ ROI度量：智能BI效能看板<br>
+          ④ 法务合规：效率提升10倍<br>
+          ⑤ OA联动：跨系统对接闭环<br>
+          ⑥ 高管助手：管理决策提效</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">↑10x</div><div class="case-result-label">法务效率</div></div>
+        <div class="case-result-item"><div class="case-result-num">BI</div><div class="case-result-label">效能看板</div></div>
+        <div class="case-result-item"><div class="case-result-num">闭环</div><div class="case-result-label">跨系统对接</div></div>
+      </div>
+    </div>
+
+    <!-- Case 7: AI漫剧 -->
+    <div class="case-card">
+      <div class="case-card-header">
+        <span class="case-card-icon">🎬</span>
+        <span class="case-card-title">剧本生成 → 分镜拆解 → 角色资产 → 动画转制 → 字幕配音 → 剪辑发行</span>
+        <span class="case-card-tag tag-creative">AI漫剧生产</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>漫剧生产全链路依赖人工，剧本创作、分镜拆解、角色设计、动画转制、字幕配音、剪辑发行各环节耗时巨大，产能受限。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy AI 全链路打通</h4>
+          <p>① 剧本生成：AI自动生成剧本<br>
+          ② 分镜拆解：AI自动拆解分镜脚本<br>
+          ③ 角色资产：AI生成角色形象设计<br>
+          ④ 动画转制：分镜图及视频片段生成<br>
+          ⑤ 字幕配音：配音配乐及字幕AI处理<br>
+          ⑥ 剪辑发行：效率提升60%</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">↑60%</div><div class="case-result-label">全链路效率</div></div>
+        <div class="case-result-item"><div class="case-result-num">AI</div><div class="case-result-label">全链路打通</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tab 2: 热门场景 -->
+  <div id="tab2" class="tab-content">
+
+    <div class="section-heading">
+      <span class="icon">🔥</span>
+      <h2>五大自研 AI Agent 落地应用场景</h2>
+      <span class="badge">5大场景 × 6子场景 × 30个落地点</span>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>全栈自研 buddy 虾矩阵</strong> — 研发虾 · 办公虾 · 营销虾 · 管理虾 · 漫剧虾，覆盖5大业务领域、30个高频提效环节。
+    </div>
+
+    <!-- 场景1: 办公提效 -->
+    <div class="content-block">
+      <h3>01 办公提效 — 让全员从重复事务中解放</h3>
+      <p>AI接管邮件、数据、报告、文档、知识、日程，6大高频办公场景全面释放人力资源价值。</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📧</div>
+          <h4>邮件虾 — 邮件处理</h4>
+          <p>大量模板化邮件占用员工时间，多语言处理困难。AI自动起草和回复邮件，秒级出图。</p>
+          <span class="metric">省时80%</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📈</div>
+          <h4>分析虾 — 数据分析</h4>
+          <p>业务人员不懂SQL/Python，依赖BI团队。AI 3秒响应数据分析需求。</p>
+          <span class="metric">3秒响应</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📄</div>
+          <h4>报告虾 — 报告生成</h4>
+          <p>周月报制作繁琐，数据分散。AI自动生成专业报告，30min→3min。</p>
+          <span class="metric">提速60倍</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📚</div>
+          <h4>知识虾 — 知识检索</h4>
+          <p>企业知识散乱，新人学习成本高。AI构建企业知识库，智能检索。</p>
+          <span class="metric">提速60倍</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🗂️</div>
+          <h4>文档虾 — 文档处理</h4>
+          <p>合同、简历、发票等文档手工录入慢、易出错。AI自动识别处理。</p>
+          <span class="metric">自动处理</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📅</div>
+          <h4>协同虾 — 日程协同</h4>
+          <p>会议纪要靠人工整理易遗漏。AI纪要自动派发，任务追踪。</p>
+          <span class="metric">纪要自动派发</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 场景2: 研发提效 -->
+    <div class="content-block">
+      <h3>02 研发提效 — 让研发团队从模板代码中解放</h3>
+      <p>把精力放在真正有价值的业务逻辑实现上，AI接管编码补全、Bug定位、代码审查等高频环节。</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🐛</div>
+          <h4>Bug定位</h4>
+          <p>AI快速定位Bug，耗时30min→5min。</p>
+          <span class="metric">30min→5min</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">⌨️</div>
+          <h4>编码补全</h4>
+          <p>AI辅助编码，研发效率提升60%。</p>
+          <span class="metric">效率↑60%</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🔍</div>
+          <h4>代码审查</h4>
+          <p>AI自动审查代码，覆盖80%风险。</p>
+          <span class="metric">覆盖80%风险</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🗄️</div>
+          <h4>数据库优化</h4>
+          <p>7×24 DBA在线支持。</p>
+          <span class="metric">7×24在线</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🖥️</div>
+          <h4>UI自动化</h4>
+          <p>UI开发耗时2-3h→缩短到15min。</p>
+          <span class="metric">2-3h→15min</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📊</div>
+          <h4>研效度量</h4>
+          <p>研发效率ROI可量化。</p>
+          <span class="metric">ROI可量化</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 场景3: 营销提效 -->
+    <div class="content-block">
+      <h3>03 营销提效 — 让营销团队快速响应市场</h3>
+      <p>随时产出高质量营销物料，AI覆盖素材生成、智能洞察、客户互动、内容创作、投放优化全链路。</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🎨</div>
+          <h4>素材生成</h4>
+          <p>AI秒级出图，多平台适配。</p>
+          <span class="metric">秒级出图</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📊</div>
+          <h4>智能洞察</h4>
+          <p>数据可靠，决策有据。</p>
+          <span class="metric">决策有据</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">💬</div>
+          <h4>客户互动</h4>
+          <p>7×24智能客服。</p>
+          <span class="metric">7×24客服</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">✍️</div>
+          <h4>内容创作</h4>
+          <p>多平台适配，创意无限。</p>
+          <span class="metric">创意无限</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📢</div>
+          <h4>投放优化</h4>
+          <p>ROI最大化。</p>
+          <span class="metric">ROI最大化</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🎓</div>
+          <h4>培训材料</h4>
+          <p>手搓4h→提效到30min。</p>
+          <span class="metric">4h→30min</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 场景4: 管理提效 -->
+    <div class="content-block">
+      <h3>04 管理提效 — 让IT/法务/管理层从事务性工作中解放</h3>
+      <p>专注战略与决策，AI接管集群管理、权限同步、ROI度量、法务合规、OA联动、高管助手。</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🏢</div>
+          <h4>集群管理</h4>
+          <p>批量租户管控。</p>
+          <span class="metric">批量管控</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🔐</div>
+          <h4>SSO权限</h4>
+          <p>一键同步组织权限。</p>
+          <span class="metric">一键同步</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📈</div>
+          <h4>ROI度量</h4>
+          <p>智能BI效能看板。</p>
+          <span class="metric">BI看板</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">⚖️</div>
+          <h4>法务合规</h4>
+          <p>效率提升10倍。</p>
+          <span class="metric">↑10倍</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🔗</div>
+          <h4>OA联动</h4>
+          <p>跨系统对接闭环。</p>
+          <span class="metric">闭环对接</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">👔</div>
+          <h4>高管助手</h4>
+          <p>管理决策提效。</p>
+          <span class="metric">决策提效</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 场景5: AI漫剧 -->
+    <div class="content-block">
+      <h3>05 AI漫剧生产提效 — 全链路AI打通</h3>
+      <p>AI打通剧本、分镜、角色、动画、字幕、配音、宣发售卖全链路，效率提升60%。</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📖</div>
+          <h4>剧本生成</h4>
+          <p>AI自动生成剧本。</p>
+          <span class="metric">AI生成</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🎬</div>
+          <h4>分镜拆解</h4>
+          <p>分镜脚本AI自动拆解。</p>
+          <span class="metric">自动拆解</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🎭</div>
+          <h4>角色资产</h4>
+          <p>角色形象设计AI生成。</p>
+          <span class="metric">AI生成</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🎞️</div>
+          <h4>动画转制</h4>
+          <p>分镜图及视频片段生成。</p>
+          <span class="metric">片段生成</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🔊</div>
+          <h4>字幕配音</h4>
+          <p>配音配乐及字幕AI处理。</p>
+          <span class="metric">AI处理</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📤</div>
+          <h4>剪辑发行</h4>
+          <p>效率提升60%。</p>
+          <span class="metric">↑60%</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tab 3: 产品架构 -->
+  <div id="tab3" class="tab-content">
+
+    <div class="section-heading">
+      <span class="icon">🏗️</span>
+      <h2>WorkBuddy 智能办公 AI 应用实战分享</h2>
+      <span class="badge">29页 · 腾讯云架构师</span>
+    </div>
+
+    <!-- AI范式变化 -->
+    <div class="content-block">
+      <h3>AI Agent 时代：从"超级个体"走向"超级团队"</h3>
+      <div class="callout callout-info">
+        员工的工作方式变了：从<strong>使用AI工具辅助工作</strong>（超级个体），进化到<strong>指挥数字员工干活</strong>（超级团队）——组织"员工+数字员工"完成任务。
+      </div>
+    </div>
+
+    <!-- 腾讯AI演进 -->
+    <div class="content-block">
+      <h3>腾讯AI演进：从工具到工作流到组织重构</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2022-2023 · 工具时代</div>
+          <div class="timeline-content">
+            <strong>"单兵作战的瑞士军刀"</strong> — 文案与内容生成、基础代码辅助编写、创意图像生成。<br>
+            个人工作效率的局部跃升，AI作为被动调用的辅助工具存在。
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024-2025 · 工作流时代</div>
+          <div class="timeline-content">
+            <strong>"自动运转的流水线"</strong> — 自动化营销触达、智能客服与工单流转、自动化数据分析流。<br>
+            业务流程的自动化串联，AI开始主动执行多步骤复杂任务。
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2026及未来 · 协作新范式</div>
+          <div class="timeline-content">
+            <strong>"重构企业DNA的数字大脑"</strong> — 跨部门AI员工协作、人机共生型组织架构、业务全局自主决策系统。<br>
+            组织形态的根本性进化，AI成为重构企业协作的底层底座。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 腾讯实践数据 -->
+    <div class="content-block">
+      <h3>腾讯内部AI使用数据（2026年4月）</h3>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-card-num">95%+</div>
+          <div class="stat-card-label">工程师使用占比</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">50%</div>
+          <div class="stat-card-label">AI代码生成占比</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">27万</div>
+          <div class="stat-card-label">每天任务数</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">2200万</div>
+          <div class="stat-card-label">每天新增AI生成代码行</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">2.3万</div>
+          <div class="stat-card-label">每天AI评审条数</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">75%+</div>
+          <div class="stat-card-label">办公人员WB使用占比</div>
+        </div>
+      </div>
+      <div class="callout callout-success">
+        <strong>月人均消耗Credits 1.9万+</strong> — 腾讯95%工程师在用Buddy产品，每天生成2200万行AI代码。
+      </div>
+    </div>
+
+    <!-- 产品架构 -->
+    <div class="content-block">
+      <h3>WorkBuddy 企业版业务架构</h3>
+      <p>数字员工可由人或组织指挥，7×24小时在线。核心定位：<strong>企业级全场景AI办公智能体</strong> — 深度融合企业业务流，提供开箱即用的智能化服务，重塑组织生产力。</p>
+      
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✦</span><span><strong>技能 (Skills)</strong> — 可定制的AI能力模块，如数据分析、文档处理、代码生成等专业技能</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>套件 (Suites)</strong> — 预配置的工具组合，针对特定场景提供一站式解决方案</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>专家 (Experts)</strong> — 领域专家AI角色，提供专业咨询建议，如同拥有专属行业顾问团队</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>连接器 (Connectors)</strong> — 打通外部系统和数据源，实现无缝对接，打破数据孤岛</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>记忆 (Memory)</strong> — 智能记忆系统，记住用户偏好与历史上下文，提供个性化服务</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>项目 (Teams)</strong> — 项目即团队，多人+AI协同，团队知识沉淀，角色化治理</span></div>
+      </div>
+    </div>
+
+    <!-- 三大引擎 -->
+    <div class="content-block">
+      <h3>三大引擎协同：专家 × 技能 × 灵感</h3>
+      <div class="callout callout-info">
+        <strong>专家提供专业深度 × 技能扩展能力边界 × 灵感复用创意模板 = 企业级AI作战团队</strong>
+      </div>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🎓</div>
+          <h4>专家中心</h4>
+          <p>100+领域专家覆盖全行业，按场景智能匹配最佳专家，专家团协同多个专家。</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🧩</div>
+          <h4>技能市场</h4>
+          <p>丰富的预置技能即开即用，支持自定义技能扩展开发，跨领域能力灵活组合调用。</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">💡</div>
+          <h4>灵感社区</h4>
+          <p>热门模板一键复用，常见工作流沉淀成为可复用的任务起点，社区分享持续更新迭代。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tab 4: 客户宣讲 -->
+  <div id="tab4" class="tab-content">
+
+    <div class="section-heading">
+      <span class="icon">💼</span>
+      <h2>WorkBuddy 宣讲 — 产品介绍与案例</h2>
+      <span class="badge">33页 · 客户宣讲版</span>
+    </div>
+
+    <!-- 产品定位 -->
+    <div class="content-block">
+      <h3>WorkBuddy 是什么？</h3>
+      <p><strong>你的AI智能办公助手</strong> — 具备理解、规划、执行能力的智能体，能够模拟人类操作习惯，接管繁琐的电脑端重复性工作。</p>
+      <div class="callout callout-success">
+        <strong>核心3句话：</strong><br>
+        1. 有PC办公/Office就能用得上，覆盖全行业通用场景<br>
+        2. 开箱即用，零门槛上手——一键写文档、做PPT、改表格、整理纪要<br>
+        3. 成本可控、数据安全，同等能力下混元3 preview性价比拉满
+      </div>
+      <p><strong>产品4大形态：</strong>桌面端 · 小程序 · 管理后台 · 主流IM平台(Claw形态)</p>
+    </div>
+
+    <!-- 对比传统AI -->
+    <div class="content-block">
+      <h3>如何区别传统AI工具？</h3>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width:20%">维度</th>
+            <th style="width:40%">传统AI工具</th>
+            <th style="width:40%">WorkBuddy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>能力层面</td>
+            <td>只能回答问题，停留在对话层面，提供建议但无法执行实际任务</td>
+            <td>能理解并主动干活，具备行动力，自主规划并直接交付最终工作成果</td>
+          </tr>
+          <tr>
+            <td>操作方式</td>
+            <td>需一步步手动操作，依赖人类作为"中转站"，复制粘贴、切换软件</td>
+            <td>一句话完成复杂流程，化繁为简，将多步骤的繁琐任务压缩为一次指令</td>
+          </tr>
+          <tr>
+            <td>生态连接</td>
+            <td>各软件独立，数据割裂，形成信息孤岛，无法跨平台协同</td>
+            <td>打通腾讯全家桶，无缝连接文档、会议等生态，数据自由流转</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout callout-info">
+        它不只是聊天机器人，而是一个<strong>永不疲倦、随叫随到</strong>的数字员工。
+      </div>
+    </div>
+
+    <!-- Skill概念 -->
+    <div class="content-block">
+      <h3>什么是 Skill？</h3>
+      <p><strong>Skill = Agent的"技能包"</strong>，安装一个Skill，WorkBuddy就多一项本事。</p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-card-num">76,000+</div>
+          <div class="stat-card-label">已收录技能</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">即插即用</div>
+          <div class="stat-card-label">海量技能</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">插件化</div>
+          <div class="stat-card-label">能力扩展</div>
+        </div>
+      </div>
+      <p><strong>能力进化路径：</strong>基础Agent（具备基础执行力）→ + Skill技能包（特定领域能力扩展）→ 全能WorkBuddy（胜任复杂业务场景）</p>
+    </div>
+
+    <!-- 企业AI工作台 -->
+    <div class="content-block">
+      <h3>WorkBuddy：企业员工AI工作台</h3>
+      <p>岗位全覆盖、企业全场景职场办公AI能力。每个人拥有自己的AI搭档，一句话下发任务，获取可验收结果。</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📦</div>
+          <h4>产品/项目岗位</h4>
+          <p>需求管理、竞品分析、项目排期、风险识别</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🤝</div>
+          <h4>销售/售前岗位</h4>
+          <p>项目方案、行业分析、客户跟踪、风险预警</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📢</div>
+          <h4>市场/品牌岗位</h4>
+          <p>物料生成、文案创作、品牌调研、活动策划</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">👥</div>
+          <h4>HR/人事岗位</h4>
+          <p>简历筛选、面试评价、考勤分析、绩效评定</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">💰</div>
+          <h4>财务/行政岗位</h4>
+          <p>报销审核、财务看板、合规检查、预算分析</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📊</div>
+          <h4>运营/管理岗位</h4>
+          <p>数据报告、趋势分析、异常识别、进度汇总</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🚚</div>
+          <h4>供应链/采购岗位</h4>
+          <p>邮件日程、自动提醒、会议纪要、周报生成</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 企业管理 -->
+    <div class="content-block">
+      <h3>企业统一管控AI资产</h3>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✓</span><span>知识、文档、专家、Skill统一管理</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>度量、成本、配额精准规划</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>权限、身份、密钥、审计统一管控</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>Skill沉淀最佳实践，岗位经验不随人走</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>140+领域专家 + 企业自定义专家</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>Build企业标准化工作流</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tab 5: CodeBuddy -->
+  <div id="tab5" class="tab-content">
+
+    <div class="section-heading">
+      <span class="icon">💻</span>
+      <h2>腾讯云 CodeBuddy 产品介绍</h2>
+      <span class="badge">33页 · 腾讯云开发者中心</span>
+    </div>
+
+    <!-- 研效平台 -->
+    <div class="content-block">
+      <h3>腾讯研效工具平台</h3>
+      <p>腾讯研效工具平台是同时支撑腾讯各业务线的通用工具平台，覆盖设计、研发、运维全链路。</p>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✓</span><span>统一技术标准和最佳实践，提升工具效能</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>打破工具孤岛，提高跨团队协作效率</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>统一资源池，提高资源利用率</span></div>
+      </div>
+    </div>
+
+    <!-- 历史演进 -->
+    <div class="content-block">
+      <h3>研效平台历史演进</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2011-2013</div>
+          <div class="timeline-content">启动TAPD项目 → TAPD正式发布并在腾讯内部全面推广</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2014-2016</div>
+          <div class="timeline-content">推出腾讯云 → 腾讯工蜂正式上线（内部统一代码托管平台）</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2017-2020</div>
+          <div class="timeline-content">AI在研发工具中应用探索 → CloudStudio云端IDE正式发布 → TCA腾讯云代码分析</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2021-2023</div>
+          <div class="timeline-content">腾讯研效技术委员会成立 → CoDesign产品设计协作平台 → 工蜂Copilot(CodeBuddy)内部使用</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024-2025</div>
+          <div class="timeline-content">成立代码智能化Oteam → 工蜂Copilot活跃率超80%，正式更名<strong>CodeBuddy</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CodeBuddy数据 -->
+    <div class="content-block">
+      <h3>CodeBuddy 研发智能化数据</h3>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-card-num">93%</div>
+          <div class="stat-card-label">用户认为AI助手可帮助提效</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">4.54/5</div>
+          <div class="stat-card-label">用户好评率</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">50%</div>
+          <div class="stat-card-label">代码生成率</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">82.26%</div>
+          <div class="stat-card-label">整体活跃率（5W+T族用户）</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">89%</div>
+          <div class="stat-card-label">标杆BG活跃率</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num">52.9%</div>
+          <div class="stat-card-label">补全采纳率</div>
+        </div>
+      </div>
+      <div class="callout callout-success">
+        <strong>代码生成率50%，是腾讯80%工程师的选择。</strong>
+      </div>
+    </div>
+
+    <!-- 产品形态 -->
+    <div class="content-block">
+      <h3>CodeBuddy 产品形态</h3>
+      <p>为服务好腾讯内部各业务线，CodeBuddy演化出两大领域、四种角色：</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🎨</div>
+          <h4>设计师 & 产品经理</h4>
+          <p>设计即应用 — C++/C#/Lua、Unity/Unreal、游戏Demo、信息安全、性能优化</p>
+          <span class="domain-badge domain-design">全链路设计开发</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">👨‍💻</div>
+          <h4>专业程序员</h4>
+          <p>前端工程、简单应用、复杂工程、后端开发 — C++/Go/Java、高并发、稳定性驱动</p>
+          <span class="domain-badge domain-dev">专业工程开发</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🧪</div>
+          <h4>测试工程师</h4>
+          <p>智能评审、自动化 — Go/Java/Python、产品化API驱动、敏捷开发、日志分析</p>
+          <span class="domain-badge domain-test">测试自动化</span>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🔧</div>
+          <h4>运维工程师</h4>
+          <p>面向DevOps — Java/Go/Python/C++、高并发、风控需求、合规监管</p>
+          <span class="domain-badge domain-ops">DevOps</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 产品形态 -->
+    <div class="content-block">
+      <h3>产品交付形态</h3>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>形态</th>
+            <th>描述</th>
+            <th>适用场景</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AI IDE</td>
+            <td>集成开发环境中的AI辅助</td>
+            <td>日常编码、代码补全、智能审查</td>
+          </tr>
+          <tr>
+            <td>Plugin</td>
+            <td>插件形式嵌入现有工具链</td>
+            <td>已有IDE增强、CI/CD集成</td>
+          </tr>
+          <tr>
+            <td>CLI</td>
+            <td>命令行工具</td>
+            <td>脚本自动化、批量处理</td>
+          </tr>
+          <tr>
+            <td>智能体管理</td>
+            <td>智能体配置和管理平台</td>
+            <td>团队级AI策略、知识库/Rules</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 管理能力 -->
+    <div class="content-block">
+      <h3>企业级管理能力</h3>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✓</span><span>知识库/Rules — 企业自定义知识沉淀</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>成员管理 — 团队权限和角色管控</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>研效看板 — 研发效率数据可视化</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>智能体管理 — AI策略配置</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>日志管理 — 操作审计追溯</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>模型/网络 — 灵活配置底层模型</span></div>
+      </div>
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>资料来源：</strong>以上内容整理自腾讯云CodeBuddy产品介绍文档（2025），数据截至2026年4月。
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-qr">
+      <img src="qr-code.png" alt="微信二维码">
+    </div>
+    <div class="footer-text">
+      <h3>小饭的 AI 实战笔记</h3>
+      <p>社区共创 - 开源</p>
+      <p>&copy; 2026 小饭的 AI 实战笔记</p>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-contact-title">联系我</div>
+      <div class="footer-contact-item">
+        <span class="label">联系人：</span>
+        <span class="value">大雄的AI口袋</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="label">微信：</span>
+        <span class="value">Sakura9598</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="label">电话：</span>
+        <span class="value">18975182935</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
