@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="WorkBuddy Skills - 20 个实战技能案例，含部署方法和详细使用指南">
+<meta name="description" content="WorkBuddy Skills - 28 个实战技能案例，含部署方法和详细使用指南">
 <title>Skills - 小饭的 AI 实战笔记</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1776,7 +1776,7 @@ img { max-width: 100%; height: auto; }
 <!-- Skills Hero -->
 <section class="skills-hero">
   <h1>WorkBuddy Skills</h1>
-  <p>20 个实战技能案例，覆盖内容创作、金融数据、AI 创作、办公协作、法律合规等场景。点击任意卡片查看部署方法和详细使用指南。</p>
+  <p>28 个实战技能案例，覆盖内容创作、金融数据、AI 创作、办公协作、法律合规、人力资源、财务管理、教育培训等场景。点击任意卡片查看部署方法和详细使用指南。</p>
 </section>
 
 <!-- Skills Grid -->
@@ -1798,6 +1798,11 @@ img { max-width: 100%; height: auto; }
     <span class="filter-pill" onclick="filterSkills('内容优化')">内容优化</span>
     <span class="filter-pill" onclick="filterSkills('文件管理')">文件管理</span>
     <span class="filter-pill" onclick="filterSkills('知识付费')">知识付费</span>
+    <span class="filter-pill" onclick="filterSkills('人力资源')">人力资源</span>
+    <span class="filter-pill" onclick="filterSkills('财务管理')">财务管理</span>
+    <span class="filter-pill" onclick="filterSkills('教育培训')">教育培训</span>
+    <span class="filter-pill" onclick="filterSkills('市场营销')">市场营销</span>
+    <span class="filter-pill" onclick="filterSkills('行政管理')">行政管理</span>
 
   </div>
   <div class="skills-grid">
@@ -1980,6 +1985,79 @@ img { max-width: 100%; height: auto; }
       <h4>小鹅通打通 WorkBuddy 流程</h4>
       <p>把小鹅通知识店铺与 WorkBuddy AI Agent 平台连接，实现课程自动化、内容分发、用户运营</p>
       <div class="skill-card-cat">知识付费 · 点击查看详情 →</div>
+    </div>
+
+    <div class="skill-card" data-cat="人力资源" style="--skill-color:#6366F1;--skill-bg:#6366F11A" onclick="openSkillModal(20)">
+      <div class="skill-card-top">
+        <div class="skill-icon">🧑‍💼</div>
+        <span class="skill-tag">HR</span>
+      </div>
+      <h4>招聘JD生成与简历智能筛选</h4>
+      <p>自动生成岗位JD、解析简历、人岗匹配评分、生成面试问题清单</p>
+      <div class="skill-card-cat">人力资源 · 点击查看详情 →</div>
+    </div>
+    <div class="skill-card" data-cat="人力资源" style="--skill-color:#6366F1;--skill-bg:#6366F11A" onclick="openSkillModal(21)">
+      <div class="skill-card-top">
+        <div class="skill-icon">👥</div>
+        <span class="skill-tag">HR</span>
+      </div>
+      <h4>员工培训方案与绩效评估</h4>
+      <p>培训需求分析、课程方案设计、绩效评估报告生成、面谈话术建议</p>
+      <div class="skill-card-cat">人力资源 · 点击查看详情 →</div>
+    </div>
+    <div class="skill-card" data-cat="财务管理" style="--skill-color:#F59E0B;--skill-bg:#F59E0B1A" onclick="openSkillModal(22)">
+      <div class="skill-card-top">
+        <div class="skill-icon">🧾</div>
+        <span class="skill-tag">财务</span>
+      </div>
+      <h4>发票智能识别与报销自动化</h4>
+      <p>OCR识别发票信息、自动校验真伪、报销审批流程、费用统计分析</p>
+      <div class="skill-card-cat">财务管理 · 点击查看详情 →</div>
+    </div>
+    <div class="skill-card" data-cat="财务管理" style="--skill-color:#F59E0B;--skill-bg:#F59E0B1A" onclick="openSkillModal(23)">
+      <div class="skill-card-top">
+        <div class="skill-icon">📈</div>
+        <span class="skill-tag">财务</span>
+      </div>
+      <h4>财务报表分析与预算编制</h4>
+      <p>三大报表分析、财务指标计算、预算模板生成、预算执行差异分析</p>
+      <div class="skill-card-cat">财务管理 · 点击查看详情 →</div>
+    </div>
+    <div class="skill-card" data-cat="法律合规" style="--skill-color:#6366F1;--skill-bg:#6366F11A" onclick="openSkillModal(24)">
+      <div class="skill-card-top">
+        <div class="skill-icon">📑</div>
+        <span class="skill-tag">法律</span>
+      </div>
+      <h4>合同智能审查与风险提示</h4>
+      <p>合同条款逐条审查、风险点标注、修改建议、合规性检查</p>
+      <div class="skill-card-cat">法律合规 · 点击查看详情 →</div>
+    </div>
+    <div class="skill-card" data-cat="教育培训" style="--skill-color:#10B981;--skill-bg:#10B9811A" onclick="openSkillModal(25)">
+      <div class="skill-card-top">
+        <div class="skill-icon">🎓</div>
+        <span class="skill-tag">教育</span>
+      </div>
+      <h4>课程大纲与试题自动生成</h4>
+      <p>教学大纲设计、知识点拆解、题库批量生成、评分标准制定</p>
+      <div class="skill-card-cat">教育培训 · 点击查看详情 →</div>
+    </div>
+    <div class="skill-card" data-cat="市场营销" style="--skill-color:#EC4899;--skill-bg:#EC48991A" onclick="openSkillModal(26)">
+      <div class="skill-card-top">
+        <div class="skill-icon">🎯</div>
+        <span class="skill-tag">营销</span>
+      </div>
+      <h4>竞品分析与营销方案策划</h4>
+      <p>竞品调研、SWOT分析、营销日历生成、投放策略与文案撰写</p>
+      <div class="skill-card-cat">市场营销 · 点击查看详情 →</div>
+    </div>
+    <div class="skill-card" data-cat="行政管理" style="--skill-color:#06B6D4;--skill-bg:#06B6D41A" onclick="openSkillModal(27)">
+      <div class="skill-card-top">
+        <div class="skill-icon">📌</div>
+        <span class="skill-tag">行政</span>
+      </div>
+      <h4>会议纪要自动化与任务追踪</h4>
+      <p>录音转写、纪要自动生成、任务分配与追踪、决议跟进提醒</p>
+      <div class="skill-card-cat">行政管理 · 点击查看详情 →</div>
     </div>
   </div>
 </section>
@@ -3082,6 +3160,318 @@ img { max-width: 100%; height: auto; }
           应用场景
         </div>
         <div class="skill-use-cases"><div class="skill-use-case">知识付费店铺日常运营自动化：商品、订单、用户、数据一站式管理</div><div class="skill-use-case">课程营销内容自动化：课程大纲 → 公众号文章 → 小红书海报 → 群发推广</div><div class="skill-use-case">私域用户分层运营：按付费/完课/沉默等标签自动触达，提高复购和转化</div><div class="skill-use-case">小鹅通 + 公众号 + 视频号矩阵：一个 WorkBuddy 工作流串联多个平台</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-modal-overlay" id="skillOverlay20" onclick="closeSkillModal(20)"></div>
+  <div class="skill-modal" id="skillModal20" style="--skill-color:#6366F1">
+    <div class="skill-modal-header">
+      <button class="skill-modal-close" onclick="closeSkillModal(20)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <div class="skill-modal-header-top">
+        <div class="skill-modal-icon" style="background:#6366F11A">🧑‍💼</div>
+        <div>
+          <div class="skill-modal-title">招聘JD生成与简历智能筛选</div>
+          <div class="skill-modal-tag">
+            <span style="background:#6366F11A;color:#6366F1">HR</span>
+            <span style="background:var(--bg-soft);color:var(--text-tertiary)">人力资源</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skill-modal-body">
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>技能概述</div>
+        <div class="skill-section-text">利用 WorkBuddy 的自然语言能力，结合企业信息查询（企查查/天眼查）和文档处理，实现招聘全流程自动化：从岗位 JD 生成、简历批量解析、人岗匹配评分到面试问题智能生成。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>部署方法</div>
+        <ul class="skill-deploy-list"><li>1. 安装 qcc-company（企查查）或 tyc-mcp（天眼查）技能，用于查询企业基本信息</li><li>2. 安装 tencent-docs 技能，用于简历表格的读写和导出</li><li>3. 在 .workbuddy/skills/ 下创建自定义技能 hr-recruitment，定义 JD 模板和评分规则</li><li>4. 配置简历解析规则：学历权重20%、经验权重40%、技能匹配30%、加分项10%</li><li>5. 设置定时任务：每天早上自动从邮箱拉取新简历并解析</li></ul>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>使用步骤</div>
+        <ol class="skill-steps-list"><li>输入指令：「帮我写一份高级Java工程师的JD，要求5年经验，熟悉微服务，工作地点长沙」</li><li>AI 根据行业标准生成完整 JD（岗位职责、任职要求、加分项、薪资范围）</li><li>将收到的简历文件拖入对话，输入「解析这些简历，按匹配度排序」</li><li>AI 逐份解析简历关键信息（学历、工作年限、技能栈、项目经验）</li><li>自动评分并输出匹配度排行表，标注每份简历的优劣势</li><li>输入「为匹配度最高的3位候选人生成面试问题」→ AI 生成针对性技术面试题</li></ol>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>示例指令</div>
+        <div class="skill-example-box">我们公司正在招一名产品经理，base长沙，3-5年经验，需要熟悉B端SaaS。帮我：1）写一份JD；2）把这10份简历按匹配度排序打分；3）为前3名候选人各生成5道面试题。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>应用场景</div>
+        <div class="skill-use-cases"><div class="skill-use-case">批量招聘季快速筛选：一次处理上百份简历，30分钟出结果</div><div class="skill-use-case">多岗位并行招聘：同时生成多个岗位的JD和面试题</div><div class="skill-use-case">简历库沉淀：历史简历自动归档，后续有匹配岗位直接召回</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-modal-overlay" id="skillOverlay21" onclick="closeSkillModal(21)"></div>
+  <div class="skill-modal" id="skillModal21" style="--skill-color:#6366F1">
+    <div class="skill-modal-header">
+      <button class="skill-modal-close" onclick="closeSkillModal(21)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <div class="skill-modal-header-top">
+        <div class="skill-modal-icon" style="background:#6366F11A">👥</div>
+        <div>
+          <div class="skill-modal-title">员工培训方案与绩效评估</div>
+          <div class="skill-modal-tag">
+            <span style="background:#6366F11A;color:#6366F1">HR</span>
+            <span style="background:var(--bg-soft);color:var(--text-tertiary)">人力资源</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skill-modal-body">
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>技能概述</div>
+        <div class="skill-section-text">结合 WorkBuddy 文档生成能力和知识库管理，实现员工培训全流程：培训需求分析、课程方案设计、培训效果评估。同时支持绩效评估报告自动生成和面谈话术建议。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>部署方法</div>
+        <ul class="skill-deploy-list"><li>1. 安装 tencent-docs 技能，用于生成培训方案文档和绩效报告</li><li>2. 安装 ima-skills 知识库技能，将公司制度、岗位说明书导入知识库</li><li>3. 安装 official-document-skill（公文写作技能），生成正式培训通知和考核文件</li><li>4. 在知识库中建立「培训资源库」和「绩效考核标准库」</li><li>5. 设置定时任务：季度末自动汇总绩效数据生成评估报告</li></ul>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>使用步骤</div>
+        <ol class="skill-steps-list"><li>输入指令：「分析技术部Q3培训需求，岗位包括前端、后端、测试」</li><li>AI 从知识库调取岗位能力模型，对比现有技能差距，输出需求分析</li><li>输入「为前端工程师设计为期4周的Vue3培训方案」</li><li>AI 生成完整方案：课程大纲、每周计划、讲师安排、考核方式</li><li>培训结束后输入「根据考核成绩生成培训效果评估报告」</li><li>季度绩效输入「根据以下KPI数据生成绩效评估报告并给出面谈话术」</li></ol>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>示例指令</div>
+        <div class="skill-example-box">技术部有15人需要Vue3培训，其中5人是转岗。帮我设计一个4周的培训方案，包括课程大纲、每周目标、考核方式。培训结束后根据考核成绩生成效果评估报告，并给每位参训员工写一段绩效面谈话术。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>应用场景</div>
+        <div class="skill-use-cases"><div class="skill-use-case">新员工入职培训：自动生成定制化培训计划和考核试题</div><div class="skill-use-case">季度/年度绩效评估：KPI数据自动汇总，生成绩效报告和改进建议</div><div class="skill-use-case">转岗培训：针对新旧岗位技能差异设计专属培训路径</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-modal-overlay" id="skillOverlay22" onclick="closeSkillModal(22)"></div>
+  <div class="skill-modal" id="skillModal22" style="--skill-color:#F59E0B">
+    <div class="skill-modal-header">
+      <button class="skill-modal-close" onclick="closeSkillModal(22)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <div class="skill-modal-header-top">
+        <div class="skill-modal-icon" style="background:#F59E0B1A">🧾</div>
+        <div>
+          <div class="skill-modal-title">发票智能识别与报销自动化</div>
+          <div class="skill-modal-tag">
+            <span style="background:#F59E0B1A;color:#F59E0B">财务</span>
+            <span style="background:var(--bg-soft);color:var(--text-tertiary)">财务管理</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skill-modal-body">
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>技能概述</div>
+        <div class="skill-section-text">利用 WorkBuddy 多模态能力识别发票图片信息，结合腾讯文档实现报销流程自动化：发票OCR识别、真伪校验、报销单自动生成、审批流程跟踪、费用统计分析。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>部署方法</div>
+        <ul class="skill-deploy-list"><li>1. 安装 tencent-docs 技能，用于创建和管理报销单表格</li><li>2. 安装 weiyun（微云）技能，用于发票图片统一存储</li><li>3. 在 .workbuddy/skills/ 下创建 expense-reimbursement 自定义技能</li><li>4. 配置报销规则模板：差旅标准、餐补标准、交通报销规则</li><li>5. 设置定时任务：每月1号自动生成上月费用统计报表</li></ul>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>使用步骤</div>
+        <ol class="skill-steps-list"><li>将发票拍照图片发送到对话窗口</li><li>输入「识别这些发票，提取关键信息并校验」</li><li>AI 自动提取：发票号码、开票日期、金额、税额、购买方、销售方</li><li>与税务局验真接口比对（如已配置），标注异常发票</li><li>输入「根据报销标准生成报销单」→ AI 自动填充腾讯文档报销表</li><li>输入「生成上月费用统计报表，按部门分类」</li></ol>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>示例指令</div>
+        <div class="skill-example-box">这是我这次出差的5张发票（图片），帮我识别提取信息，按公司差旅报销标准（经济舱机票+300元/天酒店+100元/天餐补）生成报销单，然后创建一个腾讯文档报销表让我审批。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>应用场景</div>
+        <div class="skill-use-cases"><div class="skill-use-case">差旅报销批量处理：一次提交多张发票，自动分类汇总</div><div class="skill-use-case">月度费用统计：自动汇总各部门报销数据生成可视化报表</div><div class="skill-use-case">异常发票预警：重复报销、金额异常、过期发票自动标记</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-modal-overlay" id="skillOverlay23" onclick="closeSkillModal(23)"></div>
+  <div class="skill-modal" id="skillModal23" style="--skill-color:#F59E0B">
+    <div class="skill-modal-header">
+      <button class="skill-modal-close" onclick="closeSkillModal(23)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <div class="skill-modal-header-top">
+        <div class="skill-modal-icon" style="background:#F59E0B1A">📈</div>
+        <div>
+          <div class="skill-modal-title">财务报表分析与预算编制</div>
+          <div class="skill-modal-tag">
+            <span style="background:#F59E0B1A;color:#F59E0B">财务</span>
+            <span style="background:var(--bg-soft);color:var(--text-tertiary)">财务管理</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skill-modal-body">
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>技能概述</div>
+        <div class="skill-section-text">结合 WorkBuddy 的 westock-data 金融数据能力和腾讯文档，实现财务分析全流程：三大报表分析、关键财务指标计算、预算模板自动生成、预算执行差异分析，输出专业财务分析报告。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>部署方法</div>
+        <ul class="skill-deploy-list"><li>1. 安装 westock-data 技能，获取上市公司财务数据作为行业对标</li><li>2. 安装 tencent-docs 技能，用于生成财务分析报告和预算表</li><li>3. 安装 neo-crm（销售易CRM）技能，拉取营收数据辅助预算编制</li><li>4. 在知识库中导入历史三年财务报表作为分析基准</li><li>5. 创建 budget-analysis 自定义技能，定义预算科目和编制规则</li></ul>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>使用步骤</div>
+        <ol class="skill-steps-list"><li>上传或输入资产负债表、利润表、现金流量表数据</li><li>输入「分析这三张报表，计算关键财务指标」</li><li>AI 自动计算：流动比率、速动比率、资产负债率、ROE、ROA、毛利率等</li><li>输入「与行业对标分析」→ 调取同行业上市公司数据进行对比</li><li>输入「根据历史数据和增长趋势编制下一年预算」</li><li>AI 生成预算表（腾讯文档），含收入预算、成本预算、费用预算</li></ol>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>示例指令</div>
+        <div class="skill-example-box">这是我们公司2024年三季度的资产负债表和利润表数据。帮我：1）计算关键财务指标；2）与同行业（选3家上市公司）对标分析；3）根据历史趋势编制2025年年度预算，包括收入预算、成本预算、费用预算，输出到腾讯文档。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>应用场景</div>
+        <div class="skill-use-cases"><div class="skill-use-case">季度/年度财务分析：自动生成专业财务分析报告</div><div class="skill-use-case">预算编制与执行监控：预算vs实际差异实时跟踪</div><div class="skill-use-case">投融资分析：为融资计划准备财务数据包和商业计划书</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-modal-overlay" id="skillOverlay24" onclick="closeSkillModal(24)"></div>
+  <div class="skill-modal" id="skillModal24" style="--skill-color:#6366F1">
+    <div class="skill-modal-header">
+      <button class="skill-modal-close" onclick="closeSkillModal(24)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <div class="skill-modal-header-top">
+        <div class="skill-modal-icon" style="background:#6366F11A">📑</div>
+        <div>
+          <div class="skill-modal-title">合同智能审查与风险提示</div>
+          <div class="skill-modal-tag">
+            <span style="background:#6366F11A;color:#6366F1">法律</span>
+            <span style="background:var(--bg-soft);color:var(--text-tertiary)">法律合规</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skill-modal-body">
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>技能概述</div>
+        <div class="skill-section-text">结合北大法宝/华宇元典法律数据库和 WorkBuddy 文档分析能力，实现合同全流程智能审查：条款逐条审查、风险点标注、修改建议生成、合规性检查，输出审查报告。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>部署方法</div>
+        <ul class="skill-deploy-list"><li>1. 安装 pkulaw（北大法宝）技能，接入法律法规和合同范本数据库</li><li>2. 安装 yuandian-mcp（华宇元典）技能，获取案例判决数据</li><li>3. 安装 tencent-docs 技能，用于生成合同审查报告</li><li>4. 在知识库中导入公司合同模板库和审查标准</li><li>5. 创建 contract-review 自定义技能，定义审查规则和风险等级</li></ul>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>使用步骤</div>
+        <ol class="skill-steps-list"><li>将合同文本上传或粘贴到对话窗口</li><li>输入「审查这份合同，标注风险点并给出修改建议」</li><li>AI 逐条审查：主体资格、标的条款、付款条款、违约责任、争议解决等</li><li>每个风险点标注等级（高/中/低），引用相关法条</li><li>输入「对比我们的标准模板，列出差异条款」</li><li>AI 输出完整审查报告，含修改建议和风险提示</li></ol>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>示例指令</div>
+        <div class="skill-example-box">这是一份供应商合同，对方是深圳XX科技公司。帮我审查这份合同，重点关注：1）付款条款是否有利；2）违约责任是否对等；3）知识产权归属是否清晰；4）争议解决条款是否合理。标注所有风险点并给出修改建议，输出审查报告。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>应用场景</div>
+        <div class="skill-use-cases"><div class="skill-use-case">采购/销售合同审查：批量审查，30分钟出报告</div><div class="skill-use-case">劳动合同合规检查：对照劳动法逐条审查</div><div class="skill-use-case">合同模板库管理：标准模板+审查规则，新合同自动对标</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-modal-overlay" id="skillOverlay25" onclick="closeSkillModal(25)"></div>
+  <div class="skill-modal" id="skillModal25" style="--skill-color:#10B981">
+    <div class="skill-modal-header">
+      <button class="skill-modal-close" onclick="closeSkillModal(25)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <div class="skill-modal-header-top">
+        <div class="skill-modal-icon" style="background:#10B9811A">🎓</div>
+        <div>
+          <div class="skill-modal-title">课程大纲与试题自动生成</div>
+          <div class="skill-modal-tag">
+            <span style="background:#10B9811A;color:#10B981">教育</span>
+            <span style="background:var(--bg-soft);color:var(--text-tertiary)">教育培训</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skill-modal-body">
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>技能概述</div>
+        <div class="skill-section-text">结合 WorkBuddy 文档生成和知识库能力，实现教育培训内容全流程自动化：教学大纲设计、知识点拆解、题库批量生成、评分标准制定，支持多种题型和难度级别。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>部署方法</div>
+        <ul class="skill-deploy-list"><li>1. 安装 tencent-docs 技能，用于生成课程大纲和试卷文档</li><li>2. 安装 ima-skills 知识库技能，导入教材和课程标准</li><li>3. 安装 xiaoe-cloud-cli（小鹅通）技能，直接发布到知识付费平台</li><li>4. 在知识库建立「课程标准库」和「题库模板库」</li><li>5. 创建 curriculum-design 自定义技能，定义知识点拆解规则</li></ul>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>使用步骤</div>
+        <ol class="skill-steps-list"><li>输入指令：「为Python入门课程设计16周教学大纲，面向零基础学员」</li><li>AI 按认知规律拆解知识点，生成周计划（学习目标+知识点+实践项目）</li><li>输入「为第3周的数据类型章节生成20道练习题，含选择/填空/编程题」</li><li>AI 批量生成题目，每题附答案解析和难度标注</li><li>输入「生成期中试卷，难易比3:5:2，含评分标准」</li><li>输出完整试卷文档（腾讯文档），可直接打印或发布到小鹅通</li></ol>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>示例指令</div>
+        <div class="skill-example-box">我要开一门「AI办公效率提升」的线上课程，12课时，面向职场白领。帮我：1）设计课程大纲，每课时含学习目标和案例；2）为第4课时「AI写文档」生成15道课后练习题；3）生成期末考核方案和评分标准。所有内容输出到腾讯文档。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>应用场景</div>
+        <div class="skill-use-cases"><div class="skill-use-case">培训机构课程开发：快速产出标准化课程包</div><div class="skill-use-case">企业内训内容生产：岗位技能课程+考核题库一键生成</div><div class="skill-use-case">知识付费内容创作：课程大纲+题库+营销文案一条龙</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-modal-overlay" id="skillOverlay26" onclick="closeSkillModal(26)"></div>
+  <div class="skill-modal" id="skillModal26" style="--skill-color:#EC4899">
+    <div class="skill-modal-header">
+      <button class="skill-modal-close" onclick="closeSkillModal(26)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <div class="skill-modal-header-top">
+        <div class="skill-modal-icon" style="background:#EC48991A">🎯</div>
+        <div>
+          <div class="skill-modal-title">竞品分析与营销方案策划</div>
+          <div class="skill-modal-tag">
+            <span style="background:#EC48991A;color:#EC4899">营销</span>
+            <span style="background:var(--bg-soft);color:var(--text-tertiary)">市场营销</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skill-modal-body">
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>技能概述</div>
+        <div class="skill-section-text">结合企查查企业信息、westock-data行业数据和 WorkBuddy 内容生成能力，实现营销全链路：竞品调研、SWOT分析、营销日历、投放策略、文案撰写，输出完整营销方案。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>部署方法</div>
+        <ul class="skill-deploy-list"><li>1. 安装 qcc-company（企查查）技能，查询竞品企业工商和融资信息</li><li>2. 安装 tencentads（腾讯营销投放）技能，获取广告投放数据</li><li>3. 安装 wechat-write 技能，生成营销软文和推广文案</li><li>4. 安装 tencent-docs 技能，输出营销方案文档</li><li>5. 在知识库导入品牌手册和营销策略模板</li></ul>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>使用步骤</div>
+        <ol class="skill-steps-list"><li>输入「分析XX行业的3个主要竞品，做SWOT分析」</li><li>AI 调取企查查数据（融资轮次、规模、团队）+ 网页搜索产品信息</li><li>生成竞品对比表和SWOT分析图</li><li>输入「根据竞品分析制定Q3营销方案」</li><li>AI 生成方案：目标用户、渠道策略、内容日历、预算分配、KPI指标</li><li>输入「为方案中的5个营销节点各写一篇推广文案」</li></ol>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>示例指令</div>
+        <div class="skill-example-box">我们的产品是一款AI办公助手，竞品是Notion AI和飞书智能伙伴。帮我：1）查询这三家公司的融资和团队信息；2）做产品功能对比和SWOT分析；3）制定Q3小红书+公众号营销方案，包括内容日历和投放预算；4）为前3个营销节点写推广文案。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>应用场景</div>
+        <div class="skill-use-cases"><div class="skill-use-case">新品上市营销策划：竞品分析→定位→方案→文案一条龙</div><div class="skill-use-case">季度营销规划：内容日历+渠道策略+预算分配</div><div class="skill-use-case">品牌舆情监控：定时抓取竞品动态和用户评价</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-modal-overlay" id="skillOverlay27" onclick="closeSkillModal(27)"></div>
+  <div class="skill-modal" id="skillModal27" style="--skill-color:#06B6D4">
+    <div class="skill-modal-header">
+      <button class="skill-modal-close" onclick="closeSkillModal(27)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <div class="skill-modal-header-top">
+        <div class="skill-modal-icon" style="background:#06B6D41A">📌</div>
+        <div>
+          <div class="skill-modal-title">会议纪要自动化与任务追踪</div>
+          <div class="skill-modal-tag">
+            <span style="background:#06B6D41A;color:#06B6D4">行政</span>
+            <span style="background:var(--bg-soft);color:var(--text-tertiary)">行政管理</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skill-modal-body">
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>技能概述</div>
+        <div class="skill-section-text">结合腾讯会议AI纪要和 WorkBuddy 文档能力，实现会议全流程自动化：录音转写、纪要自动生成、任务分配与追踪、决议跟进提醒，让行政管理工作效率提升10倍。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>部署方法</div>
+        <ul class="skill-deploy-list"><li>1. 安装 tmeet-skill（腾讯会议）技能，获取会议录制和AI智能纪要</li><li>2. 安装 tencent-docs 技能，生成会议纪要文档和任务追踪表</li><li>3. 安装 tapd 技能，将会议任务直接创建为TAPD工作项</li><li>4. 配置定时任务：每天早上推送当日待跟进的会议决议</li><li>5. 在知识库导入会议纪要模板和任务追踪规范</li></ul>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>使用步骤</div>
+        <ol class="skill-steps-list"><li>会议结束后输入「获取今天下午产品评审会的AI纪要」</li><li>AI 从腾讯会议拉取智能纪要和转写全文</li><li>输入「根据纪要生成会议纪要文档，按标准格式」</li><li>AI 自动提取：参会人员、议题、讨论要点、决议、待办事项</li><li>输入「把待办事项创建为任务，分配给对应负责人」</li><li>任务自动同步到TAPD，每天推送进度提醒</li></ol>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>示例指令</div>
+        <div class="skill-example-box">今天下午2点开了一个产品需求评审会，参会人有产品、设计、开发共8人。帮我：1）从腾讯会议拉取AI纪要；2）按公司标准格式生成会议纪要；3）把讨论中确定的5个待办事项分配给对应的人并创建TAPD任务；4）设置每天早上9点推送未完成任务提醒。</div>
+      </div>
+      <div class="skill-section">
+        <div class="skill-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>应用场景</div>
+        <div class="skill-use-cases"><div class="skill-use-case">周会/月会纪要自动化：30秒生成标准纪要文档</div><div class="skill-use-case">项目评审会任务追踪：决议→任务→TAPD→进度推送</div><div class="skill-use-case">跨部门会议协调：纪要自动分发，任务自动分配</div></div>
       </div>
     </div>
   </div>
