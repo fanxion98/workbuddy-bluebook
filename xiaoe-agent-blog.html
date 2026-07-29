@@ -134,6 +134,18 @@ a:hover{color:var(--c-teal-dark)}
   background:var(--c-teal-bg2);
   color:var(--c-teal);
 }
+.nav-links a.nav-back-btn{
+  background:var(--c-teal);
+  color:#fff;
+  font-weight:600;
+  padding:6px 16px;
+  border-radius:var(--radius-xl);
+  transition:all .2s;
+}
+.nav-links a.nav-back-btn:hover{
+  background:var(--c-teal-dark);
+  color:#fff;
+}
 .search-box{
   display:flex;align-items:center;
   background:var(--bg-soft);
@@ -811,6 +823,7 @@ a:hover{color:var(--c-teal-dark)}
       <a href="#/articles" onclick="navigate('/articles')">全部文章</a>
       <a href="#/contact" onclick="navigate('/contact')">联系我</a>
       <a href="#/?cat=解决方案" onclick="navigate('/?cat=解决方案')">行业方案</a>
+      <a href="index.html" class="nav-back-btn">← 返回WorkBuddy</a>
     </nav>
     <div class="search-box">
       <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
