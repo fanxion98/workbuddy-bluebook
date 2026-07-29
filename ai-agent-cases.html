@@ -418,8 +418,8 @@ a:hover { color: var(--color-primary-800); }
 <!-- Main Content -->
 <div class="container">
 
-  <!-- Tab Navigation -->
-  <div class="tab-nav">
+    <!-- Tab Navigation -->
+  <div class="tab-nav" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;">
     <button class="tab-btn active" onclick="switchTab('tab1', this)">📋 场景案例</button>
     <button class="tab-btn" onclick="switchTab('tab2', this)">🔥 热门场景</button>
     <button class="tab-btn" onclick="switchTab('tab3', this)">🏗️ 产品架构</button>
@@ -427,19 +427,30 @@ a:hover { color: var(--color-primary-800); }
     <button class="tab-btn" onclick="switchTab('tab5', this)">💻 CodeBuddy</button>
   </div>
 
+
   <!-- Tab 1: AI Agent 场景案例 -->
   <div id="tab1" class="tab-content active">
 
     <div class="section-heading">
       <span class="icon">📋</span>
       <h2>AI Agent 场景案例 — 真实客户落地</h2>
-      <span class="badge">18页 · 多行业</span>
+      <span class="badge">18个案例 · 多行业</span>
     </div>
 
-    <p>以下案例均来自 WorkBuddy 真实客户落地实践，覆盖金属贸易、人力资源、税务师事务所、物流、教育等多个行业。</p>
+    <p>以下案例均来自 WorkBuddy/CodeBuddy 真实客户落地实践，覆盖金属贸易、人力资源、税务、教育、金融、ISV、医疗、汽车、制造、MCN、检测、物流、生物医药、纺织等多个行业。</p>
+
+    <div class="filter-bar" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">
+      <button class="tab-btn active" onclick="filterCases('all',this)" style="cursor:pointer;">全部</button>
+      <button class="tab-btn" onclick="filterCases('office',this)" style="cursor:pointer;">办公提效</button>
+      <button class="tab-btn" onclick="filterCases('dev',this)" style="cursor:pointer;">研发提效</button>
+      <button class="tab-btn" onclick="filterCases('mkt',this)" style="cursor:pointer;">营销提效</button>
+      <button class="tab-btn" onclick="filterCases('mgmt',this)" style="cursor:pointer;">管理提效</button>
+      <button class="tab-btn" onclick="filterCases('creative',this)" style="cursor:pointer;">内容生成</button>
+      <button class="tab-btn" onclick="filterCases('ops',this)" style="cursor:pointer;">运维提效</button>
+    </div>
 
     <!-- Case 1: 合同/报价单 -->
-    <div class="case-card">
+    <div class="case-card filter-office" data-cat="office">
       <div class="case-card-header">
         <span class="case-card-icon">📝</span>
         <span class="case-card-title">合同撰写 → 报价单生成 → 审核 → 文档处理</span>
@@ -466,7 +477,7 @@ a:hover { color: var(--color-primary-800); }
     </div>
 
     <!-- Case 2: 报表生成 -->
-    <div class="case-card">
+    <div class="case-card filter-office" data-cat="office">
       <div class="case-card-header">
         <span class="case-card-icon">📊</span>
         <span class="case-card-title">报表生成 → 办公材料自动生成 → 发送邮件</span>
@@ -493,7 +504,7 @@ a:hover { color: var(--color-primary-800); }
     </div>
 
     <!-- Case 3: 单据识别 -->
-    <div class="case-card">
+    <div class="case-card filter-office" data-cat="office">
       <div class="case-card-header">
         <span class="case-card-icon">🧾</span>
         <span class="case-card-title">单据识别 → AI自动识别提取字段 → 录入效率提升10倍</span>
@@ -507,134 +518,434 @@ a:hover { color: var(--color-primary-800); }
         <div class="case-solution">
           <h4>🦞 WorkBuddy 提效方案 · 4步完成税务数字化</h4>
           <p>① 单据拍照上传：自动识别发票、报关单、装箱单关键数据<br>
-          ② 数据自动汇总：按退税类型、客户、时间维度汇总<br>
-          ③ 智能校验：自动核对金额、税号等信息<br>
-          ④ 报表生成：输出结构化Excel报表和分析报告</p>
+          ② 数据自动汇总：按退税类型、客户、时间维度汇总，生成Excel<br>
+          ③ 报表分析输出：自动生成数据分析报告，标注异常数据<br>
+          ④ 咨询文档生成：一键生成税务咨询报告、方案建议书、会议纪要</p>
         </div>
       </div>
       <div class="case-result">
         <div class="case-result-item"><div class="case-result-num">10x</div><div class="case-result-label">录入效率</div></div>
         <div class="case-result-item"><div class="case-result-num">10-20人</div><div class="case-result-label">团队规模</div></div>
-        <div class="case-result-item"><div class="case-result-num">99%+</div><div class="case-result-label">识别准确率</div></div>
+        <div class="case-result-item"><div class="case-result-num">3类</div><div class="case-result-label">单据全覆盖</div></div>
       </div>
     </div>
 
-    <!-- Case 4: 研发提效 -->
-    <div class="case-card">
+    <!-- Case 4: 表格处理 (NEW) -->
+    <div class="case-card filter-office" data-cat="office">
       <div class="case-card-header">
-        <span class="case-card-icon">💻</span>
-        <span class="case-card-title">代码生成 → Bug定位 → 代码审查 → 数据库优化</span>
+        <span class="case-card-icon">📐</span>
+        <span class="case-card-title">合同审核 → 招标解读 → 教培方案 → Excel提效</span>
+        <span class="case-card-tag tag-office">办公提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😣 传统痛点</h4>
+          <p>某综合教育与政企服务集团，覆盖招投标、合同法务、教培方案与跨部门Excel数据处理。合同/招标文件多且复杂，关键条款人工筛查耗时长；教培方案70%内容相似但每次重写；部门员工Excel水平参差，简单分析也要找IT。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 合同审核：关键条款提取+风险点识别+历史合同比对，单份审查30min→5min<br>
+          ② 招标解读：技术参数自动汇总+评分细则提炼+应标差距分析<br>
+          ③ 教培方案：基于历史方案+客户需求差异化生成，方案产出1天→1小时<br>
+          ④ Excel提效：自然语言数据透视/公式生成/一句话出图表</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">+70%</div><div class="case-result-label">Excel生产力</div></div>
+        <div class="case-result-item"><div class="case-result-num">-83%</div><div class="case-result-label">合同审查耗时</div></div>
+        <div class="case-result-item"><div class="case-result-num">20人</div><div class="case-result-label">用户规模</div></div>
+      </div>
+      <div class="callout callout-success" style="margin-top:12px;">
+        <strong>客户原话：</strong>"WorkBuddy进来后，Excel生产力提高了70%，合同与招标文件审查也是质的飞跃。"
+      </div>
+    </div>
+
+    <!-- Case 5: 风控分析 (NEW) -->
+    <div class="case-card filter-office" data-cat="office">
+      <div class="case-card-header">
+        <span class="case-card-icon">📈</span>
+        <span class="case-card-title">业务取数 → 报表生成 → 历史复用 → 风控看板</span>
+        <span class="case-card-tag tag-office">办公提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😣 传统痛点</h4>
+          <p>某区域性银行/证券机构IT部门人手有限，业务部门频繁找IT出销售日报、风控周报、分支机构月报，业务等报表1-2小时严重错过决策时机，IT 70%时间被报表请求占满。历史报表分散在各部门，复用率极低。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 报表自动生成：多源数据接入(核心系统/CRM/Excel)+模板化输出，1-2h→5min<br>
+          ② 即时数据查询：业务自然语言提问，AI直接出结果+图表，秒级响应<br>
+          ③ 历史报表复用：报表沉淀进知识库，相似需求一键复用，复用率↑70%<br>
+          ④ 风控指标看板：多源数据聚合+异常自动告警，实时监控关键指标</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">-70%</div><div class="case-result-label">报表等待时间</div></div>
+        <div class="case-result-item"><div class="case-result-num">+70%</div><div class="case-result-label">报表复用率</div></div>
+        <div class="case-result-item"><div class="case-result-num">12人</div><div class="case-result-label">用户规模</div></div>
+      </div>
+      <div class="callout callout-success" style="margin-top:12px;">
+        <strong>客户原话：</strong>"WorkBuddy让等待时间缩了70%，IT终于从取数员变回技术支持，可以做架构和创新了。"
+      </div>
+    </div>
+
+    <!-- Case 6: ISV开发提效 (NEW) -->
+    <div class="case-card filter-dev" data-cat="dev">
+      <div class="case-card-header">
+        <span class="case-card-icon">🖥️</span>
+        <span class="case-card-title">ISV开发提效：需求承接 → AI规划 → AICoding → 项目交付</span>
         <span class="case-card-tag tag-dev">研发提效</span>
       </div>
       <div class="case-card-body">
         <div class="case-pain">
           <h4>😫 传统痛点</h4>
-          <p>研发团队被模板代码拖累，Bug定位耗时30min+，代码审查依赖人工覆盖不全，数据库优化需要DBA介入响应慢，研发效率ROI无法量化。</p>
+          <p>某软件开发商在业务高峰期面临需求沟通不清楚、需求变更、交付慢、人力不足等问题，项目一旦延期对公司业绩造成巨大影响。开发人力难以匹配快速增长的业务侧需求，人员更替带来老项目维护困难。</p>
         </div>
         <div class="case-solution">
-          <h4>🦞 WorkBuddy 提效方案</h4>
-          <p>① 编码补全：AI辅助编码，效率提升60%<br>
-          ② Bug定位：耗时30min→5min<br>
-          ③ 代码审查：覆盖80%风险<br>
-          ④ 数据库优化：7×24 DBA在线支持<br>
-          ⑤ 研效度量：研发效率ROI可量化</p>
+          <h4>🦞 CodeBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 需求规划：AI根据项目需求生成项目计划<br>
+          ② 代码编写：AI根据需求生成项目代码，效率提升1倍<br>
+          ③ 代码评审：AI评审配合人工复审，大幅降低评审工作量<br>
+          ④ 交付部署：项目交付周期大大缩短</p>
         </div>
       </div>
       <div class="case-result">
-        <div class="case-result-item"><div class="case-result-num">↑60%</div><div class="case-result-label">研发效率</div></div>
-        <div class="case-result-item"><div class="case-result-num">5min</div><div class="case-result-label">Bug定位</div></div>
-        <div class="case-result-item"><div class="case-result-num">80%</div><div class="case-result-label">风险覆盖</div></div>
+        <div class="case-result-item"><div class="case-result-num">+100%</div><div class="case-result-label">编码效率</div></div>
+        <div class="case-result-item"><div class="case-result-num">-50%</div><div class="case-result-label">交付周期</div></div>
+        <div class="case-result-item"><div class="case-result-num">30人</div><div class="case-result-label">研发团队</div></div>
       </div>
     </div>
 
-    <!-- Case 5: 营销提效 -->
-    <div class="case-card">
+    <!-- Case 7: 编码补全 (NEW) -->
+    <div class="case-card filter-dev" data-cat="dev">
       <div class="case-card-header">
-        <span class="case-card-icon">📱</span>
-        <span class="case-card-title">素材生成 → 内容创作 → 客户互动 → 投放优化</span>
+        <span class="case-card-icon">⌨️</span>
+        <span class="case-card-title">编码补全：写注释→AI自动出代码+单测·主流语言全覆盖</span>
+        <span class="case-card-tag tag-dev">研发提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>某政务数字化ISV，研发人员日常70%时间在写重复模板代码（CRUD、参数校验、空指针处理、log埋点等）。新人尤其慢，老员工容易出错，企业代码风格难统一。新人不熟悉企业代码规范，PR频繁返工。注释/单测常被省略，技术债积累。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 CodeBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 编辑器内联补全：VS Code/JetBrains/Xcode装好插件即用<br>
+          ② 上下文理解：读取CodeBase全局，理解项目代码风格<br>
+          ③ 注释驱动生成：写好注释，AI自动出函数体<br>
+          ④ 单测同步生成：函数完成后一键生成3个JUnit测试用例</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">+45%</div><div class="case-result-label">编码效率</div></div>
+        <div class="case-result-item"><div class="case-result-num">230人</div><div class="case-result-label">研发团队</div></div>
+        <div class="case-result-item"><div class="case-result-num">全覆盖</div><div class="case-result-label">主流语言</div></div>
+      </div>
+    </div>
+
+    <!-- Case 8: Bug定位 (NEW) -->
+    <div class="case-card filter-dev" data-cat="dev">
+      <div class="case-card-header">
+        <span class="case-card-icon">🐛</span>
+        <span class="case-card-title">Bug定位：日志结构化解析+代码上下文定位+修复方案生成</span>
+        <span class="case-card-tag tag-dev">研发提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>某企业级软件开发商，研发团队100+人，主营ERP、CRM及供应链管理系统，服务客户覆盖制造、零售、金融等。系统全年7×24小时运行，故障排障SLA要求≤30分钟。线上Bug排查高度依赖资深工程师经验，新人无从下手，平均单Bug定位耗时超30分钟。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 CodeBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 日志一键解析：上传报错日志/堆栈，AI自动结构化解析关键错误信息<br>
+          ② 上下文关联定位：读取全局代码，结合项目上下文快速定位出错代码行<br>
+          ③ 根因智能诊断：分析报错类型与业务场景，区分代码缺陷/配置问题/依赖冲突<br>
+          ④ 修复方案自动生成：一键生成修复代码片段、单元测试用例与验证步骤</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">+60%</div><div class="case-result-label">故障定位效率</div></div>
+        <div class="case-result-item"><div class="case-result-num">-70%</div><div class="case-result-label">新人上手周期</div></div>
+        <div class="case-result-item"><div class="case-result-num">100+</div><div class="case-result-label">研发人员</div></div>
+      </div>
+    </div>
+
+    <!-- Case 9: 代码生成+老代码重构 (NEW) -->
+    <div class="case-card filter-dev" data-cat="dev">
+      <div class="case-card-header">
+        <span class="case-card-icon">🔧</span>
+        <span class="case-card-title">Figma2Code + 代码质量保障 + 代码本地化·医疗ISV</span>
+        <span class="case-card-tag tag-dev">研发提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>某医疗信息化ISV研发团队132人，主营医疗设备管理、献血/输血系统等。40%是新业务开发，60%是老客户版本迭代。前端从Figma设计稿还原代码单组件耗时2-3小时，老项目代码考古成本高，医疗合规要求代码本地化，境外AI工具无法使用。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 CodeBuddy AI 提效方案 · 4步落地</h4>
+          <p>① Figma2Code：设计稿一键生成生产级代码，组件耗时3h→15min<br>
+          ② 代码质量保障：读取Codebase全局，Bug定位/老项目重构<br>
+          ③ 代码自动生成：利用代码补全及生成快速完成项目开发，AI采纳率60%+<br>
+          ④ 安全合规：使用国产AI工具及模型，满足医疗行业数据安全及合规要求</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">+60%</div><div class="case-result-label">AI采纳率</div></div>
+        <div class="case-result-item"><div class="case-result-num">-50%</div><div class="case-result-label">交付周期</div></div>
+        <div class="case-result-item"><div class="case-result-num">132人</div><div class="case-result-label">研发团队</div></div>
+      </div>
+    </div>
+
+    <!-- Case 10: 汽车智能编程 (NEW) -->
+    <div class="case-card filter-dev" data-cat="dev">
+      <div class="case-card-header">
+        <span class="case-card-icon">🚗</span>
+        <span class="case-card-title">汽车智能编程+安全快速交付：零缺陷·软硬协同</span>
+        <span class="case-card-tag tag-dev">研发提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>某汽车领域软件系统开发公司，为各汽车行业提供汽车哨兵、智能座舱安全系统、功耗监控系统、全景影像系统等开发。汽车哨兵系统涉及大量图像识别算法、低延迟响应；智能座舱安全需满足行业功能安全要求；功耗监控系统多ECU协同、休眠唤醒逻辑复杂。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 CodeBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 构筑"零缺陷"安全防线：代码由"被动修复"转向"主动检测"<br>
+          ② 打造"软硬协同"性能极致：由"功能实现"转向"体验优化"<br>
+          ③ 实现研发效能提升：代码开发由"人力堆叠"转向"智力复用"<br>
+          ④ 打造智能化安全领跑者：多模态开发，构建安全规划，由"跟随者"转向"领跑者"</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">-40%+</div><div class="case-result-label">研发效率</div></div>
+        <div class="case-result-item"><div class="case-result-num">-50%+</div><div class="case-result-label">缺陷下降</div></div>
+        <div class="case-result-item"><div class="case-result-num">50+</div><div class="case-result-label">开发者</div></div>
+      </div>
+    </div>
+
+    <!-- Case 11: 运维提效 (NEW) -->
+    <div class="case-card filter-ops" data-cat="ops">
+      <div class="case-card-header">
+        <span class="case-card-icon">🛠️</span>
+        <span class="case-card-title">运维提效：需求沉淀→AI自动出计划+生成代码→工具部署→自动化统计</span>
+        <span class="case-card-tag tag-office">运维提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>某中外合资制造企业，公司业务结构相对固定，运维部门主要基于现有系统维护和更新。近期缩减了部分运维人力，导致人均工作量超负荷，很多工作持续delay。运维部门每日行政管理动作没有专人负责，每天需额外耽搁1-2H。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 需求沉淀：运维人员整理耗时较多的重复性工作，投递给WorkBuddy沉淀需求文档<br>
+          ② 计划+工具生成：WorkBuddy利用deepseekV4、混元等模型，基于需求制定开发计划，通过Python脚本自动化完成工具开发（如工时统计、任务排期工具）<br>
+          ③ 工具落地：完成工具开发后给运维人员试用，收集用户反馈<br>
+          ④ 反馈自动化调优：WorkBuddy基于改进意见，在现有工具基础上功能迭代</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">80%</div><div class="case-result-label">稳定运行</div></div>
+        <div class="case-result-item"><div class="case-result-num">1账号</div><div class="case-result-label">0.5人力</div></div>
+        <div class="case-result-item"><div class="case-result-num">3坐席</div><div class="case-result-label">9年单</div></div>
+      </div>
+    </div>
+
+    <!-- Case 12: 小红书运营 (NEW) -->
+    <div class="case-card filter-mkt" data-cat="mkt">
+      <div class="case-card-header">
+        <span class="case-card-icon">📕</span>
+        <span class="case-card-title">小红书运营：搜索技能/召唤专家→WorkBuddy成为运营干将</span>
         <span class="case-card-tag tag-mkt">营销提效</span>
       </div>
       <div class="case-card-body">
         <div class="case-pain">
           <h4>😫 传统痛点</h4>
-          <p>营销素材手搓4小时起步，数据不可靠决策无据，客服7×24人力成本高，多平台适配费时费力，投放ROI无法最大化。</p>
+          <p>某MCN公司，需要快速产出标题、正文、封面文案或选题方向，持续产出高质量营销文案耗时耗力，创意容易枯竭，内容易同质化。需要花大量时间寻找热点，分析同行、竞品、市场动态。每日发文内容创意枯竭，同质化严重，风格单一。</p>
         </div>
         <div class="case-solution">
-          <h4>🦞 WorkBuddy 提效方案</h4>
-          <p>① 素材生成：秒级出图，手搓4h→30min<br>
-          ② 智能洞察：数据可靠，决策有据<br>
-          ③ 客户互动：7×24智能客服<br>
-          ④ 内容创作：多平台适配，创意无限<br>
-          ⑤ 投放优化：ROI最大化</p>
+          <h4>🦞 WorkBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 发现机会：WorkBuddy找热点、扒竞品爆款逻辑，输入"查AI玩具电商销量"直接给数据<br>
+          ② 文案撰写：召唤内容创作专家/小红书运营专家，明确说"写小红书笔记，口语化，加emoji和互动提问"<br>
+          ③ 推广营销：写笔记封面文案、评论区互动话术，从发内容到引流全搞定<br>
+          ④ 数据监控：监控已发布的文案点赞数、评论数、分享数等数据，精准掌控营销动态</p>
         </div>
       </div>
       <div class="case-result">
-        <div class="case-result-item"><div class="case-result-num">30min</div><div class="case-result-label">素材生成</div></div>
-        <div class="case-result-item"><div class="case-result-num">7×24</div><div class="case-result-label">智能客服</div></div>
-        <div class="case-result-item"><div class="case-result-num">↑ROI</div><div class="case-result-label">投放优化</div></div>
+        <div class="case-result-item"><div class="case-result-num">+100%</div><div class="case-result-label">发文数量</div></div>
+        <div class="case-result-item"><div class="case-result-num">-80%</div><div class="case-result-label">创作耗时</div></div>
+        <div class="case-result-item"><div class="case-result-num">200+</div><div class="case-result-label">签约网红</div></div>
       </div>
     </div>
 
-    <!-- Case 6: 管理提效 -->
-    <div class="case-card">
+    <!-- Case 13: 智能报告预审 (NEW) -->
+    <div class="case-card filter-office" data-cat="office">
       <div class="case-card-header">
-        <span class="case-card-icon">⚙️</span>
-        <span class="case-card-title">集群管理 → SSO权限 → ROI度量 → 法务合规</span>
+        <span class="case-card-icon">🔬</span>
+        <span class="case-card-title">智能报告预审：AI自动预审+精准分发+数据趋势预警</span>
+        <span class="case-card-tag tag-office">降本增效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>某检测机构，每日产出大量检测报告，需对比样本参数是否符合CMA标准，以及有效性核对、数据整理，耗时耗力且易出错。报告需手动发送至客户邮箱并存档，全程依赖Excel统计历史数据。随着业务规模扩张，后台行政压力持续攀升。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 智能预审：自动校验样本参数与CMA标准，0人工干预<br>
+          ② 精准分发：按预设规则精准匹配客户邮箱，同步存入归档系统<br>
+          ③ 趋势预警：纵向对比历史批次，指标异常波动实时推送预警<br>
+          ④ 质量升级：单次PDF报告升级为含趋势分析的质量预警解决方案</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">-70%</div><div class="case-result-label">后台行政人力</div></div>
+        <div class="case-result-item"><div class="case-result-num">全自动</div><div class="case-result-label">异常预警</div></div>
+        <div class="case-result-item"><div class="case-result-num">20人</div><div class="case-result-label">×24个月</div></div>
+      </div>
+    </div>
+
+    <!-- Case 14: 客服提效 (NEW) -->
+    <div class="case-card filter-mkt" data-cat="mkt">
+      <div class="case-card-header">
+        <span class="case-card-icon">🎧</span>
+        <span class="case-card-title">客户互动·客服提效：企微Skill+多模态处理+知识库</span>
+        <span class="case-card-tag tag-mkt">营销提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>某国际物流运输公司，旗下50+客服员工，日常用企微与用户沟通。每天客户各类问题咨询量达5000+个，客服"满负荷"工作无法保证处理问题的高效与高质量。客服需要从企微大量的图片、PDF文档中查看提取信息，来回操作耗时10min+。客服人员更换频繁，企业希望沉淀问题处理/话术回复知识库。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 对接企微Skill：接入企业微信CLI(wecom-cli)全能套件，实现消息拉取、自动发送<br>
+          ② 多模态数据处理：将企微的文本/图片/文件/语音消息整理归档，提取标准格式化信息<br>
+          ③ 自建RAG知识库：沉淀统一回复话术，创建专属知识库，客服可快速检索，统一标准<br>
+          ④ 远程遥控：通过移动端(WorkBuddy小程序)与远程对话能力，不坐电脑前也能处理紧急任务</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">x2倍</div><div class="case-result-label">客服回复量</div></div>
+        <div class="case-result-item"><div class="case-result-num">-50%</div><div class="case-result-label">单问题处理时间</div></div>
+        <div class="case-result-item"><div class="case-result-num">50+</div><div class="case-result-label">客服人员</div></div>
+      </div>
+    </div>
+
+    <!-- Case 15: 专项助手 (NEW) -->
+    <div class="case-card filter-mgmt" data-cat="mgmt">
+      <div class="case-card-header">
+        <span class="case-card-icon">🧬</span>
+        <span class="case-card-title">专项助手·高效智能业务管理：自定义Skills+企业用量管理</span>
         <span class="case-card-tag tag-mgmt">管理提效</span>
       </div>
       <div class="case-card-body">
         <div class="case-pain">
           <h4>😫 传统痛点</h4>
-          <p>IT/法务/管理层深陷事务性工作，租户管理分散，权限同步繁琐，效能无法量化，法务合规效率低，跨系统对接困难。</p>
+          <p>某生物医疗公司存在大量的财务、人力、研发生物数据内容，单表依赖资深人员手动整理约60分钟，再导入系统，成为业务瓶颈。不同部门的数据逻辑不一样，需要有专业人员归纳，人力成本高。模型消耗监控难，额外支出，临时财务流程复杂。</p>
         </div>
         <div class="case-solution">
-          <h4>🦞 WorkBuddy 提效方案</h4>
-          <p>① 集群管理：批量租户管控<br>
-          ② SSO权限：一键同步组织权限<br>
-          ③ ROI度量：智能BI效能看板<br>
-          ④ 法务合规：效率提升10倍<br>
-          ⑤ OA联动：跨系统对接闭环<br>
-          ⑥ 高管助手：管理决策提效</p>
+          <h4>🦞 WorkBuddy AI 提效方案 · 4步落地</h4>
+          <p>① 简易安装：对比开源openclaw，WorkBuddy一键部署，无需开发<br>
+          ② 自定义Skills管理：支持创建专属skill，实现跨部门交叉提效<br>
+          ③ 自动化流程：定时创建任务，管理自动化任务，避免人员遗忘<br>
+          ④ 企业用量管理：模型消耗用量可控，用量明细可查，杜绝预算外费用产生</p>
         </div>
       </div>
       <div class="case-result">
-        <div class="case-result-item"><div class="case-result-num">↑10x</div><div class="case-result-label">法务效率</div></div>
-        <div class="case-result-item"><div class="case-result-num">BI</div><div class="case-result-label">效能看板</div></div>
-        <div class="case-result-item"><div class="case-result-num">闭环</div><div class="case-result-label">跨系统对接</div></div>
+        <div class="case-result-item"><div class="case-result-num">-90%</div><div class="case-result-label">人力时间</div></div>
+        <div class="case-result-item"><div class="case-result-num">500人</div><div class="case-result-label">企业规模</div></div>
+        <div class="case-result-item"><div class="case-result-num">可控</div><div class="case-result-label">费用管理</div></div>
       </div>
     </div>
 
-    <!-- Case 7: AI漫剧 -->
-    <div class="case-card">
+    <!-- Case 16: 集群管控+SSO (NEW) -->
+    <div class="case-card filter-mgmt" data-cat="mgmt">
       <div class="case-card-header">
-        <span class="case-card-icon">🎬</span>
-        <span class="case-card-title">剧本生成 → 分镜拆解 → 角色资产 → 动画转制 → 字幕配音 → 剪辑发行</span>
-        <span class="case-card-tag tag-creative">AI漫剧生产</span>
+        <span class="case-card-icon">🌐</span>
+        <span class="case-card-title">集群管控+SSO权限：Ai2专用实例+三级Token配额+四层安全</span>
+        <span class="case-card-tag tag-mgmt">管理提效</span>
       </div>
       <div class="case-card-body">
         <div class="case-pain">
           <h4>😫 传统痛点</h4>
-          <p>漫剧生产全链路依赖人工，剧本创作、分镜拆解、角色设计、动画转制、字幕配音、剪辑发行各环节耗时巨大，产能受限。</p>
+          <p>某跨国纺织集团，工厂遍布全球多国，正处于数字化深化期。总部计划为120位管理层配备办公助手，企微打通，要求信息安全、系统可运维、成本可核算。管理层跨国办公，文档/数据处理跨时区协作难。大规模Agent部署后账号、权限、费用难以管控。使用境外AI有合规风险，ROI难以量化。</p>
         </div>
         <div class="case-solution">
-          <h4>🦞 WorkBuddy AI 全链路打通</h4>
-          <p>① 剧本生成：AI自动生成剧本<br>
-          ② 分镜拆解：AI自动拆解分镜脚本<br>
-          ③ 角色资产：AI生成角色形象设计<br>
-          ④ 动画转制：分镜图及视频片段生成<br>
-          ⑤ 字幕配音：配音配乐及字幕AI处理<br>
-          ⑥ 剪辑发行：效率提升60%</p>
+          <h4>🦞 ClawPro 企业级管控方案 · 4步落地</h4>
+          <p>① Ai2专用实例：租户级物理隔离，每位高管专属云服务器<br>
+          ② Token配额：企业-部门-个人三级分配+可视化token成本管控大盘<br>
+          ③ SSO权限：对接企微/OA，账号权限一键同步<br>
+          ④ CIO看板：AI投入产出量化，续约决策有据可依</p>
         </div>
       </div>
       <div class="case-result">
-        <div class="case-result-item"><div class="case-result-num">↑60%</div><div class="case-result-label">全链路效率</div></div>
-        <div class="case-result-item"><div class="case-result-num">AI</div><div class="case-result-label">全链路打通</div></div>
+        <div class="case-result-item"><div class="case-result-num">-70%</div><div class="case-result-label">事务处理时间</div></div>
+        <div class="case-result-item"><div class="case-result-num">120人</div><div class="case-result-label">管理层坐席</div></div>
+        <div class="case-result-item"><div class="case-result-num">4层</div><div class="case-result-label">纵深安全</div></div>
+      </div>
+    </div>
+
+    <!-- Case 17: AI漫剧 -->
+    <div class="case-card filter-creative" data-cat="creative">
+      <div class="case-card-header">
+        <span class="case-card-icon">🎬</span>
+        <span class="case-card-title">AI漫剧·智能内容生成：剧本→分镜→角色→动画→字幕配音→发行</span>
+        <span class="case-card-tag tag-creative">内容生成提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>漫剧创作团队60%时间在重复性工作（分镜绘制、角色设计、上色渲染、配音配乐等），制作周期长，单部作品需3-6个月。专业画师稀缺，人力成本高昂。内容同质化严重，缺乏差异化。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 AIGC提效方案 · 4步落地</h4>
+          <p>① 剧本智能解析：自动理解并生成剧本结构，提取角色和场景<br>
+          ② 分镜生成：多风格画面渲染，多模型调用<br>
+          ③ 角色库制作：角色形象生成，智能生成表情，动作自动补全<br>
+          ④ 一站式媒体处理：AI合成配音，自动匹配BGM，画质增强</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">+60%</div><div class="case-result-label">制作效率</div></div>
+        <div class="case-result-item"><div class="case-result-num">-40%</div><div class="case-result-label">成本降低</div></div>
+        <div class="case-result-item"><div class="case-result-num">15万+</div><div class="case-result-label">月生成分钟</div></div>
+      </div>
+    </div>
+
+    <!-- Case 18: 小红书/MCN合并到营销已有，补充行业落单场景表 -->
+    <div class="case-card filter-mgmt" data-cat="mgmt">
+      <div class="case-card-header">
+        <span class="case-card-icon">📋</span>
+        <span class="case-card-title">近期高价值应用场景梳理（8大行业真实落单）</span>
+        <span class="case-card-tag tag-mgmt">行业全景</span>
+      </div>
+      <div class="case-card-body" style="grid-template-columns: 1fr;">
+        <div>
+          <h4>★ 数据来源：腾讯云近期真实落单案例</h4>
+          <table class="compare-table" style="margin-top:12px;">
+            <thead>
+              <tr><th>行业</th><th>真实落单场景</th><th>核心价值</th><th>关键提效</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>★ 制造业</td><td>生产报表自动汇总/ERP·SRM·钉钉打通/战略提案撰写/代码开发辅助/知识库构建</td><td>管理层从事务性工作中解放，AI代码生成承接人员精简</td><td>事务性时间省70%</td></tr>
+              <tr><td>★ IT/ISV</td><td>Code Review/测试用例自动构建/自定义MCP对接业务系统/研发文档撰写</td><td>Codebuddy+Workbuddy组合落地，开发提效+内部工具自研</td><td>研发提效50%+</td></tr>
+              <tr><td>电商/跨境</td><td>多语种客服/产品详情与文案生成/单据·报价·库存表整理/财税申报</td><td>全部门AI化，系统数据贯通</td><td>跨部门协同提效</td></tr>
+              <tr><td>医疗医药</td><td>GMP合规文档生成/批生产记录自动填充/法务合同初审/营销文案合规审核</td><td>替代人工誊抄，规避合规风险</td><td>单文档耗时降至分钟级</td></tr>
+              <tr><td>文化传媒</td><td>直播脚本与短视频文案/海报批量生成/投放报告与竞品监测/24h自动化</td><td>一句话生成多版本素材</td><td>内容产出快10倍</td></tr>
+              <tr><td>金融</td><td>行业资讯抓取与研报撰写/金融走势分析与选股Skill/客服标准回复/合同自动生成</td><td>客观、实时、并发的系统级流水线</td><td>合同制作30min→3min</td></tr>
+              <tr><td>税务/财税</td><td>出口退税数据处理/单据OCR录入/申报材料整理/数据汇总分析</td><td>自动化解决录入计算</td><td>办公效率显著提升</td></tr>
+              <tr><td>建筑/科技</td><td>标书与报价单自动生成/项目方案书撰写/周报纪要/数据扒取与条款校验</td><td>几十块月费=不占工位的数字员工</td><td>投标响应提速70%</td></tr>
+              <tr><td>人力/教育</td><td>简历批量解析与候选人评分/Boss直聘自动化沟通/课后学情报告/个性化学习方案</td><td>小团队也能跑专业人效</td><td>单任务耗时降80%</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
   </div>
-
-  <!-- Tab 2: 热门场景 -->
+<!-- Tab 2: 热门场景 -->
   <div id="tab2" class="tab-content">
 
     <div class="section-heading">
@@ -869,6 +1180,7 @@ a:hover { color: var(--color-primary-800); }
 
   </div>
 
+  
   <!-- Tab 3: 产品架构 -->
   <div id="tab3" class="tab-content">
 
@@ -985,6 +1297,323 @@ a:hover { color: var(--color-primary-800); }
           <h4>灵感社区</h4>
           <p>热门模板一键复用，常见工作流沉淀成为可复用的任务起点，社区分享持续更新迭代。</p>
         </div>
+      </div>
+    </div>
+
+    <!-- 安全防护 (NEW) -->
+    <div class="content-block">
+      <h3>WorkBuddy 三位一体的安全防护</h3>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🔐</div>
+          <h4>行为安全管控</h4>
+          <p><strong>风险场景：</strong>误删文件、非预期执行、偏离任务范围、执行高危命令<br>
+          <strong>防护措施：</strong>Tool Call前置审计（执行前识别高危动作）→ 运行时沙箱（限制文件、进程、命令边界）→ 高危动作可告警/阻断/留痕</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🔑</div>
+          <h4>权限安全管控</h4>
+          <p><strong>风险场景：</strong>越权读写、误操作数据、数据泄露、系统目录变更<br>
+          <strong>防护措施：</strong>敏感路径隔离（凭据、系统目录默认不可写）→ 最小权限边界（仅授权工作区可写入）→ 权限动作可审计</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🌐</div>
+          <h4>网络安全管控</h4>
+          <p><strong>风险场景：</strong>偷连外网、恶意下载、数据外传、未知访问<br>
+          <strong>防护措施：</strong>代理出站管控（Domain/IP/URL级策略控制）→ 默认网络隔离（Agent不可自由访问外网）→ 异常访问可拦截</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 办公交付提示词对比 (NEW) -->
+    <div class="content-block">
+      <h3>办公交付：一句话生成PPT、报告和图表</h3>
+      <p><strong>核心原则：先框架后填充</strong> — PPT先确认大纲、Word先确定章节结构、Excel先明确分析维度。框架对了，AI填充的内容才不会跑偏。</p>
+      <table class="compare-table" style="margin-top:12px;">
+        <thead>
+          <tr><th>场景</th><th>差提示词 ❌</th><th>好提示词 ✅</th><th>关键差异</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PPT生成</td>
+            <td>帮我做一个关于服务器的PPT</td>
+            <td>请先为「联想服务器产品介绍」生成一份PPT大纲，要求：封面+公司背景+产品线介绍+核心优势+成功案例+联系方式，共约10-12页。</td>
+            <td>无范围→先出大纲控页数和结构</td>
+          </tr>
+          <tr>
+            <td>PPT生成</td>
+            <td>根据这个需求做一份方案PPT</td>
+            <td>请分两步：①先输出PPT大纲（含每页标题、3个要点、建议配图方向）；②我确认大纲后，再逐页生成内容。</td>
+            <td>直接生成不可控→大纲确认再展开</td>
+          </tr>
+          <tr>
+            <td>Word报告</td>
+            <td>帮我写一份项目报告</td>
+            <td>请撰写一份数据中心扩容项目的立项报告，包含：项目背景、现状分析、需求描述、方案概述、预算估算、风险评估、实施计划。正式公文格式，3000字左右。</td>
+            <td>无模板→指定章节+格式+篇幅</td>
+          </tr>
+          <tr>
+            <td>Excel数据</td>
+            <td>帮我分析一下这份数据</td>
+            <td>请分析附件中的销售数据：①按产品线汇总销售额和增长率；②Top 5客户排名；③同比环比趋势；④用图表展示。结论附在最后。</td>
+            <td>无目标→指定分析维度+输出形式</td>
+          </tr>
+          <tr>
+            <td>Excel看板</td>
+            <td>做个数据看板给我</td>
+            <td>请基于销售机会跟进表，生成一页管理看板：本月新增机会数、预计成交金额Top 5、按阶段漏斗分布、超期未跟进预警（标红）。适合周会投影展示。</td>
+            <td>无场景→明确看板指标+可视化规则</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Prompt模板 (NEW) -->
+    <div class="content-block">
+      <h3>Prompt模板 — 让输出稳定</h3>
+      <div class="callout callout-info">
+        很多人用AI效果不稳定，不是AI不行，而是输入要求不稳定。建议用固定模板约束输出：<br>
+        <strong>你是[角色]，任务目标是[目标]，输入材料包括[材料]，请按照[结构]输出，输出格式要求[格式]，注意事项包括[约束]。</strong>
+      </div>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📝</div>
+          <h4>模板1：客户拜访纪要</h4>
+          <p><strong>角色：</strong>资深销售助理<br>
+          <strong>7部分标准化结构：</strong>基本信息→客户现状与痛点→客户明确需求→隐性需求→报价/预算/时间→待办事项→建议的下一步行动<br>
+          <strong>关键约束：</strong>严禁编造未提及内容；信息冲突时标注"需确认"。</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🖥️</div>
+          <h4>模板2：服务器/存储方案生成</h4>
+          <p><strong>角色：</strong>联想售前专家<br>
+          <strong>5部分方案结构：</strong>需求理解与关键约束→推荐方案1-2套(配置+理由)→架构/部署示意说明→实施步骤与周期→风险与注意事项<br>
+          <strong>关键约束：</strong>参数以知识库为准；不确定处标注"待确认参数"；严禁夸大性能。</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🔧</div>
+          <h4>模板3：故障复盘文档生成</h4>
+          <p><strong>角色：</strong>研发技术负责人<br>
+          <strong>6部分复盘闭环：</strong>故障概述/现象/影响→根因分析→处理过程时间线→临时措施与永久修复→待改进项→经验沉淀(可复用排查要点)<br>
+          <strong>关键约束：</strong>客观陈述不追责；根因不明处标注"待进一步定位"。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skill沉淀方法论 (NEW) -->
+    <div class="content-block">
+      <h3>Skill 沉淀方法论 — 5步法</h3>
+      <div class="callout callout-warning">
+        <strong>核心原则：不要一开始就写Skill！</strong> 先在真实对话中迭代调试Prompt，收集足够的Bad Case和成功经验后，再沉淀为标准化Skill。
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">Step 1</div>
+          <div class="timeline-content"><strong>写初版Prompt</strong> — 基于任务需求编写初始指令</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Step 2</div>
+          <div class="timeline-content"><strong>跑几轮对话</strong> — 多场景测试，发现边界问题</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Step 3</div>
+          <div class="timeline-content"><strong>记录Bad Case</strong> — 整理失败案例，归纳问题模式</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Step 4</div>
+          <div class="timeline-content"><strong>定向修补Prompt</strong> — 针对性优化，补充约束规则</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Step 5</div>
+          <div class="timeline-content"><strong>固化为Skill模板</strong> — 封装为标准Skill，团队可复用</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HR智能简历匹配 (NEW) -->
+    <div class="content-block">
+      <h3>WorkBuddy HR 智能简历匹配专家</h3>
+      <p>从「人工筛简历靠经验」到「AI全岗位智能路由」，让每一份简历都被精准识别、合理推荐、闭环触达。</p>
+      <table class="compare-table" style="margin-top:12px;">
+        <thead>
+          <tr><th>维度</th><th>传统招聘流程</th><th>WorkBuddy 智能简历匹配</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>简历筛选</td><td>人工逐份阅读·30分钟/份</td><td>自动解析·30秒/份</td></tr>
+          <tr><td>岗位匹配</td><td>凭印象推荐·易遗漏适配岗</td><td>5维加权评分·全岗对比</td></tr>
+          <tr><td>评分体系</td><td>主观经验·难量化</td><td>年限+学历+技能+项目+适配·100分制</td></tr>
+          <tr><td>岗位库</td><td>分散Excel·难维护</td><td>15部门32+岗位·一处维护全局用</td></tr>
+          <tr><td>报告输出</td><td>手写邮件·信息散落</td><td>七层PDF·8页250KB·雷达+条形图</td></tr>
+          <tr><td>推送触达</td><td>层层转发·易丢件</td><td>飞书Bot一键推·摘要+附件双送达</td></tr>
+          <tr><td>决策建议</td><td>靠HR主管个人经验</td><td>P0-P3优先级·面试重点·Offer策略</td></tr>
+          <tr><td><strong>全流程耗时</strong></td><td><strong>3-5天/候选人</strong></td><td><strong>5分钟/候选人（提效200+倍）</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 智能合同风控审查 (NEW) -->
+    <div class="content-block">
+      <h3>WorkBuddy 智能合同风控审查系统</h3>
+      <p>AI-Powered Contract Risk Review — 四大板块能力 × WorkBuddy Skill 全流程覆盖</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📄</div>
+          <h4>板块一·文本解析</h4>
+          <p>OCR+版面分析，合同结构化提取：甲乙方/金额/条款/附件</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📚</div>
+          <h4>板块二·知识库审查</h4>
+          <p>RAG+法规知识库，外法内规自动匹配，违规条款精准定位</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🔍</div>
+          <h4>板块三·智能审查</h4>
+          <p>规则引擎+多Agent，信控/合规/交易审查，风险三色标注评分</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">✍️</div>
+          <h4>板块四·电子签AI复核</h4>
+          <p>法律模型+交叉验证，法条检索/合同对比，电子起草+签署闭环</p>
+        </div>
+      </div>
+      <div class="callout callout-success">
+        <strong>综合效率：</strong>单份合同审查从3-5天 → 全流程30分钟，效率提升96%
+      </div>
+    </div>
+
+    <!-- 智能招投标雷达 (NEW) -->
+    <div class="content-block">
+      <h3>WorkBuddy 智能招投标雷达系统</h3>
+      <p>AI-Powered Bid Radar — 五步智能工作流 × WorkBuddy Skill 全流程覆盖</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">Step 1 · 多源抓取</div>
+          <div class="timeline-content">WebSearch+WebFetch，中国政府采购网/招投标平台/各省市政府采购网/企业招标</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Step 2 · AI评估</div>
+          <div class="timeline-content">5维度智能打分：业务匹配/预算合理/中标概率/紧迫性/投入产出比</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Step 3 · 报告生成</div>
+          <div class="timeline-content">Word横版A4报告+Markdown优先跟进报告，8列表格+项目详情+免责声明</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Step 4 · 智能推送</div>
+          <div class="timeline-content">微信小程序通知/企微/钉钉Webhook，每日09:00自动执行</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Step 5 · 归档</div>
+          <div class="timeline-content">历史招标数据沉淀，趋势分析，竞品监测</div>
+        </div>
+      </div>
+      <div class="callout callout-success">
+        <strong>综合效率：</strong>单日报编制从3-4小时 → 全流程5分钟，效率提升90%
+      </div>
+    </div>
+
+    <!-- 投标全链路助手 (NEW) -->
+    <div class="content-block">
+      <h3>WorkBuddy 投标全链路助手 · 6步全自动出标</h3>
+      <p>从「人海战术拼标书」到「AI全自动出标」，让每一次投标都精准、合规、可追溯。</p>
+      <table class="compare-table" style="margin-top:12px;">
+        <thead>
+          <tr><th>步骤</th><th>传统投标流程</th><th>WorkBuddy投标自动化</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>① 资料解析</td><td>人工逐章读·4-6小时</td><td>LLM五清单结构化·5分钟</td></tr>
+          <tr><td>② 方案初稿</td><td>从零写·难复用模板·2-3天</td><td>7章V1一键生成·30分钟</td></tr>
+          <tr><td>③ V1评估</td><td>凭经验拍脑袋·易漏</td><td>5维度评分+中标概率推算·看板可视化</td></tr>
+          <tr><td>④ V2优化</td><td>人工逐章修·漏评分项</td><td>22+项评分驱动优化·对照表可追溯</td></tr>
+          <tr><td>⑤ V1 vs V2</td><td>无对比·不知道改了啥</td><td>综合匹配+14分·中标概率+13%</td></tr>
+          <tr><td>⑥ 标书出文</td><td>反复改格式·PDF易截断</td><td>Word+PDF+对照表+看板·6件套</td></tr>
+          <tr><td><strong>单次耗时</strong></td><td><strong>5-7天</strong></td><td><strong>1-2小时（提效30倍）</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 竞品分析案例 (NEW) -->
+    <div class="content-block">
+      <h3>运营场景：竞品分析自动化案例</h3>
+      <p>自动化内容抓取与智能分析推送方案，完整闭环。</p>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✦</span><span><strong>定时抓取源端内容：</strong>系统支持配置定时任务，自动从小红书和微信公众号等主流平台抓取竞品教育机构的最新图文、课程动态</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>生成分析报告与建议：</strong>利用AI大模型进行深度语义分析，自动提取核心观点、情感倾向及互动数据，生成结构化分析报告和行动建议</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>多渠道自动推送：</strong>将分析报告和关键信息按预设规则自动推送至指定邮箱、腾讯文档，实现信息无缝流转与团队高效协同</span></div>
+      </div>
+      <div class="callout callout-warning">
+        <strong>方案难点：</strong>① 小红书无官方MCP服务，需自行构建数据获取通道 ② 需处理账号登录与长效授权 ③ 平台反爬虫策略需高可用低风险方案
+      </div>
+    </div>
+
+    <!-- 企业版对比 (NEW) -->
+    <div class="content-block">
+      <h3>为什么选择WorkBuddy企业版？</h3>
+      <p><strong>更智能 · 更安全 · 更可控</strong> — 个人生产力升级为团队基础设施</p>
+      <table class="compare-table" style="margin-top:12px;">
+        <thead>
+          <tr><th>对比维度</th><th>企业旗舰版</th><th>企业专享版</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>价格</td><td>198/人/月，1账号起售</td><td>316/人/月，100账号起售</td></tr>
+          <tr><td>AI桌面办公</td><td>✓</td><td>✓</td></tr>
+          <tr><td>AI CODING编码</td><td>✓</td><td>✓</td></tr>
+          <tr><td>企业管理后台</td><td>✓ admin管理后台</td><td>✓ admin管理后台+专属网络访问</td></tr>
+          <tr><td>License内置</td><td>2000 Credit/License</td><td>2000 Credit/License</td></tr>
+          <tr><td>通用性</td><td>License可通用xbuddy产品</td><td>License可通用xbuddy产品</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:12px;"><strong>企业版四大管控维度：</strong></p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">👥</div>
+          <h4>01 管人</h4>
+          <p>权限管控·组织架构同步·审批机制</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🤖</div>
+          <h4>02 管AI</h4>
+          <p>多模型调度·专属知识库·统一Prompt</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">💰</div>
+          <h4>03 管钱</h4>
+          <p>用量追溯·明细管理·财务审计</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🔒</div>
+          <h4>04 管安全</h4>
+          <p>IP白名单·日志留存·API管理</p>
+        </div>
+      </div>
+      <div class="callout callout-success">
+        <strong>效率放开 · 风险管住 · 资产留下 · 价值算清</strong>
+      </div>
+    </div>
+
+    <!-- 下周就能做的三件事 (NEW) -->
+    <div class="content-block">
+      <h3>行动起来：下周就能做的三件事</h3>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">1️⃣</div>
+          <h4>找到组织中已经在自发用AI的人</h4>
+          <p>搞一次AI Demo Day，建一个分享群。周会上多问一句"你最近用AI做了什么有意思的？"——"同事示范"的力量远超过专家培训。</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">2️⃣</div>
+          <h4>选一个真实业务问题，完整交给一个自闭环能力强的人</h4>
+          <p>超级个体需要的是"完整的问题"，不是"切碎的任务"。选一个边界清晰、有明确交付物的问题，给WorkBuddy权限，给三个月时间，只看结果不看过程。</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">3️⃣</div>
+          <h4>你自己亲自下场</h4>
+          <p>隔着汇报材料理解AI，和亲自用过AI，是两种完全不同的认知状态。用WorkBuddy独立完成一件完整的事，体验完整闭环。</p>
+        </div>
+      </div>
+      <div class="callout callout-info" style="margin-top:16px;">
+        <strong>不做AI时代的旁观者，争当智能浪潮的参与者。</strong>
       </div>
     </div>
 
@@ -1123,6 +1752,190 @@ a:hover { color: var(--color-primary-800); }
       </div>
     </div>
 
+    <!-- 竞品分析 (NEW) -->
+    <div class="content-block">
+      <h3>WorkBuddy 竞品分析</h3>
+      <p>WorkBuddy是企业级AI工作台，把干活、多个智能体协作、打通各种系统和企业管理串成一条龙；别家产品大多只做单点的AI任务，WorkBuddy已经能像管真人团队一样管好一批数字员工。</p>
+      <table class="compare-table" style="margin-top:12px;">
+        <thead>
+          <tr><th>排名</th><th>产品名称</th><th>所属厂商</th><th>当月访问增量</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background:var(--color-primary-50);"><td>1</td><td><strong>WorkBuddy</strong></td><td>腾讯</td><td><strong>820万</strong></td></tr>
+          <tr><td>2</td><td>Kimi Claw</td><td>月之暗面</td><td>410万</td></tr>
+          <tr><td>3</td><td>ArkClaw</td><td>火山引擎·字节</td><td>380万</td></tr>
+          <tr><td>4</td><td>Hermes（爱马仕）</td><td>开源社区</td><td>330万</td></tr>
+          <tr><td>5</td><td>OpenClaw（原生龙虾）</td><td>开源鼻祖</td><td>290万</td></tr>
+          <tr><td>6</td><td>MaxClaw</td><td>MiniMax</td><td>240万</td></tr>
+          <tr><td>7</td><td>DuClaw</td><td>百度智能云</td><td>170万</td></tr>
+          <tr><td>8</td><td>QoderWork</td><td>阿里Qoder</td><td>140万</td></tr>
+          <tr><td>9</td><td>CoPaw</td><td>阿里通义</td><td>120万</td></tr>
+          <tr><td>10</td><td>AutoClaw</td><td>智谱华章</td><td>110万</td></tr>
+        </tbody>
+      </table>
+      <div class="callout callout-success">
+        WorkBuddy在桌面智能体平台占据<strong>领先地位</strong>。混元3.0 Preview性价比高，登顶海外Open Router榜首。
+      </div>
+    </div>
+
+    <!-- Demo案例：小李的一天 (NEW) -->
+    <div class="content-block">
+      <h3>Demo案例：小李的一天 — AI工作流无缝接力</h3>
+      <p>小李周一早9点面临38封邮件及老板交代的复盘、PPT、数据、纪要等任务，传统方式需9.5小时，准点下班成奢望。<strong>WorkBuddy接管后半小时搞定核心事项，成功夺回时间主权。</strong></p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">09:00 · 沟通应答</div>
+          <div class="timeline-content"><strong>挑战：</strong>38封邮件轰炸 → <strong>AI提效：</strong>5分钟分类+起草回复</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">10:30 · 文档写作</div>
+          <div class="timeline-content"><strong>挑战：</strong>180条Excel数据 → <strong>AI提效：</strong>5分钟生成Word复盘报告</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">14:00 · PPT汇报</div>
+          <div class="timeline-content"><strong>挑战：</strong>Word转PPT公司模板 → <strong>AI提效：</strong>10分钟转化为12页商务PPT</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">16:00 · 数据可视化</div>
+          <div class="timeline-content"><strong>挑战：</strong>1440条门店流水 → <strong>AI提效：</strong>4分钟生成交互Dashboard</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">17:30 · 会议协作</div>
+          <div class="timeline-content"><strong>挑战：</strong>120分钟会议录音 → <strong>AI提效：</strong>6分钟整理核心纪要</div>
+        </div>
+      </div>
+      <div class="callout callout-success">
+        <strong>传统耗时9.5小时 → WorkBuddy接管半小时搞定</strong> — 打通文档/邮件全链路
+      </div>
+    </div>
+
+    <!-- 十大热门场景 (NEW) -->
+    <div class="content-block">
+      <h3>十大热门场景 — 办公最耗时、最刚需、最适合Agent替代</h3>
+    </div>
+
+    <!-- 场景1: 智能办公 -->
+    <div class="content-block">
+      <h4>场景1：智能办公</h4>
+      <p><strong>典型需求来源：</strong>有文档协同需求的中大型企业；已有OA办公系统但缺乏AI入口；寻求降本提效的"全员适用"型组织</p>
+      <p><strong>业务痛点：</strong>重复性文字工作（邮件收发、会议纪要、公文写作）；工作效率瓶颈（项目材料汇总、制度资料查询效率低）</p>
+      <p><strong>WorkBuddy智能解法：</strong>内容提取/OCR识别（精准提取票据表单关键信息）→ 智能报表分析（多维度交叉比对与逻辑校验）</p>
+      <div class="callout callout-success"><strong>提效成果：</strong>文档处理时间-85%，人均办公提效3-5倍</div>
+      <p><strong>案例参考：</strong>某新西兰跨国制造企业中国分支、某具身智能机器人科技公司</p>
+    </div>
+
+    <!-- 场景2: 数据处理 -->
+    <div class="content-block">
+      <h4>场景2：数据处理</h4>
+      <p><strong>典型需求来源：</strong>"数据搬运密集型"部门（财务税务、HR、电商运营）；多源数据企业；出海企业</p>
+      <p><strong>WB解法：</strong>AI驱动自动化数据处理 → 多文档智能整合 → 一键提取关键数据 → OCR+自动填表</p>
+      <div class="callout callout-success"><strong>提效效果：</strong>文档撰写耗时半天→几分钟，内容错误率-90%</div>
+      <p><strong>案例参考：</strong>某动物体外检测设备出海企业、某税务服务与企业管理咨询公司</p>
+    </div>
+
+    <!-- 场景3: 运营提效 -->
+    <div class="content-block">
+      <h4>场景3：运营提效</h4>
+      <p><strong>核心痛点：</strong>多平台账号运营靠人工，热帖识别滞后；报告分发、邮件群发、归档占用大量后台行政人力</p>
+      <p><strong>WB解法：</strong>自动化账号运营策略 → 报告智能预审+邮件分发 → OA单据归纳与自动审批 → 拍照填表</p>
+      <div class="callout callout-success"><strong>应用效果：</strong>成功替代4大部门基础事务，综合人力成本节省达80%</div>
+      <p><strong>案例参考：</strong>某社区电商运营ISV、某五金塑胶制造厂</p>
+    </div>
+
+    <!-- 场景4: 营销获客 -->
+    <div class="content-block">
+      <h4>场景4：营销获客</h4>
+      <p><strong>核心痛点：</strong>高质量营销素材创作极度耗时</p>
+      <p><strong>WB解法：</strong>① 智能找热点（实时抓取全网趋势）② 抖音/小红书运营专家（一键生成图文脚本与运营策略）</p>
+      <div class="callout callout-success"><strong>提效成果：</strong>发文量提升+100%，创作耗时减少-80%</div>
+      <p><strong>案例参考：</strong>某美妆品牌、某文化传媒电商直播带货公司</p>
+    </div>
+
+    <!-- 场景5: 智能客服 -->
+    <div class="content-block">
+      <h4>场景5：智能客服</h4>
+      <p><strong>业务痛点：</strong>客服满负荷（咨询量大，人工响应不及时）；话术难统一（产品知识更新快，培训成本高）</p>
+      <p><strong>WB核心解法：</strong>企业微信IM入口 → WorkBuddy定时任务获取数据 → 连通管理知识库</p>
+      <div class="callout callout-success"><strong>业务效果：</strong>单人回复量x2，平均处理时间-50%</div>
+      <p><strong>案例参考：</strong>某金融服务平台、某跨境电商品牌</p>
+    </div>
+
+    <!-- 场景6: 内容生产 -->
+    <div class="content-block">
+      <h4>场景6：内容生产（漫剧/图片/文案等）</h4>
+      <p><strong>业务痛点：</strong>单部漫剧制作周期长，人工成本高昂，产能受限</p>
+      <p><strong>WB解法：</strong>① 剧本智能解析 ② 自动化分镜生成 ③ 图文/视频合成</p>
+      <div class="callout callout-success"><strong>业务效果：</strong>制作效率提升60%，制作成本降低40%</div>
+      <p><strong>案例参考：</strong>某AI漫剧数字传媒公司、某文化传媒电商直播带货公司</p>
+    </div>
+
+    <!-- 场景7: 管理决策 -->
+    <div class="content-block">
+      <h4>场景7：管理决策提效</h4>
+      <p><strong>核心痛点：</strong>数据汇总慢，跨部门协同效率低下；决策滞后，难以快速响应市场变化</p>
+      <p><strong>WB解法：</strong>① 管理层一站式入口（上传文档报表→直接做数据分析）② 销售异常实时监控（定时智能汇报，异常预警）</p>
+      <div class="callout callout-success"><strong>提效成果：</strong>决策效率+80%，管理层事务性时间节省-70%</div>
+      <p><strong>案例参考：</strong>某金融投资公司、某食品调味品制造企业</p>
+    </div>
+
+    <!-- 场景8: 产研提效 -->
+    <div class="content-block">
+      <h4>场景8：产研提效 - 产品设计</h4>
+      <p><strong>核心痛点：</strong>竞品分析耗时（信息搜集繁杂）；PRD撰写繁琐（格式对齐成本高）</p>
+      <p><strong>WB解法：</strong>① 一句话生成报告（AI自动抓取数据生成竞品分析报告）② PRD模板智能套用（内置专家和技能一键填充）</p>
+      <div class="callout callout-success"><strong>提效成果：</strong>PRD撰写及对齐时间从1天→10分钟</div>
+      <p><strong>落单参考客户：</strong>某跨境电商研发部门</p>
+    </div>
+
+    <!-- 场景9: 知识沉淀 -->
+    <div class="content-block">
+      <h4>场景9：知识沉淀</h4>
+      <p><strong>核心痛点：</strong>知识散落无沉淀，难以集中管理和高效检索；经验无法复用，人员流失导致核心知识流失</p>
+      <p><strong>WB解法：</strong>一键打通各知识平台（腾讯文档/腾讯会议/Ima/乐享/企业自建）→ 智能问答+精准溯源</p>
+      <div class="callout callout-success"><strong>提效成果：</strong>新人上手与知识检索时间从数周→分钟级</div>
+      <p><strong>落单参考客户：</strong>某可穿戴智能硬件公司、某卫生纸无纺布智能制造企业</p>
+    </div>
+
+    <!-- 场景10: 行业定制 -->
+    <div class="content-block">
+      <h4>场景10：行业定制</h4>
+      <p><strong>核心痛点：</strong>通用AI不懂行业（缺乏垂直领域深度认知）；业务系统割裂（AI难以直接调用企业内部工具与数据孤岛）</p>
+      <p><strong>WB解法：</strong>① 自建Skill：MCP+API（无缝打通企业现有业务流）② 行业知识与Agent定制（沉淀专属知识库，打造企业级业务专家）</p>
+      <div class="callout callout-success"><strong>提效成果：</strong>行业方案交付周期从数月→数周，提效30%+</div>
+      <p><strong>落单参考客户：</strong>某商业航天公司</p>
+    </div>
+
+    <!-- 高价值落单场景洞察 (NEW) -->
+    <div class="content-block">
+      <h3>高价值落单场景洞察</h3>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🏭</div>
+          <h4>标杆案例：制造业</h4>
+          <p><strong>场景：</strong>自动化任务(定时拉取邮件并回复等)+日常办公<br>
+          <strong>核心价值：</strong>安装使用简单，普通员工上手简单；支持丰富skill；有研发部门可从claude code切换到codebuddy；支持对接企微架构和SSO认证</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🛒</div>
+          <h4>标杆案例：跨境电商</h4>
+          <p><strong>场景：</strong>辅助跨境电商日常办公+内容生成+单据整理<br>
+          <strong>核心价值：</strong>研发可用AI整理产品开发资料；设计可用AI辅助产品设计；供应链可用AI生成出货资料、单据；财务可用AI整理申报材料；支持接入第三方平台</p>
+        </div>
+      </div>
+      <p style="margin-top:16px;"><strong>高需求场景共性：</strong></p>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✦</span><span><strong>数据文件处理/智能办公</strong> — 涉及大量数据分析处理任务</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>重复事务自动化</strong> — 替代高频低效人工操作，快速展现可量化ROI</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>海外AI替代</strong> — 把握出海合规与降本需求，提供安全可靠的国产化AI平替</span></div>
+      </div>
+      <p style="margin-top:12px;"><strong>长约特征：</strong></p>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✦</span><span><strong>核心业务流深度集成</strong> — WorkBuddy可触及客户核心业务流程</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>跨部门协同扩展需求</strong> — 具备从单点部门向全公司应用的潜力</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>明确的年度数字化转型规划</strong> — 已将相关系统列入年度IT规划</span></div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Tab 5: CodeBuddy -->
@@ -1238,7 +2051,7 @@ a:hover { color: var(--color-primary-800); }
       </div>
     </div>
 
-    <!-- 产品形态 -->
+    <!-- 产品交付形态 -->
     <div class="content-block">
       <h3>产品交付形态</h3>
       <table class="compare-table">
@@ -1251,25 +2064,187 @@ a:hover { color: var(--color-primary-800); }
         </thead>
         <tbody>
           <tr>
-            <td>AI IDE</td>
-            <td>集成开发环境中的AI辅助</td>
-            <td>日常编码、代码补全、智能审查</td>
+            <td><strong>CodeBuddy Plugin</strong></td>
+            <td>IDE插件 — 支持VS Code、JetBrains全系、Visual Studio、Xcode等IDE，<strong>独家支持微信开发者工具</strong></td>
+            <td>生态依赖场景（项目依赖特定IDE插件）；旧项目维护场景（环境复杂度高）</td>
           </tr>
           <tr>
-            <td>Plugin</td>
-            <td>插件形式嵌入现有工具链</td>
-            <td>已有IDE增强、CI/CD集成</td>
+            <td><strong>CodeBuddy IDE</strong></td>
+            <td>AI原生IDE — 覆盖编码、编译、调试全链路的上下文感知，原生支持<strong>Spec+TDD</strong>的AI时代开发方式</td>
+            <td>产设研一体化（Figma设计稿生成前端、Tapd Bug单代码分析）；全栈产品开发</td>
           </tr>
           <tr>
-            <td>CLI</td>
-            <td>命令行工具</td>
-            <td>脚本自动化、批量处理</td>
+            <td><strong>CodeBuddy CLI</strong></td>
+            <td>基于命令行的AI编程解决方案 — 命令行原生，贴合Linux开发理念，基于TDD的开发理念</td>
+            <td>CI/CD管道自动化代码生成；大规模代码库批量重构；服务器端开发部署</td>
           </tr>
           <tr>
-            <td>智能体管理</td>
-            <td>智能体配置和管理平台</td>
-            <td>团队级AI策略、知识库/Rules</td>
+            <td><strong>CodeBuddy Admin</strong></td>
+            <td>统一管理后台 — Plugin/IDE/CLI统一接入，研效观测、环境自定义、BackgroundAgent</td>
+            <td>团队级AI策略、知识库/Rules、模型/网络配置</td>
           </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 代码补全 (NEW detail) -->
+    <div class="content-block">
+      <h3>代码补全 — 智能预测下一次代码输入</h3>
+      <p>基于实时光标定位和AST语法树分析技术，智能感知当前代码仓库的上下文关联，实现精准的代码智能推荐。支持工程理解与跨文件补全，自适应补全粒度，支持NES。腾讯内部补全采纳率30%+。</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📝</div>
+          <h4>单行补全</h4>
+          <p>顺序开发场景准确率较高；工程里重复度较高的代码表现好</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📄</div>
+          <h4>多行补全</h4>
+          <p>页面/UI开发（格式相对固定，多为组件调用）；事件/协议/脚本开发（结构相似，原子能力调用）</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🔮</div>
+          <h4>编码预判</h4>
+          <p>有大量雷同的操作序列，AI智能预判后续代码</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 技术问答 (NEW) -->
+    <div class="content-block">
+      <h3>技术问答（ASK）— 基于完整工程感知的AI咨询</h3>
+      <p>集成侧栏对话、内联交互、智能指令集功能，具备CODEBASE全文件工程分析能力，为开发者提供覆盖完整编码生命周期的实时技术咨询服务。</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📖</div>
+          <h4>新人上手</h4>
+          <p>读代码，理解当前工程；AI随时待命，问AI没有社交障碍</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🏗️</div>
+          <h4>项目分析</h4>
+          <p>架构分析、架构设计建议；性能分析、性能瓶颈检查</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 开发智能体 Craft (NEW) -->
+    <div class="content-block">
+      <h3>开发智能体（Craft）— 任务级开发助手</h3>
+      <p>根据用户需求智能分析，制定开发计划，由AI完成编码并测试验证。擅长处理工具链开发、事件开发、SDK集成、SHADER编写等上下文清晰的专业开发任务。</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🛠️</div>
+          <h4>工具链/原型开发</h4>
+          <p>上下文清晰且可快速验证的工具/原型，可以直接让Craft独立完成，人工测试结果即可</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📝</div>
+          <h4>功能开发草稿</h4>
+          <p>在大工程中添加或修改功能，让Craft打一遍草稿，再人工审核和修改</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 代码评审智能体 AICR (NEW) -->
+    <div class="content-block">
+      <h3>代码评审智能体（AICR）— 针对Repo的代码审查</h3>
+      <p>基于自定义规则的、针对MR的、目的性审查。支持GIT协议代码仓库，支持API接入工作流。帮助代码审核人快速理解提交内容，提供AI评审建议、修复意见，提高CR效率和覆盖率。</p>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✓</span><span><strong>本地代码评审：</strong>通过插件在本地编码【片段/文件/Diff】中进行AI评审，风险左移</span></div>
+        <div class="feature-item"><span class="check">✓</span><span><strong>代码仓库级评审（待上线）：</strong>绑定代码仓库，对仓库中的代码实现动态评审，生成项目级评审建议；支持企业自定义评审规则集</span></div>
+      </div>
+    </div>
+
+    <!-- 安全智能体 (NEW) -->
+    <div class="content-block">
+      <h3>安全智能体 — 针对Repo的代码安全分析</h3>
+      <p>集成腾讯TCA专业代码分析工具，针对REPO的智能安全扫描，增加代码安全保障。</p>
+      <div class="callout callout-info">
+        <strong>工作流：</strong>① 后台绑定TCA → ② 触发扫描 → ③ 获取扫描结果 → ④ 后台修复 → ⑤ PR合并 → ⑥ Plugin处理遗漏问题
+      </div>
+      <p><strong>检测能力：</strong>代码缺陷 · 代码规范 · 安全漏洞扫描 · 无效代码</p>
+    </div>
+
+    <!-- 架构分析智能体 Repo Wiki (NEW) -->
+    <div class="content-block">
+      <h3>架构分析智能体（Repo Wiki）— 代码知识文档维护</h3>
+      <p>通过在平台创建代码知识库并绑定GIT仓库，系统将实时监听代码变更，自动生成最新的代码知识文档，显著提升开发团队协作效率，降低文档维护成本。</p>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✓</span><span><strong>实时生成代码知识文档：</strong>绑定Git仓库，实时监听代码变更，并实时更新/维护各工程的代码知识文档</span></div>
+        <div class="feature-item"><span class="check">✓</span><span><strong>辅助生成技术类文档：</strong>智能生成架构图、业务流程图、组件图、依赖关系图、类图与数据流图</span></div>
+      </div>
+    </div>
+
+    <!-- 自定义知识库 RAG (NEW) -->
+    <div class="content-block">
+      <h3>自定义知识库（RAG）</h3>
+      <p>RAG可以结合企业文档/代码，理解企业独特的业务场景。采用代码语法语义分析技术，可以结合代码业务逻辑进行切片与存储，强化代码知识的召回准确性。</p>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✓</span><span>可根据业务场景、技术栈类型自定义企业私有知识库</span></div>
+        <div class="feature-item"><span class="check">✓</span><span>可使用官方知识库解决通用编码问题</span></div>
+        <div class="feature-item"><span class="check">✓</span><span><strong>多种数据源支持：</strong>文档(.md/.markdown/.docx/.pdf)、压缩包(.zip/.tar/.tgz/.tar.gz/.gz/.gzip)</span></div>
+        <div class="feature-item"><span class="check">✓</span><span><strong>检索增强：</strong>在技术问答时可通过@知识库选择某领域知识库，检索相关知识后强化问答效果</span></div>
+      </div>
+    </div>
+
+    <!-- 自定义Rules (NEW) -->
+    <div class="content-block">
+      <h3>自定义Rules — 规则集</h3>
+      <p>为用户与团队提供自定义和持久化AI行为规范的能力，确保代码产出符合预期。允许用户创建User Rules或Project Rules，让AI在补全、聊天、Agent等环节自动遵循相关规则。</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">👤</div>
+          <h4>User Rules</h4>
+          <p>将个人偏好的内容（如编码习惯、AI语气、个人负责的多个项目的通用内容）配置到User Rules里</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📁</div>
+          <h4>Project Rules</h4>
+          <p>将项目需要全员遵守（如团队风格、技术栈约定、目录架构、安全红线、代码review、项目沉淀等）的内容配置到Project Rules里</p>
+        </div>
+      </div>
+      <p style="margin-top:8px;"><strong>规则覆盖场景：</strong>项目级架构与目录约束 · 统一代码风格与技术栈 · 组件/模块模板与样板代码 · 错误修复与重构策略 · 安全与质量红线 · 团队协作与onboarding</p>
+    </div>
+
+    <!-- 度量看板 (NEW) -->
+    <div class="content-block">
+      <h3>度量看板 — 展示研效指标</h3>
+      <p>对企业内用户的使用情况进行度量统计，帮助企业管理者观测提效成果、优化提效方案。</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📊</div>
+          <h4>补全指标</h4>
+          <p>按次、按行和按字符三种口径统计：代码生成率、采纳率、新增总数、采纳总数、生成总数等</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">💬</div>
+          <h4>对话指标</h4>
+          <p>对话次数、对话使用指令次数、对话使用各智能体次数、对话使用知识库次数、对话中代码段操作次数等</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AICoding技能矩阵 (NEW) -->
+    <div class="content-block">
+      <h3>驾驭AICoding — 技能矩阵</h3>
+      <p>AI编程需要系统的任务流管理、上下文管理、事务管理能力。</p>
+      <table class="compare-table" style="margin-top:12px;">
+        <thead>
+          <tr><th>类别</th><th>能力</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td rowspan="2">任务流管理</td><td>TaskPlan</td><td>任务分解与计划制定</td></tr>
+          <tr><td>Spec</td><td>需求规格定义</td></tr>
+          <tr><td rowspan="5">上下文管理</td><td>TDD</td><td>测试驱动开发</td></tr>
+          <tr><td>Rules</td><td>规则约束</td></tr>
+          <tr><td>RAG</td><td>知识库检索增强</td></tr>
+          <tr><td>Codebase</td><td>全局代码理解</td></tr>
+          <tr><td>MCP</td><td>外部工具协议接入</td></tr>
+          <tr><td rowspan="4">事务管理</td><td>Craft Agent</td><td>任务级开发助手</td></tr>
+          <tr><td>RepoWiki</td><td>代码知识文档</td></tr>
+          <tr><td>AICR Agent</td><td>代码评审智能体</td></tr>
+          <tr><td>安全Agent</td><td>代码安全分析</td></tr>
         </tbody>
       </table>
     </div>
@@ -1287,14 +2262,100 @@ a:hover { color: var(--color-primary-800); }
       </div>
     </div>
 
+    <!-- 技术服务方案 (NEW) -->
+    <div class="content-block">
+      <h3>技术服务方案</h3>
+      <p>腾讯集团联合生态合作伙伴，为您提供<strong>产品+实施+咨询</strong>全链路、与时俱进的AI研发赋能解决方案。</p>
+      <div class="scenario-grid">
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🏢</div>
+          <h4>产品</h4>
+          <p>腾讯集团内部最佳实践 · 算力（软硬一体机/国产化算力/NVIDIA算力/腾讯云GPU）</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">🔧</div>
+          <h4>实施</h4>
+          <p>生态伙伴提供：AICoding培训 · 定制化开发 · MCP开发 · 研发工具集开发 · 知识库建设 · 软硬一体方案</p>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-item-icon">📋</div>
+          <h4>咨询</h4>
+          <p>结合企业DevOps流程体系，落地AI研发赋能：AIDevOps咨询 · 模型调度 · 企业报表</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 客户案例 (NEW) -->
+    <div class="content-block">
+      <h3>客户案例</h3>
+    </div>
+
+    <!-- 招商银行 -->
+    <div class="content-block">
+      <h4>招商银行</h4>
+      <p><strong>项目背景：</strong>招商银行与腾讯作为战略合作伙伴，基于双方在AI辅助编码领域的共同需求，于2023年12月签署合作协议，成立AI代码助手联创项目组。</p>
+      <p><strong>解决方案（三层闭环架构）：</strong></p>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✦</span><span><strong>模型层：</strong>共建金融领域增量预训练语料，持续运营行内代码/规范/文档等数据注入；微调时间↓49%，收敛率↑37%</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>插件层：</strong>统一多端插件服务，支持VS Code/JetBrains插件功能保持一致</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>运营层：</strong>建立"研效指标监控—问题回溯解决—持续观察"滚动式运营策略，周报自动推送高管</span></div>
+      </div>
+      <div class="callout callout-success">
+        <strong>项目收益：</strong>内部用户8,000+人（研发覆盖率92%）· 代码采纳率15%→28% · 代码生成率16%→31%（等效释放1200人月）· 插件崩溃率＜0.1% · NPS: 72
+      </div>
+    </div>
+
+    <!-- 小米集团 -->
+    <div class="content-block">
+      <h4>小米集团</h4>
+      <p><strong>项目背景：</strong>小米于2023年底启动AI辅助编码探索，经过四个月建设虽取得初步进展，但在代码采纳率、生成效果及IDE体验等方面仍未达到内部预期。因此小米决定引入成熟的商业化解决方案。</p>
+      <p><strong>解决方案：</strong></p>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✦</span><span><strong>IDE插件融合：</strong>使用腾讯云AI代码助手插件内核，样式/logo/登陆/反馈/升级机制保持和小米自研IDE插件一致</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>模型训练：</strong>基于腾讯代码大模型，结合小米手机业务代码增强训练，补全生成率↑6%</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>联合运营：</strong>配合小米MIT生产力团队，多次AI编码最佳实践培训，提升用户活跃度</span></div>
+      </div>
+      <div class="callout callout-success">
+        <strong>项目收益：</strong>内部用户10,000+人 · 代码采纳率27% · 代码生成率36%（等效释放3600+人月）· 插件崩溃率＜0.1% · NPS: 80 · 整体研发提效20%
+      </div>
+    </div>
+
+    <!-- 正浩创新 -->
+    <div class="content-block">
+      <h4>正浩创新</h4>
+      <p><strong>项目背景：</strong>正浩作为全球领先的移动储能与清洁能源技术公司，研发团队涉及嵌入式软件(C/C++)、硬件驱动、移动应用、后端云服务、前端Web、测试自动化等多个领域。</p>
+      <p><strong>解决方案：</strong></p>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✦</span><span><strong>VPC专享版：</strong>更安全，独立VPC部署环境，与公网逻辑隔离，提供专属插件与专属网络</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>AICR：</strong>提供代码片段、代码文件、DIFF代码等不同颗粒度的AI代码评审功能</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>扩展能力：</strong>允许自定义企业级RAG知识库、自定义MCP Server、自定义模型</span></div>
+      </div>
+      <div class="callout callout-success">
+        <strong>项目收益：</strong>内部用户300人（日活240+）· 代码采纳率26% · 代码生成率30%（等效释放90+人月）· 插件崩溃率＜0.1% · NPS: 80
+      </div>
+    </div>
+
+    <!-- 小鹅通 -->
+    <div class="content-block">
+      <h4>小鹅通</h4>
+      <p><strong>项目背景：</strong>小鹅通是一家专注内容付费的技术服务商。随着业务快速扩展，希望借助AI赋能，进一步提升在开发领域的效率与质量。</p>
+      <p><strong>解决方案：</strong></p>
+      <div class="feature-list">
+        <div class="feature-item"><span class="check">✦</span><span><strong>插件版本：</strong>saas旗舰版插件，支持多种类型IDE开发工具，有效满足混合技术栈研发团队需求</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>代码补全：</strong>支持工程理解&跨文件补全，单行补全速度可达400ms以内</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>Craft智能体：</strong>根据需求描述自主分析，制定开发计划，由AI完成编码并测试验证</span></div>
+        <div class="feature-item"><span class="check">✦</span><span><strong>场景丰富：</strong>可解释代码、生成注释、修复代码、重构代码、单测生成、AI评审(AICR)</span></div>
+      </div>
+      <div class="callout callout-success">
+        <strong>项目收益：</strong>内部用户200人（日活170+）· 无缝集成至vscode/Idea/PyCharm/Rider等开发工具
+      </div>
+    </div>
+
     <div class="callout callout-warning">
       <strong>资料来源：</strong>以上内容整理自腾讯云CodeBuddy产品介绍文档（2025），数据截至2026年4月。
     </div>
 
   </div>
-
-</div>
-
 <!-- Footer -->
 <footer class="site-footer">
   <div class="footer-inner">
@@ -1332,6 +2393,19 @@ function switchTab(tabId, btn) {
   btn.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+function filterCases(cat, btn) {
+  document.querySelectorAll('.filter-bar .tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.case-card').forEach(c => {
+    if (cat === 'all' || c.getAttribute('data-cat') === cat) {
+      c.style.display = '';
+    } else {
+      c.style.display = 'none';
+    }
+  });
+}
+
 </script>
 
 </body>
