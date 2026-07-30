@@ -8,4 +8,4 @@ Crawl-delay: 1
 User-agent: Googlebot
 Allow: /
 
-Sitemap: https://fanxion98.github.io/workbuddy-bluebook/sitemap.xml
+Sitemap: https://simouxuan.com/sitemap.xml
