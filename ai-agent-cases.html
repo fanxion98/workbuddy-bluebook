@@ -581,7 +581,7 @@ a:hover { color: var(--color-primary-800); }
     <div class="section-heading">
       <span class="icon">📋</span>
       <h2>AI Agent 场景案例 — 真实客户落地</h2>
-      <span class="badge">19个案例 · 多行业</span>
+      <span class="badge">20个案例 · 多行业</span>
     </div>
 
     <p>以下案例均来自 WorkBuddy/CodeBuddy 真实客户落地实践，覆盖金属贸易、人力资源、税务、教育、金融、ISV、医疗、汽车、制造、MCN、检测、物流、生物医药、纺织等多个行业。</p>
@@ -1121,6 +1121,38 @@ a:hover { color: var(--color-primary-800); }
       </div>
       <div style="padding:12px 16px;border-top:1px solid #E5E7EB;">
         <a href="https://www.simouxuan.com/seo-case.html" target="_blank" style="color:#16A34A;font-size:13px;font-weight:500;text-decoration:none;">查看完整步骤教程 →</a>
+      </div>
+    </div>
+
+    <!-- Case 20: 用WorkBuddy打通GitHub全流程 -->
+    <div class="case-card filter-dev" data-cat="dev">
+      <div class="case-card-header">
+        <span class="case-card-icon">🐙</span>
+        <span class="case-card-title">用WorkBuddy打通GitHub全流程：推送部署、域名绑定、Pages上线</span>
+        <span class="case-card-tag tag-dev">研发提效</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>个人开发者不懂Git命令行，推送代码频繁报错。凭据过期不会处理，域名绑定了DNS配不对，HTTPS显示不安全，Pages部署后页面打不开。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy 方案 · 可复现</h4>
+          <p>① <strong>Git推送</strong>：git add → commit → push，遇到网络超时自动重试<br>
+          ② <strong>凭据过期</strong>：gh auth login --web 设备码流程重新登录GitHub<br>
+          ③ <strong>API直推</strong>：git push失败时，用Python+GitHub API（urllib+base64）直接PUT文件<br>
+          ④ <strong>域名绑定</strong>：仓库根目录创建CNAME文件→DNSPod配A记录+CNAME<br>
+          ⑤ <strong>HTTPS修复</strong>：空commit触发Pages重建，加速Let's Encrypt证书签发<br>
+          ⑥ <strong>部署验证</strong>：curl检查HTTP状态码，WebFetch确认页面内容</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">3种</div><div class="case-result-label">推送方式</div></div>
+        <div class="case-result-item"><div class="case-result-num">10+</div><div class="case-result-label">文件部署</div></div>
+        <div class="case-result-item"><div class="case-result-num">100%</div><div class="case-result-label">上线成功率</div></div>
+      </div>
+      <div style="padding:12px 16px;border-top:1px solid #E5E7EB;">
+        <a href="https://www.simouxuan.com/" target="_blank" style="color:#2563EB;font-size:13px;font-weight:500;text-decoration:none;">访问部署成果 → www.simouxuan.com</a>
       </div>
     </div>
 
