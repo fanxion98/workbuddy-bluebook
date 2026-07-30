@@ -1210,6 +1210,67 @@ img { max-width: 100%; height: auto; }
   .prev-next-nav { flex-direction: column; gap: 12px; }
   .prev-next-nav .pn-next { text-align: left; }
   .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+  .search-section { padding: 0 16px 16px; }
+  .search-input { font-size: 14px; height: 44px; padding: 0 14px; }
+  .search-btn { height: 44px; padding: 0 16px; font-size: 14px; }
+}
+
+/* ===== Search Box ===== */
+.search-section {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px 20px;
+}
+.search-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.search-input {
+  flex: 1;
+  height: 48px;
+  padding: 0 18px;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  font-size: 15px;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background: var(--bg-card);
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.search-input::placeholder { color: var(--text-tertiary); }
+.search-input:focus {
+  border-color: var(--c-teal);
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.12);
+}
+.search-btn {
+  height: 48px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--c-teal), var(--c-blue));
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.search-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(20, 184, 166, 0.25);
+}
+.search-btn:active { transform: translateY(0); }
+.search-hint {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 10px;
 }
 
 </style>
@@ -1259,6 +1320,18 @@ img { max-width: 100%; height: auto; }
     <span class="hero-tag purple">20+ Skills</span>
   </div>
 </section>
+
+<!-- Search -->
+<div class="search-section">
+  <form class="search-form" onsubmit="handleSearch(event)">
+    <input type="text" class="search-input" id="searchInput" placeholder="搜索文章关键词，如：WorkBuddy教程、AI Agent、Skills…">
+    <button type="submit" class="search-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      搜索
+    </button>
+  </form>
+  <p class="search-hint">站内搜索 — 输入关键词后自动在百度搜索本博客内容</p>
+</div>
 
 <!-- Series -->
 <section class="series-section" id="series">
@@ -1686,6 +1759,13 @@ function toggleExpand() {
   });
   btn.classList.toggle('expanded');
   btn.firstChild.textContent = expanded ? '展开全部 (' + hiddenCards.length + ') ' : '收起 ';
+}
+
+function handleSearch(e) {
+  e.preventDefault();
+  var q = document.getElementById('searchInput').value.trim();
+  if (!q) return;
+  window.open('https://www.baidu.com/s?wd=' + encodeURIComponent('site:simouxuan.com ' + q), '_blank');
 }
 </script>
 </body>
