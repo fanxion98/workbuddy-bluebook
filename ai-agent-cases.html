@@ -382,6 +382,76 @@ a:hover { color: var(--color-primary-800); }
 .footer-contact-item .label { color: #A8A29E; }
 .footer-contact-item .value { color: #fff; }
 
+/* ===== SEO Tutorial Styles ===== */
+.seo-hero { background: var(--bg-hero, linear-gradient(135deg, #F0FDFA 0%, #ECFEFF 30%, #F0F9FF 60%, #FDF4FF 100%)); border-radius: var(--radius-lg, 16px); padding: 40px 32px; margin-bottom: 32px; text-align: center; }
+.seo-hero-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(20,184,166,0.12); color: #14B8A6; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 16px; }
+.seo-hero h2 { font-size: 26px; font-weight: 600; color: #292524; line-height: 1.4; margin-bottom: 12px; }
+.seo-hero-sub { font-size: 15px; color: #57534E; line-height: 1.7; max-width: 600px; margin: 0 auto 16px; }
+.seo-hero-meta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-size: 13px; color: #A8A29E; }
+
+.seo-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 32px; }
+.seo-stat-card { background: #fff; border: 1px solid var(--border, #E7E5E4); border-radius: 12px; padding: 20px 12px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.seo-stat-num { font-size: 26px; font-weight: 700; background: linear-gradient(135deg, #14B8A6, #38BDF8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.seo-stat-label { font-size: 11px; color: #A8A29E; margin-top: 4px; }
+
+.step-block { margin-bottom: 40px; scroll-margin-top: 80px; }
+.step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.step-header .step-num { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: linear-gradient(135deg, #14B8A6, #38BDF8); color: #fff; border-radius: 50%; font-size: 15px; font-weight: 700; flex-shrink: 0; box-shadow: 0 2px 8px rgba(20,184,166,0.3); }
+.step-header h3 { font-size: 20px; font-weight: 600; color: #292524; }
+.step-intro { color: #57534E; margin-bottom: 14px; font-size: 14px; }
+
+.prompt-box { background: #1e293b; color: #e2e8f0; padding: 14px 18px; border-radius: 10px; margin: 10px 0; font-size: 13px; line-height: 1.7; }
+.prompt-box::before { content: '💬 你对 WorkBuddy 说：'; display: block; font-size: 11px; color: #94a3b8; margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.code-block { background: #1e293b; color: #e2e8f0; padding: 14px 18px; border-radius: 10px; margin: 10px 0; font-size: 12.5px; line-height: 1.6; overflow-x: auto; }
+.code-block::before { content: '📄 WorkBuddy 生成 / 执行：'; display: block; font-size: 11px; color: #94a3b8; margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.code-block code, .prompt-box code { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
+
+.action-row { display: flex; gap: 0; margin-bottom: 2px; border-radius: 10px; overflow: hidden; }
+.action-label { display: flex; align-items: center; gap: 6px; padding: 9px 14px; font-size: 12px; font-weight: 600; color: #fff; flex-shrink: 0; min-width: 110px; }
+.label-do { background: #38BDF8; }
+.label-verify { background: #22C55E; }
+.action-content { flex: 1; padding: 9px 14px; background: #fff; border: 1px solid #E7E5E4; border-left: none; font-size: 13px; color: #57534E; line-height: 1.75; }
+.action-content strong { color: #292524; font-weight: 600; }
+.action-content code { font-family: 'JetBrains Mono', Consolas, monospace; background: rgba(20,184,166,0.08); color: #0F766E; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+.action-content a { color: #14B8A6; }
+
+.seo-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+.seo-table th { background: #F5F5F4; text-align: left; padding: 9px 12px; font-weight: 600; color: #292524; border-bottom: 2px solid #E7E5E4; }
+.seo-table td { padding: 9px 12px; border-bottom: 1px solid #F5F5F4; color: #57534E; }
+.seo-table tr:hover td { background: rgba(20,184,166,0.04); }
+
+.keyword-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.keyword-tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+.kw-brand { background: rgba(20,184,166,0.10); color: #0F766E; }
+.kw-wb { background: rgba(56,189,248,0.10); color: #0284C7; }
+.kw-agent { background: rgba(251,146,60,0.10); color: #C2410C; }
+.kw-office { background: rgba(34,197,94,0.10); color: #15803D; }
+.kw-xiaoe { background: rgba(168,85,247,0.10); color: #7C3AED; }
+.kw-long { background: rgba(244,114,182,0.10); color: #BE185D; }
+
+.result-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 20px 0; }
+.result-card { background: #fff; border: 1px solid #E7E5E4; border-radius: 12px; padding: 18px; }
+.result-card .check { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: rgba(34,197,94,0.15); color: #22C55E; border-radius: 50%; font-size: 14px; margin-bottom: 6px; }
+.result-card h4 { font-size: 14px; font-weight: 600; color: #292524; margin-bottom: 4px; }
+.result-card p { font-size: 13px; color: #57534E; margin: 0; }
+
+.takeaway-box { background: linear-gradient(135deg, rgba(20,184,166,0.06), rgba(56,189,248,0.06)); border: 1px solid #E7E5E4; border-radius: 16px; padding: 24px; margin: 24px 0; }
+.takeaway-box h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; color: #292524; }
+.takeaway-list { list-style: none; padding: 0; counter-reset: takeaway; }
+.takeaway-list li { position: relative; padding-left: 34px; margin-bottom: 12px; color: #57534E; line-height: 1.7; counter-increment: takeaway; }
+.takeaway-list li::before { content: counter(takeaway); position: absolute; left: 0; top: 0; width: 22px; height: 22px; background: linear-gradient(135deg, #14B8A6, #38BDF8); color: #fff; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.takeaway-list li strong { color: #292524; }
+
+.seo-search-box { max-width: 560px; margin: 0 auto 28px; }
+.seo-search-form { display: flex; gap: 0; background: #fff; border: 1.5px solid #E7E5E4; border-radius: 20px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.seo-search-form:focus-within { border-color: #2DD4BF; box-shadow: 0 0 0 3px rgba(20,184,166,0.12); }
+.seo-search-input { flex: 1; border: none; outline: none; padding: 11px 18px; font-size: 14px; font-family: inherit; color: #292524; background: transparent; }
+.seo-search-input::placeholder { color: #A8A29E; }
+.seo-search-btn { border: none; background: linear-gradient(135deg, #14B8A6, #38BDF8); color: #fff; padding: 0 22px; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+.seo-search-btn:hover { opacity: 0.9; }
+.seo-search-hint { text-align: center; font-size: 12px; color: #A8A29E; margin-top: 6px; }
+
 /* ===== Mobile Responsive ===== */
 
 /* Tablet & below */
@@ -461,6 +531,17 @@ a:hover { color: var(--color-primary-800); }
   .footer-qr { width: 160px; height: 237px; }
   .footer-text h3 { font-size: 14px; }
   .footer-text p { font-size: 12px; }
+
+  /* SEO Tutorial */
+  .seo-stats { grid-template-columns: repeat(2, 1fr); }
+  .result-grid { grid-template-columns: 1fr; }
+  .seo-hero { padding: 28px 20px; }
+  .seo-hero h2 { font-size: 22px; }
+  .action-label { min-width: 80px; font-size: 11px; }
+  .action-content { font-size: 12.5px; }
+  .prompt-box, .code-block { padding: 12px 14px; font-size: 12px; }
+  .seo-search-input { font-size: 13px; padding: 10px 14px; }
+  .seo-search-btn { padding: 0 16px; font-size: 13px; }
 }
 
 /* Phone */
@@ -508,6 +589,20 @@ a:hover { color: var(--color-primary-800); }
 
   .footer-qr { width: 140px; height: 207px; }
   .footer-contact-item { font-size: 12px; }
+
+  /* SEO Tutorial phone */
+  .seo-hero { padding: 20px 14px; border-radius: 10px; }
+  .seo-hero h2 { font-size: 18px; }
+  .step-header h3 { font-size: 16px; }
+  .step-header .step-num { width: 28px; height: 28px; font-size: 13px; }
+  .action-label { min-width: 60px; padding: 7px 8px; font-size: 10px; }
+  .action-content { padding: 7px 10px; font-size: 11.5px; }
+  .prompt-box, .code-block { padding: 10px; font-size: 11px; }
+  .seo-table { font-size: 11px; }
+  .seo-table th, .seo-table td { padding: 7px 8px; }
+  .takeaway-box { padding: 16px 12px; }
+  .seo-search-input { font-size: 12px; padding: 9px 12px; }
+  .seo-search-btn { padding: 0 14px; font-size: 12px; }
 }
 </style>
 </head>
@@ -529,6 +624,7 @@ a:hover { color: var(--color-primary-800); }
       <a href="skills.html">Skills</a>
       <a href="xiaoe-agent-blog.html">小鹅通</a>
       <a href="ai-agent-cases.html" class="active">AI案例</a>
+      <a href="javascript:void(0)" onclick="switchTab('tab6', document.querySelectorAll('.tab-btn')[5])">SEO实战</a>
       <a href="index.html" class="back-btn">← 返回首页</a>
     </div>
   </div>
@@ -572,6 +668,7 @@ a:hover { color: var(--color-primary-800); }
     <button class="tab-btn" onclick="switchTab('tab3', this)">🏗️ 产品架构</button>
     <button class="tab-btn" onclick="switchTab('tab4', this)">💼 客户宣讲</button>
     <button class="tab-btn" onclick="switchTab('tab5', this)">💻 CodeBuddy</button>
+    <button class="tab-btn" onclick="switchTab('tab6', this)">🔍 SEO实战</button>
   </div>
 
 
@@ -2565,6 +2662,263 @@ a:hover { color: var(--color-primary-800); }
 
     <div class="callout callout-warning">
       <strong>资料来源：</strong>以上内容整理自腾讯云CodeBuddy产品介绍文档（2025），数据截至2026年4月。
+    </div>
+
+  </div>
+
+  <!-- Tab 6: SEO 实战 -->
+  <div id="tab6" class="tab-content">
+
+    <div class="section-heading">
+      <span class="icon">🔍</span>
+      <h2>用 WorkBuddy 做百度SEO — 完整操作教程</h2>
+      <span class="badge">7步 · 149关键词</span>
+    </div>
+
+    <!-- SEO Hero -->
+    <div class="seo-hero">
+      <span class="seo-hero-tag">SEO 实战 · 完整操作教程</span>
+      <h2>用 WorkBuddy 做百度SEO关键词</h2>
+      <p class="seo-hero-sub">每一步写清楚：你对 WorkBuddy 说什么 → WorkBuddy 做了什么 → 结果怎么验证。照着做，一下午从零搭好百度SEO全套。</p>
+      <div class="seo-hero-meta">
+        <span>📅 2026-07-30</span>
+        <span>⏱ 约3小时</span>
+        <span>🔧 WorkBuddy + GitHub Pages</span>
+      </div>
+    </div>
+
+    <!-- Search Box -->
+    <div class="seo-search-box">
+      <form class="seo-search-form" action="https://www.baidu.com/s" method="get" target="_blank" onsubmit="var q=this.querySelector('.seo-search-input');q.name='wd';q.value='site:simouxuan.com '+q.value;">
+        <input type="text" class="seo-search-input" placeholder="搜索本站文章，如：WorkBuddy 教程、AI Agent 案例…" autocomplete="off">
+        <button type="submit" class="seo-search-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          搜索
+        </button>
+      </form>
+      <p class="seo-search-hint">输入关键词，通过百度搜索本站内容</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="seo-stats">
+      <div class="seo-stat-card"><div class="seo-stat-num">7步</div><div class="seo-stat-label">全流程</div></div>
+      <div class="seo-stat-card"><div class="seo-stat-num">149</div><div class="seo-stat-label">关键词</div></div>
+      <div class="seo-stat-card"><div class="seo-stat-num">10</div><div class="seo-stat-label">页面优化</div></div>
+      <div class="seo-stat-card"><div class="seo-stat-num">¥几十</div><div class="seo-stat-label">年费成本</div></div>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step-block">
+      <div class="step-header"><span class="step-num">1</span><h3>买域名 + 绑定 GitHub Pages</h3></div>
+      <p class="step-intro">博客默认地址是 <code>fanxion98.github.io</code>，百度不收录。第一步买独立域名。</p>
+      <div class="prompt-box">我买了域名 simouxuan.com，帮我绑定到 GitHub Pages。仓库地址是 fanxion98/fanxion98.github.io</div>
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">
+          <strong>① 创建 CNAME 文件</strong> — 在仓库根目录创建 <code>CNAME</code>，内容写 <code>www.simouxuan.com</code><br>
+          <strong>② 生成 DNS 配置说明</strong> — 告诉你去 DNSPod 加这些记录：
+        </div>
+      </div>
+      <div class="code-block"><code># A记录（指向GitHub Pages服务器，共4条）
+类型: A    主机记录: @     记录值: 185.199.108.153
+类型: A    主机记录: @     记录值: 185.199.109.153
+类型: A    主机记录: @     记录值: 185.199.110.153
+类型: A    主机记录: @     记录值: 185.199.111.153
+
+# CNAME记录（www子域名指向GitHub Pages）
+类型: CNAME  主机记录: www   记录值: fanxion98.github.io</code></div>
+      <div class="callout callout-warning">
+        <strong>⚠️ 踩坑实录：</strong>CNAME 文件里写 <code>simouxuan.com</code>（不带 www）→ 百度验证 www 域名时会 301 跳转 → 验证失败。<strong>正确写法：www.simouxuan.com</strong>。DNSPod 免费版境外解析只支持 2 条 IP，手动补加剩余 2 条。
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-block">
+      <div class="step-header"><span class="step-num">2</span><h3>HTTPS 证书</h3></div>
+      <p class="step-intro">域名绑好后浏览器显示"不安全"。GitHub Pages 自动签发 Let's Encrypt 证书。</p>
+      <div class="prompt-box">域名绑好了但浏览器显示不安全，HTTPS 证书还没生效，帮我触发一下</div>
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">在仓库根目录执行空 commit 触发重新部署：<code>git commit --allow-empty -m "触发重新部署"</code> 然后 <code>git push</code></div>
+      </div>
+      <div class="callout callout-success">
+        <strong>✅ 结果：</strong>约 30 分钟后 GitHub 自动签发证书，浏览器显示安全锁 🔒
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-block">
+      <div class="step-header"><span class="step-num">3</span><h3>技术 SEO 全套优化</h3></div>
+      <p class="step-intro">告诉 WorkBuddy "做SEO优化"，它写 Python 脚本批量改 10 个页面。</p>
+      <div class="prompt-box">帮我对网站做SEO优化，包括：robots.txt、sitemap.xml、每页加meta标签和canonical、JSON-LD结构化数据、移动端适配。仓库里所有 html 文件都要改。</div>
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">
+          <strong>① 新建 <code>robots.txt</code></strong> — 允许 Baiduspider，指向 sitemap<br>
+          <strong>② 新建 <code>sitemap.xml</code></strong> — 列出全部 10 个页面 URL + 更新频率<br>
+          <strong>③ 批量改 10 个 HTML 文件</strong> — 每个文件加：
+        </div>
+      </div>
+      <table class="seo-table">
+        <thead><tr><th>优化项</th><th>具体操作</th></tr></thead>
+        <tbody>
+          <tr><td><strong>h1 标签</strong></td><td>每页只留 1 个 h1（之前有多个）</td></tr>
+          <tr><td><strong>meta description</strong></td><td>每页加描述，100-150 字</td></tr>
+          <tr><td><strong>canonical</strong></td><td>每页指向自身 URL，防重复收录</td></tr>
+          <tr><td><strong>Open Graph</strong></td><td>og:title / og:description / og:url</td></tr>
+          <tr><td><strong>JSON-LD</strong></td><td>Article 类型结构化数据</td></tr>
+          <tr><td><strong>移动适配</strong></td><td>@media 900px / 480px 两档响应式 CSS</td></tr>
+        </tbody>
+      </table>
+      <div class="action-row">
+        <div class="action-label label-verify">验证</div>
+        <div class="action-content">
+          打开 <code>https://www.simouxuan.com/robots.txt</code> → 看到内容正常。<br>
+          打开 <code>https://www.simouxuan.com/sitemap.xml</code> → 看到 10 条 URL。<br>
+          浏览器右键"查看源代码" → 能搜到 meta description 和 JSON-LD。
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-block">
+      <div class="step-header"><span class="step-num">4</span><h3>百度站长平台验证</h3></div>
+      <p class="step-intro">让百度知道你的网站存在。</p>
+      <div class="prompt-box">百度站长平台让我下载验证文件 baidu_verify_codeva-nJSG61v6a6.html，帮我放到网站根目录并部署上去</div>
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">
+          <strong>① 把验证文件复制到仓库根目录</strong><br>
+          <strong>② git push 推送到 GitHub</strong>（如果 git push 凭据过期，用 <code>gh auth login --web</code> 设备码流程重新登录）<br>
+          <strong>③ 等 45 秒 GitHub Pages 部署完成</strong>
+        </div>
+      </div>
+      <div class="action-row">
+        <div class="action-label label-verify">验证</div>
+        <div class="action-content">WorkBuddy 用 curl 检查 <code>https://www.simouxuan.com/baidu_verify_codeva-nJSG61v6a6.html</code> → 返回 HTTP 200 + 验证码内容正确 → 回百度点"完成验证"</div>
+      </div>
+      <div class="callout callout-warning">
+        <strong>⚠️ 踩坑实录：</strong>验证反复失败 → 原因是 CNAME 写的 <code>simouxuan.com</code>（不带 www），百度验证的是 <code>www.simouxuan.com</code>，访问时 301 跳转导致验证文件返回 301 而非 200。改 CNAME 为 <code>www.simouxuan.com</code> 后验证通过。
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step-block">
+      <div class="step-header"><span class="step-num">5</span><h3>提交 Sitemap + URL</h3></div>
+      <p class="step-intro">验证通过后，主动告诉百度有哪些页面。</p>
+      <div class="prompt-box">百度验证通过了，帮我整理一下需要提交的URL列表，我要去百度站长平台提交sitemap和链接</div>
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">
+          <strong>① 确认 sitemap.xml 已部署</strong> — 地址 <code>https://www.simouxuan.com/sitemap.xml</code><br>
+          <strong>② 列出 8 个重要页面 URL</strong> 供你逐个提交：
+        </div>
+      </div>
+      <div class="code-block"><code>https://www.simouxuan.com/
+https://www.simouxuan.com/ai-agent-cases.html
+https://www.simouxuan.com/skills.html
+https://www.simouxuan.com/part1.html
+https://www.simouxuan.com/part2.html
+https://www.simouxuan.com/part3.html
+https://www.simouxuan.com/seo-case.html
+https://www.simouxuan.com/ai-manual.html</code></div>
+      <div class="action-row">
+        <div class="action-label label-verify">手动操作</div>
+        <div class="action-content">
+          <strong>提交 Sitemap：</strong>百度搜索资源平台 → 普通收录 → 填入 <code>https://www.simouxuan.com/sitemap.xml</code> → 提交<br>
+          <strong>逐条提交 URL：</strong>链接提交 → 逐个粘贴上面的 URL（每天可提交 10-20 条）
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step-block">
+      <div class="step-header"><span class="step-num">6</span><h3>149 个关键词策略 + 部署</h3></div>
+      <p class="step-intro"><strong>核心概念：</strong>百度没有"提交关键词"功能。关键词写在 HTML 的 <code>meta keywords</code> 标签里，百度爬虫抓取页面时自动提取。</p>
+      <div class="prompt-box">帮我想一些我个人博客的搜索关键词，要覆盖用户可能搜的各种词。博客主题是 WorkBuddy、AI Agent、AI办公、小鹅通、个人博客</div>
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">按内容主题整理了 <strong>6 大类共 149 个关键词</strong>：</div>
+      </div>
+      <div class="keyword-cloud">
+        <span class="keyword-tag kw-brand">品牌词：思陌选、小饭、小饭博客</span>
+        <span class="keyword-tag kw-wb">WorkBuddy：教程、下载、Skills、案例</span>
+        <span class="keyword-tag kw-agent">AI Agent：智能体、场景、案例、实战</span>
+        <span class="keyword-tag kw-office">AI办公：文档、数据分析、PPT、会议</span>
+        <span class="keyword-tag kw-xiaoe">小鹅通+电商：知识付费、店铺管理</span>
+        <span class="keyword-tag kw-long">长尾词：WorkBuddy vs Cursor、vs Copilot</span>
+      </div>
+      <div class="callout">
+        <strong>💡 关键原则：</strong>不是把 149 个词全塞进一个页面。按页面主题分配：首页放全 6 大类做流量入口，子页面放垂直相关词。
+      </div>
+      <table class="seo-table">
+        <thead><tr><th>页面</th><th>关键词数</th><th>分配策略</th></tr></thead>
+        <tbody>
+          <tr><td>首页 index.html</td><td>38 个</td><td>全 6 大类，品牌词 + 核心词 + 长尾词</td></tr>
+          <tr><td>AI Agent案例</td><td>20 个</td><td>AI Agent 相关词为主</td></tr>
+          <tr><td>Skills技能</td><td>15 个</td><td>WorkBuddy + Skills 相关</td></tr>
+          <tr><td>使用手册</td><td>17 个</td><td>WorkBuddy 教程 + 下载 + 使用</td></tr>
+          <tr><td>其他 4 个页面</td><td>各 14-16 个</td><td>按页面内容分配相关词</td></tr>
+        </tbody>
+      </table>
+      <div class="prompt-box">这些关键词全部帮我加进去，按页面内容分配到对应的 meta keywords 标签里。8 个 HTML 文件都要改。</div>
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">写了一个 Python 脚本，用 <code>re.sub</code> 正则匹配每个文件的 <code>&lt;meta name="keywords" ...&gt;</code> 标签，替换为分配好的关键词。一次性改完 8 个文件。</div>
+      </div>
+      <div class="code-block"><code># 脚本核心逻辑
+import re
+
+# 每个页面分配的关键词
+keywords_map = {
+    "index.html": "思陌选,小饭,小饭博客,...（38个词）",
+    "ai-agent-cases.html": "AI Agent,AI智能体,...（20个词）",
+    "skills.html": "WorkBuddy Skills,...（15个词）",
+    # ... 共8个文件
+}
+
+# 正则替换 meta keywords
+for filename, keywords in keywords_map.items():
+    content = open(filename, "r", encoding="utf-8").read()
+    new_content = re.sub(
+        r'&lt;meta name="keywords" content="[^"]*"&gt;',
+        f'&lt;meta name="keywords" content="{keywords}"&gt;',
+        content
+    )
+    open(filename, "w", encoding="utf-8").write(new_content)
+    print(f"✅ {filename} → {len(keywords.split(','))} 个关键词")</code></div>
+      <div class="action-row">
+        <div class="action-label label-verify">验证</div>
+        <div class="action-content">WorkBuddy 推送上线后，用 WebFetch 打开每个页面查看源代码 → 确认 <code>meta keywords</code> 标签里包含了分配的关键词。8 个文件全部更新成功，149 个关键词全部上线。</div>
+      </div>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="step-block">
+      <div class="step-header"><span class="step-num">7</span><h3>完成成果</h3></div>
+      <div class="result-grid">
+        <div class="result-card"><div class="check">✓</div><h4>独立域名上线</h4><p>www.simouxuan.com 正常访问</p></div>
+        <div class="result-card"><div class="check">✓</div><h4>HTTPS 安全</h4><p>Let's Encrypt 证书已签发</p></div>
+        <div class="result-card"><div class="check">✓</div><h4>SEO 技术合规</h4><p>robots / sitemap / meta / JSON-LD 全就位</p></div>
+        <div class="result-card"><div class="check">✓</div><h4>百度站长验证通过</h4><p>网站被百度收录系统识别</p></div>
+        <div class="result-card"><div class="check">✓</div><h4>Sitemap 已提交</h4><p>百度定期抓取 10 个页面</p></div>
+        <div class="result-card"><div class="check">✓</div><h4>149 个关键词上线</h4><p>6 大类按页面分配完成</p></div>
+      </div>
+    </div>
+
+    <!-- Takeaways -->
+    <div class="step-block">
+      <div class="takeaway-box">
+        <h3>3 条核心经验</h3>
+        <ol class="takeaway-list">
+          <li><strong>先买域名再做 SEO</strong> — 没独立域名百度不收。域名年费几十元，不需要服务器。GitHub Pages 免费托管。</li>
+          <li><strong>技术 SEO 不能省</strong> — robots.txt、sitemap.xml、meta 标签是搜索引擎理解你网站的"语言"。WorkBuddy 一条指令批量改完。</li>
+          <li><strong>主动提交比等抓取快</strong> — 提交 sitemap + 逐个提交 URL，1-3 天被抓取。不提交可能等几周。关键词写在 meta keywords 里，百度爬虫自动提取。</li>
+        </ol>
+      </div>
+      <div class="callout">
+        <strong>💡 SEO 是慢活：</strong>从提交到首页排名一般 1-3 个月。基础设施搭好了，剩下就是持续产出内容和等。
+      </div>
     </div>
 
   </div>
