@@ -231,6 +231,7 @@ a:hover { color: var(--color-primary-800); }
 .tag-mkt { background: rgba(251,146,60,0.1); color: var(--c-coral); }
 .tag-mgmt { background: rgba(244,114,182,0.1); color: var(--c-purple); }
 .tag-creative { background: rgba(52,211,153,0.1); color: var(--c-green); }
+.tag-seo { background: rgba(34,197,94,0.12); color: #16A34A; }
 
 .case-card-body { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .case-pain, .case-solution {
@@ -580,7 +581,7 @@ a:hover { color: var(--color-primary-800); }
     <div class="section-heading">
       <span class="icon">📋</span>
       <h2>AI Agent 场景案例 — 真实客户落地</h2>
-      <span class="badge">18个案例 · 多行业</span>
+      <span class="badge">19个案例 · 多行业</span>
     </div>
 
     <p>以下案例均来自 WorkBuddy/CodeBuddy 真实客户落地实践，覆盖金属贸易、人力资源、税务、教育、金融、ISV、医疗、汽车、制造、MCN、检测、物流、生物医药、纺织等多个行业。</p>
@@ -593,6 +594,7 @@ a:hover { color: var(--color-primary-800); }
       <button class="tab-btn" onclick="filterCases('mgmt',this)" style="cursor:pointer;">管理提效</button>
       <button class="tab-btn" onclick="filterCases('creative',this)" style="cursor:pointer;">内容生成</button>
       <button class="tab-btn" onclick="filterCases('ops',this)" style="cursor:pointer;">运维提效</button>
+      <button class="tab-btn" onclick="filterCases('seo',this)" style="cursor:pointer;">SEO网站</button>
     </div>
 
     <!-- Case 1: 合同/报价单 -->
@@ -1087,6 +1089,40 @@ a:hover { color: var(--color-primary-800); }
             </tbody>
           </table>
         </div>
+      </div>
+    </div>
+
+    <!-- Case 19: 用WorkBuddy打通百度SEO全流程 (个人实战) -->
+    <div class="case-card filter-seo" data-cat="seo">
+      <div class="case-card-header">
+        <span class="case-card-icon">🔍</span>
+        <span class="case-card-title">用WorkBuddy打通百度SEO全流程：域名→HTTPS→技术优化→站长验证→关键词布局</span>
+        <span class="case-card-tag tag-seo">SEO网站</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-pain">
+          <h4>😫 传统痛点</h4>
+          <p>个人博客托管在GitHub Pages，没有自定义域名，百度完全不收录。缺乏robots.txt、sitemap.xml、meta标签等SEO基础设施。页面H1标签过多、移动端不适配、无HTTPS证书。不懂SEO技术，不知道从何下手，买了域名不知道怎么配DNS，HTTPS显示"不安全"，百度站长验证反复失败。</p>
+        </div>
+        <div class="case-solution">
+          <h4>🦞 WorkBuddy AI 提效方案 · 8步全流程</h4>
+          <p>① <strong>域名绑定</strong>：腾讯云购买simouxuan.com，CNAME配置+DNS A记录+www域名坑排查<br>
+          ② <strong>HTTPS证书</strong>：GitHub Pages自动签发Let's Encrypt，空commit触发重建<br>
+          ③ <strong>技术SEO全套</strong>：robots.txt+sitemap.xml+h1修复+meta/OG/JSON-LD结构化数据<br>
+          ④ <strong>移动适配</strong>：900px/480px两档断点响应式CSS<br>
+          ⑤ <strong>百度站长验证</strong>：文件验证+301跳转踩坑→CNAME改www主域名<br>
+          ⑥ <strong>Sitemap提交</strong>：百度站长平台提交sitemap+8个URL逐个提交<br>
+          ⑦ <strong>149个关键词布局</strong>：6大类关键词按8个页面主题精准分配<br>
+          ⑧ <strong>SEO案例复盘</strong>：全流程整理成案例页面，本身就是优质内容</p>
+        </div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-item"><div class="case-result-num">8步</div><div class="case-result-label">全流程打通</div></div>
+        <div class="case-result-item"><div class="case-result-num">149</div><div class="case-result-label">关键词部署</div></div>
+        <div class="case-result-item"><div class="case-result-num">10个</div><div class="case-result-label">页面SEO优化</div></div>
+      </div>
+      <div style="padding:12px 16px;border-top:1px solid #E5E7EB;">
+        <a href="https://www.simouxuan.com/seo-case.html" target="_blank" style="color:#16A34A;font-size:13px;font-weight:500;text-decoration:none;">查看完整SEO实战案例 → www.simouxuan.com/seo-case.html</a>
       </div>
     </div>
 
