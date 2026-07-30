@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="用WorkBuddy从零完成个人博客百度SEO优化全流程实战案例：域名绑定、DNS配置、HTTPS证书、robots.txt、sitemap.xml、meta标签、JSON-LD结构化数据、149个关键词策略、百度站长平台验证与提交，完整可复现。">
+<title>用 WorkBuddy 打通百度SEO全流程 - 个人博客优化实战案例 | 小饭</title>
+<meta name="keywords" content="WorkBuddy SEO,百度SEO优化,SEO实战案例,网站SEO优化,博客SEO,百度站长平台,sitemap提交,关键词优化,meta标签优化,JSON-LD结构化数据,HTTPS证书,域名绑定GitHub Pages,DNS配置,DNSPod,robots.txt,移动端适配,响应式设计,WorkBuddy案例,AI做SEO,WorkBuddy自动化SEO">
+<link rel="canonical" href="https://www.simouxuan.com/seo-case.html">
+<meta property="og:title" content="用 WorkBuddy 打通百度SEO全流程 - 个人博客优化实战案例 | 小饭">
+<meta property="og:description" content="用WorkBuddy从零完成个人博客百度SEO优化全流程实战案例：域名绑定、DNS配置、HTTPS证书、技术SEO、149个关键词策略、百度站长平台验证与提交。">
+<meta property="og:url" content="https://www.simouxuan.com/seo-case.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="小饭的 AI 实战笔记">
+<meta property="og:locale" content="zh_CN">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "用 WorkBuddy 打通百度SEO全流程 - 个人博客优化实战案例",
+  "description": "用WorkBuddy从零完成个人博客百度SEO优化全流程实战案例：域名绑定、DNS配置、HTTPS证书、技术SEO、149个关键词策略、百度站长平台验证与提交。",
+  "url": "https://www.simouxuan.com/seo-case.html",
+  "inLanguage": "zh-CN",
+  "author": {
+    "@type": "Person",
+    "name": "小饭"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "小饭"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "小饭的 AI 实战笔记",
+    "url": "https://www.simouxuan.com/"
+  }
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-primary-50: rgba(20, 184, 166, 0.08);
+  --color-primary-100: rgba(20, 184, 166, 0.15);
+  --color-primary-400: #2DD4BF;
+  --color-primary-600: #14B8A6;
+  --color-primary-800: #0F766E;
+  --c-teal: #14B8A6;
+  --c-blue: #38BDF8;
+  --c-coral: #FB923C;
+  --c-purple: #F472B6;
+  --c-green: #22C55E;
+  --bg: #FAFAF9;
+  --bg-card: #FFFFFF;
+  --bg-soft: #F5F5F4;
+  --bg-hero: linear-gradient(135deg, #F0FDFA 0%, #ECFEFF 30%, #F0F9FF 60%, #FDF4FF 100%);
+  --text-primary: #292524;
+  --text-secondary: #57534E;
+  --text-tertiary: #A8A29E;
+  --border: #E7E5E4;
+  --border-light: #F5F5F4;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 12px 40px rgba(20, 184, 166, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
+  --font-serif: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --topbar-h: 56px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: var(--color-primary-600); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--color-primary-800); }
+
+img { max-width: 100%; height: auto; }
+
+/* ===== Top Nav ===== */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--topbar-h);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+.topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.blog-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.blog-logo:hover { color: var(--color-primary-600); }
+.blog-logo-icon {
+  width: 30px; height: 30px;
+  background: linear-gradient(135deg, #14B8A6, #38BDF8);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 14px; font-weight: 600;
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.3);
+}
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.topbar-nav a {
+  padding: 6px 14px;
+  border-radius: var(--radius-xl);
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+.topbar-nav a:hover {
+  background: var(--color-primary-50);
+  color: var(--color-primary-600);
+}
+.topbar-nav a.active {
+  background: var(--color-primary-100);
+  color: var(--color-primary-600);
+}
+
+/* ===== Layout ===== */
+.page-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: calc(var(--topbar-h) + 40px) 24px 80px;
+}
+
+/* ===== Hero ===== */
+.case-hero {
+  background: var(--bg-hero);
+  border-radius: var(--radius-xl);
+  padding: 48px 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.case-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(20, 184, 166, 0.12);
+  color: var(--color-primary-600);
+  padding: 6px 16px;
+  border-radius: var(--radius-xl);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.case-hero h1 {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+.case-hero-sub {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+.case-hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+.case-hero-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===== Stats ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+}
+.stat-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.stat-num {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  background: linear-gradient(135deg, #14B8A6, #38BDF8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+/* ===== Section ===== */
+.case-section {
+  margin-bottom: 48px;
+}
+.case-section h2 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.case-section h2 .step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, #14B8A6, #38BDF8);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.case-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 24px 0 12px;
+}
+.case-section p {
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 12px;
+}
+.case-section ul, .case-section ol {
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 12px;
+  padding-left: 24px;
+}
+.case-section li {
+  margin-bottom: 6px;
+}
+.case-section strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.case-section code {
+  font-family: var(--font-mono);
+  background: var(--color-primary-50);
+  color: var(--color-primary-800);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+.case-section pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin: 16px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.case-section pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* Callout */
+.callout {
+  background: rgba(20, 184, 166, 0.06);
+  border-left: 3px solid var(--color-primary-600);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+.callout-warning {
+  background: rgba(251, 146, 60, 0.06);
+  border-left-color: var(--c-coral);
+}
+.callout-success {
+  background: rgba(34, 197, 94, 0.06);
+  border-left-color: var(--c-green);
+}
+.callout-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.callout p {
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+  margin: 24px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-primary-400), var(--c-blue));
+  border-radius: 2px;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 3px solid var(--color-primary-600);
+  z-index: 1;
+}
+.timeline-time {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  margin-bottom: 4px;
+}
+.timeline-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.timeline-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Table */
+.seo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 13px;
+}
+.seo-table th {
+  background: var(--bg-soft);
+  text-align: left;
+  padding: 10px 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border);
+}
+.seo-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-secondary);
+}
+.seo-table tr:hover td {
+  background: var(--color-primary-50);
+}
+
+/* Keyword tags */
+.keyword-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.keyword-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-xl);
+  font-size: 12px;
+  font-weight: 500;
+}
+.kw-brand { background: rgba(20, 184, 166, 0.10); color: #0F766E; }
+.kw-wb { background: rgba(56, 189, 248, 0.10); color: #0284C7; }
+.kw-agent { background: rgba(251, 146, 60, 0.10); color: #C2410C; }
+.kw-office { background: rgba(34, 197, 94, 0.10); color: #15803D; }
+.kw-xiaoe { background: rgba(168, 85, 247, 0.10); color: #7C3AED; }
+.kw-long { background: rgba(244, 114, 182, 0.10); color: #BE185D; }
+
+/* Result cards */
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+.result-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.result-card .check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; height: 24px;
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--c-green);
+  border-radius: 50%;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.result-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.result-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Takeaway */
+.takeaway-box {
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.06), rgba(56, 189, 248, 0.06));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin: 32px 0;
+}
+.takeaway-box h3 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+.takeaway-list {
+  list-style: none;
+  padding: 0;
+  counter-reset: takeaway;
+}
+.takeaway-list li {
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  counter-increment: takeaway;
+}
+.takeaway-list li::before {
+  content: counter(takeaway);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px; height: 24px;
+  background: linear-gradient(135deg, #14B8A6, #38BDF8);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.takeaway-list li strong {
+  color: var(--text-primary);
+}
+
+/* Footer */
+.case-footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.case-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  background: var(--color-primary-600);
+  color: #fff;
+  border-radius: var(--radius-xl);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.case-footer a:hover {
+  background: var(--color-primary-800);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(20, 184, 166, 0.3);
+}
+.case-footer p {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .result-grid { grid-template-columns: 1fr; }
+  .case-hero { padding: 36px 24px; }
+  .case-hero h1 { font-size: 24px; }
+  .case-hero-sub { font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+  .page-wrap { padding: calc(var(--topbar-h) + 24px) 16px 60px; }
+  .topbar { padding: 0 12px; }
+  .topbar-nav { gap: 0; }
+  .topbar-nav a { padding: 4px 8px; font-size: 12px; }
+  .blog-logo span { display: none; }
+  .case-hero { padding: 28px 16px; border-radius: var(--radius-md); }
+  .case-hero h1 { font-size: 20px; }
+  .case-hero-sub { font-size: 13px; }
+  .case-hero-meta { gap: 12px; font-size: 12px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stat-card { padding: 16px 8px; }
+  .stat-num { font-size: 22px; }
+  .stat-label { font-size: 11px; }
+  .case-section h2 { font-size: 18px; }
+  .case-section h2 .step-num { width: 28px; height: 28px; font-size: 12px; }
+  .case-section h3 { font-size: 15px; }
+  .case-section p, .case-section li { font-size: 13px; }
+  .case-section pre { padding: 14px; font-size: 12px; }
+  .seo-table { font-size: 12px; }
+  .seo-table th, .seo-table td { padding: 8px 10px; }
+  .callout { padding: 12px 14px; }
+  .takeaway-box { padding: 20px 16px; }
+  .timeline { padding-left: 24px; }
+  .timeline::before { left: 8px; }
+  .timeline-item::before { left: -22px; width: 10px; height: 10px; }
+}
+
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 99;
+  color: var(--color-primary-600);
+}
+.back-to-top.visible { opacity: 1; visibility: visible; }
+.back-to-top:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+</style>
+</head>
+<body>
+
+<!-- Top Nav -->
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="blog-logo">
+      <span class="blog-logo-icon">W</span>
+      <span>小饭的 AI 实战笔记</span>
+    </a>
+    <div class="topbar-nav">
+      <a href="index.html">首页</a>
+      <a href="index.html#series">系列</a>
+      <a href="index.html#articles">文章</a>
+      <a href="skills.html">Skills</a>
+      <a href="ai-agent-cases.html">AI案例</a>
+      <a href="seo-case.html" class="active">SEO实战</a>
+    </div>
+  </div>
+</nav>
+
+<div id="top"></div>
+
+<!-- Main Content -->
+<div class="page-wrap">
+
+  <!-- Hero -->
+  <section class="case-hero">
+    <span class="case-hero-tag">SEO 实战案例</span>
+    <h1>用 WorkBuddy 打通百度SEO全流程</h1>
+    <p class="case-hero-sub">从买域名到提交 sitemap，从技术SEO到149个关键词布局——一下午时间，用 WorkBuddy 完成个人博客的完整SEO优化链路。</p>
+    <div class="case-hero-meta">
+      <span>📅 2026-07-30</span>
+      <span>⏱ 全流程约 3 小时</span>
+      <span>🔧 工具：WorkBuddy + GitHub Pages</span>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-num">8</div>
+      <div class="stat-label">优化页面数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">149</div>
+      <div class="stat-label">部署关键词</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">6</div>
+      <div class="stat-label">关键词大类</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">SEO技术项</div>
+    </div>
+  </div>
+
+  <!-- Background -->
+  <section class="case-section">
+    <h2><span class="step-num">0</span>背景：为什么要做SEO？</h2>
+    <p>我的个人博客「小饭的 AI 实战笔记」托管在 GitHub Pages 上，内容涵盖 WorkBuddy 使用手册、AI Agent 案例、Skills 技能等 28 篇原创文章。但存在三个问题：</p>
+    <ul>
+      <li><strong>没有独立域名</strong> — 用的是 <code>fanxion98.github.io</code>，百度对 GitHub 子域名收录不友好</li>
+      <li><strong>没有任何SEO基础设施</strong> — 没有 robots.txt、sitemap.xml、meta 标签、结构化数据</li>
+      <li><strong>百度完全收录不了</strong> — 没有提交过百度站长平台，搜索引擎根本不知道这个网站存在</li>
+    </ul>
+    <p>目标很简单：让百度能搜到「思陌选」「WorkBuddy 教程」「AI Agent 案例」这些关键词时，我的博客能出现在搜索结果里。</p>
+    <div class="callout">
+      <div class="callout-title">💡 核心思路</div>
+      <p>不是「写完文章等百度来抓」，而是主动出击：买域名 → 配DNS → 上HTTPS → 做技术SEO → 验证站长平台 → 提交sitemap → 布局关键词 → 提交URL。每一步都用 WorkBuddy 完成。</p>
+    </div>
+  </section>
+
+  <!-- Step 1: Domain -->
+  <section class="case-section">
+    <h2><span class="step-num">1</span>域名购买与绑定</h2>
+    <h3>1.1 为什么需要独立域名？</h3>
+    <p>GitHub Pages 默认提供 <code>username.github.io</code> 的子域名，但百度对这类域名的收录优先级很低。拥有独立域名有三个好处：</p>
+    <ul>
+      <li>百度更信任独立域名，收录概率大幅提升</li>
+      <li>品牌识别度高 — <code>simouxuan.com</code> 比 <code>fanxion98.github.io</code> 好记</li>
+      <li>未来迁移方便 — 域名跟着你走，不怕平台变动</li>
+    </ul>
+
+    <h3>1.2 操作步骤</h3>
+    <p>在腾讯云购买了 <code>simouxuan.com</code> 域名（思陌选），然后通过 WorkBuddy 完成绑定：</p>
+    <ol>
+      <li>在 GitHub 仓库根目录创建 <code>CNAME</code> 文件，内容为 <code>www.simouxuan.com</code></li>
+      <li>在腾讯云 DNSPod 配置 DNS 解析：
+        <ul>
+          <li>4 条 A 记录：<code>@</code> → <code>185.199.108.153</code> / <code>109</code> / <code>110</code> / <code>111</code></li>
+          <li>1 条 CNAME 记录：<code>www</code> → <code>fanxion98.github.io</code></li>
+        </ul>
+      </li>
+      <li>等待 DNS 生效（通常 10-30 分钟）</li>
+    </ol>
+
+    <div class="callout callout-warning">
+      <div class="callout-title">⚠️ 遇到的坑</div>
+      <p>DNSPod 免费版不支持境外解析，而 GitHub Pages 服务器在境外。解决方案：在 DNSPod 弹出的付费提示中填入 2 个 IP，再手动添加剩余 2 条 A 记录。另外，www 和不带 www 的域名只能选一个作为主域名，否则会出现 301 重定向问题（后面百度验证时踩了这个坑）。</p>
+    </div>
+
+    <h3>1.3 www vs 不带 www</h3>
+    <p>最初 CNAME 设为 <code>simouxuan.com</code>（不带 www），但百度站长平台验证 <code>www.simouxuan.com</code> 时，GitHub Pages 返回 301 重定向到不带 www 的域名，导致百度验证失败。</p>
+    <p><strong>解决方案：</strong>把 CNAME 改为 <code>www.simouxuan.com</code>，让 www 成为主域名。修改后：</p>
+    <ul>
+      <li><code>https://www.simouxuan.com</code> → 200（不跳转）</li>
+      <li><code>https://simouxuan.com</code> → 301 跳转到 www（正常行为）</li>
+    </ul>
+  </section>
+
+  <!-- Step 2: HTTPS -->
+  <section class="case-section">
+    <h2><span class="step-num">2</span>HTTPS 证书签发</h2>
+    <p>域名绑定后，浏览器显示「不安全」，因为还没有 HTTPS 证书。GitHub Pages 支持自动签发 Let's Encrypt 证书，但需要等待。</p>
+    <h3>操作方式</h3>
+    <ul>
+      <li>GitHub Pages 绑定自定义域名后会自动申请证书</li>
+      <li>证书签发通常需要 10-30 分钟</li>
+      <li>如果长时间未签发，用一个空 commit 触发重新部署：<code>git commit --allow-empty -m "触发重新部署"</code></li>
+    </ul>
+    <div class="callout callout-success">
+      <div class="callout-title">✅ 结果</div>
+      <p>空 commit 推送后约 30 分钟，HTTPS 证书签发成功。<code>https://www.simouxuan.com</code> 正常访问，SSL 证书有效期至 10 月 28 日。</p>
+    </div>
+  </section>
+
+  <!-- Step 3: Technical SEO -->
+  <section class="case-section">
+    <h2><span class="step-num">3</span>技术SEO全套优化</h2>
+    <p>这是整个流程中工作量最大的一步。WorkBuddy 对 8 个页面逐一诊断并批量修复，涵盖以下所有技术项：</p>
+
+    <table class="seo-table">
+      <thead>
+        <tr>
+          <th>优化项</th>
+          <th>优化前</th>
+          <th>优化后</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>robots.txt</strong></td>
+          <td>不存在</td>
+          <td>允许 Baiduspider，指向 sitemap</td>
+        </tr>
+        <tr>
+          <td><strong>sitemap.xml</strong></td>
+          <td>不存在</td>
+          <td>8 个页面 URL，含 lastmod/priority</td>
+        </tr>
+        <tr>
+          <td><strong>h1 标签</strong></td>
+          <td>每页多个 h1</td>
+          <td>每页仅 1 个 h1（符合规范）</td>
+        </tr>
+        <tr>
+          <td><strong>meta description</strong></td>
+          <td>缺失</td>
+          <td>每页独立描述</td>
+        </tr>
+        <tr>
+          <td><strong>meta keywords</strong></td>
+          <td>缺失</td>
+          <td>每页 14-38 个关键词</td>
+        </tr>
+        <tr>
+          <td><strong>canonical</strong></td>
+          <td>缺失</td>
+          <td>每页 canonical 指向自身</td>
+        </tr>
+        <tr>
+          <td><strong>Open Graph</strong></td>
+          <td>缺失</td>
+          <td>og:title/description/url/type/site_name/locale</td>
+        </tr>
+        <tr>
+          <td><strong>JSON-LD 结构化数据</strong></td>
+          <td>缺失</td>
+          <td>Schema.org Article/WebSite 标记</td>
+        </tr>
+        <tr>
+          <td><strong>移动端适配</strong></td>
+          <td>不适配手机</td>
+          <td>@media 900px/480px 两档响应式</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>关键代码片段</h3>
+    <p><strong>robots.txt：</strong></p>
+    <pre><code>User-agent: *
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+Sitemap: https://www.simouxuan.com/sitemap.xml</code></pre>
+
+    <p><strong>JSON-LD 结构化数据（每页头部）：</strong></p>
+    <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "WorkBuddy AI 实战笔记",
+  "description": "...",
+  "url": "https://www.simouxuan.com/",
+  "inLanguage": "zh-CN",
+  "author": { "@type": "Person", "name": "小饭" },
+  "publisher": { "@type": "Person", "name": "小饭" },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "小饭的 AI 实战笔记",
+    "url": "https://www.simouxuan.com/"
+  }
+}
+&lt;/script&gt;</code></pre>
+
+    <div class="callout">
+      <div class="callout-title">💡 WorkBuddy 的角色</div>
+      <p>整个技术SEO过程由 WorkBuddy 用 Python 脚本批量完成：<code>fix_h1_tags.py</code> 修复 h1 标签，<code>add_seo_meta.py</code> 添加 meta/OG/JSON-LD。8 个页面在一分钟内全部处理完毕，无需手动逐个修改。</p>
+    </div>
+  </section>
+
+  <!-- Step 4: Baidu Webmaster -->
+  <section class="case-section">
+    <h2><span class="step-num">4</span>百度站长平台验证</h2>
+    <h3>4.1 验证方式选择</h3>
+    <p>百度站长平台提供三种验证方式：HTML 标签验证、文件验证、CNAME 验证。最初尝试 HTML 标签验证，但因为 GitHub Pages 强制 HTTPS 导致 301 跳转，验证失败。改用<strong>文件验证</strong>：</p>
+    <ol>
+      <li>在百度站长平台下载验证文件 <code>baidu_verify_codeva-nJSG61v6a6.html</code></li>
+      <li>通过 GitHub 网页端上传到仓库根目录</li>
+      <li>等待 GitHub Pages 部署（1-3 分钟）</li>
+      <li>访问 <code>https://www.simouxuan.com/baidu_verify_codeva-nJSG61v6a6.html</code> 确认返回 200 + 正确内容</li>
+      <li>回百度站长平台点「完成验证」</li>
+    </ol>
+
+    <h3>4.2 踩坑：www 域名 301 问题</h3>
+    <p>验证时百度请求的是 <code>www.simouxuan.com</code>，但 CNAME 写的是不带 www 的 <code>simouxuan.com</code>，GitHub Pages 返回 301 重定向，百度认为验证失败。</p>
+    <p><strong>解决方案：</strong>把 CNAME 改为 <code>www.simouxuan.com</code>，让 www 成为主域名。修改后验证立即通过。</p>
+
+    <div class="callout callout-success">
+      <div class="callout-title">✅ 验证结果</div>
+      <p>百度站长平台验证通过，网站 <code>www.simouxuan.com</code> 正式被百度收录系统识别。</p>
+    </div>
+  </section>
+
+  <!-- Step 5: Sitemap + URL -->
+  <section class="case-section">
+    <h2><span class="step-num">5</span>提交 Sitemap 与 URL</h2>
+    <h3>5.1 Sitemap 提交</h3>
+    <p>在百度站长平台 → 普通收录 → Sitemap，提交：</p>
+    <pre><code>https://www.simouxuan.com/sitemap.xml</code></pre>
+    <p>提交成功后百度会定期抓取 sitemap 中的 8 个页面 URL。</p>
+
+    <h3>5.2 URL 主动提交</h3>
+    <p>除了 sitemap，还可以在「链接提交」页面逐个提交重要 URL，让百度优先抓取：</p>
+    <pre><code>https://www.simouxuan.com/
+https://www.simouxuan.com/ai-agent-cases.html
+https://www.simouxuan.com/skills.html
+https://www.simouxuan.com/xiaoe-agent-blog.html
+https://www.simouxuan.com/part1.html
+https://www.simouxuan.com/part2.html
+https://www.simouxuan.com/part3.html
+https://www.simouxuan.com/part4.html</code></pre>
+    <p>每天可提交 10-20 条，提交后百度 1-3 天内抓取。</p>
+  </section>
+
+  <!-- Step 6: Keywords -->
+  <section class="case-section">
+    <h2><span class="step-num">6</span>149 个关键词布局策略</h2>
+    <p>百度没有「提交关键词」的功能 — 关键词是通过页面内容、标题、meta 标签传达给百度的。WorkBuddy 帮我整理了 6 大类共 149 个搜索关键词，按页面主题分配到 8 个页面的 meta keywords 中：</p>
+
+    <h3>六大关键词分类</h3>
+    <div class="keyword-cloud">
+      <span class="keyword-tag kw-brand">品牌词</span>
+      <span class="keyword-tag kw-wb">WorkBuddy核心词</span>
+      <span class="keyword-tag kw-agent">AI Agent智能体</span>
+      <span class="keyword-tag kw-office">AI办公提效</span>
+      <span class="keyword-tag kw-xiaoe">小鹅通+电商</span>
+      <span class="keyword-tag kw-long">对比/长尾词</span>
+    </div>
+
+    <table class="seo-table">
+      <thead>
+        <tr>
+          <th>页面</th>
+          <th>关键词数</th>
+          <th>覆盖大类</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>首页 index.html</td><td>38</td><td>全部 6 大类</td></tr>
+        <tr><td>AI Agent 案例</td><td>20</td><td>AI Agent + WorkBuddy</td></tr>
+        <tr><td>Skills 技能</td><td>15</td><td>WorkBuddy 核心</td></tr>
+        <tr><td>小鹅通博客</td><td>14</td><td>小鹅通+电商</td></tr>
+        <tr><td>使用手册 part1</td><td>17</td><td>WorkBuddy 核心</td></tr>
+        <tr><td>实战案例 part2</td><td>15</td><td>AI 办公提效</td></tr>
+        <tr><td>进阶篇 part3</td><td>14</td><td>WorkBuddy 核心</td></tr>
+        <tr><td>岗位行业 part4</td><td>16</td><td>AI 办公提效</td></tr>
+      </tbody>
+    </table>
+
+    <h3>代表性关键词举例</h3>
+    <div class="keyword-cloud">
+      <span class="keyword-tag kw-brand">思陌选</span>
+      <span class="keyword-tag kw-brand">小饭 WorkBuddy</span>
+      <span class="keyword-tag kw-wb">WorkBuddy是什么</span>
+      <span class="keyword-tag kw-wb">WorkBuddy教程</span>
+      <span class="keyword-tag kw-wb">WorkBuddy下载安装</span>
+      <span class="keyword-tag kw-wb">WorkBuddy Skills</span>
+      <span class="keyword-tag kw-wb">WorkBuddy MCP</span>
+      <span class="keyword-tag kw-agent">AI Agent</span>
+      <span class="keyword-tag kw-agent">AI智能体</span>
+      <span class="keyword-tag kw-agent">AI Agent案例</span>
+      <span class="keyword-tag kw-agent">AI Agent应用场景</span>
+      <span class="keyword-tag kw-office">AI办公</span>
+      <span class="keyword-tag kw-office">AI文档生成</span>
+      <span class="keyword-tag kw-office">AI PPT制作</span>
+      <span class="keyword-tag kw-office">AI代码助手</span>
+      <span class="keyword-tag kw-xiaoe">小鹅通AI</span>
+      <span class="keyword-tag kw-xiaoe">小鹅通AI Agent</span>
+      <span class="keyword-tag kw-long">WorkBuddy vs Cursor</span>
+      <span class="keyword-tag kw-long">WorkBuddy vs Copilot</span>
+      <span class="keyword-tag kw-long">WorkBuddy能做什么</span>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">💡 关键词布局原则</div>
+      <p>关键词不是简单堆砌，而是按页面主题分配：首页放全部 6 大类（流量入口），案例页放 AI Agent 相关词，技能页放 Skills 相关词。每页关键词与页面内容强相关，避免被百度判定为关键词堆砌作弊。</p>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="case-section">
+    <h2><span class="step-num">7</span>全流程时间线</h2>
+    <p>以下是整个 SEO 优化过程的完整时间线，展示 WorkBuddy 如何一步步推进：</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-time">STEP 01</div>
+        <div class="timeline-title">购买域名 simouxuan.com</div>
+        <div class="timeline-desc">在腾讯云购买域名，年费几十元，无需服务器</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">STEP 02</div>
+        <div class="timeline-title">创建 CNAME + 配置 DNS</div>
+        <div class="timeline-desc">在仓库根目录加 CNAME 文件，DNSPod 配 4 条 A 记录 + 1 条 CNAME 记录</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">STEP 03</div>
+        <div class="timeline-title">HTTPS 证书签发</div>
+        <div class="timeline-desc">GitHub Pages 自动签发 Let's Encrypt 证书，空 commit 触发加速</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">STEP 04</div>
+        <div class="timeline-title">技术SEO全套优化</div>
+        <div class="timeline-desc">robots.txt + sitemap.xml + h1 修复 + meta/OG/JSON-LD + 移动适配，8 页面批量处理</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">STEP 05</div>
+        <div class="timeline-title">百度站长平台文件验证</div>
+        <div class="timeline-desc">上传验证文件，解决 www 301 跳转问题，验证通过</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">STEP 06</div>
+        <div class="timeline-title">提交 Sitemap</div>
+        <div class="timeline-desc">提交 sitemap.xml，百度开始定期抓取 8 个页面</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">STEP 07</div>
+        <div class="timeline-title">149 个关键词部署</div>
+        <div class="timeline-desc">6 大类关键词按页面主题分配到 8 个页面的 meta keywords</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">STEP 08</div>
+        <div class="timeline-title">URL 主动提交</div>
+        <div class="timeline-desc">逐个提交 8 个重要页面 URL，加速百度抓取</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="case-section">
+    <h2><span class="step-num">8</span>完成成果</h2>
+    <div class="result-grid">
+      <div class="result-card">
+        <div class="check">✓</div>
+        <h4>独立域名上线</h4>
+        <p>www.simouxuan.com 正常访问，品牌化</p>
+      </div>
+      <div class="result-card">
+        <div class="check">✓</div>
+        <h4>HTTPS 安全证书</h4>
+        <p>Let's Encrypt 证书已签发，浏览器显示安全锁</p>
+      </div>
+      <div class="result-card">
+        <div class="check">✓</div>
+        <h4>SEO 技术合规</h4>
+        <p>robots/sitemap/h1/meta/OG/JSON-LD 全部就位</p>
+      </div>
+      <div class="result-card">
+        <div class="check">✓</div>
+        <h4>移动端适配</h4>
+        <p>900px/480px 两档响应式，手机端体验良好</p>
+      </div>
+      <div class="result-card">
+        <div class="check">✓</div>
+        <h4>百度站长验证</h4>
+        <p>文件验证通过，网站被百度收录系统识别</p>
+      </div>
+      <div class="result-card">
+        <div class="check">✓</div>
+        <h4>Sitemap 提交</h4>
+        <p>8 个页面 URL 已提交，百度定期抓取</p>
+      </div>
+      <div class="result-card">
+        <div class="check">✓</div>
+        <h4>149 个关键词</h4>
+        <p>6 大类关键词布局到 8 个页面</p>
+      </div>
+      <div class="result-card">
+        <div class="check">✓</div>
+        <h4>URL 主动提交</h4>
+        <p>8 个重要页面逐个提交，加速抓取</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Takeaways -->
+  <section class="case-section">
+    <div class="takeaway-box">
+      <h3>核心经验总结</h3>
+      <ol class="takeaway-list">
+        <li><strong>先买域名再做SEO</strong> — 没有独立域名，百度对 GitHub 子域名的收录极不友好。域名是 SEO 的第一步，年费几十元，性价比极高。</li>
+        <li><strong>www 和不带 www 只能选一个</strong> — 百度验证时会因为 301 重定向失败。提前确定主域名，CNAME 写主域名，另一个自动跳转。</li>
+        <li><strong>技术SEO不是可选项</strong> — robots.txt、sitemap.xml、meta 标签、JSON-LD 结构化数据，这些是搜索引擎理解你网站的「语言」。没有它们，百度不知道你有什么页面、每个页面讲什么。</li>
+        <li><strong>关键词要按页面分配</strong> — 不是把所有关键词堆到首页，而是按内容主题分配到不同页面。首页做流量入口放全部大类，子页面放垂直领域词，形成关键词矩阵。</li>
+        <li><strong>移动适配影响排名</strong> — 百度对移动端友好的网站给予更高排名。两档响应式断点（900px/480px）覆盖了从平板到手机的全部场景。</li>
+        <li><strong>主动提交比等抓取快</strong> — sitemap 提交 + URL 逐个提交，比被动等百度爬虫发现快得多。提交后 1-3 天就能被抓取，不提交可能要等几周。</li>
+        <li><strong>WorkBuddy 让 SEO 变成对话式操作</strong> — 从域名绑定到关键词部署，每一步都是用自然语言跟 WorkBuddy 说了需求，它用 Python 脚本批量处理。一个人一下午完成了传统SEO公司几天的工作量。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Next Steps -->
+  <section class="case-section">
+    <h2><span class="step-num">9</span>后续规划</h2>
+    <ul>
+      <li><strong>2-4 周后查看收录情况</strong> — 在百度搜索「思陌选」或核心关键词，查看是否被收录</li>
+      <li><strong>持续产出优质内容</strong> — 内容质量是排名的核心因素，文章越专业收录越快</li>
+      <li><strong>做外链建设</strong> — 在知乎、公众号等平台发布文章并链接到博客，提升域名权重</li>
+      <li><strong>提交搜狗/360 站长平台</strong> — 除了百度，其他搜索引擎也要覆盖</li>
+      <li><strong>监控索引量</strong> — 在百度站长平台「索引量」页面查看每天收录的页面数</li>
+    </ul>
+    <div class="callout">
+      <div class="callout-title">💡 SEO 是慢活</div>
+      <p>从提交到首页排名一般需要 1-3 个月。关键看三个因素：内容质量、外链数量、用户行为数据（点击率、停留时间）。基础设施已经搭好了，剩下就是持续运营。</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="case-footer">
+    <a href="index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+      返回首页
+    </a>
+    <p>小饭的 AI 实战笔记 — 每一篇都是亲手做过来的</p>
+  </div>
+
+</div>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" onclick="backToTop()" aria-label="回到顶部">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+<script>
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, { passive: true });
+})();
+function backToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
