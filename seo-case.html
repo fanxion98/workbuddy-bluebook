@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="用WorkBuddy从零完成个人博客百度SEO优化全流程实战案例：域名绑定、DNS配置、HTTPS证书、robots.txt、sitemap.xml、meta标签、JSON-LD结构化数据、149个关键词策略、百度站长平台验证与提交，完整可复现。">
-<title>用 WorkBuddy 打通百度SEO全流程 - 个人博客优化实战案例 | 小饭</title>
+<meta name="description" content="用WorkBuddy做百度SEO关键词的完整操作流程：每步写清楚对WorkBuddy说什么、WorkBuddy做了什么、结果怎么验证。149个关键词6大类，照着做就能复现。">
+<title>用 WorkBuddy 做百度SEO关键词 - 完整操作流程教程 | 小饭</title>
 <meta name="keywords" content="WorkBuddy SEO,百度SEO优化,SEO实战案例,网站SEO优化,博客SEO,百度站长平台,sitemap提交,关键词优化,meta标签优化,JSON-LD结构化数据,HTTPS证书,域名绑定GitHub Pages,DNS配置,DNSPod,robots.txt,移动端适配,响应式设计,WorkBuddy案例,AI做SEO,WorkBuddy自动化SEO">
 <link rel="canonical" href="https://www.simouxuan.com/seo-case.html">
-<meta property="og:title" content="用 WorkBuddy 打通百度SEO全流程 - 个人博客优化实战案例 | 小饭">
-<meta property="og:description" content="用WorkBuddy从零完成个人博客百度SEO优化全流程实战案例：域名绑定、DNS配置、HTTPS证书、技术SEO、149个关键词策略、百度站长平台验证与提交。">
+<meta property="og:title" content="用 WorkBuddy 做百度SEO关键词 - 完整操作流程教程 | 小饭">
+<meta property="og:description" content="用WorkBuddy做百度SEO关键词的完整操作流程：每步写清楚对WorkBuddy说什么、WorkBuddy做了什么、结果怎么验证。">
 <meta property="og:url" content="https://www.simouxuan.com/seo-case.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="小饭的 AI 实战笔记">
@@ -17,23 +17,13 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "用 WorkBuddy 打通百度SEO全流程 - 个人博客优化实战案例",
-  "description": "用WorkBuddy从零完成个人博客百度SEO优化全流程实战案例：域名绑定、DNS配置、HTTPS证书、技术SEO、149个关键词策略、百度站长平台验证与提交。",
+  "headline": "用 WorkBuddy 做百度SEO关键词 - 完整操作流程教程",
+  "description": "用WorkBuddy做百度SEO关键词的完整操作流程：每步写清楚对WorkBuddy说什么、WorkBuddy做了什么、结果怎么验证。",
   "url": "https://www.simouxuan.com/seo-case.html",
   "inLanguage": "zh-CN",
-  "author": {
-    "@type": "Person",
-    "name": "小饭"
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "小饭"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "小饭的 AI 实战笔记",
-    "url": "https://www.simouxuan.com/"
-  }
+  "author": { "@type": "Person", "name": "小饭" },
+  "publisher": { "@type": "Person", "name": "小饭" },
+  "isPartOf": { "@type": "WebSite", "name": "小饭的 AI 实战笔记", "url": "https://www.simouxuan.com/" }
 }
 </script>
 <style>
@@ -73,488 +63,117 @@
 }
 
 html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--text-primary);
-  font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+body { background: var(--bg); color: var(--text-primary); font-family: var(--font-sans); font-size: 14px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
 a { color: var(--color-primary-600); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--color-primary-800); }
-
 img { max-width: 100%; height: auto; }
 
 /* ===== Top Nav ===== */
-.topbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: var(--topbar-h);
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  padding: 0 24px;
-}
-.topbar-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.blog-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-serif);
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text-primary);
-  text-decoration: none;
-  white-space: nowrap;
-}
+.topbar { position: fixed; top: 0; left: 0; right: 0; height: var(--topbar-h); background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); z-index: 100; display: flex; align-items: center; padding: 0 24px; }
+.topbar-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.blog-logo { display: flex; align-items: center; gap: 8px; font-family: var(--font-serif); font-size: 16px; font-weight: 500; color: var(--text-primary); text-decoration: none; white-space: nowrap; }
 .blog-logo:hover { color: var(--color-primary-600); }
-.blog-logo-icon {
-  width: 30px; height: 30px;
-  background: linear-gradient(135deg, #14B8A6, #38BDF8);
-  border-radius: var(--radius-sm);
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; font-size: 14px; font-weight: 600;
-  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.3);
-}
-.topbar-nav {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.topbar-nav a {
-  padding: 6px 14px;
-  border-radius: var(--radius-xl);
-  font-size: 13px;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: all 0.2s;
-  font-weight: 500;
-}
-.topbar-nav a:hover {
-  background: var(--color-primary-50);
-  color: var(--color-primary-600);
-}
-.topbar-nav a.active {
-  background: var(--color-primary-100);
-  color: var(--color-primary-600);
-}
+.blog-logo-icon { width: 30px; height: 30px; background: linear-gradient(135deg, #14B8A6, #38BDF8); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; font-weight: 600; box-shadow: 0 2px 8px rgba(20,184,166,0.3); }
+.topbar-nav { display: flex; align-items: center; gap: 4px; }
+.topbar-nav a { padding: 6px 14px; border-radius: var(--radius-xl); font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: all 0.2s; font-weight: 500; }
+.topbar-nav a:hover { background: var(--color-primary-50); color: var(--color-primary-600); }
+.topbar-nav a.active { background: var(--color-primary-100); color: var(--color-primary-600); }
 
 /* ===== Layout ===== */
-.page-wrap {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: calc(var(--topbar-h) + 40px) 24px 80px;
-}
+.page-wrap { max-width: 820px; margin: 0 auto; padding: calc(var(--topbar-h) + 40px) 24px 80px; }
 
 /* ===== Hero ===== */
-.case-hero {
-  background: var(--bg-hero);
-  border-radius: var(--radius-xl);
-  padding: 48px 40px;
-  margin-bottom: 40px;
-  text-align: center;
-}
-.case-hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(20, 184, 166, 0.12);
-  color: var(--color-primary-600);
-  padding: 6px 16px;
-  border-radius: var(--radius-xl);
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-.case-hero h1 {
-  font-family: var(--font-serif);
-  font-size: 32px;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.4;
-  margin-bottom: 16px;
-}
-.case-hero-sub {
-  font-size: 16px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  max-width: 600px;
-  margin: 0 auto 24px;
-}
-.case-hero-meta {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  font-size: 13px;
-  color: var(--text-tertiary);
-}
-.case-hero-meta span {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+.case-hero { background: var(--bg-hero); border-radius: var(--radius-xl); padding: 48px 40px; margin-bottom: 40px; text-align: center; }
+.case-hero-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(20,184,166,0.12); color: var(--color-primary-600); padding: 6px 16px; border-radius: var(--radius-xl); font-size: 12px; font-weight: 600; margin-bottom: 20px; }
+.case-hero h1 { font-family: var(--font-serif); font-size: 30px; font-weight: 600; color: var(--text-primary); line-height: 1.4; margin-bottom: 16px; }
+.case-hero-sub { font-size: 16px; color: var(--text-secondary); line-height: 1.7; max-width: 600px; margin: 0 auto 24px; }
+.case-hero-meta { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 13px; color: var(--text-tertiary); }
+.case-hero-meta span { display: flex; align-items: center; gap: 6px; }
 
 /* ===== Stats ===== */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 48px;
-}
-.stat-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 24px 16px;
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.2s;
-}
-.stat-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-.stat-num {
-  font-size: 28px;
-  font-weight: 700;
-  font-family: var(--font-serif);
-  background: linear-gradient(135deg, #14B8A6, #38BDF8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.stat-label {
-  font-size: 12px;
-  color: var(--text-tertiary);
-  margin-top: 4px;
-}
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 48px; }
+.stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px 16px; text-align: center; box-shadow: var(--shadow-sm); transition: all 0.2s; }
+.stat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.stat-num { font-size: 28px; font-weight: 700; font-family: var(--font-serif); background: linear-gradient(135deg, #14B8A6, #38BDF8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.stat-label { font-size: 12px; color: var(--text-tertiary); margin-top: 4px; }
 
-/* ===== Section ===== */
-.case-section {
-  margin-bottom: 48px;
-}
-.case-section h2 {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.case-section h2 .step-num {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px; height: 32px;
-  background: linear-gradient(135deg, #14B8A6, #38BDF8);
-  color: #fff;
-  border-radius: 50%;
-  font-size: 14px;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-.case-section h3 {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin: 24px 0 12px;
-}
-.case-section p {
-  color: var(--text-secondary);
-  line-height: 1.85;
-  margin-bottom: 12px;
-}
-.case-section ul, .case-section ol {
-  color: var(--text-secondary);
-  line-height: 1.85;
-  margin-bottom: 12px;
-  padding-left: 24px;
-}
-.case-section li {
-  margin-bottom: 6px;
-}
-.case-section strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-.case-section code {
-  font-family: var(--font-mono);
-  background: var(--color-primary-50);
-  color: var(--color-primary-800);
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 13px;
-}
-.case-section pre {
-  background: #1e293b;
-  color: #e2e8f0;
-  padding: 20px;
-  border-radius: var(--radius-md);
-  overflow-x: auto;
-  margin: 16px 0;
-  font-size: 13px;
-  line-height: 1.6;
-}
-.case-section pre code {
-  background: none;
-  color: inherit;
-  padding: 0;
-}
+/* ===== Step Block ===== */
+.step-block { margin-bottom: 48px; scroll-margin-top: 80px; }
+.step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.step-header .step-num { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: linear-gradient(135deg, #14B8A6, #38BDF8); color: #fff; border-radius: 50%; font-size: 16px; font-weight: 700; flex-shrink: 0; box-shadow: 0 2px 8px rgba(20,184,166,0.3); }
+.step-header h2 { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--text-primary); }
+
+/* ===== Action Block (You say / WB does / Verify) ===== */
+.action-block { margin-bottom: 24px; }
+.action-row { display: flex; gap: 0; margin-bottom: 2px; border-radius: var(--radius-md); overflow: hidden; }
+.action-label { display: flex; align-items: center; gap: 6px; padding: 10px 16px; font-size: 13px; font-weight: 600; color: #fff; flex-shrink: 0; min-width: 120px; }
+.label-say { background: #14B8A6; }
+.label-do { background: #38BDF8; }
+.label-verify { background: #22C55E; }
+.action-label svg { width: 14px; height: 14px; flex-shrink: 0; }
+.action-content { flex: 1; padding: 10px 16px; background: var(--bg-card); border: 1px solid var(--border); border-left: none; font-size: 13.5px; color: var(--text-secondary); line-height: 1.75; }
+.action-content strong { color: var(--text-primary); font-weight: 600; }
+.action-content code { font-family: var(--font-mono); background: var(--color-primary-50); color: var(--color-primary-800); padding: 2px 8px; border-radius: 4px; font-size: 12.5px; }
+.action-content a { color: var(--color-primary-600); }
+
+/* Prompt box */
+.prompt-box { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: var(--radius-md); margin: 12px 0; font-size: 13px; line-height: 1.7; position: relative; }
+.prompt-box::before { content: '💬 你对 WorkBuddy 说：'; display: block; font-size: 11px; color: #94a3b8; margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.prompt-box code { font-family: var(--font-mono); color: #5EEAD4; background: none; padding: 0; font-size: 12.5px; }
+
+/* Code block */
+.code-block { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: var(--radius-md); margin: 12px 0; font-size: 12.5px; line-height: 1.6; overflow-x: auto; position: relative; }
+.code-block::before { content: '📄 WorkBuddy 生成 / 执行：'; display: block; font-size: 11px; color: #94a3b8; margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.code-block code { font-family: var(--font-mono); color: inherit; background: none; padding: 0; }
 
 /* Callout */
-.callout {
-  background: rgba(20, 184, 166, 0.06);
-  border-left: 3px solid var(--color-primary-600);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  padding: 16px 20px;
-  margin: 20px 0;
-}
-.callout-warning {
-  background: rgba(251, 146, 60, 0.06);
-  border-left-color: var(--c-coral);
-}
-.callout-success {
-  background: rgba(34, 197, 94, 0.06);
-  border-left-color: var(--c-green);
-}
-.callout-title {
-  font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.callout p {
-  margin-bottom: 0;
-  font-size: 13px;
-}
-
-/* Timeline */
-.timeline {
-  position: relative;
-  padding-left: 32px;
-  margin: 24px 0;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 10px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: linear-gradient(180deg, var(--color-primary-400), var(--c-blue));
-  border-radius: 2px;
-}
-.timeline-item {
-  position: relative;
-  margin-bottom: 24px;
-}
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -28px;
-  top: 6px;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--bg-card);
-  border: 3px solid var(--color-primary-600);
-  z-index: 1;
-}
-.timeline-time {
-  font-size: 12px;
-  color: var(--text-tertiary);
-  font-family: var(--font-mono);
-  margin-bottom: 4px;
-}
-.timeline-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 4px;
-}
-.timeline-desc {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
+.callout { background: rgba(20,184,166,0.06); border-left: 3px solid var(--color-primary-600); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 14px 18px; margin: 16px 0; }
+.callout-warning { background: rgba(251,146,60,0.06); border-left-color: var(--c-coral); }
+.callout-success { background: rgba(34,197,94,0.06); border-left-color: var(--c-green); }
+.callout-title { font-weight: 600; font-size: 14px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+.callout p { margin-bottom: 0; font-size: 13px; }
 
 /* Table */
-.seo-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 16px 0;
-  font-size: 13px;
-}
-.seo-table th {
-  background: var(--bg-soft);
-  text-align: left;
-  padding: 10px 14px;
-  font-weight: 600;
-  color: var(--text-primary);
-  border-bottom: 2px solid var(--border);
-}
-.seo-table td {
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--border-light);
-  color: var(--text-secondary);
-}
-.seo-table tr:hover td {
-  background: var(--color-primary-50);
-}
+.seo-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+.seo-table th { background: var(--bg-soft); text-align: left; padding: 10px 14px; font-weight: 600; color: var(--text-primary); border-bottom: 2px solid var(--border); }
+.seo-table td { padding: 10px 14px; border-bottom: 1px solid var(--border-light); color: var(--text-secondary); }
+.seo-table tr:hover td { background: var(--color-primary-50); }
 
 /* Keyword tags */
-.keyword-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 16px 0;
-}
-.keyword-tag {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: var(--radius-xl);
-  font-size: 12px;
-  font-weight: 500;
-}
-.kw-brand { background: rgba(20, 184, 166, 0.10); color: #0F766E; }
-.kw-wb { background: rgba(56, 189, 248, 0.10); color: #0284C7; }
-.kw-agent { background: rgba(251, 146, 60, 0.10); color: #C2410C; }
-.kw-office { background: rgba(34, 197, 94, 0.10); color: #15803D; }
-.kw-xiaoe { background: rgba(168, 85, 247, 0.10); color: #7C3AED; }
-.kw-long { background: rgba(244, 114, 182, 0.10); color: #BE185D; }
+.keyword-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.keyword-tag { display: inline-block; padding: 4px 12px; border-radius: var(--radius-xl); font-size: 12px; font-weight: 500; }
+.kw-brand { background: rgba(20,184,166,0.10); color: #0F766E; }
+.kw-wb { background: rgba(56,189,248,0.10); color: #0284C7; }
+.kw-agent { background: rgba(251,146,60,0.10); color: #C2410C; }
+.kw-office { background: rgba(34,197,94,0.10); color: #15803D; }
+.kw-xiaoe { background: rgba(168,85,247,0.10); color: #7C3AED; }
+.kw-long { background: rgba(244,114,182,0.10); color: #BE185D; }
 
 /* Result cards */
-.result-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin: 24px 0;
-}
-.result-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 20px;
-  box-shadow: var(--shadow-sm);
-}
-.result-card .check {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px; height: 24px;
-  background: rgba(34, 197, 94, 0.15);
-  color: var(--c-green);
-  border-radius: 50%;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-.result-card h4 {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 4px;
-}
-.result-card p {
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin: 0;
-}
+.result-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 24px 0; }
+.result-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; box-shadow: var(--shadow-sm); }
+.result-card .check { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: rgba(34,197,94,0.15); color: var(--c-green); border-radius: 50%; font-size: 14px; margin-bottom: 8px; }
+.result-card h4 { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+.result-card p { font-size: 13px; color: var(--text-secondary); margin: 0; }
 
 /* Takeaway */
-.takeaway-box {
-  background: linear-gradient(135deg, rgba(20, 184, 166, 0.06), rgba(56, 189, 248, 0.06));
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  margin: 32px 0;
-}
-.takeaway-box h3 {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: var(--text-primary);
-}
-.takeaway-list {
-  list-style: none;
-  padding: 0;
-  counter-reset: takeaway;
-}
-.takeaway-list li {
-  position: relative;
-  padding-left: 36px;
-  margin-bottom: 14px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  counter-increment: takeaway;
-}
-.takeaway-list li::before {
-  content: counter(takeaway);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 24px; height: 24px;
-  background: linear-gradient(135deg, #14B8A6, #38BDF8);
-  color: #fff;
-  border-radius: 50%;
-  font-size: 12px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.takeaway-list li strong {
-  color: var(--text-primary);
-}
+.takeaway-box { background: linear-gradient(135deg, rgba(20,184,166,0.06), rgba(56,189,248,0.06)); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; margin: 32px 0; }
+.takeaway-box h3 { font-family: var(--font-serif); font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--text-primary); }
+.takeaway-list { list-style: none; padding: 0; counter-reset: takeaway; }
+.takeaway-list li { position: relative; padding-left: 36px; margin-bottom: 14px; color: var(--text-secondary); line-height: 1.7; counter-increment: takeaway; }
+.takeaway-list li::before { content: counter(takeaway); position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: linear-gradient(135deg, #14B8A6, #38BDF8); color: #fff; border-radius: 50%; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.takeaway-list li strong { color: var(--text-primary); }
 
 /* Footer */
-.case-footer {
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  text-align: center;
-}
-.case-footer a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 24px;
-  background: var(--color-primary-600);
-  color: #fff;
-  border-radius: var(--radius-xl);
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-.case-footer a:hover {
-  background: var(--color-primary-800);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(20, 184, 166, 0.3);
-}
-.case-footer p {
-  margin-top: 12px;
-  font-size: 13px;
-  color: var(--text-tertiary);
-}
+.case-footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+.case-footer a { display: inline-flex; align-items: center; gap: 6px; padding: 10px 24px; background: var(--color-primary-600); color: #fff; border-radius: var(--radius-xl); font-size: 14px; font-weight: 500; transition: all 0.2s; }
+.case-footer a:hover { background: var(--color-primary-800); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(20,184,166,0.3); }
+.case-footer p { margin-top: 12px; font-size: 13px; color: var(--text-tertiary); }
+
+/* Back to top */
+.back-to-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 99; color: var(--color-primary-600); }
+.back-to-top.visible { opacity: 1; visibility: visible; }
+.back-to-top:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
@@ -562,9 +181,9 @@ img { max-width: 100%; height: auto; }
   .result-grid { grid-template-columns: 1fr; }
   .case-hero { padding: 36px 24px; }
   .case-hero h1 { font-size: 24px; }
-  .case-hero-sub { font-size: 14px; }
+  .action-label { min-width: 80px; font-size: 11px; }
+  .action-content { font-size: 12.5px; }
 }
-
 @media (max-width: 480px) {
   .page-wrap { padding: calc(var(--topbar-h) + 24px) 16px 60px; }
   .topbar { padding: 0 12px; }
@@ -573,47 +192,19 @@ img { max-width: 100%; height: auto; }
   .blog-logo span { display: none; }
   .case-hero { padding: 28px 16px; border-radius: var(--radius-md); }
   .case-hero h1 { font-size: 20px; }
-  .case-hero-sub { font-size: 13px; }
-  .case-hero-meta { gap: 12px; font-size: 12px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .stat-card { padding: 16px 8px; }
   .stat-num { font-size: 22px; }
-  .stat-label { font-size: 11px; }
-  .case-section h2 { font-size: 18px; }
-  .case-section h2 .step-num { width: 28px; height: 28px; font-size: 12px; }
-  .case-section h3 { font-size: 15px; }
-  .case-section p, .case-section li { font-size: 13px; }
-  .case-section pre { padding: 14px; font-size: 12px; }
+  .step-header h2 { font-size: 18px; }
+  .step-header .step-num { width: 30px; height: 30px; font-size: 14px; }
+  .action-label { min-width: 60px; padding: 8px 10px; font-size: 10px; }
+  .action-content { padding: 8px 12px; font-size: 12px; }
+  .prompt-box, .code-block { padding: 12px; font-size: 11.5px; }
   .seo-table { font-size: 12px; }
   .seo-table th, .seo-table td { padding: 8px 10px; }
   .callout { padding: 12px 14px; }
   .takeaway-box { padding: 20px 16px; }
-  .timeline { padding-left: 24px; }
-  .timeline::before { left: 8px; }
-  .timeline-item::before { left: -22px; width: 10px; height: 10px; }
 }
-
-/* Back to top */
-.back-to-top {
-  position: fixed;
-  bottom: 24px; right: 24px;
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s;
-  z-index: 99;
-  color: var(--color-primary-600);
-}
-.back-to-top.visible { opacity: 1; visibility: visible; }
-.back-to-top:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
 </style>
 </head>
 <body>
@@ -643,9 +234,9 @@ img { max-width: 100%; height: auto; }
 
   <!-- Hero -->
   <section class="case-hero">
-    <span class="case-hero-tag">SEO 实战案例</span>
-    <h1>用 WorkBuddy 打通百度SEO全流程</h1>
-    <p class="case-hero-sub">从买域名到149个关键词上线，一下午完成个人博客SEO。每步可复现，照着做就行。</p>
+    <span class="case-hero-tag">SEO 实战 · 完整操作教程</span>
+    <h1>用 WorkBuddy 做百度SEO关键词</h1>
+    <p class="case-hero-sub">每一步写清楚：你对 WorkBuddy 说什么 → WorkBuddy 做了什么 → 结果怎么验证。照着做，一下午从零搭好百度SEO全套。</p>
     <div class="case-hero-meta">
       <span>📅 2026-07-30</span>
       <span>⏱ 约3小时</span>
@@ -655,153 +246,327 @@ img { max-width: 100%; height: auto; }
 
   <!-- Stats -->
   <div class="stats-grid">
-    <div class="stat-card"><div class="stat-num">6步</div><div class="stat-label">全流程</div></div>
+    <div class="stat-card"><div class="stat-num">7步</div><div class="stat-label">全流程</div></div>
     <div class="stat-card"><div class="stat-num">149</div><div class="stat-label">关键词</div></div>
     <div class="stat-card"><div class="stat-num">10</div><div class="stat-label">页面优化</div></div>
     <div class="stat-card"><div class="stat-num">¥几十</div><div class="stat-label">年费成本</div></div>
   </div>
 
-  <!-- Step 1 -->
-  <section class="case-section">
-    <h2><span class="step-num">1</span>买域名 + 绑定GitHub Pages</h2>
-    <p>博客默认用 <code>fanxion98.github.io</code>，百度不收录。买个独立域名是SEO第一步。</p>
-    <h3>操作步骤</h3>
-    <ol>
-      <li><strong>腾讯云买域名</strong> — 搜 <code>simouxuan.com</code>，几十元/年，不需要买服务器</li>
-      <li><strong>GitHub仓库加CNAME文件</strong> — 内容写 <code>www.simouxuan.com</code></li>
-      <li><strong>DNSPod配DNS</strong> — 4条A记录指向GitHub IP（185.199.108-111.153）+ 1条CNAME（www → fanxion98.github.io）</li>
-    </ol>
+  <!-- Step 1: 买域名 -->
+  <section class="step-block" id="step1">
+    <div class="step-header">
+      <span class="step-num">1</span>
+      <h2>买域名 + 绑定 GitHub Pages</h2>
+    </div>
+    <p style="color:var(--text-secondary);margin-bottom:16px;">博客默认地址是 <code>fanxion98.github.io</code>，百度不收录。第一步买独立域名。</p>
+
+    <div class="action-block">
+      <div class="prompt-box">
+        我买了域名 simouxuan.com，帮我绑定到 GitHub Pages。仓库地址是 fanxion98/fanxion98.github.io
+      </div>
+    </div>
+
+    <div class="action-block">
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">
+          <strong>① 创建 CNAME 文件</strong> — 在仓库根目录创建 <code>CNAME</code>，内容写 <code>www.simouxuan.com</code><br>
+          <strong>② 生成 DNS 配置说明</strong> — 告诉你去 DNSPod 加这些记录：
+        </div>
+      </div>
+      <div class="code-block"><code># A记录（指向GitHub Pages服务器，共4条）
+类型: A    主机记录: @     记录值: 185.199.108.153
+类型: A    主机记录: @     记录值: 185.199.109.153
+类型: A    主机记录: @     记录值: 185.199.110.153
+类型: A    主机记录: @     记录值: 185.199.111.153
+
+# CNAME记录（www子域名指向GitHub Pages）
+类型: CNAME  主机记录: www   记录值: fanxion98.github.io</code></div>
+    </div>
+
     <div class="callout callout-warning">
-      <div class="callout-title">⚠️ 踩坑</div>
-      <p>DNSPod免费版不支持境外解析 → 弹框里填2个IP，再手动加剩余2条。CNAME必须写带www的，否则百度验证会因301跳转失败。</p>
+      <div class="callout-title">⚠️ 踩坑实录</div>
+      <p>CNAME 文件里写 <code>simouxuan.com</code>（不带 www）→ 百度验证 www 域名时会 301 跳转 → 验证失败。<strong>正确写法：www.simouxuan.com</strong>。DNSPod 免费版境外解析只支持 2 条 IP，手动补加剩余 2 条。</p>
     </div>
   </section>
 
-  <!-- Step 2 -->
-  <section class="case-section">
-    <h2><span class="step-num">2</span>HTTPS证书</h2>
-    <p>绑定域名后浏览器显示"不安全"。GitHub Pages会自动签发Let's Encrypt证书，等10-30分钟。</p>
-    <div class="callout">
-      <div class="callout-title">💡 加速技巧</div>
-      <p>如果等太久没签发，推一个空commit触发重新部署：<code>git commit --allow-empty -m "触发重新部署"</code></p>
+  <!-- Step 2: HTTPS -->
+  <section class="step-block" id="step2">
+    <div class="step-header">
+      <span class="step-num">2</span>
+      <h2>HTTPS 证书</h2>
     </div>
+    <p style="color:var(--text-secondary);margin-bottom:16px;">域名绑好后浏览器显示"不安全"。GitHub Pages 自动签发 Let's Encrypt 证书。</p>
+
+    <div class="action-block">
+      <div class="prompt-box">
+        域名绑好了但浏览器显示不安全，HTTPS 证书还没生效，帮我触发一下
+      </div>
+    </div>
+
+    <div class="action-block">
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">
+          在仓库根目录执行空 commit 触发重新部署：<code>git commit --allow-empty -m "触发重新部署"</code> 然后 <code>git push</code>
+        </div>
+      </div>
+    </div>
+
     <div class="callout callout-success">
       <div class="callout-title">✅ 结果</div>
-      <p>约30分钟后证书签发成功，浏览器显示安全锁。</p>
+      <p>约 30 分钟后 GitHub 自动签发证书，浏览器显示安全锁 🔒</p>
     </div>
   </section>
 
-  <!-- Step 3 -->
-  <section class="case-section">
-    <h2><span class="step-num">3</span>技术SEO全套优化</h2>
-    <p>WorkBuddy用Python脚本对10个页面批量处理，一分钟搞定：</p>
-    <table class="seo-table">
-      <thead><tr><th>优化项</th><th>操作</th></tr></thead>
-      <tbody>
-        <tr><td><strong>robots.txt</strong></td><td>新建，允许Baiduspider，指向sitemap</td></tr>
-        <tr><td><strong>sitemap.xml</strong></td><td>新建，列出全部页面URL+更新频率</td></tr>
-        <tr><td><strong>h1标签</strong></td><td>每页只留1个h1（之前有多个）</td></tr>
-        <tr><td><strong>meta标签</strong></td><td>每页加description + keywords</td></tr>
-        <tr><td><strong>canonical</strong></td><td>每页指向自身URL，防重复收录</td></tr>
-        <tr><td><strong>Open Graph</strong></td><td>加og:title/description/url，社交分享有预览</td></tr>
-        <tr><td><strong>JSON-LD</strong></td><td>加结构化数据，百度更好理解内容</td></tr>
-        <tr><td><strong>移动适配</strong></td><td>加@media 900px/480px两档响应式CSS</td></tr>
-      </tbody>
-    </table>
-    <div class="callout">
-      <div class="callout-title">💡 WorkBuddy怎么做的</div>
-      <p>跟WorkBuddy说"帮我做SEO优化"，它写Python脚本批量改文件。不用手动改10个页面。</p>
+  <!-- Step 3: 技术SEO -->
+  <section class="step-block" id="step3">
+    <div class="step-header">
+      <span class="step-num">3</span>
+      <h2>技术 SEO 全套优化</h2>
+    </div>
+    <p style="color:var(--text-secondary);margin-bottom:16px;">告诉 WorkBuddy "做SEO优化"，它写 Python 脚本批量改 10 个页面。</p>
+
+    <div class="action-block">
+      <div class="prompt-box">
+        帮我对网站做SEO优化，包括：robots.txt、sitemap.xml、每页加meta标签和canonical、JSON-LD结构化数据、移动端适配。仓库里所有 html 文件都要改。
+      </div>
+    </div>
+
+    <div class="action-block">
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">
+          <strong>① 新建 <code>robots.txt</code></strong> — 允许 Baiduspider，指向 sitemap<br>
+          <strong>② 新建 <code>sitemap.xml</code></strong> — 列出全部 10 个页面 URL + 更新频率<br>
+          <strong>③ 批量改 10 个 HTML 文件</strong> — 每个文件加：
+        </div>
+      </div>
+      <table class="seo-table">
+        <thead><tr><th>优化项</th><th>具体操作</th></tr></thead>
+        <tbody>
+          <tr><td><strong>h1 标签</strong></td><td>每页只留 1 个 h1（之前有多个）</td></tr>
+          <tr><td><strong>meta description</strong></td><td>每页加描述，100-150 字</td></tr>
+          <tr><td><strong>canonical</strong></td><td>每页指向自身 URL，防重复收录</td></tr>
+          <tr><td><strong>Open Graph</strong></td><td>og:title / og:description / og:url</td></tr>
+          <tr><td><strong>JSON-LD</strong></td><td>Article 类型结构化数据</td></tr>
+          <tr><td><strong>移动适配</strong></td><td>@media 900px / 480px 两档响应式 CSS</td></tr>
+        </tbody>
+      </table>
+      <div class="action-row">
+        <div class="action-label label-verify">验证</div>
+        <div class="action-content">
+          打开 <code>https://www.simouxuan.com/robots.txt</code> → 看到内容正常。<br>
+          打开 <code>https://www.simouxuan.com/sitemap.xml</code> → 看到 10 条 URL。<br>
+          浏览器右键"查看源代码" → 能搜到 meta description 和 JSON-LD。
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Step 4 -->
-  <section class="case-section">
-    <h2><span class="step-num">4</span>百度站长平台验证</h2>
-    <p>让百度知道你的网站存在。</p>
-    <h3>操作步骤</h3>
-    <ol>
-      <li>打开 <a href="https://ziyuan.baidu.com" target="_blank">百度搜索资源平台</a>，添加站点 <code>www.simouxuan.com</code></li>
-      <li>选<strong>文件验证</strong>，下载验证文件（如 <code>baidu_verify_xxx.html</code>）</li>
-      <li>上传到GitHub仓库根目录，等部署后访问确认返回200</li>
-      <li>回百度点"完成验证"</li>
-    </ol>
+  <!-- Step 4: 百度站长验证 -->
+  <section class="step-block" id="step4">
+    <div class="step-header">
+      <span class="step-num">4</span>
+      <h2>百度站长平台验证</h2>
+    </div>
+    <p style="color:var(--text-secondary);margin-bottom:16px;">让百度知道你的网站存在。</p>
+
+    <div class="action-block">
+      <div class="prompt-box">
+        百度站长平台让我下载验证文件 baidu_verify_codeva-nJSG61v6a6.html，帮我放到网站根目录并部署上去
+      </div>
+    </div>
+
+    <div class="action-block">
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">
+          <strong>① 把验证文件复制到仓库根目录</strong><br>
+          <strong>② git push 推送到 GitHub</strong>（如果 git push 凭据过期，用 <code>gh auth login --web</code> 设备码流程重新登录）<br>
+          <strong>③ 等 45 秒 GitHub Pages 部署完成</strong>
+        </div>
+      </div>
+      <div class="action-row">
+        <div class="action-label label-verify">验证</div>
+        <div class="action-content">
+          WorkBuddy 用 curl 检查 <code>https://www.simouxuan.com/baidu_verify_codeva-nJSG61v6a6.html</code> → 返回 HTTP 200 + 验证码内容正确 → 回百度点"完成验证"
+        </div>
+      </div>
+    </div>
+
     <div class="callout callout-warning">
-      <div class="callout-title">⚠️ 踩坑</div>
-      <p>如果百度验证的是www域名，但CNAME写的不带www，会301跳转导致验证失败。解决方案：CNAME写 <code>www.simouxuan.com</code>。</p>
+      <div class="callout-title">⚠️ 踩坑实录</div>
+      <p>验证反复失败 → 原因是 CNAME 写的 <code>simouxuan.com</code>（不带 www），百度验证的是 <code>www.simouxuan.com</code>，访问时 301 跳转导致验证文件返回 301 而非 200。改 CNAME 为 <code>www.simouxuan.com</code> 后验证通过。</p>
     </div>
   </section>
 
-  <!-- Step 5 -->
-  <section class="case-section">
-    <h2><span class="step-num">5</span>提交Sitemap + URL</h2>
-    <p>验证通过后，主动告诉百度有哪些页面。</p>
-    <h3>Sitemap提交</h3>
-    <p>百度站长平台 → 普通收录 → Sitemap，提交：<code>https://www.simouxuan.com/sitemap.xml</code></p>
-    <h3>URL逐个提交</h3>
-    <p>在"链接提交"页面，逐个填入重要页面URL（每天可提交10-20条）：</p>
-    <pre><code>https://www.simouxuan.com/
+  <!-- Step 5: 提交Sitemap -->
+  <section class="step-block" id="step5">
+    <div class="step-header">
+      <span class="step-num">5</span>
+      <h2>提交 Sitemap + URL</h2>
+    </div>
+    <p style="color:var(--text-secondary);margin-bottom:16px;">验证通过后，主动告诉百度有哪些页面。</p>
+
+    <div class="action-block">
+      <div class="prompt-box">
+        百度验证通过了，帮我整理一下需要提交的URL列表，我要去百度站长平台提交sitemap和链接
+      </div>
+    </div>
+
+    <div class="action-block">
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">
+          <strong>① 确认 sitemap.xml 已部署</strong> — 地址 <code>https://www.simouxuan.com/sitemap.xml</code><br>
+          <strong>② 列出 8 个重要页面 URL</strong> 供你逐个提交：
+        </div>
+      </div>
+      <div class="code-block"><code>https://www.simouxuan.com/
 https://www.simouxuan.com/ai-agent-cases.html
 https://www.simouxuan.com/skills.html
 https://www.simouxuan.com/part1.html
-...共8个页面</code></pre>
+https://www.simouxuan.com/part2.html
+https://www.simouxuan.com/part3.html
+https://www.simouxuan.com/seo-case.html
+https://www.simouxuan.com/ai-manual.html</code></div>
+    </div>
+
+    <div class="action-block">
+      <div class="action-row">
+        <div class="action-label label-verify">手动操作</div>
+        <div class="action-content">
+          <strong>提交 Sitemap：</strong>百度搜索资源平台 → 普通收录 → 填入 <code>https://www.simouxuan.com/sitemap.xml</code> → 提交<br>
+          <strong>逐条提交 URL：</strong>链接提交 → 逐个粘贴上面的 URL（每天可提交 10-20 条）
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Step 6 -->
-  <section class="case-section">
-    <h2><span class="step-num">6</span>149个关键词布局</h2>
-    <p>百度没有"提交关键词"功能 — 关键词写在页面的 <code>meta keywords</code> 标签里，百度抓取后自动提取。</p>
-    <h3>6大类关键词</h3>
-    <div class="keyword-cloud">
-      <span class="keyword-tag kw-brand">品牌词（思陌选、小饭）</span>
-      <span class="keyword-tag kw-wb">WorkBuddy核心词（教程、下载、Skills）</span>
-      <span class="keyword-tag kw-agent">AI Agent（智能体、案例、场景）</span>
-      <span class="keyword-tag kw-office">AI办公（文档、数据分析、PPT）</span>
-      <span class="keyword-tag kw-xiaoe">小鹅通+电商</span>
-      <span class="keyword-tag kw-long">对比长尾词（vs Cursor、vs Copilot）</span>
+  <!-- Step 6: 关键词策略 -->
+  <section class="step-block" id="step6">
+    <div class="step-header">
+      <span class="step-num">6</span>
+      <h2>149 个关键词策略 + 部署</h2>
     </div>
-    <h3>按页面分配</h3>
+    <p style="color:var(--text-secondary);margin-bottom:16px;"><strong>核心概念：</strong>百度没有"提交关键词"功能。关键词写在 HTML 的 <code>meta keywords</code> 标签里，百度爬虫抓取页面时自动提取。</p>
+
+    <div class="action-block">
+      <div class="prompt-box">
+        帮我想一些我个人博客的搜索关键词，要覆盖用户可能搜的各种词。博客主题是 WorkBuddy、AI Agent、AI办公、小鹅通、个人博客
+      </div>
+    </div>
+
+    <div class="action-block">
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">
+          按内容主题整理了 <strong>6 大类共 149 个关键词</strong>：
+        </div>
+      </div>
+      <div class="keyword-cloud">
+        <span class="keyword-tag kw-brand">品牌词：思陌选、小饭、小饭博客</span>
+        <span class="keyword-tag kw-wb">WorkBuddy：教程、下载、Skills、案例</span>
+        <span class="keyword-tag kw-agent">AI Agent：智能体、场景、案例、实战</span>
+        <span class="keyword-tag kw-office">AI办公：文档、数据分析、PPT、会议</span>
+        <span class="keyword-tag kw-xiaoe">小鹅通+电商：知识付费、店铺管理</span>
+        <span class="keyword-tag kw-long">长尾词：WorkBuddy vs Cursor、vs Copilot</span>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">💡 关键原则</div>
+      <p>不是把 149 个词全塞进一个页面。按页面主题分配：首页放全 6 大类做流量入口，子页面放垂直相关词。</p>
+    </div>
+
     <table class="seo-table">
-      <thead><tr><th>页面</th><th>关键词数</th></tr></thead>
+      <thead><tr><th>页面</th><th>关键词数</th><th>分配策略</th></tr></thead>
       <tbody>
-        <tr><td>首页</td><td>38个（全6大类）</td></tr>
-        <tr><td>AI Agent案例</td><td>20个</td></tr>
-        <tr><td>Skills技能</td><td>15个</td></tr>
-        <tr><td>使用手册</td><td>17个</td></tr>
-        <tr><td>其他4个页面</td><td>各14-16个</td></tr>
+        <tr><td>首页 index.html</td><td>38 个</td><td>全 6 大类，品牌词 + 核心词 + 长尾词</td></tr>
+        <tr><td>AI Agent案例</td><td>20 个</td><td>AI Agent 相关词为主</td></tr>
+        <tr><td>Skills技能</td><td>15 个</td><td>WorkBuddy + Skills 相关</td></tr>
+        <tr><td>使用手册</td><td>17 个</td><td>WorkBuddy 教程 + 下载 + 使用</td></tr>
+        <tr><td>其他 4 个页面</td><td>各 14-16 个</td><td>按页面内容分配相关词</td></tr>
       </tbody>
     </table>
-    <div class="callout">
-      <div class="callout-title">💡 原则</div>
-      <p>不是堆关键词，而是按页面内容分配相关词。首页做流量入口放全部大类，子页面放垂直词。</p>
+
+    <div class="action-block">
+      <div class="prompt-box">
+        这些关键词全部帮我加进去，按页面内容分配到对应的 meta keywords 标签里。8 个 HTML 文件都要改。
+      </div>
+    </div>
+
+    <div class="action-block">
+      <div class="action-row">
+        <div class="action-label label-do">WorkBuddy 做了</div>
+        <div class="action-content">
+          写了一个 Python 脚本，用 <code>re.sub</code> 正则匹配每个文件的 <code>&lt;meta name="keywords" ...&gt;</code> 标签，替换为分配好的关键词。一次性改完 8 个文件。
+        </div>
+      </div>
+      <div class="code-block"><code># 脚本核心逻辑
+import re
+
+# 每个页面分配的关键词
+keywords_map = {
+    "index.html": "思陌选,小饭,小饭博客,...（38个词）",
+    "ai-agent-cases.html": "AI Agent,AI智能体,...（20个词）",
+    "skills.html": "WorkBuddy Skills,...（15个词）",
+    # ... 共8个文件
+}
+
+# 正则替换 meta keywords
+for filename, keywords in keywords_map.items():
+    content = open(filename, "r", encoding="utf-8").read()
+    new_content = re.sub(
+        r'&lt;meta name="keywords" content="[^"]*"&gt;',
+        f'&lt;meta name="keywords" content="{keywords}"&gt;',
+        content
+    )
+    open(filename, "w", encoding="utf-8").write(new_content)
+    print(f"✅ {filename} → {len(keywords.split(','))} 个关键词")</code></div>
+    </div>
+
+    <div class="action-block">
+      <div class="action-row">
+        <div class="action-label label-verify">验证</div>
+        <div class="action-content">
+          WorkBuddy 推送上线后，用 WebFetch 打开每个页面查看源代码 → 确认 <code>meta keywords</code> 标签里包含了分配的关键词。<br>
+          8 个文件全部更新成功，149 个关键词全部上线。
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Results -->
-  <section class="case-section">
-    <h2><span class="step-num">7</span>完成成果</h2>
+  <!-- Step 7: 完成成果 -->
+  <section class="step-block" id="step7">
+    <div class="step-header">
+      <span class="step-num">7</span>
+      <h2>完成成果</h2>
+    </div>
     <div class="result-grid">
       <div class="result-card"><div class="check">✓</div><h4>独立域名上线</h4><p>www.simouxuan.com 正常访问</p></div>
-      <div class="result-card"><div class="check">✓</div><h4>HTTPS安全</h4><p>Let's Encrypt证书已签发</p></div>
-      <div class="result-card"><div class="check">✓</div><h4>SEO技术合规</h4><p>robots/sitemap/meta/JSON-LD全就位</p></div>
+      <div class="result-card"><div class="check">✓</div><h4>HTTPS 安全</h4><p>Let's Encrypt 证书已签发</p></div>
+      <div class="result-card"><div class="check">✓</div><h4>SEO 技术合规</h4><p>robots / sitemap / meta / JSON-LD 全就位</p></div>
       <div class="result-card"><div class="check">✓</div><h4>百度站长验证通过</h4><p>网站被百度收录系统识别</p></div>
-      <div class="result-card"><div class="check">✓</div><h4>Sitemap已提交</h4><p>百度定期抓取10个页面</p></div>
-      <div class="result-card"><div class="check">✓</div><h4>149个关键词上线</h4><p>6大类按页面分配完成</p></div>
+      <div class="result-card"><div class="check">✓</div><h4>Sitemap 已提交</h4><p>百度定期抓取 10 个页面</p></div>
+      <div class="result-card"><div class="check">✓</div><h4>149 个关键词上线</h4><p>6 大类按页面分配完成</p></div>
     </div>
   </section>
 
   <!-- Takeaways -->
-  <section class="case-section">
+  <section class="step-block">
     <div class="takeaway-box">
-      <h3>3条核心经验</h3>
+      <h3>3 条核心经验</h3>
       <ol class="takeaway-list">
-        <li><strong>先买域名再做SEO</strong> — 没独立域名百度不收。域名年费几十元，不需要服务器。</li>
-        <li><strong>技术SEO不能省</strong> — robots.txt、sitemap.xml、meta标签是搜索引擎理解你网站的"语言"。</li>
-        <li><strong>主动提交比等抓取快</strong> — 提交sitemap + 逐个提交URL，1-3天被抓取。不提交可能等几周。</li>
+        <li><strong>先买域名再做 SEO</strong> — 没独立域名百度不收。域名年费几十元，不需要服务器。GitHub Pages 免费托管。</li>
+        <li><strong>技术 SEO 不能省</strong> — robots.txt、sitemap.xml、meta 标签是搜索引擎理解你网站的"语言"。WorkBuddy 一条指令批量改完。</li>
+        <li><strong>主动提交比等抓取快</strong> — 提交 sitemap + 逐个提交 URL，1-3 天被抓取。不提交可能等几周。关键词写在 meta keywords 里，百度爬虫自动提取。</li>
       </ol>
     </div>
     <div class="callout">
-      <div class="callout-title">💡 SEO是慢活</div>
-      <p>从提交到首页排名一般1-3个月。基础设施搭好了，剩下就是持续产出内容和等。</p>
+      <div class="callout-title">💡 SEO 是慢活</div>
+      <p>从提交到首页排名一般 1-3 个月。基础设施搭好了，剩下就是持续产出内容和等。</p>
     </div>
   </section>
 
