@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI工具评测大全：深度评测Cursor、扣子Coze、Dify、n8n、Midjourney、Sora等6大主流AI工具，含功能对比、定价方案、适用场景、上手指南，帮你快速选对工具。">
+<title>AI工具评测 - 6大主流AI工具深度横评与上手指南 | 小饭</title>
+<meta name="keywords" content="AI工具评测,Cursor评测,扣子Coze,Dify,n8n,Midjourney,Sora,AI工具对比,AI工具推荐,AI工具哪个好,AI代码编辑器,AI工作流平台,AI图像生成,AI视频生成,2026 AI工具">
+<link rel="canonical" href="https://www.simouxuan.com/ai-tools.html">
+<meta property="og:title" content="AI工具评测 - 6大主流AI工具深度横评与上手指南 | 小饭">
+<meta property="og:description" content="AI工具评测大全：深度评测Cursor、扣子Coze、Dify、n8n、Midjourney、Sora等6大主流AI工具，含功能对比、定价方案、适用场景、上手指南。">
+<meta property="og:url" content="https://www.simouxuan.com/ai-tools.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="小饭的 AI 实战笔记">
+<meta property="og:locale" content="zh_CN">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI工具评测 - 6大主流AI工具深度横评与上手指南",
+  "description": "深度评测Cursor、扣子Coze、Dify、n8n、Midjourney、Sora等6大主流AI工具，含功能对比、定价方案、适用场景、上手指南。",
+  "url": "https://www.simouxuan.com/ai-tools.html",
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-08-01",
+  "dateModified": "2026-08-01",
+  "author": { "@type": "Person", "name": "小饭" },
+  "publisher": { "@type": "Person", "name": "小饭" },
+  "isPartOf": { "@type": "WebSite", "name": "小饭的 AI 实战笔记", "url": "https://www.simouxuan.com/" }
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --color-primary-50: rgba(20, 184, 166, 0.08);
+  --color-primary-100: rgba(20, 184, 166, 0.15);
+  --color-primary-400: #2DD4BF;
+  --color-primary-600: #14B8A6;
+  --color-primary-800: #0F766E;
+  --c-teal: #14B8A6; --c-blue: #38BDF8; --c-coral: #FB923C; --c-purple: #F472B6;
+  --bg: #FAFAF9; --bg-card: #FFFFFF; --bg-soft: #F5F5F4;
+  --bg-hero: linear-gradient(135deg, #F0FDFA 0%, #ECFEFF 30%, #F0F9FF 60%, #FDF4FF 100%);
+  --text-primary: #292524; --text-secondary: #57534E; --text-tertiary: #A8A29E;
+  --border: #E7E5E4; --border-light: #F5F5F4;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.03);
+  --shadow-lg: 0 12px 40px rgba(20,184,166,0.08), 0 4px 16px rgba(0,0,0,0.04);
+  --shadow-hover: 0 8px 28px rgba(20,184,166,0.12), 0 4px 12px rgba(0,0,0,0.05);
+  --topbar-h: 56px;
+  --font-serif: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 20px;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text-primary); font-family: var(--font-sans); font-size: 14px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+a { color: var(--color-primary-600); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--color-primary-800); }
+
+/* Topbar */
+.topbar { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); height: var(--topbar-h); display: flex; align-items: center; }
+.topbar-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 24px; }
+.blog-logo { display: flex; align-items: center; gap: 8px; font-family: var(--font-serif); font-size: 16px; font-weight: 500; color: var(--text-primary); text-decoration: none; white-space: nowrap; }
+.blog-logo:hover { color: var(--color-primary-600); }
+.blog-logo-icon { width: 30px; height: 30px; background: linear-gradient(135deg, #14B8A6, #38BDF8); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; font-weight: 600; }
+.topbar-nav { display: flex; align-items: center; gap: 4px; }
+.topbar-nav a { padding: 6px 14px; border-radius: var(--radius-xl); font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: all 0.2s; font-weight: 500; }
+.topbar-nav a:hover { background: var(--color-primary-50); color: var(--color-primary-600); }
+.topbar-nav a.active { background: var(--color-primary-100); color: var(--color-primary-600); }
+
+/* Container */
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+.hero { margin-top: var(--topbar-h); padding: 64px 24px 40px; text-align: center; background: var(--bg-hero); }
+.hero h1 { font-size: 32px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; line-height: 1.3; }
+.hero p { font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 20px; }
+.hero-tags { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.hero-tag { padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+.hero-tag.teal { background: rgba(20,184,166,0.10); color: #14B8A6; }
+.hero-tag.blue { background: rgba(56,189,248,0.10); color: #38BDF8; }
+.hero-tag.coral { background: rgba(251,146,60,0.10); color: #FB923C; }
+.hero-tag.purple { background: rgba(244,114,182,0.10); color: #F472B6; }
+
+/* Section */
+.section { padding: 48px 0; }
+.section-title { font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+.section-sub { font-size: 14px; color: var(--text-tertiary); margin-bottom: 28px; }
+
+/* Tool Card */
+.tool-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 28px; box-shadow: var(--shadow-sm); transition: box-shadow 0.3s; scroll-margin-top: 80px; }
+.tool-card:hover { box-shadow: var(--shadow-md); }
+.tool-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+.tool-icon { width: 52px; height: 52px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+.tool-header h3 { font-size: 20px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.tool-header .tool-subtitle { font-size: 13px; color: var(--text-tertiary); }
+.tool-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; margin-left: 8px; vertical-align: middle; }
+
+.tool-body h4 { font-size: 15px; font-weight: 600; color: var(--text-primary); margin: 20px 0 8px; }
+.tool-body p { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+.tool-body ul { list-style: none; padding: 0; margin: 8px 0; }
+.tool-body ul li { font-size: 14px; color: var(--text-secondary); padding: 4px 0 4px 20px; position: relative; }
+.tool-body ul li::before { content: ""; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary-400); }
+
+/* Pricing table */
+.pricing-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+.pricing-table th { background: var(--bg-soft); padding: 10px 14px; text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 2px solid var(--border); }
+.pricing-table td { padding: 10px 14px; border-bottom: 1px solid var(--border-light); color: var(--text-secondary); }
+.pricing-table tr:last-child td { border-bottom: none; }
+
+/* Pros/Cons */
+.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.pros-box, .cons-box { padding: 16px; border-radius: var(--radius-md); }
+.pros-box { background: rgba(52,211,153,0.06); border: 1px solid rgba(52,211,153,0.15); }
+.cons-box { background: rgba(251,113,133,0.06); border: 1px solid rgba(251,113,133,0.15); }
+.pros-box h5 { font-size: 13px; font-weight: 600; color: #059669; margin-bottom: 8px; }
+.cons-box h5 { font-size: 13px; font-weight: 600; color: #E11D48; margin-bottom: 8px; }
+.pros-box ul, .cons-box ul { list-style: none; padding: 0; margin: 0; }
+.pros-box li, .cons-box li { font-size: 13px; padding: 3px 0 3px 16px; position: relative; color: var(--text-secondary); }
+.pros-box li::before { content: "+"; position: absolute; left: 0; color: #059669; font-weight: 700; }
+.cons-box li::before { content: "-"; position: absolute; left: 0; color: #E11D48; font-weight: 700; }
+
+/* Compare table */
+.compare-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; overflow-x: auto; display: block; }
+.compare-table th { background: var(--bg-soft); padding: 12px 14px; text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 2px solid var(--border); white-space: nowrap; }
+.compare-table td { padding: 12px 14px; border-bottom: 1px solid var(--border-light); color: var(--text-secondary); }
+
+/* Verdict box */
+.verdict-box { background: linear-gradient(135deg, rgba(20,184,166,0.06), rgba(56,189,248,0.06)); border: 1px solid rgba(20,184,166,0.15); border-radius: var(--radius-lg); padding: 24px; margin: 24px 0; }
+.verdict-box h4 { font-size: 16px; font-weight: 700; color: var(--color-primary-800); margin-bottom: 12px; }
+.verdict-box p { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+
+/* CTA */
+.cta-box { text-align: center; padding: 40px 24px; background: var(--bg-hero); border-radius: var(--radius-lg); margin: 40px 0; }
+.cta-box h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.cta-box p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+.cta-btn { display: inline-block; padding: 10px 28px; background: linear-gradient(135deg, #14B8A6, #38BDF8); color: #fff; border-radius: var(--radius-xl); font-size: 14px; font-weight: 600; text-decoration: none; transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); color: #fff; }
+
+/* Footer */
+.site-footer { background: var(--text-primary); color: #A8A29E; padding: 48px 24px 32px; text-align: center; margin-top: 64px; }
+.footer-inner { max-width: 600px; margin: 0 auto; }
+.footer-text h3 { font-size: 16px; color: #fff; margin-bottom: 8px; }
+.footer-text p { font-size: 13px; margin-bottom: 4px; }
+
+/* TOC */
+.toc-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 24px; margin-bottom: 32px; }
+.toc-box h4 { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 10px; }
+.toc-box ul { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 24px; }
+.toc-box li { padding: 3px 0; }
+.toc-box a { font-size: 13px; color: var(--text-secondary); }
+.toc-box a:hover { color: var(--color-primary-600); }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .topbar-nav a { padding: 6px 8px; font-size: 12px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 14px; }
+  .tool-card { padding: 20px; }
+  .tool-header { flex-direction: column; gap: 8px; }
+  .pros-cons { grid-template-columns: 1fr; }
+  .toc-box ul { columns: 1; }
+  .compare-table { font-size: 11px; }
+  .compare-table th, .compare-table td { padding: 8px 10px; }
+}
+@media (max-width: 480px) {
+  .topbar-nav { gap: 0; }
+  .topbar-nav a { padding: 5px 6px; font-size: 11px; }
+  .hero { padding: 40px 16px 28px; }
+  .hero h1 { font-size: 20px; }
+  .section { padding: 32px 0; }
+  .tool-card { padding: 16px; }
+}
+</style>
+</head>
+<body>
+<!-- Top Nav -->
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="blog-logo">
+      <span class="blog-logo-icon">W</span>
+      <span>小饭的 AI 实战笔记</span>
+    </a>
+    <div class="topbar-nav">
+      <a href="index.html">首页</a>
+      <a href="ai-tools.html" class="active">AI工具</a>
+      <a href="llm-compare.html">大模型</a>
+      <a href="ai-industry.html">行业落地</a>
+      <a href="skills.html">Skills</a>
+      <a href="ai-agent-cases.html">AI案例</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>AI 工具评测大全</h1>
+  <p>深度横评 6 大主流 AI 工具，从代码编辑到工作流自动化，从图像生成到视频创作，帮你快速选对工具、少走弯路。</p>
+  <div class="hero-tags">
+    <span class="hero-tag teal">6 款工具</span>
+    <span class="hero-tag blue">深度评测</span>
+    <span class="hero-tag coral">含定价方案</span>
+    <span class="hero-tag purple">2026年8月更新</span>
+  </div>
+</section>
+
+<div class="container">
+  <!-- TOC -->
+  <div class="toc-box" style="margin-top: 32px;">
+    <h4>目录</h4>
+    <ul>
+      <li><a href="#cursor">1. Cursor — AI代码编辑器</a></li>
+      <li><a href="#coze">2. 扣子 Coze — 零代码Bot搭建</a></li>
+      <li><a href="#dify">3. Dify — 企业级AI应用平台</a></li>
+      <li><a href="#n8n">4. n8n — 工作流自动化引擎</a></li>
+      <li><a href="#midjourney">5. Midjourney — AI图像生成</a></li>
+      <li><a href="#sora">6. Sora — AI视频生成</a></li>
+      <li><a href="#compare">7. 横向对比总表</a></li>
+      <li><a href="#verdict">8. 选型建议</a></li>
+    </ul>
+  </div>
+
+  <section class="section" style="padding-top: 16px;">
+    <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px;">
+      2026年AI工具遍地开花，但选错工具比写错代码更浪费时间。这篇评测覆盖<strong>代码编辑、工作流自动化、图像生成、视频生成</strong>四大场景，每款工具从功能特性、定价方案、优缺点、适用人群四个维度拆解，所有信息基于2026年8月最新版本。
+    </p>
+
+    <!-- Cursor -->
+    <div class="tool-card" id="cursor">
+      <div class="tool-header">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #6366F1, #8B5CF6);">💻</div>
+        <div>
+          <h3>Cursor <span class="tool-badge" style="background:rgba(99,102,241,0.10);color:#6366F1">AI代码编辑器</span></h3>
+          <p class="tool-subtitle">基于 VS Code 构建的 AI 原生编辑器，2026年6月更新至 3.6 版本</p>
+        </div>
+      </div>
+      <div class="tool-body">
+        <p>Cursor 是目前最成熟的 AI 代码编辑器，被 Stripe、NVIDIA 等超过半数财富 500 强企业使用。2026年4月的 3.0 版本重构为 Agent-First 界面，支持多仓库并行操作、自主代理、云端交接等前沿能力。</p>
+
+        <h4>核心功能</h4>
+        <ul>
+          <li><strong>Composer 2.5</strong>：Cursor 自研前沿编码模型，200+ tok/s 生成速度，可同时编辑 10-100+ 个文件</li>
+          <li><strong>多代理并行</strong>：8个并行代理同时规划、编码、测试和修复，端到端实现功能</li>
+          <li><strong>代码库 RAG 索引</strong>：索引整个项目，理解架构和模式，500K 行代码库也能精准定位</li>
+          <li><strong>多模型支持</strong>：自由切换 Claude Opus 5、GPT-5.6、Gemini 3.1 Pro、Grok 4.5 等前沿模型</li>
+          <li><strong>Cursor Router</strong>：智能路由，根据任务自动选择最佳模型（2026年7月新增）</li>
+          <li><strong>跨平台交接</strong>：桌面 / Web / 移动端 / Slack / GitHub / Linear 全平台覆盖</li>
+        </ul>
+
+        <h4>定价方案</h4>
+        <table class="pricing-table">
+          <tr><th>方案</th><th>月费</th><th>核心权益</th></tr>
+          <tr><td>Hobby（免费）</td><td>$0</td><td>2000 次补全 / 50 次高级请求</td></tr>
+          <tr><td>Pro</td><td>$20/月</td><td>无限补全 / 500 次快速请求 / Composer 多文件编辑</td></tr>
+          <tr><td>Pro+</td><td>$60/月</td><td>3 倍 Pro 用量 / 多工作区</td></tr>
+          <tr><td>Ultra</td><td>$200/月</td><td>20 倍 Pro 用量 / 最高优先级 / 后台代理</td></tr>
+          <tr><td>Teams</td><td>$32-40/人/月</td><td>共享聊天 / 集中计费 / SAML SSO</td></tr>
+        </table>
+
+        <div class="pros-cons">
+          <div class="pros-box">
+            <h5>优势</h5>
+            <ul>
+              <li>最流畅的 AI 编辑体验，Tab 补全预测多行编辑</li>
+              <li>代码库理解能力业界第一</li>
+              <li>VS Code 基础，迁移成本极低</li>
+              <li>更新频率高，功能迭代快</li>
+            </ul>
+          </div>
+          <div class="cons-box">
+            <h5>不足</h5>
+            <ul>
+              <li>重度使用 Pro 额度不够，需升 Ultra</li>
+              <li>闭源，无法自部署</li>
+              <li>大 monorepo 索引时内存占用高</li>
+              <li>高峰期请求可能降速</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>适合谁</h4>
+        <p>追求最极致 AI 编程体验的开发者；VS Code 用户无缝迁移；需要多文件重构和代码库级对话的团队。<strong>结论：如果只选一个 AI 编程工具，选 Cursor。</strong></p>
+      </div>
+    </div>
+
+    <!-- Coze -->
+    <div class="tool-card" id="coze">
+      <div class="tool-header">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #14B8A6, #2DD4BF);">🤖</div>
+        <div>
+          <h3>扣子 Coze <span class="tool-badge" style="background:rgba(20,184,166,0.10);color:#14B8A6">零代码Bot搭建</span></h3>
+          <p class="tool-subtitle">字节跳动出品的零代码 AI Bot 搭建平台，注册即用</p>
+        </div>
+      </div>
+      <div class="tool-body">
+        <p>Coze 是字节跳动推出的 AI 应用/Bot 搭建平台，主打"零代码拖拽即上线"。内置 300+ 预置组件和插件市场，2 小时就能做出一个能用的对话机器人，是门槛最低的 AI 应用搭建工具。</p>
+
+        <h4>核心功能</h4>
+        <ul>
+          <li><strong>可视化编排器</strong>：类 Figma 拖拽界面，零代码搭建 Bot</li>
+          <li><strong>300+ 预置组件</strong>：覆盖对话、搜索、生成、API 调用等场景</li>
+          <li><strong>多渠道发布</strong>：一键发布到飞书、微信公众号、抖音、微信等渠道</li>
+          <li><strong>插件市场</strong>：丰富的第三方插件，扩展 Bot 能力</li>
+          <li><strong>工作流编排</strong>：支持条件判断、循环、并行等逻辑</li>
+          <li><strong>知识库</strong>：上传文档/网页，Bot 基于知识回答</li>
+        </ul>
+
+        <h4>定价方案</h4>
+        <table class="pricing-table">
+          <tr><th>方案</th><th>费用</th><th>说明</th></tr>
+          <tr><td>免费版</td><td>¥0</td><td>基础 Bot 搭建与发布，有调用限制</td></tr>
+          <tr><td>专业版</td><td>按量付费</td><td>更高调用额度、更多高级组件</td></tr>
+        </table>
+
+        <div class="pros-cons">
+          <div class="pros-box">
+            <h5>优势</h5>
+            <ul>
+              <li>零门槛，不写代码也能上手</li>
+              <li>字节生态整合，飞书/抖音一键发布</li>
+              <li>中文支持好，国内访问稳定</li>
+              <li>免费版功能够用</li>
+            </ul>
+          </div>
+          <div class="cons-box">
+            <h5>不足</h5>
+            <ul>
+              <li>工作流深度仅 10 层，复杂逻辑受限</li>
+              <li>不支持私有化部署</li>
+              <li>知识库 RAG 能力较弱</li>
+              <li>工作流版本需手动备份</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>适合谁</h4>
+        <p>非技术用户快速搭建对话机器人；运营/新媒体团队做内容生成 Bot；需要快速原型验证的场景。<strong>结论：想最快做出一个能用的 Bot，选 Coze。</strong></p>
+      </div>
+    </div>
+
+    <!-- Dify -->
+    <div class="tool-card" id="dify">
+      <div class="tool-header">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #2563EB, #38BDF8);">🔧</div>
+        <div>
+          <h3>Dify <span class="tool-badge" style="background:rgba(37,99,235,0.10);color:#2563EB">AI应用开发平台</span></h3>
+          <p class="tool-subtitle">开源企业级 LLM 应用开发与编排平台，GitHub 142K Stars</p>
+        </div>
+      </div>
+      <div class="tool-body">
+        <p>Dify 是目前最火的开源 AI 应用开发平台（v1.14.1，2026年5月更新），支持从知识导入→模型配置→应用开发→部署上线的全流程。核心强项是 RAG 知识库 + Agent 工作流编排，可私有化部署，满足企业数据合规需求。</p>
+
+        <h4>核心功能</h4>
+        <ul>
+          <li><strong>RAG 知识库</strong>：上传 PDF/Word/Excel，基于企业私有知识回答</li>
+          <li><strong>工作流 DAG 引擎</strong>：支持 50 层工作流深度，复杂条件判断</li>
+          <li><strong>模型网关</strong>：接入 GPT、Claude、DeepSeek、通义千问、本地模型</li>
+          <li><strong>Prompt IDE</strong>：可视化提示词编辑和调试</li>
+          <li><strong>API 输出</strong>：生成 API 接口，嵌入现有系统</li>
+          <li><strong>私有化部署</strong>：Docker 一键部署，数据完全可控</li>
+        </ul>
+
+        <h4>定价方案</h4>
+        <table class="pricing-table">
+          <tr><th>方案</th><th>费用</th><th>说明</th></tr>
+          <tr><td>社区版</td><td>免费</td><td>Docker 自部署，全功能</td></tr>
+          <tr><td>云服务</td><td>按量付费</td><td>免运维，从 $59/月起</td></tr>
+          <tr><td>企业版</td><td>定制</td><td>私有化部署 + 技术支持</td></tr>
+        </table>
+        <p style="font-size: 12px; color: var(--text-tertiary);">本地部署建议：4核 CPU + 8GB 内存，知识库索引时短暂需 16GB</p>
+
+        <div class="pros-cons">
+          <div class="pros-box">
+            <h5>优势</h5>
+            <ul>
+              <li>开源免费，类 Apache 2.0 许可</li>
+              <li>RAG 能力强，支持复杂文档解析</li>
+              <li>私有化部署，数据安全可控</li>
+              <li>模型适配灵活，支持多模型切换</li>
+            </ul>
+          </div>
+          <div class="cons-box">
+            <h5>不足</h5>
+            <ul>
+              <li>部署门槛比 Coze 高，需技术基础</li>
+              <li>冷启动 3-5 秒，响应较慢</li>
+              <li>连接器数量不如 n8n（400+）</li>
+              <li>最大并发 200/s</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>适合谁</h4>
+        <p>需要搭建带知识库的 AI 应用的技术团队；需要私有化部署的企业；需要把 AI 嵌入自己产品的开发者。<strong>结论：要做有深度的 AI 应用，选 Dify。</strong></p>
+      </div>
+    </div>
+
+    <!-- n8n -->
+    <div class="tool-card" id="n8n">
+      <div class="tool-header">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #EA4335, #FB923C);">⚡</div>
+        <div>
+          <h3>n8n <span class="tool-badge" style="background:rgba(234,67,53,0.10);color:#EA4335">工作流自动化引擎</span></h3>
+          <p class="tool-subtitle">开源工作流自动化平台，400+ 连接器，GitHub 188K Stars</p>
+        </div>
+      </div>
+      <div class="tool-body">
+        <p>n8n 是最强大的通用工作流自动化引擎（stable v0.25.4，2026年5月更新），400+ 预置连接器覆盖几乎所有主流 SaaS。AI 只是它的一个节点，核心能力是把多个系统串起来自动运行。响应延迟仅 50-200ms，冷启动 <1 秒。</p>
+
+        <h4>核心功能</h4>
+        <ul>
+          <li><strong>400+ 连接器</strong>：Slack、飞书、数据库、CRM、ERP、Webhook 全覆盖</li>
+          <li><strong>代码节点</strong>：支持 JavaScript/Python 自定义逻辑</li>
+          <li><strong>20 层工作流</strong>：支持串行/并行分支、子工作流</li>
+          <li><strong>AI 节点</strong>：调用大模型作为工作流的一环</li>
+          <li><strong>定时触发</strong>：Cron 表达式 + 事件触发双模式</li>
+          <li><strong>自部署</strong>：Docker 一键部署，内存仅 ~300MB</li>
+        </ul>
+
+        <h4>定价方案</h4>
+        <table class="pricing-table">
+          <tr><th>方案</th><th>费用</th><th>说明</th></tr>
+          <tr><td>自部署</td><td>免费</td><td>Docker 部署，fair-code 许可</td></tr>
+          <tr><td>Cloud Starter</td><td>$20/月</td><td>2500 次执行 / 5 个工作流</td></tr>
+          <tr><td>Cloud Pro</td><td>$50/月</td><td>10000 次执行 / 无限工作流</td></tr>
+          <tr><td>Enterprise</td><td>定制</td><td>SSO / RBAC / 日志审计</td></tr>
+        </table>
+        <p style="font-size: 12px; color: var(--text-tertiary);">云成本参考：AWS t3.small 部署约 $23/月</p>
+
+        <div class="pros-cons">
+          <div class="pros-box">
+            <h5>优势</h5>
+            <ul>
+              <li>连接器数量最多（400+）</li>
+              <li>响应最快（50-200ms）</li>
+              <li>部署最轻量（300MB 内存）</li>
+              <li>代码灵活性最高</li>
+            </ul>
+          </div>
+          <div class="cons-box">
+            <h5>不足</h5>
+            <ul>
+              <li>AI 能力是插件级别，非核心</li>
+              <li>纯知识库场景不如 RAGflow</li>
+              <li>零代码用户上手有门槛</li>
+              <li>工作流深度 20 层，不如 Dify（50层）</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>适合谁</h4>
+        <p>需要串联多个系统做自动化的技术团队；需要定时任务、数据同步、通知推送的运维；需要 AI + 传统自动化混合架构的企业。<strong>结论：把活儿自动串起来，选 n8n。</strong></p>
+      </div>
+    </div>
+
+    <!-- Midjourney -->
+    <div class="tool-card" id="midjourney">
+      <div class="tool-header">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #7C3AED, #F472B6);">🎨</div>
+        <div>
+          <h3>Midjourney <span class="tool-badge" style="background:rgba(124,58,237,0.10);color:#7C3AED">AI图像生成</span></h3>
+          <p class="tool-subtitle">业界领先的 AI 图像生成工具，艺术品质标杆</p>
+        </div>
+      </div>
+      <div class="tool-body">
+        <p>Midjourney 是 AI 图像生成领域的标杆产品，以出色的艺术质感和细节表现著称。2026年版本在写实风格、一致性角色、文字渲染方面大幅提升，支持网页版独立创作界面。</p>
+
+        <h4>核心功能</h4>
+        <ul>
+          <li><strong>高质量图像生成</strong>：写实/插画/3D/概念艺术，多风格切换</li>
+          <li><strong>一致性角色</strong>：跨图保持角色外观一致（--cref 参数）</li>
+          <li><strong>图像编辑</strong>：局部重绘、扩图、风格转换</li>
+          <li><strong>Vary 变体系统</strong>：精细调整生成结果的变体</li>
+          <li><strong>批量生成</strong>：支持批量任务和排队</li>
+          <li><strong>网页版</strong>：独立创作界面，不再依赖 Discord</li>
+        </ul>
+
+        <h4>定价方案</h4>
+        <table class="pricing-table">
+          <tr><th>方案</th><th>月费</th><th>核心权益</th></tr>
+          <tr><td>Basic</td><td>$10/月</td><td>200 张/月 / 3 并发</td></tr>
+          <tr><td>Standard</td><td>$30/月</td><td>15h 快速模式 + 无限松弛模式</td></tr>
+          <tr><td>Pro</td><td>$60/月</td><td>30h 快速 + 隐私模式 + 12 并发</td></tr>
+          <tr><td>Mega</td><td>$120/月</td><td>60h 快速 + 12 并发</td></tr>
+        </table>
+
+        <div class="pros-cons">
+          <div class="pros-box">
+            <h5>优势</h5>
+            <ul>
+              <li>艺术品质业界第一</li>
+              <li>风格多样性极强</li>
+              <li>一致性角色功能实用</li>
+              <li>社区活跃，灵感丰富</li>
+            </ul>
+          </div>
+          <div class="cons-box">
+            <h5>不足</h5>
+            <ul>
+              <li>价格较高</li>
+              <li>精确控制不如 Stable Diffusion</li>
+              <li>中文提示词支持一般</li>
+              <li>商用需注意版权条款</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>适合谁</h4>
+        <p>设计师、插画师、内容创作者；需要高质量配图的自媒体和营销团队；追求艺术品质的创意工作者。<strong>结论：要最好的出图效果，选 Midjourney。</strong></p>
+      </div>
+    </div>
+
+    <!-- Sora -->
+    <div class="tool-card" id="sora">
+      <div class="tool-header">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #0F766E, #14B8A6);">🎬</div>
+        <div>
+          <h3>Sora <span class="tool-badge" style="background:rgba(15,118,110,0.10);color:#0F766E">AI视频生成</span></h3>
+          <p class="tool-subtitle">OpenAI 出品的 AI 视频生成工具，文本/图片转视频</p>
+        </div>
+      </div>
+      <div class="tool-body">
+        <p>Sora 是 OpenAI 推出的 AI 视频生成工具，能根据文本描述或图片生成高质量视频。2026年版本在时长、一致性、物理模拟方面显著提升，支持最长 60 秒视频生成。</p>
+
+        <h4>核心功能</h4>
+        <ul>
+          <li><strong>文本生成视频</strong>：描述场景，AI 生成对应视频</li>
+          <li><strong>图片生成视频</strong>：上传图片，让静态画面动起来</li>
+          <li><strong>物理模拟</strong>：模拟真实物理效果（重力、碰撞、流体）</li>
+          <li><strong>一致性</strong>：长视频中保持角色和场景一致</li>
+          <li><strong>视频编辑</strong>：扩展、变速、风格转换</li>
+          <li><strong>多分辨率</strong>：支持 720p / 1080p / 4K 输出</li>
+        </ul>
+
+        <h4>定价方案</h4>
+        <table class="pricing-table">
+          <tr><th>方案</th><th>月费</th><th>视频额度</th></tr>
+          <tr><td>ChatGPT Plus</td><td>$20/月</td><td>50 次/月（720p / 5秒）</td></tr>
+          <tr><td>ChatGPT Pro</td><td>$200/月</td><td>无限生成（含 1080p / 20秒）</td></tr>
+          <tr><td>API</td><td>按量付费</td><td>$0.10/秒（720p）</td></tr>
+        </table>
+
+        <div class="pros-cons">
+          <div class="pros-box">
+            <h5>优势</h5>
+            <ul>
+              <li>生成质量业界顶尖</li>
+              <li>物理模拟逼真</li>
+              <li>与 ChatGPT 生态整合</li>
+              <li>支持图片转视频</li>
+            </ul>
+          </div>
+          <div class="cons-box">
+            <h5>不足</h5>
+            <ul>
+              <li>价格较高，Pro 才有无限额度</li>
+              <li>生成耗时较长（1-3 分钟）</li>
+              <li>复杂场景偶尔出现瑕疵</li>
+              <li>国内访问需特殊网络</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>适合谁</h4>
+        <p>短视频创作者、广告制作团队、影视概念设计师；需要快速生成视频素材的营销人员；探索 AI 视频可能性的创作者。<strong>结论：要最好的 AI 视频效果，选 Sora。</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compare Table -->
+  <section class="section" id="compare">
+    <h2 class="section-title">横向对比总表</h2>
+    <p class="section-sub">一表看清 6 款工具的核心差异</p>
+    <table class="compare-table">
+      <tr>
+        <th>维度</th><th>Cursor</th><th>Coze</th><th>Dify</th><th>n8n</th><th>Midjourney</th><th>Sora</th>
+      </tr>
+      <tr>
+        <td><strong>定位</strong></td><td>AI代码编辑器</td><td>零代码Bot搭建</td><td>AI应用开发</td><td>工作流自动化</td><td>AI图像生成</td><td>AI视频生成</td>
+      </tr>
+      <tr>
+        <td><strong>开源</strong></td><td>否</td><td>否</td><td>是 (类Apache 2.0)</td><td>是 (fair-code)</td><td>否</td><td>否</td>
+      </tr>
+      <tr>
+        <td><strong>自部署</strong></td><td>否</td><td>否</td><td>Docker</td><td>Docker/npm</td><td>否</td><td>否</td>
+      </tr>
+      <tr>
+        <td><strong>上手难度</strong></td><td>低（VS Code基础）</td><td>极低（零代码）</td><td>中（需技术基础）</td><td>中高（需编程）</td><td>低</td><td>低</td>
+      </tr>
+      <tr>
+        <td><strong>免费版</strong></td><td>有限免费</td><td>有</td><td>社区版全功能</td><td>自部署免费</td><td>无</td><td>Plus含50次</td>
+      </tr>
+      <tr>
+        <td><strong>起价</strong></td><td>$20/月</td><td>免费起步</td><td>免费起步</td><td>$20/月云版</td><td>$10/月</td><td>$20/月(含GPT)</td>
+      </tr>
+      <tr>
+        <td><strong>GitHub Stars</strong></td><td>—</td><td>闭源</td><td>142K</td><td>188K</td><td>—</td><td>—</td>
+      </tr>
+      <tr>
+        <td><strong>最佳场景</strong></td><td>日常编程</td><td>快速做Bot</td><td>企业AI应用</td><td>系统集成</td><td>出图</td><td>出视频</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Verdict -->
+  <section class="section" id="verdict">
+    <div class="verdict-box">
+      <h4>选型建议：按场景选工具</h4>
+      <p><strong>写代码</strong> → Cursor（日常编程首选，VS Code 用户无缝迁移）</p>
+      <p><strong>做对话机器人</strong> → Coze（零代码最快上线，字节生态一键发布）</p>
+      <p><strong>做有知识库的 AI 应用</strong> → Dify（开源可私有化，RAG 能力强）</p>
+      <p><strong>串联多系统自动化</strong> → n8n（400+ 连接器，AI 是其中一环）</p>
+      <p><strong>生成图片</strong> → Midjourney（艺术品质标杆）</p>
+      <p><strong>生成视频</strong> → Sora（物理模拟最逼真）</p>
+      <p style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(20,184,166,0.15);"><strong>混合架构推荐</strong>：n8n（系统集成+触发器）+ Dify（LLM+RAG 应用层）是企业级最稳组合。n8n 负责外部系统集成，通过 HTTP 调 Dify API，Dify 专注 AI 逻辑，分工明确。</p>
+    </div>
+
+    <div class="cta-box">
+      <h3>想了解更多 AI 实战内容？</h3>
+      <p>从 WorkBuddy 使用手册到 AI Agent 案例，28 篇实战笔记持续更新</p>
+      <a href="index.html" class="cta-btn">返回首页查看全部文章</a>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-text">
+      <h3>小饭的 AI 实战笔记</h3>
+      <p>社区共创 - 开源</p>
+      <p>&copy; 2026 小饭的 AI 实战笔记</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
