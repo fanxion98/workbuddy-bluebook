@@ -1273,6 +1273,48 @@ img { max-width: 100%; height: auto; }
   margin-top: 10px;
 }
 
+/* News Hub */
+.news-section { max-width: 1200px; margin: 0 auto 48px; padding: 0 24px; }
+.news-tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+.news-tab {
+  padding: 8px 18px; border-radius: var(--radius-xl); font-size: 13px; font-weight: 500;
+  background: var(--color-gray-50); color: var(--text-secondary); border: 1px solid var(--border);
+  cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 6px;
+}
+.news-tab:hover { background: var(--color-primary-50); color: var(--color-primary-600); }
+.news-tab.active {
+  background: linear-gradient(135deg, #0F766E, #2563EB); color: #fff; border-color: transparent;
+}
+.news-tab .tab-icon { font-size: 15px; }
+.news-panel { display: none; }
+.news-panel.active { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.news-card {
+  display: block; padding: 16px; border-radius: var(--radius-lg); background: #fff;
+  border: 1px solid var(--border); text-decoration: none; color: inherit; transition: all 0.2s;
+  position: relative; overflow: hidden;
+}
+.news-card:hover { border-color: var(--color-primary-400); box-shadow: 0 4px 12px rgba(15, 118, 110, 0.08); transform: translateY(-2px); }
+.news-card-tag {
+  display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px;
+  margin-bottom: 8px;
+}
+.news-card h4 { font-size: 14px; font-weight: 500; margin: 0 0 6px; line-height: 1.4; }
+.news-card p { font-size: 12px; color: var(--text-tertiary); margin: 0; }
+.news-card-arrow { position: absolute; bottom: 12px; right: 14px; color: var(--color-primary-400); }
+
+@media (max-width: 900px) {
+  .news-tabs { gap: 6px; }
+  .news-tab { padding: 6px 12px; font-size: 12px; }
+}
+@media (max-width: 480px) {
+  .news-grid { grid-template-columns: 1fr; }
+  .news-tab { padding: 6px 10px; font-size: 11px; }
+  .news-tab .tab-icon { font-size: 13px; }
+}
+
 </style>
 </head>
 <body>
@@ -1290,6 +1332,7 @@ img { max-width: 100%; height: auto; }
       <a href="skills.html">Skills</a>
       <a href="xiaoe-agent-blog.html">小鹅通</a>
       <a href="ai-agent-cases.html">AI案例</a>
+      <a href="#news">新闻热点</a>
     </div>
     <div class="topbar-actions">
       <div class="dropdown">
@@ -1331,6 +1374,98 @@ img { max-width: 100%; height: auto; }
   </form>
   <p class="search-hint">站内搜索 — 输入关键词后自动在百度搜索本博客内容</p>
 </div>
+
+<!-- News Hub -->
+<section class="news-section" id="news">
+  <h2 class="section-title">新闻热点</h2>
+  <p class="section-sub">追踪 OPC、WorkBuddy、AI 行业最新动态，点击查看详情</p>
+  <div class="news-tabs">
+    <button class="news-tab active" onclick="switchNewsTab('opc', this)"><span class="tab-icon">🏢</span> OPC热点新闻</button>
+    <button class="news-tab" onclick="switchNewsTab('workbuddy', this)"><span class="tab-icon">🔧</span> WorkBuddy热点新闻</button>
+    <button class="news-tab" onclick="switchNewsTab('ai', this)"><span class="tab-icon">🤖</span> 人工智能热点新闻</button>
+    <button class="news-tab" onclick="switchNewsTab('global', this)"><span class="tab-icon">🌍</span> 全球AI行业热点新闻</button>
+  </div>
+
+  <div class="news-panel active" id="news-opc">
+    <div class="news-grid">
+      <a class="news-card" href="https://www.baidu.com/s?wd=OPC%E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8+%E6%9C%80%E6%96%B0" target="_blank" rel="noopener">
+        <span class="news-card-tag" style="background:rgba(15,118,110,.10);color:#0F766E">OPC</span>
+        <h4>OPC一人公司模式最新动态</h4>
+        <p>AI时代的一人公司如何运作，最新案例与趋势</p>
+      </a>
+      <a class="news-card" href="https://www.baidu.com/s?wd=%E4%B8%80%E4%BA%BA%E5%85%AC%E5%8F%B8+AI%E4%BB%A3%E7%90%86" target="_blank" rel="noopener">
+        <span class="news-card-tag" style="background:rgba(15,118,110,.10);color:#0F766E">OPC</span>
+        <h4>AI代理+一人公司实践</h4>
+        <p>用AI替代团队，一个人做出一家公司的产出</p>
+      </a>
+      <a class="news-card" href="https://www.baidu.com/s?wd=%E9%95%BF%E6%B2%99+%E7%AE%97%E5%8A%9B%E5%88%B8+AI%E5%88%9B%E4%B8%9A" target="_blank" rel="noopener">
+        <span class="news-card-tag" style="background:rgba(15,118,110,.10);color:#0F766E">OPC</span>
+        <h4>长沙算力券与AI创业政策</h4>
+        <p>10%补贴、单企最高100万，AI创业窗口期</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="news-panel" id="news-workbuddy">
+    <div class="news-grid">
+      <a class="news-card" href="https://www.baidu.com/s?wd=WorkBuddy+%E8%85%BE%E8%AE%AF+AI%E5%8A%9E%E5%85%AC" target="_blank" rel="noopener">
+        <span class="news-card-tag" style="background:rgba(37,99,235,.10);color:#2563EB">WorkBuddy</span>
+        <h4>WorkBuddy 最新功能与更新</h4>
+        <p>腾讯AI办公助手，最新Skills与Connector动态</p>
+      </a>
+      <a class="news-card" href="https://www.baidu.com/s?wd=WorkBuddy+AI+Agent+%E5%AE%9E%E6%88%98" target="_blank" rel="noopener">
+        <span class="news-card-tag" style="background:rgba(37,99,235,.10);color:#2563EB">WorkBuddy</span>
+        <h4>WorkBuddy Agent 实战案例</h4>
+        <p>真实任务、可复现步骤，从入门到落地</p>
+      </a>
+      <a class="news-card" href="https://www.baidu.com/s?wd=WorkBuddy+%E4%BC%81%E4%B8%9A%E7%89%88+%E4%BB%A3%E7%90%86%E5%95%86" target="_blank" rel="noopener">
+        <span class="news-card-tag" style="background:rgba(37,99,235,.10);color:#2563EB">WorkBuddy</span>
+        <h4>WorkBuddy企业版代理模式</h4>
+        <p>腾讯生态代理商，AI赋能企业数字化转型</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="news-panel" id="news-ai">
+    <div class="news-grid">
+      <a class="news-card" href="https://www.baidu.com/s?wd=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD+%E6%9C%80%E6%96%B0%E6%96%B0%E9%97%BB+2026" target="_blank" rel="noopener">
+        <span class="news-card-tag" style="background:rgba(124,58,237,.10);color:#7C3AED">AI</span>
+        <h4>人工智能最新新闻</h4>
+        <p>大模型、AI应用、AI芯片，每日热点追踪</p>
+      </a>
+      <a class="news-card" href="https://www.baidu.com/s?wd=AI+Agent+%E6%99%BA%E8%83%BD%E4%BD%93+%E6%9C%80%E6%96%B0%E8%BF%9B%E5%B1%95" target="_blank" rel="noopener">
+        <span class="news-card-tag" style="background:rgba(124,58,237,.10);color:#7C3AED">AI</span>
+        <h4>AI Agent 智能体最新进展</h4>
+        <p>从ChatGPT到自主Agent，AI能力的进化方向</p>
+      </a>
+      <a class="news-card" href="https://www.baidu.com/s?wd=%E5%9B%BD%E5%86%85%E5%A4%A7%E6%A8%A1%E5%9E%8B+DeepSeek+%E9%80%9A%E4%B9%89%E5%B9%B2%E9%97%AE" target="_blank" rel="noopener">
+        <span class="news-card-tag" style="background:rgba(124,58,237,.10);color:#7C3AED">AI</span>
+        <h4>国内大模型最新动态</h4>
+        <p>DeepSeek、通义千问、文心一言，国产AI崛起</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="news-panel" id="news-global">
+    <div class="news-grid">
+      <a class="news-card" href="https://www.baidu.com/s?wd=OpenAI+GPT+%E6%9C%80%E6%96%B0%E6%B6%88%E6%81%AF" target="_blank" rel="noopener">
+        <span class="news-card-tag" style="background:rgba(217,70,239,.10);color:#D946EF">GLOBAL</span>
+        <h4>OpenAI / GPT 最新消息</h4>
+        <p>ChatGPT、GPT-5、Sora，全球AI标杆动态</p>
+      </a>
+      <a class="news-card" href="https://www.baidu.com/s?wd=Google+Gemini+Anthropic+Claude+%E6%9C%80%E6%96%B0" target="_blank" rel="noopener">
+        <span class="news-card-tag" style="background:rgba(217,70,239,.10);color:#D946EF">GLOBAL</span>
+        <h4>Google / Anthropic AI 竞争</h4>
+        <p>Gemini vs Claude vs GPT，全球AI大厂之争</p>
+      </a>
+      <a class="news-card" href="https://www.baidu.com/s?wd=NVIDIA+AI%E8%8A%AF%E7%89%87+%E5%85%A8%E7%90%83%E7%AE%97%E5%8A%9B" target="_blank" rel="noopener">
+        <span class="news-card-tag" style="background:rgba(217,70,239,.10);color:#D946EF">GLOBAL</span>
+        <h4>NVIDIA 与全球算力竞赛</h4>
+        <p>GPU、AI芯片、算力基建，全球科技巨头布局</p>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- Series -->
 <section class="series-section" id="series">
@@ -1753,6 +1888,13 @@ function handleSearch(e) {
   var q = document.getElementById('searchInput').value.trim();
   if (!q) return;
   window.open('https://www.baidu.com/s?wd=' + encodeURIComponent('site:simouxuan.com ' + q), '_blank');
+}
+
+function switchNewsTab(tabId, btn) {
+  document.querySelectorAll('.news-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelectorAll('.news-panel').forEach(function(p) { p.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('news-' + tabId).classList.add('active');
 }
 </script>
 </body>
