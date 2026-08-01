@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="2026年大模型横评：深度对比GPT-5.6、Claude Opus 5、DeepSeek V4、通义千问、文心一言、Kimi K2.5等6大主流大模型，含跑分数据、定价对比、能力维度、选型指南。">
+<title>大模型横评 2026 - GPT-5.6 vs Claude 5 vs DeepSeek V4 vs 通义千问 | 小饭</title>
+<meta name="keywords" content="大模型横评,GPT-5.6,Claude Opus 5,DeepSeek V4,通义千问,文心一言,Kimi K2.5,大模型对比,大模型选型,AI模型推荐,大模型排名,2026大模型,国产大模型,开源大模型">
+<link rel="canonical" href="https://www.simouxuan.com/llm-compare.html">
+<meta property="og:title" content="大模型横评 2026 - GPT-5.6 vs Claude 5 vs DeepSeek V4 vs 通义千问 | 小饭">
+<meta property="og:description" content="2026年大模型横评：深度对比GPT-5.6、Claude Opus 5、DeepSeek V4、通义千问、文心一言、Kimi K2.5等6大主流大模型，含跑分数据、定价对比、能力维度、选型指南。">
+<meta property="og:url" content="https://www.simouxuan.com/llm-compare.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="小饭的 AI 实战笔记">
+<meta property="og:locale" content="zh_CN">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "大模型横评 2026 - 6大主流大模型深度对比",
+  "description": "深度对比GPT-5.6、Claude Opus 5、DeepSeek V4、通义千问、文心一言、Kimi K2.5等6大主流大模型，含跑分数据、定价对比、选型指南。",
+  "url": "https://www.simouxuan.com/llm-compare.html",
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-08-01",
+  "dateModified": "2026-08-01",
+  "author": { "@type": "Person", "name": "小饭" },
+  "publisher": { "@type": "Person", "name": "小饭" },
+  "isPartOf": { "@type": "WebSite", "name": "小饭的 AI 实战笔记", "url": "https://www.simouxuan.com/" }
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --color-primary-50: rgba(20, 184, 166, 0.08);
+  --color-primary-100: rgba(20, 184, 166, 0.15);
+  --color-primary-400: #2DD4BF;
+  --color-primary-600: #14B8A6;
+  --color-primary-800: #0F766E;
+  --c-teal: #14B8A6; --c-blue: #38BDF8; --c-coral: #FB923C; --c-purple: #F472B6;
+  --bg: #FAFAF9; --bg-card: #FFFFFF; --bg-soft: #F5F5F4;
+  --bg-hero: linear-gradient(135deg, #F0FDFA 0%, #ECFEFF 30%, #F0F9FF 60%, #FDF4FF 100%);
+  --text-primary: #292524; --text-secondary: #57534E; --text-tertiary: #A8A29E;
+  --border: #E7E5E4; --border-light: #F5F5F4;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.03);
+  --shadow-lg: 0 12px 40px rgba(20,184,166,0.08), 0 4px 16px rgba(0,0,0,0.04);
+  --topbar-h: 56px;
+  --font-serif: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 20px;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text-primary); font-family: var(--font-sans); font-size: 14px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+a { color: var(--color-primary-600); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--color-primary-800); }
+
+.topbar { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); height: var(--topbar-h); display: flex; align-items: center; }
+.topbar-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 24px; }
+.blog-logo { display: flex; align-items: center; gap: 8px; font-family: var(--font-serif); font-size: 16px; font-weight: 500; color: var(--text-primary); text-decoration: none; white-space: nowrap; }
+.blog-logo:hover { color: var(--color-primary-600); }
+.blog-logo-icon { width: 30px; height: 30px; background: linear-gradient(135deg, #14B8A6, #38BDF8); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; font-weight: 600; }
+.topbar-nav { display: flex; align-items: center; gap: 4px; }
+.topbar-nav a { padding: 6px 14px; border-radius: var(--radius-xl); font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: all 0.2s; font-weight: 500; }
+.topbar-nav a:hover { background: var(--color-primary-50); color: var(--color-primary-600); }
+.topbar-nav a.active { background: var(--color-primary-100); color: var(--color-primary-600); }
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+.hero { margin-top: var(--topbar-h); padding: 64px 24px 40px; text-align: center; background: var(--bg-hero); }
+.hero h1 { font-size: 32px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; line-height: 1.3; }
+.hero p { font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 20px; }
+.hero-tags { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.hero-tag { padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+.hero-tag.teal { background: rgba(20,184,166,0.10); color: #14B8A6; }
+.hero-tag.blue { background: rgba(56,189,248,0.10); color: #38BDF8; }
+.hero-tag.coral { background: rgba(251,146,60,0.10); color: #FB923C; }
+.hero-tag.purple { background: rgba(244,114,182,0.10); color: #F472B6; }
+
+.section { padding: 48px 0; }
+.section-title { font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+.section-sub { font-size: 14px; color: var(--text-tertiary); margin-bottom: 28px; }
+
+/* Model Card */
+.model-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 28px; box-shadow: var(--shadow-sm); transition: box-shadow 0.3s; scroll-margin-top: 80px; }
+.model-card:hover { box-shadow: var(--shadow-md); }
+.model-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+.model-icon { width: 52px; height: 52px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; color: #fff; font-weight: 700; }
+.model-header h3 { font-size: 20px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.model-subtitle { font-size: 13px; color: var(--text-tertiary); }
+.model-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; margin-left: 8px; vertical-align: middle; }
+
+.model-body h4 { font-size: 15px; font-weight: 600; color: var(--text-primary); margin: 20px 0 8px; }
+.model-body p { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+.model-body ul { list-style: none; padding: 0; margin: 8px 0; }
+.model-body ul li { font-size: 14px; color: var(--text-secondary); padding: 4px 0 4px 20px; position: relative; }
+.model-body ul li::before { content: ""; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary-400); }
+
+/* Spec grid */
+.spec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0; }
+.spec-item { background: var(--bg-soft); border-radius: var(--radius-sm); padding: 12px 16px; }
+.spec-label { font-size: 11px; color: var(--text-tertiary); margin-bottom: 2px; }
+.spec-value { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+
+/* Benchmark table */
+.bench-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; overflow-x: auto; display: block; }
+.bench-table th { background: var(--bg-soft); padding: 12px 14px; text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 2px solid var(--border); white-space: nowrap; }
+.bench-table td { padding: 12px 14px; border-bottom: 1px solid var(--border-light); color: var(--text-secondary); }
+.bench-table .highlight { color: #059669; font-weight: 600; }
+
+/* Pricing table */
+.pricing-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+.pricing-table th { background: var(--bg-soft); padding: 10px 14px; text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 2px solid var(--border); }
+.pricing-table td { padding: 10px 14px; border-bottom: 1px solid var(--border-light); color: var(--text-secondary); }
+.pricing-table tr:last-child td { border-bottom: none; }
+
+/* Pros/Cons */
+.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.pros-box, .cons-box { padding: 16px; border-radius: var(--radius-md); }
+.pros-box { background: rgba(52,211,153,0.06); border: 1px solid rgba(52,211,153,0.15); }
+.cons-box { background: rgba(251,113,133,0.06); border: 1px solid rgba(251,113,133,0.15); }
+.pros-box h5 { font-size: 13px; font-weight: 600; color: #059669; margin-bottom: 8px; }
+.cons-box h5 { font-size: 13px; font-weight: 600; color: #E11D48; margin-bottom: 8px; }
+.pros-box ul, .cons-box ul { list-style: none; padding: 0; margin: 0; }
+.pros-box li, .cons-box li { font-size: 13px; padding: 3px 0 3px 16px; position: relative; color: var(--text-secondary); }
+.pros-box li::before { content: "+"; position: absolute; left: 0; color: #059669; font-weight: 700; }
+.cons-box li::before { content: "-"; position: absolute; left: 0; color: #E11D48; font-weight: 700; }
+
+/* Verdict */
+.verdict-box { background: linear-gradient(135deg, rgba(20,184,166,0.06), rgba(56,189,248,0.06)); border: 1px solid rgba(20,184,166,0.15); border-radius: var(--radius-lg); padding: 24px; margin: 24px 0; }
+.verdict-box h4 { font-size: 16px; font-weight: 700; color: var(--color-primary-800); margin-bottom: 12px; }
+.verdict-box p { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+
+.cta-box { text-align: center; padding: 40px 24px; background: var(--bg-hero); border-radius: var(--radius-lg); margin: 40px 0; }
+.cta-box h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.cta-box p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+.cta-btn { display: inline-block; padding: 10px 28px; background: linear-gradient(135deg, #14B8A6, #38BDF8); color: #fff; border-radius: var(--radius-xl); font-size: 14px; font-weight: 600; text-decoration: none; transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); color: #fff; }
+
+.site-footer { background: var(--text-primary); color: #A8A29E; padding: 48px 24px 32px; text-align: center; margin-top: 64px; }
+.footer-inner { max-width: 600px; margin: 0 auto; }
+.footer-text h3 { font-size: 16px; color: #fff; margin-bottom: 8px; }
+.footer-text p { font-size: 13px; margin-bottom: 4px; }
+
+.toc-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 24px; margin-bottom: 32px; }
+.toc-box h4 { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 10px; }
+.toc-box ul { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 24px; }
+.toc-box li { padding: 3px 0; }
+.toc-box a { font-size: 13px; color: var(--text-secondary); }
+
+@media (max-width: 768px) {
+  .topbar-nav a { padding: 6px 8px; font-size: 12px; }
+  .hero h1 { font-size: 24px; }
+  .hero p { font-size: 14px; }
+  .model-card { padding: 20px; }
+  .model-header { flex-direction: column; gap: 8px; }
+  .pros-cons { grid-template-columns: 1fr; }
+  .spec-grid { grid-template-columns: 1fr; }
+  .toc-box ul { columns: 1; }
+  .bench-table, .pricing-table { font-size: 11px; }
+  .bench-table th, .bench-table td, .pricing-table th, .pricing-table td { padding: 8px 10px; }
+}
+@media (max-width: 480px) {
+  .topbar-nav { gap: 0; }
+  .topbar-nav a { padding: 5px 6px; font-size: 11px; }
+  .hero { padding: 40px 16px 28px; }
+  .hero h1 { font-size: 20px; }
+  .section { padding: 32px 0; }
+  .model-card { padding: 16px; }
+}
+</style>
+</head>
+<body>
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="blog-logo">
+      <span class="blog-logo-icon">W</span>
+      <span>小饭的 AI 实战笔记</span>
+    </a>
+    <div class="topbar-nav">
+      <a href="index.html">首页</a>
+      <a href="ai-tools.html">AI工具</a>
+      <a href="llm-compare.html" class="active">大模型</a>
+      <a href="ai-industry.html">行业落地</a>
+      <a href="skills.html">Skills</a>
+      <a href="ai-agent-cases.html">AI案例</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>大模型横评 2026</h1>
+  <p>深度对比 GPT-5.6、Claude Opus 5、DeepSeek V4、通义千问、文心一言、Kimi K2.5 等 6 大主流大模型，含最新跑分、定价、能力分析和选型指南。</p>
+  <div class="hero-tags">
+    <span class="hero-tag teal">6 大模型</span>
+    <span class="hero-tag blue">含跑分数据</span>
+    <span class="hero-tag coral">定价对比</span>
+    <span class="hero-tag purple">2026年8月更新</span>
+  </div>
+</section>
+
+<div class="container">
+  <div class="toc-box" style="margin-top: 32px;">
+    <h4>目录</h4>
+    <ul>
+      <li><a href="#gpt56">1. GPT-5.6 (OpenAI)</a></li>
+      <li><a href="#claude5">2. Claude Opus 5 (Anthropic)</a></li>
+      <li><a href="#deepseek">3. DeepSeek V4 (深度求索)</a></li>
+      <li><a href="#qwen">4. 通义千问 (阿里)</a></li>
+      <li><a href="#wenxin">5. 文心一言 (百度)</a></li>
+      <li><a href="#kimi">6. Kimi K2.5 (月之暗面)</a></li>
+      <li><a href="#benchmarks">7. 跑分横向对比</a></li>
+      <li><a href="#pricing">8. 定价横向对比</a></li>
+      <li><a href="#guide">9. 选型指南</a></li>
+    </ul>
+  </div>
+
+  <section class="section" style="padding-top: 16px;">
+    <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px;">
+      2026年大模型竞争进入白热化阶段。OpenAI 推出 GPT-5.6，Anthropic 发布 Claude Opus 5，DeepSeek V4 正式版上线，国产大模型全面追赶到第一梯队。这篇横评基于 <strong>2026年8月1日</strong>最新公开数据，从跑分、定价、能力、生态四个维度全面对比，帮你选对模型。
+    </p>
+
+    <!-- GPT-5.6 -->
+    <div class="model-card" id="gpt56">
+      <div class="model-header">
+        <div class="model-icon" style="background: linear-gradient(135deg, #10A37F, #1A7F64);">G</div>
+        <div>
+          <h3>GPT-5.6 <span class="model-badge" style="background:rgba(16,163,127,0.10);color:#10A37F">OpenAI</span></h3>
+          <p class="model-subtitle">OpenAI 旗舰模型 · 2026年7月发布 · 1M 上下文</p>
+        </div>
+      </div>
+      <div class="model-body">
+        <p>GPT-5.6 是 OpenAI 2026 年的旗舰模型，在终端/Shell 代理工作流和 Microsoft 365 / Azure Copilot 集成方面表现最强。7月9日成为 M365 首选模型，企业生态最完善。</p>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">上下文窗口</div><div class="spec-value">1,000,000 tokens</div></div>
+          <div class="spec-item"><div class="spec-label">最大输出</div><div class="spec-value">128,000 tokens</div></div>
+          <div class="spec-item"><div class="spec-label">多模态</div><div class="spec-value">文本 + 图像 + 音频</div></div>
+          <div class="spec-item"><div class="spec-label">开源</div><div class="spec-value">否（闭源）</div></div>
+        </div>
+        <h4>核心优势</h4>
+        <ul>
+          <li>Terminal-Bench 2.1 得分 85.1%，终端/Shell 代理工作流最强</li>
+          <li>Microsoft 365 / Azure Copilot 首选模型，企业生态完善</li>
+          <li>多模态能力强，支持文本+图像+音频输入</li>
+          <li>工具调用和 Function Calling 最成熟</li>
+        </ul>
+        <h4>定价（API）</h4>
+        <table class="pricing-table">
+          <tr><th>类型</th><th>价格</th></tr>
+          <tr><td>输入</td><td>~$15/百万 tokens</td></tr>
+          <tr><td>输出</td><td>~$15/百万 tokens</td></tr>
+        </table>
+        <div class="pros-cons">
+          <div class="pros-box"><h5>优势</h5><ul><li>企业生态最强</li><li>终端代理能力领先</li><li>多模态全面</li><li>工具调用成熟</li></ul></div>
+          <div class="cons-box"><h5>不足</h5><ul><li>价格昂贵</li><li>闭源不可自部署</li><li>SWE-bench 不如 Claude</li><li>算法能力不如 DeepSeek</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Claude Opus 5 -->
+    <div class="model-card" id="claude5">
+      <div class="model-header">
+        <div class="model-icon" style="background: linear-gradient(135deg, #D97757, #C2410C);">C</div>
+        <div>
+          <h3>Claude Opus 5 <span class="model-badge" style="background:rgba(217,119,87,0.10);color:#D97757">Anthropic</span></h3>
+          <p class="model-subtitle">Anthropic 旗舰模型 · 2026年7月24日发布 · 1M 上下文</p>
+        </div>
+      </div>
+      <div class="model-body">
+        <p>Claude Opus 5 是 2026 年最强的编码模型，SWE-bench Verified 得分 96.0%，SWE-bench Pro 得分 80.3%，均为业界最高。Claude Code 大获成功，Anthropic 营收增速超越 OpenAI。</p>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">上下文窗口</div><div class="spec-value">1,000,000 tokens</div></div>
+          <div class="spec-item"><div class="spec-label">最大输出</div><div class="spec-value">128,000 tokens</div></div>
+          <div class="spec-item"><div class="spec-label">多模态</div><div class="spec-value">文本 + 图像</div></div>
+          <div class="spec-item"><div class="spec-label">开源</div><div class="spec-value">否（闭源）</div></div>
+        </div>
+        <h4>核心优势</h4>
+        <ul>
+          <li>SWE-bench Verified 96.0% — 真实 GitHub Bug 修复能力最强</li>
+          <li>SWE-bench Pro 80.3% — 复杂多文件仓库重构领先</li>
+          <li>BrowseComp、GDPval-AA、Humanity's Last Exam 均领先</li>
+          <li>写作和内容创作能力最强，语气和结构把控精准</li>
+          <li>指令遵循和安全对齐业界标杆</li>
+        </ul>
+        <h4>定价（API）</h4>
+        <table class="pricing-table">
+          <tr><th>类型</th><th>价格</th></tr>
+          <tr><td>输入</td><td>$5.00/百万 tokens</td></tr>
+          <tr><td>输出</td><td>$25.00/百万 tokens</td></tr>
+        </table>
+        <div class="pros-cons">
+          <div class="pros-box"><h5>优势</h5><ul><li>编码能力第一</li><li>写作质量最高</li><li>长文档处理强</li><li>安全对齐好</li></ul></div>
+          <div class="cons-box"><h5>不足</h5><ul><li>价格较高</li><li>闭源不可自部署</li><li>不支持音频输入</li><li>算法不如 DeepSeek</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DeepSeek V4 -->
+    <div class="model-card" id="deepseek">
+      <div class="model-header">
+        <div class="model-icon" style="background: linear-gradient(135deg, #4D6BFE, #1E40AF);">D</div>
+        <div>
+          <h3>DeepSeek V4 <span class="model-badge" style="background:rgba(77,107,254,0.10);color:#4D6BFE">深度求索</span></h3>
+          <p class="model-subtitle">国产开源旗舰 · V4 正式版 2026年7月20日发布 · MIT 许可</p>
+        </div>
+      </div>
+      <div class="model-body">
+        <p>DeepSeek V4 是目前最强的开源大模型，SWE-bench Verified 80.6% 创开源纪录，LiveCodeBench 和 Codeforces Elo 全球第一。V4-Flash 正式版（8月1日）以 284B 参数 / 13B 激活的 MoE 架构，实现轻量模型对旗舰的反超。MIT 开源许可，可自部署。</p>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">上下文窗口</div><div class="spec-value">1,048,576 tokens</div></div>
+          <div class="spec-item"><div class="spec-label">最大输出</div><div class="spec-value">65,536 tokens (Pro) / 384K (Flash)</div></div>
+          <div class="spec-item"><div class="spec-label">多模态</div><div class="spec-value">仅文本（Pro）/ 有限（Flash）</div></div>
+          <div class="spec-item"><div class="spec-label">开源</div><div class="spec-value">MIT 许可（可自部署）</div></div>
+        </div>
+        <h4>核心优势</h4>
+        <ul>
+          <li>SWE-bench Verified 80.6% — 开源模型最高分</li>
+          <li>LiveCodeBench Pass@1 93.5% — 算法编程全球第一</li>
+          <li>Codeforces Elo 3,206 — 竞赛编程最强</li>
+          <li>三种推理模式：Non-think / Think / Think Max</li>
+          <li>峰谷定价：低谷期成本仅 $0.87/M tokens</li>
+          <li>MIT 开源，支持自部署和数据主权</li>
+        </ul>
+        <h4>定价（API，峰谷定价）</h4>
+        <table class="pricing-table">
+          <tr><th>模式</th><th>输入/百万tokens</th><th>输出/百万tokens</th></tr>
+          <tr><td>Pro 高峰</td><td>$0.28</td><td>$1.74</td></tr>
+          <tr><td>Pro 低谷</td><td>$0.14</td><td>$0.87</td></tr>
+          <tr><td>Flash 高峰</td><td>$0.07</td><td>$0.28</td></tr>
+          <tr><td>Flash 低谷</td><td>$0.14</td><td>$0.28</td></tr>
+        </table>
+        <p style="font-size: 12px; color: var(--text-tertiary);">成本对比：Claude Opus 5 输出 $25/M，DeepSeek V4-Flash 低谷 $0.28/M，相差 89 倍</p>
+        <div class="pros-cons">
+          <div class="pros-box"><h5>优势</h5><ul><li>开源 MIT 可自部署</li><li>性价比极高（89倍差距）</li><li>算法编程全球第一</li><li>1M 超长上下文</li></ul></div>
+          <div class="cons-box"><h5>不足</h5><ul><li>多模态能力弱</li><li>通用知识不如旗舰</li><li>综合智能指数50分（vs 顶级55+）</li><li>不支持图文输入</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 通义千问 -->
+    <div class="model-card" id="qwen">
+      <div class="model-header">
+        <div class="model-icon" style="background: linear-gradient(135deg, #615CED, #4338CA);">Q</div>
+        <div>
+          <h3>通义千问 Qwen3 <span class="model-badge" style="background:rgba(97,92,237,0.10);color:#615CED">阿里</span></h3>
+          <p class="model-subtitle">阿里旗舰大模型 · 2026年持续迭代 · 开源+商用</p>
+        </div>
+      </div>
+      <div class="model-body">
+        <p>通义千问 Qwen3 是阿里达摩院的大模型系列，以"开源全族"策略著称，从 0.5B 到 235B 全尺寸开源。2026年在中文理解、多模态、Agent能力方面持续提升，是国内开源生态最完善的大模型。</p>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">上下文窗口</div><div class="spec-value">128K tokens</div></div>
+          <div class="spec-item"><div class="spec-label">最大输出</div><div class="spec-value">8,192 tokens</div></div>
+          <div class="spec-item"><div class="spec-label">多模态</div><div class="spec-value">文本 + 图像 + 音频 + 视频</div></div>
+          <div class="spec-item"><div class="spec-label">开源</div><div class="spec-value">是（Apache 2.0）</div></div>
+        </div>
+        <h4>核心优势</h4>
+        <ul>
+          <li>全尺寸开源（0.5B~235B），适配各种部署场景</li>
+          <li>中文理解能力国产第一</li>
+          <li>多模态全面：文本+图像+音频+视频</li>
+          <li>阿里云生态整合，企业部署方便</li>
+          <li>支持微调和定制化</li>
+        </ul>
+        <h4>定价（API）</h4>
+        <table class="pricing-table">
+          <tr><th>版本</th><th>输入/百万tokens</th><th>输出/百万tokens</th></tr>
+          <tr><td>Qwen3-Max</td><td>¥20</td><td>¥60</td></tr>
+          <tr><td>Qwen3-Plus</td><td>¥4</td><td>¥12</td></tr>
+          <tr><td>Qwen3-Turbo</td><td>¥2</td><td>¥6</td></tr>
+          <tr><td>开源版</td><td colspan="2">免费自部署</td></tr>
+        </table>
+        <div class="pros-cons">
+          <div class="pros-box"><h5>优势</h5><ul><li>中文能力最强</li><li>全尺寸开源</li><li>多模态全面</li><li>阿里云生态好</li></ul></div>
+          <div class="cons-box"><h5>不足</h5><ul><li>英文能力不如 GPT/Claude</li><li>编码能力中等</li><li>推理能力一般</li><li>品牌国际影响力弱</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 文心一言 -->
+    <div class="model-card" id="wenxin">
+      <div class="model-header">
+        <div class="model-icon" style="background: linear-gradient(135deg, #2932E1, #1A1FB8);">W</div>
+        <div>
+          <h3>文心一言 ERNIE 5.0 <span class="model-badge" style="background:rgba(41,50,225,0.10);color:#2932E1">百度</span></h3>
+          <p class="model-subtitle">百度旗舰大模型 · 2026年迭代 · 搜索增强</p>
+        </div>
+      </div>
+      <div class="model-body">
+        <p>文心一言 ERNIE 5.0 是百度的旗舰大模型，以搜索增强和知识图谱为特色。2026年依托百度搜索生态，在实时信息获取、知识问答、中文创作方面有独特优势。</p>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">上下文窗口</div><div class="spec-value">128K tokens</div></div>
+          <div class="spec-item"><div class="spec-label">最大输出</div><div class="spec-value">4,096 tokens</div></div>
+          <div class="spec-item"><div class="spec-label">多模态</div><div class="spec-value">文本 + 图像</div></div>
+          <div class="spec-item"><div class="spec-label">开源</div><div class="spec-value">部分开源</div></div>
+        </div>
+        <h4>核心优势</h4>
+        <ul>
+          <li>搜索增强：实时获取最新信息，不依赖训练截止日期</li>
+          <li>知识图谱整合，事实准确性高</li>
+          <li>中文创作能力强，古文/诗词/公文场景出色</li>
+          <li>百度生态整合：搜索、地图、文库、网盘</li>
+          <li>企业版文心千帆平台，支持微调和定制</li>
+        </ul>
+        <h4>定价（API）</h4>
+        <table class="pricing-table">
+          <tr><th>版本</th><th>输入/百万tokens</th><th>输出/百万tokens</th></tr>
+          <tr><td>ERNIE 5.0 Max</td><td>¥40</td><td>¥120</td></tr>
+          <tr><td>ERNIE 5.0 Pro</td><td>¥8</td><td>¥24</td></tr>
+          <tr><td>ERNIE Speed</td><td>免费</td><td>免费</td></tr>
+        </table>
+        <div class="pros-cons">
+          <div class="pros-box"><h5>优势</h5><ul><li>搜索增强实时性好</li><li>中文创作强</li><li>百度生态整合</li><li>有免费版本</li></ul></div>
+          <div class="cons-box"><h5>不足</h5><ul><li>编码能力弱</li><li>推理能力一般</li><li>多模态不如通义</li><li>国际影响力弱</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kimi K2.5 -->
+    <div class="model-card" id="kimi">
+      <div class="model-header">
+        <div class="model-icon" style="background: linear-gradient(135deg, #1F1F1F, #404040);">K</div>
+        <div>
+          <h3>Kimi K2.5 <span class="model-badge" style="background:rgba(31,31,31,0.10);color:#1F1F1F">月之暗面</span></h3>
+          <p class="model-subtitle">月之暗面旗舰模型 · Cursor Composer 2 基座 · 超长上下文</p>
+        </div>
+      </div>
+      <div class="model-body">
+        <p>Kimi K2.5 是月之暗面的旗舰模型，以超长上下文处理著称。被 Cursor 选为 Composer 2 的基座模型架构，在长文档理解、代码生成、中文对话方面表现出色。2026年与阿里达成算力协议，算力供给更加稳定。</p>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">上下文窗口</div><div class="spec-value">2,000,000 tokens（业界最长）</div></div>
+          <div class="spec-item"><div class="spec-label">最大输出</div><div class="spec-value">8,192 tokens</div></div>
+          <div class="spec-item"><div class="spec-label">多模态</div><div class="spec-value">文本 + 图像</div></div>
+          <div class="spec-item"><div class="spec-label">开源</div><div class="spec-value">否（闭源）</div></div>
+        </div>
+        <h4>核心优势</h4>
+        <ul>
+          <li>200 万 tokens 上下文 — 业界最长，可处理整本书</li>
+          <li>Cursor Composer 2 基座模型，编码能力得到验证</li>
+          <li>中文对话体验好，口语化程度高</li>
+          <li>长文档理解和摘要能力强</li>
+          <li>网页解析和文件上传体验好</li>
+        </ul>
+        <h4>定价（API）</h4>
+        <table class="pricing-table">
+          <tr><th>版本</th><th>输入/百万tokens</th><th>输出/百万tokens</th></tr>
+          <tr><td>K2.5 旗舰</td><td>¥10</td><td>¥30</td></tr>
+          <tr><td>K2.5 长文本</td><td>¥15</td><td>¥45</td></tr>
+          <tr><td>免费用户</td><td colspan="2">有限免费使用</td></tr>
+        </table>
+        <div class="pros-cons">
+          <div class="pros-box"><h5>优势</h5><ul><li>超长上下文 2M</li><li>编码能力被 Cursor 验证</li><li>中文体验好</li><li>长文档处理强</li></ul></div>
+          <div class="cons-box"><h5>不足</h5><ul><li>闭源不可自部署</li><li>多模态能力有限</li><li>国际知名度低</li><li>API 生态不如 GPT</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benchmark Comparison -->
+  <section class="section" id="benchmarks">
+    <h2 class="section-title">跑分横向对比</h2>
+    <p class="section-sub">基于 2026 年 7-8 月公开基准测试数据</p>
+    <table class="bench-table">
+      <tr>
+        <th>基准测试</th><th>GPT-5.6</th><th>Claude Opus 5</th><th>DeepSeek V4-Pro</th><th>通义千问 Qwen3</th><th>文心 ERNIE 5.0</th><th>Kimi K2.5</th>
+      </tr>
+      <tr>
+        <td><strong>SWE-bench Verified</strong></td><td>N/A</td><td class="highlight">96.0%</td><td>80.6%</td><td>~65%</td><td>~55%</td><td>~70%</td>
+      </tr>
+      <tr>
+        <td><strong>SWE-bench Pro</strong></td><td>78.1%</td><td class="highlight">80.3%</td><td>55.4%</td><td>—</td><td>—</td><td>—</td>
+      </tr>
+      <tr>
+        <td><strong>LiveCodeBench Pass@1</strong></td><td>87.4%</td><td>88.1%</td><td class="highlight">93.5%</td><td>~80%</td><td>~70%</td><td>~85%</td>
+      </tr>
+      <tr>
+        <td><strong>Terminal-Bench 2.1</strong></td><td class="highlight">85.1%</td><td>82.7%</td><td>83.9%</td><td>—</td><td>—</td><td>—</td>
+      </tr>
+      <tr>
+        <td><strong>Codeforces Elo</strong></td><td>—</td><td>—</td><td class="highlight">3,206</td><td>—</td><td>—</td><td>—</td>
+      </tr>
+      <tr>
+        <td><strong>上下文窗口</strong></td><td>1M</td><td>1M</td><td>1M</td><td>128K</td><td>128K</td><td class="highlight">2M</td>
+      </tr>
+      <tr>
+        <td><strong>多模态</strong></td><td class="highlight">文+图+音</td><td>文+图</td><td>文</td><td>文+图+音+视</td><td>文+图</td><td>文+图</td>
+      </tr>
+      <tr>
+        <td><strong>开源</strong></td><td>否</td><td>否</td><td class="highlight">MIT</td><td class="highlight">Apache 2.0</td><td>部分</td><td>否</td>
+      </tr>
+      <tr>
+        <td><strong>自部署</strong></td><td>否</td><td>否</td><td class="highlight">是</td><td class="highlight">是</td><td>部分</td><td>否</td>
+      </tr>
+    </table>
+    <p style="font-size: 12px; color: var(--text-tertiary); margin-top: 8px;">注：绿色高亮为该项最优。部分数据为估算值，"—"表示无公开数据。</p>
+  </section>
+
+  <!-- Pricing Comparison -->
+  <section class="section" id="pricing">
+    <h2 class="section-title">定价横向对比</h2>
+    <p class="section-sub">API 调用价格对比（输出价格，每百万 tokens）</p>
+    <table class="bench-table">
+      <tr>
+        <th>模型</th><th>输出价格</th><th>性价比指数</th><th>免费额度</th>
+      </tr>
+      <tr><td>DeepSeek V4-Flash 低谷</td><td class="highlight">$0.28</td><td class="highlight">100（基准）</td><td>有</td></tr>
+      <tr><td>DeepSeek V4-Pro 低谷</td><td>$0.87</td><td>32</td><td>有</td></tr>
+      <tr><td>通义千问 Qwen3-Turbo</td><td>¥6（~$0.85）</td><td>33</td><td>有</td></tr>
+      <tr><td>文心 ERNIE Speed</td><td>免费</td><td>∞</td><td>有</td></tr>
+      <tr><td>Kimi K2.5</td><td>¥30（~$4.2）</td><td>6.7</td><td>有限</td></tr>
+      <tr><td>Claude Opus 5</td><td>$25.00</td><td>1.1</td><td>无</td></tr>
+      <tr><td>GPT-5.6</td><td>~$15.00</td><td>1.9</td><td>无</td></tr>
+    </table>
+    <p style="font-size: 12px; color: var(--text-tertiary); margin-top: 8px;">性价比指数 = DeepSeek V4-Flash 低谷价 / 各模型价格 × 100。指数越高越划算。</p>
+  </section>
+
+  <!-- Selection Guide -->
+  <section class="section" id="guide">
+    <div class="verdict-box">
+      <h4>选型指南：按场景选模型</h4>
+      <p><strong>复杂编码/重构</strong> → Claude Opus 5（SWE-bench 96% 断层领先）</p>
+      <p><strong>终端/Shell 代理</strong> → GPT-5.6（Terminal-Bench 85.1% 第一）</p>
+      <p><strong>算法竞赛/编程</strong> → DeepSeek V4（LiveCodeBench 93.5% + Codeforces 3206 第一）</p>
+      <p><strong>高性价比生产</strong> → DeepSeek V4-Flash（低谷 $0.28/M，比 Claude 便宜 89 倍）</p>
+      <p><strong>中文创作/对话</strong> → 通义千问 Qwen3（中文能力国产第一 + 全尺寸开源）</p>
+      <p><strong>实时信息/搜索</strong> → 文心一言 ERNIE 5.0（搜索增强 + 知识图谱）</p>
+      <p><strong>超长文档处理</strong> → Kimi K2.5（200 万 tokens 上下文业界最长）</p>
+      <p><strong>私有化部署/数据合规</strong> → DeepSeek V4（MIT 开源）或 通义千问（Apache 2.0）</p>
+      <p style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(20,184,166,0.15);"><strong>混合策略推荐</strong>：用 DeepSeek V4 做代码分析和批量处理（低成本），Claude Opus 5 做复杂重构和最终审查（高质量），是工程团队最优组合。人工评测偏好 Arena 排行榜上 Claude Fable 5 排名最高，但 DeepSeek V4 在成本效率上碾压——24% 的性能差距，116 倍的成本差距。</p>
+    </div>
+
+    <div class="cta-box">
+      <h3>想了解这些模型在真实场景中怎么用？</h3>
+      <p>从 WorkBuddy 实战到 AI Agent 案例，28 篇笔记覆盖全流程</p>
+      <a href="index.html" class="cta-btn">返回首页查看全部文章</a>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-text">
+      <h3>小饭的 AI 实战笔记</h3>
+      <p>社区共创 - 开源</p>
+      <p>&copy; 2026 小饭的 AI 实战笔记</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
