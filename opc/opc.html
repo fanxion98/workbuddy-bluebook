@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>全国OPC社区 | 政府/正规机构建立的一人公司创业社区地图</title>
+<meta name="description" content="全国OPC社区（One Person Company，一人公司）地图：汇总北京、上海、深圳、杭州、武汉、南宁、济宁、广州、苏州、成都等地政府及正规机构建立的AI创业社区，可按城市筛选，附详细入驻指南与政策扶持。">
+<meta name="keywords" content="OPC社区,一人公司,超级个体,AI创业社区,创业空间,政府孵化器">
+<meta property="og:type" content="website">
+<meta property="og:title" content="全国OPC社区 | 政府/正规机构建立的一人公司创业社区地图">
+<meta property="og:description" content="汇总全国各地政府及正规机构建立的OPC（一人公司）创业社区，可按城市筛选，附详细入驻指南与政策扶持。">
+<meta property="og:site_name" content="超级个体">
+<meta name="author" content="超级个体">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script src="https://beacon.cdn.qq.com/sdk/4.5.9/beacon_web.min.js"></script>
+<script>
+(function(){
+  try{
+    var beacon=new BeaconAction({
+      appkey:'0WEB06U85YBSLJNL',
+      versionCode:'1.0.0',
+      channelID:'share',
+      delay:1000,
+      sessionDuration:30*60*1000,
+      isOversea:false,
+      needReportRqdEvent:false
+    });
+    beacon.onDirectUserAction('preview_page_view',{
+      'url':location.href,
+      'referrer':document.referrer,
+      'title':document.title,
+      'sandbox_id':'3708bc23e9e34dd1b0485df690347a8c'
+    });
+  }catch(e){}
+})();
+</script></head>
+<body>
+<div id="site-nav"></div>
+
+<header class="pagehead">
+  <div class="wrap">
+    <div class="crumb">首页 / 全国OPC社区</div>
+    <h1>全国OPC社区</h1>
+    <p class="lead" style="max-width:800px;margin-top:18px;">OPC = One Person Company（一人公司），是 AI 时代「单人 + AI + 平台」的轻量化创业新业态。本页汇总<strong>全国各地政府、正规机构建立的 OPC 创业社区</strong>，可按城市筛选，点击卡片查看详细介绍、政策扶持与入驻指南。</p>
+    <p class="muted" id="statLine" style="font-size:15px;margin-top:14px;font-weight:800;"></p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <span class="kicker">城市筛选</span>
+    <h2 style="font-size:clamp(22px,3vw,32px);margin:10px 0 6px;">按城市查看 OPC 社区</h2>
+    <p class="muted" style="font-size:14px;margin-bottom:6px;">仅显示已收录 OPC 社区的城市（有社区才有筛选项）。</p>
+    <div class="filters" id="cityFilter"></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:18px 0 6px;">
+      <input id="searchBox" type="search" placeholder="搜索社区名 / 城市 / 赛道 / 运营方…" style="flex:1 1 280px;min-width:240px;border:2px solid var(--ink);background:#fff;padding:11px 14px;font-size:15px;font-family:var(--sans);border-radius:2px;">
+      <span class="muted" id="resultCount" style="font-size:14px;font-weight:700;"></span>
+    </div>
+    <div class="grid cols-2" id="grid"></div>
+    <div id="pager" class="pager"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/js/site.js?v=6"></script>
+<script src="opc/_opc.js"></script>
+<script>
+(function () {
+  var DATA = window.OPCS || [];
+  var PS = 12;            // 每页条数
+  var state = { city: "all", q: "", page: 1 };
+
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+
+  // 城市列表（仅含已收录社区的城市），按社区数降序
+  function cityStats(){
+    var m = {};
+    DATA.forEach(function(d){ m[d.city] = (m[d.city]||0)+1; });
+    return Object.keys(m).map(function(c){ return {city:c, n:m[c]}; })
+      .sort(function(a,b){ return b.n-a.n; });
+  }
+
+  function matched(){
+    var q = state.q.trim().toLowerCase();
+    return DATA.filter(function(d){
+      if (state.city !== "all" && d.city !== state.city) return false;
+      if (!q) return true;
+      var hay = (d.name+" "+d.city+" "+d.operator+" "+d.gov_level+" "+(d.focus||[]).join(" ")+" "+d.summary).toLowerCase();
+      return hay.indexOf(q) >= 0;
+    });
+  }
+
+  function cardHTML(d){
+    var cityPill = '<span class="pill accent">'+esc(d.city)+'</span>';
+    var lvlPill = '<span class="pill">'+esc(d.gov_level)+'</span>';
+    var focusPills = (d.focus||[]).slice(0,3).map(function(f){return '<span class="pill">'+esc(f)+'</span>';}).join("");
+    var cover = d.image
+      ? '<img class="case-card-cover" src="'+esc(d.image)+'" alt="'+esc(d.name)+'" loading="lazy" onerror="this.style.display=\'none\'">'
+      : '<div class="case-card-cover case-card-cover--empty">暂无封面</div>';
+    return '<a class="card case-card" href="opc/'+esc(d.slug)+'.html">'
+      + cover
+      + '<div class="pillrow">'+cityPill+lvlPill+'</div>'
+      + '<h3>'+esc(d.name)+'</h3>'
+      + '<p class="csummary">'+esc(d.summary)+'</p>'
+      + '<div class="pillrow" style="margin-top:6px;">'+focusPills+'</div>'
+      + '<span class="more">查看详情 →</span>'
+      + '</a>';
+  }
+
+  function pagerHTML(tp, cur){
+    if (tp <= 1) return "";
+    var nums = [], add = function(n){ if (n>=1&&n<=tp&&nums.indexOf(n)<0) nums.push(n); };
+    add(1); add(tp); for (var i=cur-1;i<=cur+1;i++) add(i);
+    nums.sort(function(a,b){return a-b;});
+    var h = '<button class="pg" data-pg="'+(cur-1)+'"'+(cur<=1?' disabled':'')+'>‹ 上一页</button>';
+    var prev=null;
+    nums.forEach(function(n){
+      if (prev!==null && n-prev>1) h += '<span class="pg-ell">…</span>';
+      h += '<button class="pg'+(n===cur?' on':'')+'" data-pg="'+n+'">'+n+'</button>';
+      prev=n;
+    });
+    h += '<button class="pg" data-pg="'+(cur+1)+'"'+(cur>=tp?' disabled':'')+'>下一页 ›</button>';
+    return h;
+  }
+
+  function render(){
+    var list = matched();
+    var tp = Math.max(1, Math.ceil(list.length / PS));
+    if (state.page > tp) state.page = tp;
+    var start = (state.page-1)*PS;
+    document.getElementById("grid").innerHTML = list.slice(start, start+PS).map(cardHTML).join("")
+      || '<p class="muted" style="grid-column:1/-1;padding:20px 0;">没有匹配的社区，试试其它关键词或切换城市。</p>';
+    document.getElementById("resultCount").textContent = "共 " + list.length + " 个社区";
+    document.getElementById("pager").innerHTML = pagerHTML(tp, state.page);
+    document.getElementById("pager").querySelectorAll("button.pg").forEach(function(b){
+      b.onclick = function(){ var p=+b.getAttribute("data-pg"); if(p>=1){ state.page=p; render(); window.scrollTo({top:document.querySelector(".filters").offsetTop-80,behavior:"smooth"}); } };
+    });
+  }
+
+  function renderFilter(){
+    var stats = cityStats();
+    var total = DATA.length;
+    var html = '<button class="on" data-city="all">全部 <span class="muted" style="font-weight:700;">'+total+'</span></button>';
+    html += stats.map(function(s){
+      return '<button data-city="'+esc(s.city)+'">'+esc(s.city)+' <span class="muted" style="font-weight:700;">'+s.n+'</span></button>';
+    }).join("");
+    var el = document.getElementById("cityFilter");
+    el.innerHTML = html;
+    el.querySelectorAll("button").forEach(function(b){
+      b.onclick = function(){
+        state.city = b.getAttribute("data-city");
+        state.page = 1;
+        el.querySelectorAll("button").forEach(function(x){x.classList.remove("on");});
+        b.classList.add("on");
+        render();
+      };
+    });
+    document.getElementById("statLine").textContent = "已收录 " + total + " 个 OPC 社区 · 覆盖 " + stats.length + " 座城市（数据整理自各地政府/官方发布与公开报道，动态更新）";
+  }
+
+  document.getElementById("searchBox").addEventListener("input", function(e){
+    state.q = e.target.value; state.page = 1; render();
+  });
+
+  renderFilter();
+  render();
+})();
+</script>
+
+</body>
+</html>
