@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>超级个体书库 | 个人成长与商业经典全文在线读</title>
+<meta name="description" content="超级个体书库：收录个人成长、商业、投资、思维、营销经典，按能力维度标注与筛选，点击即可在线阅读全文。">
+<meta name="keywords" content="书库,书单,个人成长书籍,商业书籍,投资理财,免费阅读,思维提升">
+<meta property="og:type" content="website">
+<meta property="og:title" content="超级个体书库 | 个人成长与商业经典全文在线读">
+<meta property="og:description" content="超级个体书库：收录个人成长、商业、投资、思维、营销经典，按能力维度标注与筛选，点击即可在线阅读全文。">
+<meta property="og:site_name" content="超级个体">
+<meta name="author" content="超级个体">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://beacon.cdn.qq.com/sdk/4.5.9/beacon_web.min.js"></script>
+<script>
+(function(){
+  try{
+    var beacon=new BeaconAction({
+      appkey:'0WEB06U85YBSLJNL',
+      versionCode:'1.0.0',
+      channelID:'share',
+      delay:1000,
+      sessionDuration:30*60*1000,
+      isOversea:false,
+      needReportRqdEvent:false
+    });
+    beacon.onDirectUserAction('preview_page_view',{
+      'url':location.href,
+      'referrer':document.referrer,
+      'title':document.title,
+      'sandbox_id':'3708bc23e9e34dd1b0485df690347a8c'
+    });
+  }catch(e){}
+})();
+</script></head>
+<body>
+<div id="site-nav"></div>
+
+<header class="pagehead">
+  <div class="wrap">
+    <div class="crumb">首页 / 书库</div>
+    <h1>书库 · 全文在线读</h1>
+    <p class="lead" style="max-width:760px;margin-top:18px;">收录个人成长、商业、投资与思维一线经典，按能力维度标注。<b>点击书名即可阅读该书全文</b>；点选上方维度可按能力归属筛选。</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="filters" id="filters"></div>
+    <p class="muted" id="count" style="font-size:14px;"></p>
+    <div class="grid cols-3" id="books" style="margin-top:10px;"></div>
+    <div id="pager" class="pager"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/js/site.js?v=6"></script>
+<script src="books/_links.js"></script>
+<script>
+const DIM={d1:"身份心智",d2:"心理内核",d3:"商业基本功",d4:"营销增长",d5:"内容表达",d6:"财富独立",d7:"认知引擎",d8:"时代趋势"};
+const BOOKS=[
+ ["单干：成为超级个体的49个关键动作",["d1","d3"],"49个关键动作，人即产品，高客单价起步"],
+ ["超级个体：打造你的多维竞争力",["d1"],"九能力模型：表现力到钝挫力"],
+ ["普通人如何成为超级个体",["d1"],"个人品牌盈利系统，二八定律"],
+ ["一人企业",["d1"],"小即美：适应力·自主性·速度·精简"],
+ ["像经营企业一样经营自己",["d1"],"自己=企业映射框架"],
+ ["重来",["d1"],"何必壮大，挠自己的痒处"],
+ ["巨人的方法",["d1"],"固定问卷访谈归纳法"],
+ ["高效能人士的七个习惯",["d1"],"由内而外，依赖→独立→互赖"],
+ ["终身成长",["d1"],"成长型思维"],
+ ["5分钟商学院_个人篇",["d1"],"习惯与时间管理，走向互赖"],
+ ["纳瓦尔宝典",["d1","d6"],"专长×杠杆×责任×判断力"],
+ ["被讨厌的勇气",["d2"],"课题分离，自由即被讨厌"],
+ ["少有人走的路",["d2"],"自律四原则"],
+ ["野蛮进化",["d2"],"统治者模型，白热空间"],
+ ["斗魂",["d2"],"成功方程式：能力×热情×思维方式"],
+ ["冯唐成事心法",["d2"],"不赶时髦，自在"],
+ ["创始人：先搞定自己再谈创业",["d2"],"先搞定自己"],
+ ["事业生活双全法则",["d2"],"融合而非平衡"],
+ ["有钱人和你想的不一样",["d2","d6"],"财富蓝图"],
+ ["你值得过更好的生活",["d2"],"金钱游戏，彻底解脱"],
+ ["乌合之众",["d2"],"群体防御：断言/重复/传染"],
+ ["刻板印象",["d2"],"刻板印象风险，自我肯定"],
+ ["定位",["d3"],"心智占位四步法"],
+ ["商业模式新生代",["d3"],"画布九模块"],
+ ["精益创业2.0",["d3"],"MVP，Build-Measure-Learn"],
+ ["低风险创业",["d3"],"反脆弱，非对称交易，秘密"],
+ ["打造难以复制的商业模式",["d3"],"四要素，6大要素"],
+ ["超级符号就是超级创业",["d4"],"超级符号，降低传播成本"],
+ ["价值：我对投资的思考",["d3","d6"],"长期主义，动态护城河"],
+ ["街头生意经",["d3"],"毛利至上，现金流为王"],
+ ["认识商业",["d3"],"独资企业，管理四职能"],
+ ["商业至简",["d3"],"价值驱动型专业人才"],
+ ["5分钟商学院_商业篇",["d3"],"人人都是自己的CEO"],
+ ["5分钟商学院_管理篇",["d3"],"管理是激发善意"],
+ ["面向未来的商业新法则",["d3"],"（与打造难以复制的商业模式内容重复）"],
+ ["100 euros startup.docx",["d3"],"百欧低成本创业（未读全文）"],
+ ["产品方法论",["d3","d4"],"用户价值公式"],
+ ["人心红利",["d4"],"心智三点合一，品牌即免费流量"],
+ ["增长黑客",["d4"],"增长漏斗，北极星指标"],
+ ["新零售进化论",["d4"],"物理数据二重性，人货场"],
+ ["价格游戏",["d4"],"锚定、诱饵、捆绑"],
+ ["传播学是什么",["d4","d5"],"符号矩阵，叙事"],
+ ["影响力",["d4"],"说服六原理"],
+ ["把任何东西卖给任何人",["d4"],"销售自己，250法则"],
+ ["绝对成交",["d4"],"谈判策略"],
+ ["闪电式扩张",["d4"],"速度优先，三支点"],
+ ["故事",["d5"],"故事三角，人物弧光"],
+ ["故事经济学",["d5"],"故事八阶段"],
+ ["故事课",["d5"],"靶心人公式"],
+ ["会讲故事才是好演讲",["d5"],"个人传奇三要素"],
+ ["TED演讲的秘密",["d5"],"英雄之旅，口号法"],
+ ["演讲的力量",["d5"],"五种演讲工具"],
+ ["写作这回事",["d5"],"关门写开门改"],
+ ["卡片笔记写作法",["d5"],"Zettelkasten知识复利"],
+ ["即兴表达",["d5"],"三思三定"],
+ ["学会闲聊",["d5"],"闲谈力"],
+ ["商业表达力",["d5"],"视角共情，Why模式"],
+ ["金字塔原理大全集",["d5"],"结论先行，SCQA，MECE"],
+ ["财富自由之路",["d6","d7"],"注意力>时间>金钱，定投"],
+ ["穷爸爸富爸爸",["d6"],"资产/负债，ESBI象限"],
+ ["聪明的投资者",["d6"],"安全边际，市场先生"],
+ ["大道段永平投资问答录",["d6"],"能力圈，本分平常心"],
+ ["穷查理宝典",["d6","d7"],"多元思维模型，检查清单"],
+ ["穷查理宝典 查理·芒格智慧箴言录",["d6","d7"],"（另一OCR版本）"],
+ ["一生的财富",["d6"],"洛克菲勒38封信"],
+ ["简单致富",["d6"],"指数基金，储蓄率"],
+ ["24堂财富课",["d6"],"边际成本，股权，好钱坏钱"],
+ ["10岁开始学投资理财",["d6"],"儿童财商启蒙"],
+ ["如何培养高财商孩子",["d6"],"财商阶段地图"],
+ ["一小时漫画金融思维",["d6"],"金融思维"],
+ ["一本书读懂金融二级市场",["d6"],"二级市场链条"],
+ ["简明财务分析",["d6"],"三表联动"],
+ ["财报就像一本兵法书",["d6"],"财报问责"],
+ ["贫穷的本质",["d6"],"贫穷陷阱防御"],
+ ["极简学习法",["d7"],"输入-消化-输出闭环"],
+ ["模型思维",["d7"],"多模型思考者"],
+ ["第一性原理 (李善友)",["d7"],"破界创新三部曲"],
+ ["第一性原理：21堂科学通识课",["d7"],"推导法"],
+ ["学会解决问题",["d7"],"Solvable全周期模板"],
+ ["向上生长",["d7"],"熵增、涌现、雪球"],
+ ["每天最重要的2小时",["d7"],"抉择点，心理能量"],
+ ["掌控习惯",["d7"],"四大定律，身份认同"],
+ ["习惯心理学",["d7"],"环境摩擦力"],
+ ["发现的乐趣",["d7"],"费曼品格"],
+ ["20堂商业思维进阶课",["d7"],"巨头思维"],
+ ["如何快速了解一个行业",["d7"],"行业研究框架，PEST"],
+ ["如何了解一个人",["d7"],"照亮者，SLANT"],
+ ["情报搜集技术、方法与思维",["d7"],"情报周期"],
+ ["预测之书",["d7"],"电梯效应，趋势扫描"],
+ ["5分钟商学院_工具篇",["d7"],"MECE等工具箱"],
+ ["AI未来进行式",["d8"],"四波智能浪潮，新社会契约"],
+ ["人工智能时代与人类未来",["d8"],"AI作为赋能者"],
+ ["硅谷钢铁侠",["d8"],"马斯克，垂直整合"],
+ ["十三邀",["d8"],"创作者群像"],
+ ["斯坦福大学最受欢迎的创意课",["d8"],"创意引擎六要素"],
+ ["创新的艺术",["d8"],"IDEO五步，设计思维"],
+ ["游戏改变世界",["d8"],"游戏化四特征，心流"],
+ ["300位私营公司创业者的失败教训",["d8"],"失败归因库"],
+ ["打造活力组织领导密码",["d8"],"自由与责任，无限游戏"],
+ ["得到品控手册7.0 (得到APP) (Z-Library).pdf",["d5"],"得到内容品控（PDF，未读全文）"]
+];
+
+const filtersEl=document.getElementById("filters");
+const booksEl=document.getElementById("books");
+const pagerEl=document.getElementById("pager");
+let cur="all";
+let page=1;
+const PAGE_SIZE=24;
+const fbtns=[["all","全部"]].concat(Object.entries(DIM));
+fbtns.forEach(([k,t])=>{
+  const b=document.createElement("button");
+  b.textContent=t;b.className=k===cur?"on":"";
+  b.onclick=()=>{cur=k;page=1;document.querySelectorAll("#filters button").forEach(x=>x.classList.remove("on"));b.classList.add("on");render();};
+  filtersEl.appendChild(b);
+});
+const TEASER=999; // 书库列表对所有访客完全公开
+function card(b){
+  const url=(window.BOOKLINK&&BOOKLINK[b[0]])?BOOKLINK[b[0]]:null;
+  const link=url?`<a href="${url}">${b[0]}</a>`:b[0];
+  const note=url?"":' <span class="muted" style="font-size:12px;">（无全文）</span>';
+  const btn=url?`<a class="read-btn" href="${url}">在线阅读 →</a>`:`<span class="read-btn disabled">暂不可读</span>`;
+  return `
+    <div class="book">
+      <h4>${link}${note}</h4>
+      <div class="meta">${b[1].map(d=>`<span class="pill" style="font-size:11px;padding:2px 8px;">${DIM[d]}</span>`).join(" ")}</div>
+      <div class="frame">${b[2]}</div>
+      <div class="book-foot">${btn}</div>
+    </div>`;
+}
+function pagerHtml(totalPages){
+  if(totalPages<=1) return "";
+  const nums=[];
+  const add=n=>{ if(n>=1&&n<=totalPages&&!nums.includes(n)) nums.push(n); };
+  add(1); add(totalPages);
+  for(let i=page-1;i<=page+1;i++) add(i);
+  nums.sort((a,b)=>a-b);
+  let html=`<button class="pg" data-pg="${page-1}" ${page<=1?"disabled":""}>‹ 上一页</button>`;
+  let prev=null;
+  nums.forEach(n=>{
+    if(prev!==null&&n-prev>1) html+=`<span class="pg-ell">…</span>`;
+    html+=`<button class="pg ${n===page?"on":""}" data-pg="${n}">${n}</button>`;
+    prev=n;
+  });
+  html+=`<button class="pg" data-pg="${page+1}" ${page>=totalPages?"disabled":""}>下一页 ›</button>`;
+  return html;
+}
+function render(){
+  const list=BOOKS.filter(b=>cur==="all"||b[1].includes(cur));
+  const total=list.length;
+  const totalPages=Math.max(1,Math.ceil(total/PAGE_SIZE));
+  if(page>totalPages) page=totalPages;
+  const start=(page-1)*PAGE_SIZE;
+  document.getElementById("count").textContent=`共 ${total} 本 · 第 ${page}/${totalPages} 页`;
+  booksEl.innerHTML=list.slice(start,start+PAGE_SIZE).map(card).join("");
+  pagerEl.innerHTML=pagerHtml(totalPages);
+  pagerEl.querySelectorAll("button.pg").forEach(btn=>{
+    btn.onclick=()=>{
+      const p=+btn.dataset.pg;
+      if(p>=1&&p<=totalPages){
+        page=p; render();
+        const y=document.getElementById("books").getBoundingClientRect().top+window.scrollY-90;
+        window.scrollTo({top:y,behavior:"smooth"});
+      }
+    };
+  });
+}
+render();
+</script>
+</body>
+</html>
