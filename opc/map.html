@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>超级个体能力地图自测 | 8维诊断你的个体竞争力</title>
+<meta name="description" content="8道题，测出你当下的超级个体能力画像。完成后生成雷达图，并指出你的优势维度与待补维度。">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:flex-start;justify-content:center;z-index:9999;padding:40px 20px;overflow:auto;}
+.modal-overlay.open{display:flex;}
+.modal{background:#fff;border-radius:16px;max-width:560px;width:100%;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.15);animation:modalIn .2s ease;}
+@keyframes modalIn{from{transform:translateY(12px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #E7E5E4;position:sticky;top:0;background:#fff;z-index:2;}
+.modal-actions{display:flex;gap:8px;}
+.modal-close{background:none;border:none;font-size:28px;line-height:1;cursor:pointer;color:#A8A29E;}
+.modal-close:hover{color:#292524;}
+.modal-body{flex:1;overflow:auto;padding:4px 22px 26px;}
+.modal-body .result-box{box-shadow:none!important;padding:0!important;}
+</style>
+<script src="https://beacon.cdn.qq.com/sdk/4.5.9/beacon_web.min.js"></script>
+<script>
+(function(){
+  try{
+    var beacon=new BeaconAction({
+      appkey:'0WEB06U85YBSLJNL',
+      versionCode:'1.0.0',
+      channelID:'share',
+      delay:1000,
+      sessionDuration:30*60*1000,
+      isOversea:false,
+      needReportRqdEvent:false
+    });
+    beacon.onDirectUserAction('preview_page_view',{
+      'url':location.href,
+      'referrer':document.referrer,
+      'title':document.title,
+      'sandbox_id':'3708bc23e9e34dd1b0485df690347a8c'
+    });
+  }catch(e){}
+})();
+</script></head>
+<body>
+<div id="site-nav"></div>
+
+<header class="pagehead">
+  <div class="wrap">
+    <div class="crumb">首页 / 能力地图</div>
+    <h1>能力地图 · 8 维自测</h1>
+    <p class="lead" style="max-width:760px;margin-top:18px;">8道题，测出你当下的超级个体能力画像。完成后生成雷达图，并指出你的<b>优势维度</b>与<b>待补维度</b>。</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap quiz-split">
+    <div>
+      <div id="quiz"></div>
+      <p style="margin-top:24px;">
+        <button class="btn" id="calcBtn">生成我的能力雷达 →</button>
+        <button class="btn ghost" id="resetBtn" style="margin-left:10px;">重测</button>
+      </p>
+      <p class="muted" id="hint" style="font-size:14px;margin-top:10px;"></p>
+    </div>
+    <div>
+      <div class="result-box">
+        <h3 style="font-family:var(--serif);font-size:22px;margin-bottom:6px;">你的能力雷达</h3>
+        <p class="muted" style="font-size:14px;margin:0 0 10px;">完成左侧问卷后自动生成。</p>
+        <svg id="radar" viewBox="0 0 400 400" width="100%" role="img" aria-label="能力雷达图">
+          <polygon points="200,50 306,94 350,200 306,306 200,350 94,306 50,200 94,94"
+            fill="none" stroke="#E7E5E4" stroke-width="1"/>
+          <polygon id="radarFill" points="200,200 200,200 200,200 200,200 200,200 200,200 200,200 200,200"
+            fill="rgba(20,184,166,0.15)" stroke="#14B8A6" stroke-width="3"/>
+          <g stroke="#E7E5E4" stroke-width="1">
+            <line x1="200" y1="50" x2="200" y2="350"/>
+            <line x1="50" y1="200" x2="350" y2="200"/>
+            <line x1="94" y1="94" x2="306" y2="306"/>
+            <line x1="306" y1="94" x2="94" y2="306"/>
+          </g>
+          <g font-family="Noto Sans SC,sans-serif" font-size="12.5" font-weight="600" fill="#292524">
+            <text x="200" y="24" text-anchor="middle">身份心智</text>
+            <text x="330" y="80" text-anchor="start">心理内核</text>
+            <text x="356" y="204" text-anchor="start">商业</text>
+            <text x="320" y="332" text-anchor="start">营销增长</text>
+            <text x="200" y="386" text-anchor="middle">内容表达</text>
+            <text x="80" y="332" text-anchor="end">财富独立</text>
+            <text x="44" y="204" text-anchor="end">认知引擎</text>
+            <text x="80" y="80" text-anchor="end">时代趋势</text>
+          </g>
+        </svg>
+        <div id="readout"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="能力雷达结果">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-actions">
+        <button class="btn small" id="saveImgBtn">保存图片</button>
+        <button class="btn ghost small" id="saveTxtBtn">保存结果</button>
+      </div>
+      <button class="modal-close" id="modalClose" aria-label="关闭">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="assets/js/site.js?v=6"></script>
+
+<script>
+const DIMS=[
+  {id:"d1",name:"身份与经营者心智",short:"身份心智",
+   q:"你如何看待自己与收入的关系？",
+   opts:["完全靠一份工作/时薪，离开平台就没收入",
+         "有一些技能变现，但还没系统化",
+         "把自己当「一人公司」经营，有清晰投入产出",
+         "有产品/内容带来收入，部分不依赖我实时投入",
+         "多个系统化收入来源，像经营一家抗周期公司"]},
+  {id:"d2",name:"心理内核与独立性",short:"心理内核",
+   q:"面对他人的不认可或群体压力，你通常？",
+   opts:["很在意，常为了被认可调整自己",
+         "会在意，但努力不去想",
+         "能分清「这是谁的课题」，尽量不被裹挟",
+         "基本不在意外部评价，按自己的标准行事",
+         "把不认可当常态，甚至视「被讨厌」为自由"]},
+  {id:"d3",name:"商业基本功",short:"商业",
+   q:"关于「怎么赚钱」，你的状态是？",
+   opts:["没想过商业模式，先干活再说",
+         "有个模糊方向，但没验证过",
+         "用画布/MVP 验证过价值假设",
+         "有清晰定位、轻资产模式与现金纪律",
+         "持续用数据迭代，并建了「秘密」壁垒"]},
+  {id:"d4",name:"营销与增长",short:"营销增长",
+   q:"获客与成交方面？",
+   opts:["完全靠熟人介绍，没有方法论",
+         "有自媒体但不稳定",
+         "懂增长漏斗，在跑基础获客-留存",
+         "用内容/品牌占位，转化有系统",
+         "有可放大的获客-转化-复购引擎"]},
+  {id:"d5",name:"内容表达与影响力",short:"内容表达",
+   q:"内容生产与表达？",
+   opts:["很少产出，表达会紧张",
+         "偶尔写，但不成体系",
+         "有稳定输出习惯（如卡片笔记）",
+         "会用故事/演讲塑造个人影响力",
+         "内容是我最核心的杠杆，持续复利"]},
+  {id:"d6",name:"财富与财务独立",short:"财富独立",
+   q:"财务独立程度？",
+   opts:["月光，没有资产",
+         "有储蓄但没有投资",
+         "开始定投/买资产",
+         "有多元资产，被动收入覆盖部分支出",
+         "被动收入≥主动收入，财务自由"]},
+  {id:"d7",name:"认知与学习引擎",short:"认知引擎",
+   q:"学习与决策？",
+   opts:["靠感觉和碎片信息",
+         "有看书但难成体系",
+         "有学习闭环 + 思维模型",
+         "用第一性原理/多元模型做决策",
+         "认知是复利系统，并能侦察趋势"]},
+  {id:"d8",name:"时代趋势与外部参照",short:"时代趋势",
+   q:"对 AI 与趋势的把握？",
+   opts:["没关注",
+         "知道但没用",
+         "在用 AI 提效",
+         "用 AI 作杠杆放大产出",
+         "持续侦察趋势并在早期下注"]}
+];
+const answers=new Array(DIMS.length).fill(0);
+const quizEl=document.getElementById("quiz");
+DIMS.forEach((d,i)=>{
+  const wrap=document.createElement("div");
+  wrap.className="quiz-q";
+  wrap.innerHTML=`<h4>${i+1}. ${d.q}</h4>`;
+  d.opts.forEach((o,j)=>{
+    const b=document.createElement("button");
+    b.className="opt";
+    b.innerHTML=`<b>${j+1}.</b> ${o}`;
+    b.onclick=()=>{
+      answers[i]=j+1;
+      [...wrap.querySelectorAll(".opt")].forEach(x=>x.classList.remove("sel"));
+      b.classList.add("sel");
+      document.getElementById("hint").textContent="";
+    };
+    wrap.appendChild(b);
+  });
+  quizEl.appendChild(wrap);
+});
+function pt(cx,cy,r,ang){return [cx+r*Math.cos(ang), cy+r*Math.sin(ang)];}
+document.getElementById("calcBtn").onclick=()=>{
+  if(answers.includes(0)){document.getElementById("hint").textContent="还有题目没选，请补全后再生成。";return;}
+  const cx=200,cy=200,maxR=150;
+  const pts=DIMS.map((d,i)=>{
+    const ang=(-90+45*i)*Math.PI/180;
+    const r=maxR*(answers[i]/5);
+    const [x,y]=pt(cx,cy,r,ang);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(" ");
+  document.getElementById("radarFill").setAttribute("points",pts);
+  const scores=DIMS.map((d,i)=>({name:d.name,short:d.short,val:answers[i]/5*100}));
+  const top=scores.reduce((a,b)=>b.val>a.val?b:a);
+  const low=scores.reduce((a,b)=>b.val<a.val?b:a);
+  const avg=(scores.reduce((s,x)=>s+x.val,0)/scores.length).toFixed(0);
+  const readout=document.getElementById("readout");
+  readout.innerHTML=`
+    <div class="legend">
+      <span><i style="background:var(--accent)"></i> 你的得分（满分100）</span>
+    </div>
+    <ul class="numlist" style="margin-top:14px;">
+      ${scores.sort((a,b)=>b.val-a.val).map(s=>`<li><b>${s.short}</b> — ${s.val.toFixed(0)} 分</li>`).join("")}
+    </ul>
+    <div class="pullquote" style="font-size:20px;margin:22px 0 10px;">
+      综合成熟度 <b style="color:var(--accent)">${avg}</b> / 100。你最擅长 <b>${top.name}</b>，最该补的是 <b>${low.name}</b>。
+    </div>
+    <p class="muted" style="font-size:14.5px;">
+      建议下一步：
+      <a href="theory.html" style="color:var(--accent);font-weight:700;">读理论</a> 补维度 ·
+      <a href="roadmap.html" style="color:var(--accent);font-weight:700;">看路线</a> 定阶段 ·
+      <a href="library.html" style="color:var(--accent);font-weight:700;">翻书库</a> 找书读。
+    </p>`;
+  const box=document.querySelector(".result-box");
+  const mb=document.getElementById("modalBody");
+  mb.innerHTML="";
+  const clone=box.cloneNode(true);
+  const firstMuted=clone.querySelector(".result-box > p.muted");
+  if(firstMuted) firstMuted.remove();
+  mb.appendChild(clone);
+  document.getElementById("modal").classList.add("open");
+};
+document.getElementById("resetBtn").onclick=()=>{
+  answers.fill(0);
+  document.querySelectorAll(".opt").forEach(x=>x.classList.remove("sel"));
+  document.getElementById("radarFill").setAttribute("points","200,200 200,200 200,200 200,200 200,200 200,200 200,200 200,200");
+  document.getElementById("readout").innerHTML="";
+  document.getElementById("hint").textContent="";
+  window.scrollTo({top:0,behavior:"smooth"});
+};
+function closeModal(){
+  document.getElementById("modal").classList.remove("open");
+  document.getElementById("modalBody").innerHTML="";
+}
+document.getElementById("modalClose").onclick=closeModal;
+document.getElementById("modal").addEventListener("click",e=>{if(e.target===document.getElementById("modal"))closeModal();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
+function saveImage(){
+  const svg=document.querySelector("#modalBody svg#radar");
+  if(!svg)return;
+  const c=svg.cloneNode(true);
+  c.setAttribute("xmlns","http://www.w3.org/2000/svg");
+  c.setAttribute("width","400");c.setAttribute("height","400");
+  const xml=new XMLSerializer().serializeToString(c);
+  const url="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(xml);
+  const img=new Image();
+  img.onload=function(){
+    const scale=2;
+    const canvas=document.createElement("canvas");
+    canvas.width=400*scale;canvas.height=400*scale;
+    const ctx=canvas.getContext("2d");
+    ctx.fillStyle="#ffffff";ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.scale(scale,scale);ctx.drawImage(img,0,0);
+    canvas.toBlob(function(b){
+      const a=document.createElement("a");
+      a.href=URL.createObjectURL(b);
+      a.download="超级个体_能力雷达.png";
+      document.body.appendChild(a);a.click();document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+    });
+  };
+  img.src=url;
+}
+function saveText(){
+  const lines=["超级个体 · 能力雷达结果",""];
+  document.querySelectorAll("#modalBody .numlist li").forEach(function(li){
+    lines.push(li.textContent.replace(/\s+/g," ").trim());
+  });
+  const pq=document.querySelector("#modalBody .pullquote");
+  if(pq)lines.push("",pq.textContent.replace(/\s+/g," ").trim());
+  const blob=new Blob([lines.join("\n")],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="超级个体_能力雷达结果.txt";
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
+}
+document.getElementById("saveImgBtn").onclick=saveImage;
+document.getElementById("saveTxtBtn").onclick=saveText;
+</script>
+</body>
+</html>
