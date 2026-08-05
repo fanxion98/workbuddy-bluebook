@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OPC社区详情 | 超级OPC一人公司秘籍</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="site-nav"></div>
+<div id="app" style="min-height:60vh;"></div>
+<div id="site-footer"></div>
+<script src="assets/js/site.js?v=6"></script>
+<script src="opc/_opc.js"></script>
+<script>
+(function(){
+  var app = document.getElementById('app');
+  // 从URL路径提取slug: /opc/opc/xxx.html -> xxx
+  var m = location.pathname.match(/\/opc\/opc\/([a-z0-9_-]+)\.html/i);
+  if (!m) {
+    // 不是OPC详情页路径，显示404
+    app.innerHTML = '<header class="pagehead"><div class="wrap"><h1>页面不存在</h1><p class="lead">你访问的页面找不到。<a href="index.html">返回首页</a> 或 <a href="opc.html">查看全国OPC社区</a>。</p></div></header>';
+    return;
+  }
+  var slug = m[1];
+  var DATA = window.OPCS || [];
+  var d = null;
+  for (var i=0; i<DATA.length; i++) { if (DATA[i].slug === slug) { d = DATA[i]; break; } }
+  if (!d) {
+    app.innerHTML = '<header class="pagehead"><div class="wrap"><h1>社区未找到</h1><p class="lead">未找到该OPC社区。<a href="opc.html">查看全部社区</a>。</p></div></header>';
+    return;
+  }
+
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+
+  document.title = esc(d.name) + ' | 全国OPC社区 | 超级OPC一人公司秘籍';
+  var focusPills = (d.focus||[]).map(function(f){return '<span class="pill">'+esc(f)+'</span>';}).join('');
+  var wechatPills = (d.wechat||[]).map(function(w){return '<span class="pill accent">'+esc(w)+'</span>';}).join('');
+  var cover = d.image ? '<img src="'+esc(d.image)+'" alt="'+esc(d.name)+'" style="width:100%;max-height:320px;object-fit:cover;border-radius:12px;margin-bottom:24px;" onerror="this.style.display=\'none\'">' : '';
+
+  app.innerHTML = '<header class="pagehead"><div class="wrap">' +
+    '<div class="crumb"><a href="index.html">首页</a> / <a href="opc.html">全国OPC社区</a> / ' + esc(d.name) + '</div>' +
+    '<h1>' + esc(d.name) + '</h1>' +
+    '<div class="pillrow" style="margin-top:14px;">' +
+      '<span class="pill accent">' + esc(d.city) + '</span>' +
+      '<span class="pill">' + esc(d.gov_level) + '</span>' +
+      wechatPills +
+    '</div></div></header>' +
+    '<section class="section"><div class="wrap" style="max-width:760px;">' +
+    cover +
+    '<p class="lead" style="font-size:18px;line-height:1.8;color:var(--ink);margin-bottom:28px;">' + esc(d.summary) + '</p>' +
+    '<div style="display:grid;grid-template-columns:1fr;gap:20px;">' +
+    '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">运营方</h3><p style="color:var(--ink);margin:0;font-size:15px;line-height:1.7;">' + esc(d.operator) + '</p></div>' +
+    '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">政府级别</h3><p style="color:var(--ink);margin:0;font-size:15px;">' + esc(d.gov_level) + '</p></div>' +
+    '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">成立时间</h3><p style="color:var(--ink);margin:0;font-size:15px;">' + esc(d.founded) + '</p></div>' +
+    '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">赛道方向</h3><div class="pillrow" style="margin-top:6px;">' + focusPills + '</div></div>' +
+    '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">微信公众号</h3><div class="pillrow" style="margin-top:6px;">' + (wechatPills || '<span class="muted">暂未收录</span>') + '</div></div>' +
+    '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">信息来源</h3><p style="color:var(--muted);margin:0;font-size:14px;">' + esc(d.src) + '</p></div>' +
+    '</div>' +
+    '<div style="margin-top:36px;text-align:center;"><a href="opc.html" style="display:inline-block;padding:12px 28px;border:2px solid var(--ink);border-radius:2px;color:var(--ink);text-decoration:none;font-family:var(--serif);font-size:16px;">← 返回全国OPC社区列表</a></div>' +
+    '</div></section>';
+})();
+</script>
+</body>
+</html>
