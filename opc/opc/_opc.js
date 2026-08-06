@@ -454,7 +454,7 @@ window.OPCS = [
   "gov_level": "市级（苏州）",
   "founded": "2026（政策密集落地）",
   "summary": "苏州提出到2028年打造超30个OPC社区，工业园区设10亿「青创基金群」支持OPC。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/su-zhou-cover.jpg",
   "src": "财联社 / 新浪财经",
   "wechat": [
    "苏州发布",
