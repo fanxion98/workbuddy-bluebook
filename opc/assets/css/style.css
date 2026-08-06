@@ -117,6 +117,14 @@ h1,h2,h3,h4{font-family:var(--serif);line-height:1.2;font-weight:600;margin:0;co
   background:rgba(20,184,166,0.15);color:#0F766E;
   border-color:rgba(20,184,166,0.5);
 }
+.src-link{
+  color:var(--accent);text-decoration:none;
+  border-bottom:1px dashed var(--accent);
+  transition:color .2s,border-color .2s;
+}
+.src-link:hover{
+  color:#0F766E;border-bottom-color:#0F766E;
+}
 @media(max-width:900px){
   .back-to-blog{display:none;}
 }
