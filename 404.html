@@ -10,7 +10,7 @@
 <div id="site-nav"></div>
 <div id="app" style="min-height:60vh;"></div>
 <div id="site-footer"></div>
-<script src="/opc/assets/js/site.js?v=10"></script>
+<script src="/opc/assets/js/site.js?v=11"></script>
 <script>
 (function(){
   var app = document.getElementById('app');
@@ -51,13 +51,13 @@
       return escaped;
     }
 
-    document.title = esc(d.name) + ' | 全国OPC社区 | 超级OPC一人公司秘籍';
+    document.title = esc(d.name) + ' | OPC地图 | 超级OPC一人公司秘籍';
     var focusPills = (d.focus||[]).map(function(f){return '<span class="pill">'+esc(f)+'</span>';}).join('');
     var wechatPills = (d.wechat||[]).map(function(w){return '<span class="pill accent">'+esc(w)+'</span>';}).join('');
     var cover = d.image ? '<img src="'+esc(d.image)+'" alt="'+esc(d.name)+'" style="width:100%;max-height:320px;object-fit:cover;border-radius:12px;margin-bottom:24px;" onerror="this.style.display=\'none\'">' : '';
 
     app.innerHTML = '<header class="pagehead"><div class="wrap">' +
-      '<div class="crumb"><a href="/opc/index.html">首页</a> / <a href="/opc/opc.html">全国OPC社区</a> / ' + esc(d.name) + '</div>' +
+      '<div class="crumb"><a href="/opc/index.html">首页</a> / <a href="/opc/opc.html">OPC地图</a> / ' + esc(d.name) + '</div>' +
       '<h1>' + esc(d.name) + '</h1>' +
       '<div class="pillrow" style="margin-top:14px;">' +
         '<span class="pill accent">' + esc(d.city) + '</span>' +
@@ -78,7 +78,7 @@
       '<div style="margin-top:12px;text-align:center;">' +
       '<a href="https://www.opcquan.com/communities/' + encodeURIComponent(slug) + '" target="_blank" rel="noopener" style="display:inline-block;padding:10px 24px;border:1px solid var(--line);border-radius:2px;color:var(--muted);text-decoration:none;font-size:14px;">🌐 在 OPC圈 查看完整原网页（含联系方式、地图等） →</a>' +
       '</div>' +
-      '<div style="margin-top:36px;text-align:center;"><a href="/opc/opc.html" style="display:inline-block;padding:12px 28px;border:2px solid var(--ink);border-radius:2px;color:var(--ink);text-decoration:none;font-family:var(--serif);font-size:16px;">← 返回全国OPC社区列表</a></div>' +
+      '<div style="margin-top:36px;text-align:center;"><a href="/opc/opc.html" style="display:inline-block;padding:12px 28px;border:2px solid var(--ink);border-radius:2px;color:var(--ink);text-decoration:none;font-family:var(--serif);font-size:16px;">← 返回OPC地图列表</a></div>' +
       '</div></section>';
   };
   document.head.appendChild(script);
