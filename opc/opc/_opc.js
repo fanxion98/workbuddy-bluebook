@@ -14,7 +14,7 @@ window.OPCS = [
   "gov_level": "市级（北京经开区）",
   "founded": "2026-04",
   "summary": "由WaytoAGI运营、定位「全球最大OPC社区」的AI创业孵化空间，构建「空间+服务+生态」全链条支撑。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/bei-jing-mo-shu-opc-she-qu.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1776614156161-syqdr5.jpg",
   "src": "北京亦庄官方发布（首都之窗）",
   "wechat": [
    "北京亦庄",
@@ -36,7 +36,7 @@ window.OPCS = [
   "gov_level": "区级（海淀区）",
   "founded": "2025—2026",
   "summary": "位于中关村核心区的AI创业社区，吸引大量AI创业者入驻，提供工商财税一站式服务与AI夜校培训。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/bei-jing-zhong-guan-cun-ai-bei-wei-she-qu.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/bei-jing-zhong-guan-cun-ai-bei-wei-she-qu-cover.jpg",
   "src": "中国经济网报道",
   "wechat": [
    "海淀发布",
@@ -82,7 +82,7 @@ window.OPCS = [
   "gov_level": "区级（罗湖）",
   "founded": "2026-03-13 授牌启用",
   "summary": "深圳首批人工智能OPC社区之一，聚焦罗湖重点产业的「AI破界、π创无界」全周期孵化空间。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/shen-zhen-luo-hu-chuang-kong-jian-opc-she-qu.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/shenzhen-luo-hu-chuang-kongjian-opc-shequ.jpg",
   "src": "罗湖发布 / OPC圈社区目录",
   "wechat": [
    "罗湖发布",
@@ -103,7 +103,7 @@ window.OPCS = [
   "gov_level": "街道/区级（龙岗）",
   "founded": "2026-04 揭牌",
   "summary": "坂田四大OPC社区之一，定位集孵化、场景测试、AI智能体于一体的综合性AI产业服务平台，已入驻52家OPC。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/shen-zhen-xing-he-worldopc-she-qu.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1783868093397-fhfaog.jpg",
   "src": "龙岗区政府 / 南方+",
   "wechat": [
    "龙岗发布",
@@ -124,7 +124,7 @@ window.OPCS = [
   "gov_level": "街道/区级（龙岗）",
   "founded": "2026-04 揭牌",
   "summary": "主打「AI赋能」特色的OPC社区，配套OPC专项服务窗口，实现政策直达、服务直通。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/shen-zhen-tian-an-yun-gu-opc-she-qu.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/shen-zhen-tian-an-yun-gu-opc-she-qu.jpg",
   "src": "龙岗区政府 / 南方+",
   "wechat": [
    "龙岗发布",
@@ -146,7 +146,7 @@ window.OPCS = [
   "gov_level": "街道/区级（龙岗）",
   "founded": "2026-04 揭牌",
   "summary": "地处深圳跨境圈「新贵」集聚地，针对跨境电商等业态OPC推出1-3年办公免租。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/shen-zhen-le-hui-zhong-xin-opc-she-qu.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/%E6%B7%B1%E5%9C%B3-%E4%B9%90%E8%8D%9F%E4%B8%AD%E5%BF%83OPC%E7%A4%BE%E5%8C%BA-cover.jpg",
   "src": "龙岗区政府 / 南方+",
   "wechat": [
    "龙岗发布",
@@ -167,7 +167,7 @@ window.OPCS = [
   "gov_level": "街道/区级（龙岗）",
   "founded": "2026-04 揭牌",
   "summary": "距华为总部500米的OPC社区，提供「医食住行办公休闲」六位一体配套与创业全周期服务。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/shen-zhen-jin-rong-da-opc-she-qu.png",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1783868145982-n0r5kk.png",
   "src": "龙岗区政府 / 南方+",
   "wechat": [
    "龙岗发布",
@@ -186,7 +186,7 @@ window.OPCS = [
   "gov_level": "区级（光明）",
   "founded": "2026（光明区首个人工智能主题众创空间）",
   "summary": "光明区首个人工智能主题众创空间，聚焦「技术+场景+资本」，入驻享12个月租金水电全免。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/shen-zhen-nan-tai-yun-chuang-gu-ren-gong.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/shen-zhen-nan-tai-yun-chuang-gu-ren-gong.jpg",
   "src": "OPC圈社区目录",
   "wechat": [
    "深圳光明",
@@ -248,7 +248,7 @@ window.OPCS = [
   "gov_level": "区级（龙岗）",
   "founded": "2026",
   "summary": "聚焦跨境电商与AI出海的OPC社区，依托龙岗跨境产业生态。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/shen-zhen-kang-li-cheng-kua-jing-dian-sh.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/%E6%B7%B1%E5%9C%B3-%E5%BA%B7%E5%88%A9%E5%9F%8E%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86OPC%E7%A4%BE%E5%8C%BA-cover.jpg",
   "src": "腾讯地图POI / OPC圈社区目录",
   "wechat": [
    "龙岗发布",
@@ -268,7 +268,7 @@ window.OPCS = [
   "gov_level": "区级（龙岗）",
   "founded": "2026",
   "summary": "位于龙岗创投大厦的OPC社区，衔接区域创投与人工智能产业资源。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/shen-zhen-mo-li-gu.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/shenzhen-mo-li-gu.jpg",
   "src": "腾讯地图POI / OPC圈社区目录",
   "wechat": [
    "龙岗发布",
@@ -310,7 +310,7 @@ window.OPCS = [
   "gov_level": "生态/市场型（阿里生态）",
   "founded": "2025—2026",
   "summary": "不占股权、不锁估值，直接向高潜力超级个体发放5万美元启动资金的OPC加速社区。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/hangzhou-honghu-hui.jpg",
   "src": "财联社 / 新浪财经",
   "wechat": [
    "鸿鹄汇Honghub"
@@ -331,7 +331,7 @@ window.OPCS = [
   "gov_level": "市级（武汉）",
   "founded": "2026（《支持人工智能OPC创新发展若干措施》2月印发、3月施行）",
   "summary": "武汉光谷布局超3万方OPC创新社区，目标三年集聚OPC人才5000人、孵化企业500家。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/wuhan-guanggu-chuangye-kafei-cover.jpg",
   "src": "武汉市政府 / 光谷报道",
   "wechat": [
    "中国光谷",
@@ -351,7 +351,7 @@ window.OPCS = [
   "gov_level": "市级（南宁）",
   "founded": "2026-05-15（首批10个集中开放）",
   "summary": "主打「AI+跨境电商」的南宁标杆OPC社区，依托东盟跨境电商总部基地孵化面向东盟的超级个体。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/nanning-fuyaohui-opc.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/nanning-fuyaohui-opc-cover.jpg",
   "src": "南宁市政府门户",
   "wechat": [
    "南宁发布",
@@ -370,7 +370,7 @@ window.OPCS = [
   "gov_level": "市级（南宁）",
   "founded": "2026-05-15（首批10个集中开放）",
   "summary": "主打「AI+东盟应用」的南宁标杆OPC社区，具备畅通的资源渠道与产业联动功能。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/nanning-nan-a-dongmengu-opc.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1783865410994-jo7y56.jpg",
   "src": "南宁市政府门户",
   "wechat": [
    "南宁发布",
@@ -391,7 +391,7 @@ window.OPCS = [
   "gov_level": "市级（济宁）",
   "founded": "2026-07（正式挂牌）",
   "summary": "济宁首家市级OPC创业社区，首批11家「一人公司」集中入驻，聚焦三大数字赛道。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/jining-zhiqi-opc-cover.jpg",
   "src": "山东省发改委 / 济宁发布",
   "wechat": [
    "济宁发布",
@@ -477,7 +477,7 @@ window.OPCS = [
   "gov_level": "区级（成都高新区）",
   "founded": "2026-02-06（高新π立方 OPC社区计划启动、首发揭幕）",
   "summary": "全国首个聚焦「AI+数字文创」的一人公司（OPC）专属社区，由天府软件园运营，推行「办公直进、服务全享」，打造零成本启动的OPC创业者首选地。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/cheng-du-tian-fu-ruan-jian-li-fang-opc-she-qu.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/chengdu-tianfu-ruanjian-lifang-opc-shequ.jpg",
   "src": "成都高新区官网 / 天府软件园",
   "wechat": [
    "天府软件园",
@@ -506,7 +506,7 @@ window.OPCS = [
   "gov_level": "区级（成都高新区）",
   "founded": "2026（天府长岛数字文创园 OPC社区布局）",
   "summary": "位于天府长岛数字文创园的数字文创OPC社区，覆盖AI+数字文创全业态、全流程，配套弹性算力与AIGC智能创作服务。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/chengdu-tianfuchangdao-yuanchuangdao-opc.jpg",
   "src": "成都高新区官网 OPC社区简介",
   "wechat": [
    "成都高新",
@@ -529,7 +529,7 @@ window.OPCS = [
   "gov_level": "区级（成都高新区）/ 平台合作",
   "founded": "2026-07-10（首个腾讯WorkBuddy OPC合作社区成立）",
   "summary": "首个腾讯WorkBuddy OPC合作社区，依托腾讯自研AI智能工作台，为入驻OPC提供免费算力积分与实战训练营。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/chengdu-workbuddy-opc.jpg",
   "src": "新华网（四川）",
   "wechat": [
    "腾讯云",
@@ -623,7 +623,7 @@ window.OPCS = [
   "gov_level": "区级（海淀）",
   "founded": "2026",
   "summary": "海淀OPC友好空间之一，获「OPC先锋社区」称号，提供全链条AI工具支持。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/bei-jing-ai-yuan-dian-she-qu.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/bei-jing-ai-yuan-dian-she-qu-cover.jpg",
   "src": "国家科技基础条件平台中心",
   "wechat": [
    "海淀发布"
@@ -642,7 +642,7 @@ window.OPCS = [
   "gov_level": "区级（朝阳）",
   "founded": "2026",
   "summary": "全国首个数字员工全要素微生态样板，提供一站式服务、大模型备案、科技金融、场景对接及OPC人才公寓。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/beijing-ohub-digital-human-opc.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/beijing-ohub-digital-human-opc-cover.jpg",
   "src": "北京日报/今日头条",
   "wechat": [
    "北京朝阳"
@@ -682,7 +682,7 @@ window.OPCS = [
   "gov_level": "区级（东城）",
   "founded": "2026",
   "summary": "东城区OPC社区，政务不出街，提供人才居住、落户、子女教育等全周期保障。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/beijing-heping-in-opc-cover.jpg",
   "src": "北京日报/今日头条",
   "wechat": [
    "东城发布"
@@ -700,7 +700,7 @@ window.OPCS = [
   "gov_level": "区级（海淀）",
   "founded": "2026",
   "summary": "海淀区形成的OPC创业友好空间之一，与北纬、原点并列提供生态协同。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/bei-jing-shang-di-ren-gong-zhi-neng-opc-chuang-xin-jie-qu-you-hao.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/beijing-shangdi-rengong-zhineng-opc-chuangxin-jie-qu-youhao.jpg",
   "src": "腾讯新闻·海淀",
   "wechat": [
    "海淀发布"
@@ -718,7 +718,7 @@ window.OPCS = [
   "gov_level": "区级（经开区）",
   "founded": "2026-07（首批认证）",
   "summary": "北京经开区首批8家认证OPC社区之一，聚焦AI原生创新。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1785290991900-llvz5j.png",
   "src": "人民网·北京",
   "wechat": [
    "北京亦庄"
@@ -755,7 +755,7 @@ window.OPCS = [
   "gov_level": "区级（经开区）",
   "founded": "2026-07（首批认证）",
   "summary": "经开区首批认证OPC社区，聚焦AIGC影视与AI电影创作。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1785290816693-nk5yu3.jpg",
   "src": "人民网·北京",
   "wechat": [
    "北京亦庄"
@@ -774,7 +774,7 @@ window.OPCS = [
   "gov_level": "区级（经开区）",
   "founded": "2026-07（首批认证）",
   "summary": "经开区首批认证OPC社区，聚焦高新视听与AIGC视听内容生产。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1785288117986-yzuow3.png",
   "src": "人民网·北京",
   "wechat": [
    "北京亦庄"
@@ -792,7 +792,7 @@ window.OPCS = [
   "gov_level": "区级（经开区）",
   "founded": "2026-07（首批认证）",
   "summary": "经开区首批认证OPC社区，聚焦智能产业方向孵化。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1785288969873-hdihkc.png",
   "src": "人民网·北京",
   "wechat": [
    "北京亦庄"
@@ -869,7 +869,7 @@ window.OPCS = [
   "gov_level": "区级（浦东张江）",
   "founded": "2026",
   "summary": "张江三大OPC创业项目之一，聚焦具身智能与大模型。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/shang-hai-alohaidol-fu-hua-qi-ji-di.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/shang-hai-alohaidol-fu-hua-qi-ji-di.jpg",
   "src": "张江发布",
   "wechat": [
    "张江发布"
@@ -1043,7 +1043,7 @@ window.OPCS = [
   "gov_level": "区级（杨浦）",
   "founded": "2026-07-04（试运营）",
   "summary": "杨浦OPC社区，火山引擎「合火人」计划，近百家已入驻。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/shanghai-fuxingdao-spark-opc-cover.jpg",
   "src": "今日头条",
   "wechat": [
    "上海杨浦"
@@ -1084,7 +1084,7 @@ window.OPCS = [
   "gov_level": "区级（闵行）",
   "founded": "2026",
   "summary": "闵行OPC社区，阿里打造「全国首个国际OPC社区」。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/shang-hai-hong-cheng-opc-she-qu.png",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1783867239692-sp77t1.png",
   "src": "人民网·上海",
   "wechat": [
    "上海闵行",
@@ -1125,7 +1125,7 @@ window.OPCS = [
   "gov_level": "区级（滨海高新）",
   "founded": "2026",
   "summary": "滨海高新区OPC创新社区，长免租+算力补贴。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/tian-jin-ovu-chuang-ke-xing-opc-chuang-.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1783954739041-pb35nu.png",
   "src": "天津滨海高新区网",
   "wechat": [
    "天津滨海高新"
@@ -1163,7 +1163,7 @@ window.OPCS = [
   "gov_level": "区级（渝中）",
   "founded": "2026",
   "summary": "渝中区AI+OPC示范社区，数字内容生产方向。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/chong-qing-xiang-hu-lian-jie-ai-opc-she-q.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/chong-qing-xiang-hu-lian-jie-ai-opc-she-q.jpg",
   "src": "重庆市政府网",
   "wechat": [
    "重庆渝中"
@@ -1182,7 +1182,7 @@ window.OPCS = [
   "gov_level": "区级（渝中）",
   "founded": "2026",
   "summary": "渝中区数字创意OPC产业社区，免费工位+一站式服务。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/chong-qing-chong-qing-shi-shu-zi-jing-ji-.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/%E9%87%8D%E5%BA%86-%E9%87%8D%E5%BA%86%E5%B8%82%E6%95%B0%E5%AD%97%E7%BB%8F%E6%B5%8E%E4%BA%A7%E4%B8%9A%E5%9B%AD%E6%95%B0%E5%AD%97%E5%88%9B%E6%84%8FOPC%E4%BA%A7%E4%B8%9A%E7%A4%BE%E5%8C%BA-cover.jpg",
   "src": "重庆市政府网",
   "wechat": [
    "重庆渝中"
@@ -1201,7 +1201,7 @@ window.OPCS = [
   "gov_level": "区级（两江新区）",
   "founded": "2026",
   "summary": "两江新区仙桃数据谷OPC社区，大模型训练+文化创意。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/cq-xiantao-shujugu-opc.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1783574632506-a1eifd.jpg",
   "src": "重庆市政府网",
   "wechat": [
    "重庆两江新区"
@@ -1278,7 +1278,7 @@ window.OPCS = [
   "gov_level": "区级（晋源）",
   "founded": "2026",
   "summary": "太原OPC社区，聚焦AI出海与AI智能体。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/ty-xinzhi-opc.png",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1783954654279-lhc92w.webp",
   "src": "山西经济日报",
   "wechat": [
    "太原发布"
@@ -1338,7 +1338,7 @@ window.OPCS = [
   "gov_level": "区级（浑南）",
   "founded": "2026",
   "summary": "浑南科技城OPC空间，稳定低成本算力+全链条生活配套。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1783869178858-3jeaee.png",
   "src": "浑南区政府网",
   "wechat": [
    "沈阳发布"
@@ -1455,7 +1455,7 @@ window.OPCS = [
   "gov_level": "区级（槐荫）",
   "founded": "2026",
   "summary": "济南「一人之境」节点，OPC创造营每周开营。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/jinan-lvdi-qilu-jingshu-ai.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/jinan-lvdi-qilu-jingshu-ai-cover.jpg",
   "src": "腾讯新闻",
   "wechat": [
    "济南发布"
@@ -1495,7 +1495,7 @@ window.OPCS = [
   "gov_level": "区级（雨花台）",
   "founded": "2026",
   "summary": "南京人工智能生态街区OPC社区，六大专项政策+及时雨登记。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/nanjing-zhineng-gongfang.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/nanjing-zhineng-gongfang-cover.jpg",
   "src": "南京市政府网·政务服务",
   "wechat": [
    "南京发布",
@@ -1537,7 +1537,7 @@ window.OPCS = [
   "gov_level": "区级（建邺）",
   "founded": "2026",
   "summary": "阿里首个OPC社区，长三角OPC联盟，最高2年租金减免。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/nan-jing-qin-cheng-opc-she-qu.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/nanjing-qin-cheng-opc-shequ.jpg",
   "src": "南京大学新闻/新华日报",
   "wechat": [
    "南京发布",
@@ -1558,7 +1558,7 @@ window.OPCS = [
   "gov_level": "区级（麒麟）",
   "founded": "2026",
   "summary": "麒麟科创园OPC社区，主打硬核科技与AI+内容。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/nan-jing-ying-zhi-yuan-opc-she-qu.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/nan-jing-ying-zhi-yuan-opc-she-qu.jpg",
   "src": "南京市政府网",
   "wechat": [
    "南京发布",
@@ -1619,7 +1619,7 @@ window.OPCS = [
   "gov_level": "区级（包河）",
   "founded": "2026-02-10",
   "summary": "合肥首个AI赋能OPC社区，紫云山贡街。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/he-fei-huan-jie-zhi-hui-opc.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/hefei-huan-jie-zhi-hui-opc-shequ.jpg",
   "src": "今日头条",
   "wechat": [
    "合肥发布"
@@ -1877,7 +1877,7 @@ window.OPCS = [
   "gov_level": "市级（武汉）",
   "founded": "2026-03-31（首批首发）",
   "summary": "光谷首批8家OPC社区之一，武创院本部。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/wuhan-wuchuangyuan-opc.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/wuhan-wuchuangyuan-opc-cover.jpg",
   "src": "武汉市政府/光谷报道",
   "wechat": [
    "中国光谷",
@@ -1898,7 +1898,7 @@ window.OPCS = [
   "gov_level": "市级（武汉）",
   "founded": "2026-03-31（首批首发）",
   "summary": "光谷首批8家OPC社区之一，模态空间。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/wuhan-modal-space-cover.jpg",
   "src": "湖北日报",
   "wechat": [
    "中国光谷",
@@ -1940,7 +1940,7 @@ window.OPCS = [
   "gov_level": "区级（经开）",
   "founded": "2026",
   "summary": "武汉经开区OPC社区，AI智造方向。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/wuhan-jingkai-zhizao-ai.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/wuhan-jingkai-zhizao-ai-opc-cover.jpg",
   "src": "长江日报",
   "wechat": [
    "武汉发布"
@@ -1960,7 +1960,7 @@ window.OPCS = [
   "gov_level": "区级（望城）",
   "founded": "2026",
   "summary": "湖南省首个OPC创业中心，2026年3月18日在长沙望城区大泽湖海归小镇揭牌。一期4000平方米独立办公室20间加开放工位100个，零成本启动。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/cs-dazahu-opc.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/cmnl78shp000irm946mayzu8t-cover.jpg",
   "src": "人民网·湖南",
   "wechat": [
    "长沙大泽湖国际人才社区"
@@ -2099,7 +2099,7 @@ window.OPCS = [
   "gov_level": "市级（南宁）",
   "founded": "2026-05-15（首批10个集中开放）",
   "summary": "南宁首批10个OPC社区之一，Token工厂5000P算力。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/nanning-wuxiang-yunge-fuhua.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/nanning-wuxiang-yunge-fuhua-cover.jpg",
   "src": "南宁市政府门户",
   "wechat": [
    "南宁发布",
@@ -2118,7 +2118,7 @@ window.OPCS = [
   "gov_level": "市级（南宁）",
   "founded": "2026-05-15（首批10个集中开放）",
   "summary": "南宁首批10个OPC社区之一，AI+财税服务方向。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/nanning-feixun-fuhua.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/nanning-feixun-fuhua-cover.jpg",
   "src": "南宁市政府门户",
   "wechat": [
    "南宁发布",
@@ -2137,7 +2137,7 @@ window.OPCS = [
   "gov_level": "市级（南宁）",
   "founded": "2026-05-15（首批10个集中开放）",
   "summary": "南宁首批10个OPC社区之一，AI+科技赋能方向。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/nanning-wuxiang-keji-fuhua.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/nanning-wuxiang-keji-opc-cover.jpg",
   "src": "南宁市政府门户",
   "wechat": [
    "南宁发布",
@@ -2176,7 +2176,7 @@ window.OPCS = [
   "gov_level": "市级（南宁）",
   "founded": "2026-05-15（首批10个集中开放）",
   "summary": "南宁首批10个OPC社区之一，AI+生产服务14.26万㎡。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/nanning-zhongguancun-opc.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/nanning-zhongguancun-opc-cover.jpg",
   "src": "南宁市政府门户",
   "wechat": [
    "南宁发布",
@@ -2195,7 +2195,7 @@ window.OPCS = [
   "gov_level": "市级（南宁）",
   "founded": "2026-05-15（首批10个集中开放）",
   "summary": "南宁首批10个OPC社区之一，AI+产业综合体方向。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/nanning-bede-lianxun-zhigu.png",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1783865614327-k1kl2d.png",
   "src": "南宁市政府门户",
   "wechat": [
    "南宁发布",
@@ -2214,7 +2214,7 @@ window.OPCS = [
   "gov_level": "市级（南宁）",
   "founded": "2026-05-15（首批10个集中开放）",
   "summary": "南宁首批10个OPC社区之一，AI+数字经济方向。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/nanning-guangxi-qingnian-opc.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/nanning-guangxi-qingnian-opc-cover.jpg",
   "src": "南宁市政府门户",
   "wechat": [
    "南宁发布",
@@ -2233,7 +2233,7 @@ window.OPCS = [
   "gov_level": "市级（南宁）",
   "founded": "2026-05-15（首批10个集中开放）",
   "summary": "南宁首批10个OPC社区之一，AI+新消费出海方向。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/nanning-qingxiu-chuangxin-opc.png",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1783865525805-78l5ey.png",
   "src": "南宁市政府门户",
   "wechat": [
    "南宁发布",
@@ -2275,7 +2275,7 @@ window.OPCS = [
   "gov_level": "区级（美兰）",
   "founded": "2026-07-09",
   "summary": "美兰区首个特色OPC社区，算力消费券+免租+信贷贴息。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/hai-kou-hai-nan-shu-ju-gu-opc-cover.jpg",
   "src": "腾讯新闻",
   "wechat": [
    "海口发布"
@@ -2294,7 +2294,7 @@ window.OPCS = [
   "gov_level": "区级（贵阳高新）",
   "founded": "2026-07",
   "summary": "贵州科学城OPC社区，入驻全年3680元含引擎+培训+陪跑。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/gui-yang-gui-zhou-ke-xue-cheng-opc-she-qu.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1783660475185-wa8hb4.jpg",
   "src": "人民网·贵州",
   "wechat": [
    "贵阳发布"
@@ -2352,7 +2352,7 @@ window.OPCS = [
   "gov_level": "区级（高新）",
   "founded": "2026-03-23",
   "summary": "西部首个人工智能一人公司专属社区，499元/月低成本工位。",
-  "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/xa-ai-opc-chuangxin.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/cmnl78pfx0009rm94bscxqwlt-cover.jpg",
   "src": "西安晚报",
   "wechat": [
    "西安发布"
@@ -2672,7 +2672,7 @@ window.OPCS = [
   "gov_level": "OPC社区",
   "founded": "—",
   "summary": "天府智创T·OPC明途启航营是位于成都天府新区成都科创生态岛的AI+OPC孵化社区，由成都明途科技有…",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/chengdu-tianfu-mingtu-qihangying-cover.jpg",
   "src": "OPC圈(opcquan.com)",
   "wechat": []
  },
@@ -2957,7 +2957,7 @@ window.OPCS = [
   "gov_level": "OPC社区",
   "founded": "—",
   "summary": "星元云智OPC Hub位于成都成华区龙潭工业机器人产业功能区·东广人工智能谷，2026年3月31日开…",
-  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1783574438536-uxdds8.png",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/chengdu-xingyuan-yunzhi-opc-cover.jpg",
   "src": "OPC圈(opcquan.com)",
   "wechat": []
  },
@@ -2993,7 +2993,7 @@ window.OPCS = [
   "gov_level": "OPC社区",
   "founded": "—",
   "summary": "明途启航营OPC社区位于成都天府新区科创生态岛（独角兽岛片区），是T·OPC行动首个落地项目，聚焦A…",
-  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1776615153188-2klfei.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/chengdu-mingtu-opc-cover.jpg",
   "src": "OPC圈(opcquan.com)",
   "wechat": [
    "长江创服"
@@ -3027,7 +3027,7 @@ window.OPCS = [
   "gov_level": "OPC社区",
   "founded": "—",
   "summary": "芯创社（成都芯谷人工智能OPC社区）是四川省首个电子信息垂直领域OPC社区，由成都芯谷产业园发展有限…",
-  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/chengdu-xinchuangshe-opc-cover.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/chengdu-xinchuangshe-opc.jpg",
   "src": "OPC圈(opcquan.com)",
   "wechat": []
  },
@@ -3081,7 +3081,7 @@ window.OPCS = [
   "gov_level": "OPC社区",
   "founded": "—",
   "summary": "世界客属青年创新创业中心位于梅州市梅江区世界客商中心3-5层，是2017年第五届世界客商大会揭牌的O…",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/meizhou-hakka-youth-innovation-center-cover.jpg",
   "src": "OPC圈(opcquan.com)",
   "wechat": []
  },
@@ -3136,7 +3136,7 @@ window.OPCS = [
   "gov_level": "OPC社区",
   "founded": "—",
   "summary": "海曙月湖 AiOPC 社区由维科集团与36创联合运营，坐落于宁波市海曙区核心月湖板块（柳汀街225号…",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/ning-bo-hai-shu-yue-hu-cover.jpg",
   "src": "OPC圈(opcquan.com)",
   "wechat": []
  },
@@ -3171,7 +3171,7 @@ window.OPCS = [
   "gov_level": "OPC社区",
   "founded": "—",
   "summary": "望春 AiOPC是位于宁波海曙区望春街道的OPC社区，由望春街道党群服务中心运营，面向AI应用/Ag…",
-  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/ning-bo-wang-chun-aiopc-cover.jpg",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/1785332875588-22i3hg.png",
   "src": "OPC圈(opcquan.com)",
   "wechat": []
  },
@@ -12206,7 +12206,8 @@ window.OPCS = [
   "founded": "2026年",
   "summary": "东方智造港满天星OPC创新基地由长沙经开区管委会直属平台长沙经济技术开发集团运营，是长沙经开区首个科技型创新创业综合体。",
   "src": "OPC圈(opcquan.com)",
-  "has_detail_page": true
+  "has_detail_page": true,
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/changsha-dongfang-zhizaogang.jpg"
  },
  {
   "slug": "changsha-zhongbu-zhigu",
@@ -12240,6 +12241,7 @@ window.OPCS = [
   "founded": "2017年",
   "summary": "三一众创孵化基地是长沙经开区唯一国家级科技企业孵化器，由湖南三一众创孵化器有限公司运营，系三一重工全资子公司。",
   "src": "OPC圈(opcquan.com)",
-  "has_detail_page": true
+  "has_detail_page": true,
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/changsha-sany-chuangye-cover.jpg"
  }
 ];
