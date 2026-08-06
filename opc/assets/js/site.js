@@ -39,3 +39,17 @@
     </div>`;
   }
 })();
+
+/* 书籍页面破碎图片优雅处理：自动隐藏加载失败的图片 */
+(function(){
+  document.addEventListener('error', function(e) {
+    if (e.target && e.target.tagName === 'IMG' && !e.target.dataset.fallbackHandled) {
+      e.target.dataset.fallbackHandled = '1';
+      var img = e.target;
+      // 如果是书籍页面中的图片（在 .book-body 内）
+      if (img.closest && img.closest('.book-body')) {
+        img.style.display = 'none';
+      }
+    }
+  }, true); // 使用捕获阶段捕获 image error 事件
+})();
