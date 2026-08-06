@@ -1959,12 +1959,14 @@ window.OPCS = [
   ],
   "gov_level": "区级（望城）",
   "founded": "2026",
-  "summary": "湖南省首个OPC创业中心，十大支持+智能券补贴。",
+  "summary": "湖南省首个OPC创业中心，2026年3月18日在长沙望城区大泽湖海归小镇揭牌。一期4000平方米独立办公室20间加开放工位100个，零成本启动。",
   "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/cs-dazahu-opc.jpg",
   "src": "人民网·湖南",
   "wechat": [
    "长沙大泽湖国际人才社区"
-  ]
+  ],
+  "has_detail_page": true,
+  "slug_alias": "cs-dazahu-opc"
  },
  {
   "slug": "changsha-malanshan",
@@ -1999,12 +2001,14 @@ window.OPCS = [
   ],
   "gov_level": "区级（经开）",
   "founded": "2026-03-24",
-  "summary": "长沙经开区满天星OPC基地，高新技术企业奖15万。",
+  "summary": "依托养虾十条政策，聚焦AI+制造业赛道，背靠三一重工中联重科等龙头企业资源。基建补贴最高10万元，服务补贴最高20万元。",
   "image": "https://zhuqueopc.oss-cn-beijing.aliyuncs.com/uploads/communities/cs-jingkai-opc.jpg",
   "src": "长沙经开区网",
   "wechat": [
    "长沙发布"
-  ]
+  ],
+  "has_detail_page": true,
+  "slug_alias": "cs-jingkai-opc"
  },
  {
   "slug": "guangzhou-yuzhu",
@@ -5063,7 +5067,8 @@ window.OPCS = [
   "summary": "海凭国际满天星OPC创业基地是自贸区经开区首个专业性医疗器械园区，集研发、生产、技术转让、企业孵化、…",
   "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/changsha-haipingguoji.jpg",
   "src": "OPC圈(opcquan.com)",
-  "wechat": []
+  "wechat": [],
+  "has_detail_page": true
  },
  {
   "slug": "cq-liangjiang-xingyun-opc",
@@ -5117,7 +5122,8 @@ window.OPCS = [
   "src": "OPC圈(opcquan.com)",
   "wechat": [
    "星兴万物"
-  ]
+  ],
+  "has_detail_page": true
  },
  {
   "slug": "changsha-malan-cloud-opc",
@@ -5137,7 +5143,8 @@ window.OPCS = [
   "src": "OPC圈(opcquan.com)",
   "wechat": [
    "中国V谷-马栏山"
-  ]
+  ],
+  "has_detail_page": true
  },
  {
   "slug": "qingdao-boe-opc",
@@ -12167,5 +12174,72 @@ window.OPCS = [
   "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/shanghai-fuxing-dao-opc-chaoji-geti-shequ.jpg",
   "src": "OPC圈(opcquan.com)",
   "wechat": []
+ },
+ {
+  "slug": "tianxin-changsha-opc",
+  "city": "长沙",
+  "city_key": "changsha",
+  "name": "天心区·长沙OPC共创联盟",
+  "operator": "天心经开区联合长沙理工大学等",
+  "focus": [
+   "AI应用/Agent",
+   "低空经济",
+   "跨境电商/出海"
+  ],
+  "gov_level": "区级",
+  "founded": "2026年4月",
+  "summary": "长沙OPC共创联盟是由天心经开区联合长沙理工大学、高校、企业、投资机构、创业服务机构共同组建的大学生一人公司创业生态联盟，2026年4月8日正式成立，依托天心数谷大学生创业孵化基地运营。",
+  "src": "OPC圈(opcquan.com)",
+  "has_detail_page": true
+ },
+ {
+  "slug": "changsha-dongfang-zhizaogang",
+  "city": "长沙",
+  "city_key": "changsha",
+  "name": "东方智造港满天星OPC创新基地",
+  "operator": "长沙经济技术开发集团有限公司",
+  "focus": [
+   "AI应用/Agent",
+   "AIGC内容创作"
+  ],
+  "gov_level": "区级（经开）",
+  "founded": "2026年",
+  "summary": "东方智造港满天星OPC创新基地由长沙经开区管委会直属平台长沙经济技术开发集团运营，是长沙经开区首个科技型创新创业综合体。",
+  "src": "OPC圈(opcquan.com)",
+  "has_detail_page": true
+ },
+ {
+  "slug": "changsha-zhongbu-zhigu",
+  "city": "长沙",
+  "city_key": "changsha",
+  "name": "中部智谷满天星OPC创业基地",
+  "operator": "中部智谷产业园",
+  "focus": [
+   "AI应用/Agent",
+   "智能制造",
+   "电商/消费"
+  ],
+  "gov_level": "区级（经开）",
+  "founded": "2026年",
+  "summary": "中部智谷满天星OPC创业基地位于长沙经开区，是长沙经开区授牌认定的总部型示范楼宇，6A级花园式顶级甲级写字楼。",
+  "src": "OPC圈(opcquan.com)",
+  "has_detail_page": true
+ },
+ {
+  "slug": "changsha-sany-chuangye",
+  "city": "长沙",
+  "city_key": "changsha",
+  "name": "三一众创孵化基地",
+  "operator": "湖南三一众创孵化器有限公司",
+  "focus": [
+   "AI应用/Agent",
+   "智能制造",
+   "智能硬件/IoT"
+  ],
+  "gov_level": "国家级",
+  "founded": "2017年",
+  "summary": "三一众创孵化基地是长沙经开区唯一国家级科技企业孵化器，由湖南三一众创孵化器有限公司运营，系三一重工全资子公司。",
+  "src": "OPC圈(opcquan.com)",
+  "has_detail_page": true
  }
 ];
