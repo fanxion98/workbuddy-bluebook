@@ -1,9 +1,9 @@
 /* 超级个体 — 共享站点脚本：导航/页脚注入 + 页面交互 */
 (function(){
   const NAV=[
-    ["index.html","首页"],["theory.html","理论体系"],["map.html","能力地图"],
-    ["cases.html","实操案例"],["showcase.html","超级个体"],["opc.html","全国OPC社区"],
-    ["skills.html","技能箱"],["library.html","书库"],["roadmap.html","成长路线"],["about.html","关于"]
+    ["index.html","首页"],["theory.html","底层逻辑"],["map.html","能力测评"],
+    ["cases.html","真实案例"],["showcase.html","同行榜样"],["opc.html","OPC地图"],
+    ["skills.html","AI武器库"],["library.html","私藏书单"],["roadmap.html","成长路径"],["about.html","关于我"]
   ];
   const cur=location.pathname.split("/").pop()||"index.html";
   const BASE=(location.pathname.split("/").filter(Boolean).length>2)?"../":"";
