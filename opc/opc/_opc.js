@@ -12224,7 +12224,8 @@ window.OPCS = [
   "founded": "2026年",
   "summary": "中部智谷满天星OPC创业基地位于长沙经开区，是长沙经开区授牌认定的总部型示范楼宇，6A级花园式顶级甲级写字楼。",
   "src": "OPC圈(opcquan.com)",
-  "has_detail_page": true
+  "has_detail_page": true,
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/changsha-zhongbu-zhigu.jpg"
  },
  {
   "slug": "changsha-sany-chuangye",
