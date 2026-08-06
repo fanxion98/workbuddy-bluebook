@@ -10,7 +10,7 @@
 <div id="site-nav"></div>
 <div id="app" style="min-height:60vh;"></div>
 <div id="site-footer"></div>
-<script src="/opc/assets/js/site.js?v=7"></script>
+<script src="/opc/assets/js/site.js?v=8"></script>
 <script>
 (function(){
   var app = document.getElementById('app');
@@ -74,6 +74,9 @@
       '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">赛道方向</h3><div class="pillrow" style="margin-top:6px;">' + focusPills + '</div></div>' +
       '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">微信公众号</h3><div class="pillrow" style="margin-top:6px;">' + (wechatPills || '<span class="muted">暂未收录</span>') + '</div></div>' +
       '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">信息来源</h3><p style="color:var(--muted);margin:0;font-size:14px;">' + linkifySrc(d.src) + '</p></div>' +
+      '</div>' +
+      '<div style="margin-top:12px;text-align:center;">' +
+      '<a href="https://www.opcquan.com/communities/' + encodeURIComponent(slug) + '" target="_blank" rel="noopener" style="display:inline-block;padding:10px 24px;border:1px solid var(--line);border-radius:2px;color:var(--muted);text-decoration:none;font-size:14px;">🌐 在 OPC圈 查看完整原网页（含联系方式、地图等） →</a>' +
       '</div>' +
       '<div style="margin-top:36px;text-align:center;"><a href="/opc/opc.html" style="display:inline-block;padding:12px 28px;border:2px solid var(--ink);border-radius:2px;color:var(--ink);text-decoration:none;font-family:var(--serif);font-size:16px;">← 返回全国OPC社区列表</a></div>' +
       '</div></section>';
