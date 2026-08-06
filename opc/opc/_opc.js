@@ -1300,7 +1300,7 @@ window.OPCS = [
   "gov_level": "区级（和林格尔新区）",
   "founded": "2026",
   "summary": "全国首创「自贸试验区+绿色算力+OPC业态」三位一体。",
-  "image": "",
+  "image": "https://pub-413b408ff02649388d393e4ff152b22e.r2.dev/communities/nanning-wuxiang-yunge-fuhua-cover.jpg",
   "src": "中国日报网",
   "wechat": [
    "呼和浩特发布"
