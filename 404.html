@@ -38,6 +38,19 @@
 
     function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
 
+    // 把来源里的域名/url转成可点击链接（如 OPC圈(opcquan.com) -> OPC圈(<a>opcquan.com</a>)）
+    function linkifySrc(s){
+      var raw = String(s==null?"":s);
+      var escaped = esc(raw);
+      // 1) 括号里的域名：(xxx.com / xxx.cn / xxx.org ...)
+      escaped = escaped.replace(/\(([a-z0-9][a-z0-9.-]*\.[a-z]{2,}[^)]*)\)/gi,
+        function(m,dom){return '(<a href="https://'+dom+'" target="_blank" rel="noopener" class="src-link">'+dom+'</a>)';});
+      // 2) 独立的 URL：http(s)://...
+      escaped = escaped.replace(/(?<!["\(\/>])(https?:\/\/[^\s<]+)/g,
+        '<a href="$1" target="_blank" rel="noopener" class="src-link">$1</a>');
+      return escaped;
+    }
+
     document.title = esc(d.name) + ' | 全国OPC社区 | 超级OPC一人公司秘籍';
     var focusPills = (d.focus||[]).map(function(f){return '<span class="pill">'+esc(f)+'</span>';}).join('');
     var wechatPills = (d.wechat||[]).map(function(w){return '<span class="pill accent">'+esc(w)+'</span>';}).join('');
@@ -60,7 +73,7 @@
       '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">成立时间</h3><p style="color:var(--ink);margin:0;font-size:15px;">' + esc(d.founded) + '</p></div>' +
       '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">赛道方向</h3><div class="pillrow" style="margin-top:6px;">' + focusPills + '</div></div>' +
       '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">微信公众号</h3><div class="pillrow" style="margin-top:6px;">' + (wechatPills || '<span class="muted">暂未收录</span>') + '</div></div>' +
-      '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">信息来源</h3><p style="color:var(--muted);margin:0;font-size:14px;">' + esc(d.src) + '</p></div>' +
+      '<div style="padding:20px;border:1px solid var(--line);border-radius:8px;"><h3 style="font-family:var(--serif);font-size:18px;margin:0 0 10px;">信息来源</h3><p style="color:var(--muted);margin:0;font-size:14px;">' + linkifySrc(d.src) + '</p></div>' +
       '</div>' +
       '<div style="margin-top:36px;text-align:center;"><a href="/opc/opc.html" style="display:inline-block;padding:12px 28px;border:2px solid var(--ink);border-radius:2px;color:var(--ink);text-decoration:none;font-family:var(--serif);font-size:16px;">← 返回全国OPC社区列表</a></div>' +
       '</div></section>';
