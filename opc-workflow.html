@@ -213,6 +213,16 @@ img { max-width: 100%; display: block; }
   .container { padding: 32px 16px; }
   .card { padding: 20px; }
 }
+.feature-grid { display: grid; gap: 16px; margin: 20px 0; }
+.feature-grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media(max-width:900px) { .feature-grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width:500px) { .feature-grid-4 { grid-template-columns: 1fr; } }
+.feature-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; transition: box-shadow .2s; }
+.feature-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.feature-icon { font-size: 28px; margin-bottom: 8px; }
+.feature-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--text-primary); }
+.feature-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 10px; }
+.feature-tag { display: inline-block; padding: 3px 10px; border-radius: 8px; font-size: 11px; font-weight: 600; background: #F0FDFA; color: var(--c-teal-dark); }
 </style>
 </head>
 <body>
@@ -536,6 +546,47 @@ img { max-width: 100%; display: block; }
           <li><strong>全年私域运营陪跑</strong> — 月度复盘、数据诊断、策略迭代</li>
         </ul>
       </div>
+    </div>
+  </div>
+
+  <!-- 算力服务 -->
+  <div class="section-block">
+    <div class="section-heading">
+      <span class="icon">⚡</span>
+      <h2>算力服务：直营 · 集采 · 优化 · 运维</h2>
+      <span class="badge">面向长沙本地</span>
+    </div>
+    <div class="callout callout-info">
+      🎯 面向长沙本地<strong>创业者、工作室、中小企业</strong>，直营提供合规算力服务全链路。
+    </div>
+    <div class="feature-grid feature-grid-4">
+      <div class="feature-card">
+        <div class="feature-icon">📦</div>
+        <h4>合规算力套餐</h4>
+        <p>直营销售合规 Token 算力套餐，按需选档，开票合规，无中间商赚差价。</p>
+        <span class="feature-tag">按量计费</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛒</div>
+        <h4>批量算力集采</h4>
+        <p>多企业联合集采，拿到更低单价。适合工作室、园区多家企业拼单采购。</p>
+        <span class="feature-tag">拼单降本</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📉</div>
+        <h4>算力成本优化</h4>
+        <p>分析实际用量，优化套餐配比。闲置算力调度、模型选型建议，帮企业省 30%+ 算力开支。</p>
+        <span class="feature-tag">降本提效</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔧</div>
+        <h4>长期算力运维</h4>
+        <p>持续监控用量波动、到期续费提醒、突发扩容保障。季度用量复盘 + 成本优化报告。</p>
+        <span class="feature-tag">全程陪跑</span>
+      </div>
+    </div>
+    <div class="callout callout-success" style="margin-top:12px;">
+      📍 <strong>长沙优势：</strong>长沙算力券政策可叠加使用，单企最高 100 万补贴，进一步降低算力成本。
     </div>
   </div>
 
