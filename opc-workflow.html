@@ -223,6 +223,24 @@ img { max-width: 100%; display: block; }
 .feature-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--text-primary); }
 .feature-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 10px; }
 .feature-tag { display: inline-block; padding: 3px 10px; border-radius: 8px; font-size: 11px; font-weight: 600; background: #F0FDFA; color: var(--c-teal-dark); }
+.trend-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+@media(max-width:800px) { .trend-grid { grid-template-columns: 1fr; } }
+.trend-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px 20px; position: relative; overflow: hidden; }
+.trend-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+.trend-1::before { background: linear-gradient(90deg, var(--c-teal), var(--c-blue)); }
+.trend-2::before { background: linear-gradient(90deg, var(--c-amber), #F59E0B); }
+.trend-3::before { background: linear-gradient(90deg, var(--c-purple), #8B5CF6); }
+.trend-label { display: inline-block; padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; margin-bottom: 10px; }
+.trend-1 .trend-label { background: #F0FDFA; color: var(--c-teal-dark); }
+.trend-2 .trend-label { background: #FFFBEB; color: #92400E; }
+.trend-3 .trend-label { background: #F5F3FF; color: #6D28D9; }
+.trend-icon { font-size: 32px; margin-bottom: 8px; }
+.trend-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary); }
+.trend-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.8; margin: 0 0 12px; }
+.trend-outcome { padding: 8px 12px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; }
+.trend-1 .trend-outcome { background: #F0FDFA; color: var(--c-teal-dark); }
+.trend-2 .trend-outcome { background: #FFFBEB; color: #92400E; }
+.trend-3 .trend-outcome { background: #F5F3FF; color: #6D28D9; }
 </style>
 </head>
 <body>
@@ -421,6 +439,41 @@ img { max-width: 100%; display: block; }
           <td>区域垄断性资源</td>
         </tr>
       </table>
+    </div>
+  </div>
+
+  <!-- 2027行业趋势判断 -->
+  <div class="section-block">
+    <div class="section-heading">
+      <span class="icon">🔮</span>
+      <h2>2027 年行业趋势判断</h2>
+      <span class="badge">为什么是现在</span>
+    </div>
+    <div class="callout callout-warning" style="font-size:14px;">
+      🧭 <strong>核心判断：</strong>AI 服务行业正从"卖概念"切换到"卖结果"。长沙市场窗口期已经打开，目前没有完整闭环服务商——先入者将建立结构性壁垒。
+    </div>
+    <div class="trend-grid">
+      <div class="trend-card trend-1">
+        <div class="trend-label">趋势一</div>
+        <div class="trend-icon">🧹</div>
+        <h4>OPC 赛道全面去泡沫</h4>
+        <p>纯概念、纯沙龙、无落地能力的团队逐步淘汰。重交付、重结果、重变现的<strong>实体 AI 服务</strong>迎来结构性爆发。</p>
+        <div class="trend-outcome">📈 爆发方向：落地交付能力 = 核心竞争力</div>
+      </div>
+      <div class="trend-card trend-2">
+        <div class="trend-label">趋势二</div>
+        <div class="trend-icon">🎯</div>
+        <h4>客户付费逻辑切换</h4>
+        <p>长沙企业与创业者认知升级，<strong>不再为概念付费</strong>。核心付费点集中在：AI 落地降本、内容量产、私域变现、长效运营结果。</p>
+        <div class="trend-outcome">💰 付费锚点：降本 → 量产 → 变现 → 运营</div>
+      </div>
+      <div class="trend-card trend-3">
+        <div class="trend-label">趋势三</div>
+        <div class="trend-icon">🏰</div>
+        <h4>长沙市场空白红利</h4>
+        <p>长沙本地缺少<strong>「AI生产 + 私域变现 + 算力配套 + 全程直营交付」</strong>的完整闭环服务商。本模式具备极强独家差异化与先发壁垒。</p>
+        <div class="trend-outcome">🔒 先发优势：目前无对标竞品</div>
+      </div>
     </div>
   </div>
 
