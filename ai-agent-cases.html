@@ -604,6 +604,69 @@ a:hover { color: var(--color-primary-800); }
   .seo-search-input { font-size: 12px; padding: 9px 12px; }
   .seo-search-btn { padding: 0 14px; font-size: 12px; }
 }
+
+/* ===== WorkBuddy 实战资源库入口 ===== */
+.reslib-entry {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+}
+.reslib-head {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 24px; flex-wrap: wrap;
+}
+.reslib-title { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.reslib-badge {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+  color: #fff; background: var(--color-primary-600);
+  padding: 2px 8px; border-radius: 4px;
+}
+.reslib-head h2 {
+  font-family: var(--font-serif); font-size: 20px; font-weight: 600;
+  color: var(--text-primary);
+}
+.reslib-head p {
+  font-size: 13px; color: var(--text-secondary);
+  line-height: 1.8; max-width: 620px;
+}
+.reslib-cta {
+  flex: 0 0 auto;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 500; text-decoration: none;
+  padding: 10px 20px; border-radius: var(--radius-md);
+  background: var(--color-primary-600); color: #fff;
+  transition: all 0.2s; box-shadow: 0 2px 8px rgba(20, 184, 166, 0.2);
+}
+.reslib-cta:hover { background: var(--color-primary-800); transform: translateY(-1px); }
+.reslib-nav {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-top: 22px; padding-top: 20px;
+  border-top: 1px solid var(--border-light);
+}
+.reslib-nav a {
+  flex: 1 1 128px;
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 12px 16px; border-radius: var(--radius-md);
+  background: var(--bg-soft); border: 1px solid var(--border-light);
+  text-decoration: none; transition: all 0.2s;
+}
+.reslib-nav a:hover {
+  background: var(--color-primary-50);
+  border-color: #99F6E4;
+  transform: translateY(-1px);
+}
+.reslib-nav a b {
+  font-family: var(--font-mono); font-size: 20px;
+  color: var(--color-primary-600); line-height: 1.2;
+}
+.reslib-nav a span { font-size: 12px; color: var(--text-tertiary); }
+@media (max-width: 640px) {
+  .reslib-entry { padding: 20px; }
+  .reslib-head { flex-direction: column; }
+}
 </style>
 </head>
 <body>
@@ -659,7 +722,28 @@ a:hover { color: var(--color-primary-800); }
 <!-- Main Content -->
 <div class="container">
 
-    <!-- Tab Navigation -->
+      <!-- WorkBuddy 实战资源库 -->
+  <section class="reslib-entry">
+    <div class="reslib-head">
+      <div>
+        <div class="reslib-title">
+          <span class="reslib-badge">NEW</span>
+          <h2>WorkBuddy 实战资源库</h2>
+        </div>
+        <p>8 份 WorkBuddy 教程逐条拆过之后攒下的家底。125 条指令、20 个模板、65 个案例、3 套实操、14 节入门，每一条都能一键复制。</p>
+      </div>
+      <a href="resources.html" class="reslib-cta">进入资源库 →</a>
+    </div>
+    <nav class="reslib-nav">
+      <a href="resources.html#sec-cmd"><b>125</b><span>通用指令</span></a>
+      <a href="resources.html#sec-tpl"><b>20</b><span>职场模板</span></a>
+      <a href="resources.html#sec-case"><b>65</b><span>真实案例</span></a>
+      <a href="resources.html#sec-ops"><b>3</b><span>完整实操</span></a>
+      <a href="resources.html#sec-core"><b>14</b><span>入门章节</span></a>
+    </nav>
+  </section>
+
+<!-- Tab Navigation -->
   <div class="tab-nav" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;">
     <button class="tab-btn active" onclick="switchTab('tab1', this)">📋 场景案例</button>
     <button class="tab-btn" onclick="switchTab('tab2', this)">🔥 热门场景</button>
