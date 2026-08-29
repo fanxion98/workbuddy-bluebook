@@ -1,0 +1,3382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="WorkBuddy 实战资源库：125 条通用指令、20 个职场 Prompt 模板、65 个真实应用案例，外加公众号自动化、ima 知识库、多 Agent 协作三套实操流程，以及 14 节从上手到避坑的入门指南（含常见问题解答）。全部可一键复制。">
+<title>WorkBuddy 实战资源库 - 125 条指令 · 20 个模板 · 65 个案例 · 14 节入门 | 小饭</title>
+<meta name="keywords" content="WorkBuddy指令,WorkBuddy提示词,WorkBuddy案例,WorkBuddy模板,WorkBuddy实操,AI办公案例,AI提示词模板,WorkBuddy资源库,多Agent协作,公众号自动化,ima知识库">
+<link rel="canonical" href="https://www.simouxuan.com/resources.html">
+<meta property="og:title" content="WorkBuddy 实战资源库 - 125 条指令 · 20 个模板 · 65 个案例">
+<meta property="og:description" content="WorkBuddy 通用指令、职场 Prompt 模板、真实应用案例与三套完整实操流程，全部可一键复制。">
+<meta property="og:url" content="https://www.simouxuan.com/resources.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="小饭的 AI 实战笔记">
+<meta property="og:locale" content="zh_CN">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "WorkBuddy 实战资源库",
+  "description": "WorkBuddy 通用指令、职场 Prompt 模板、真实应用案例与完整实操流程速查库。",
+  "url": "https://www.simouxuan.com/resources.html",
+  "inLanguage": "zh-CN",
+  "author": { "@type": "Person", "name": "小饭" },
+  "publisher": { "@type": "Person", "name": "小饭" },
+  "isPartOf": { "@type": "WebSite", "name": "小饭的 AI 实战笔记", "url": "https://www.simouxuan.com/" }
+}
+</script>
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-primary-50: rgba(20, 184, 166, 0.08);
+  --color-primary-100: rgba(20, 184, 166, 0.15);
+  --color-primary-400: #2DD4BF;
+  --color-primary-600: #14B8A6;
+  --color-primary-800: #0F766E;
+  --c-teal: #14B8A6;
+  --c-blue: #38BDF8;
+  --c-coral: #FB923C;
+  --c-purple: #F472B6;
+  --bg: #FAFAF9;
+  --bg-card: #FFFFFF;
+  --bg-soft: #F5F5F4;
+  --bg-hero: linear-gradient(135deg, #F0FDFA 0%, #ECFEFF 30%, #F0F9FF 60%, #FDF4FF 100%);
+  --text-primary: #292524;
+  --text-secondary: #57534E;
+  --text-tertiary: #A8A29E;
+  --border: #E7E5E4;
+  --border-light: #F5F5F4;
+  --border-hover: #99F6E4;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 12px 40px rgba(20, 184, 166, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 8px 28px rgba(20, 184, 166, 0.12), 0 4px 12px rgba(0, 0, 0, 0.05);
+  --sidebar-w: 240px;
+  --toc-w: 200px;
+  --reading-w: 720px;
+  --topbar-h: 56px;
+  --font-serif: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: var(--color-primary-600); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--color-primary-800); }
+
+img { max-width: 100%; height: auto; }
+
+/* ===== Top Nav ===== */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--topbar-h);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+.topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.blog-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.blog-logo:hover { color: var(--color-primary-600); }
+.blog-logo-icon {
+  width: 30px; height: 30px;
+  background: linear-gradient(135deg, #14B8A6, #38BDF8);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 14px; font-weight: 600;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+}
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.topbar-nav a {
+  padding: 6px 14px;
+  border-radius: var(--radius-xl);
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-weight: 500;
+}
+.topbar-nav a:hover {
+  background: var(--color-primary-50);
+  color: var(--color-primary-600);
+}
+.topbar-nav a.active {
+  background: var(--color-primary-100);
+  color: var(--color-primary-600);
+}
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+  overflow: hidden;
+}
+.breadcrumb a {
+  color: var(--text-tertiary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.breadcrumb a:hover { color: var(--color-primary-600); }
+.breadcrumb a.current { color: var(--color-primary-600); font-weight: 500; }
+.breadcrumb-sep { color: var(--text-tertiary); font-size: 11px; opacity: 0.5; }
+
+/* Dropdown */
+.dropdown { position: relative; }
+.dropdown-trigger {
+  padding: 6px 14px;
+  border-radius: var(--radius-xl);
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.dropdown-trigger:hover {
+  background: var(--color-primary-50);
+  color: var(--color-primary-600);
+}
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  min-width: 240px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: all 0.2s;
+  box-shadow: var(--shadow-lg);
+}
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdown-menu img {
+  width: 200px; height: 296px;
+  border-radius: var(--radius-sm);
+  display: block;
+  margin: 0 auto 10px;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+.dropdown-menu p {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Part nav pills */
+.part-nav { display: flex; gap: 4px; align-items: center; }
+.part-nav a {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  transition: all 0.2s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.part-nav a.active {
+  background: var(--color-primary-100);
+  color: var(--color-primary-600);
+  font-weight: 500;
+}
+.part-nav a:hover:not(.active) { background: var(--bg-soft); }
+
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-back:hover { color: var(--color-primary-600); }
+
+/* ===== Hero ===== */
+.hero {
+  margin-top: var(--topbar-h);
+  padding: 72px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-hero);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 60%);
+  z-index: 0;
+  filter: blur(40px);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; right: -5%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 60%);
+  z-index: 0;
+  filter: blur(40px);
+}
+.hero > * { position: relative; z-index: 1; }
+.hero-name {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #14B8A6 0%, #38BDF8 50%, #14B8A6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.hero-tagline {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 460px;
+  margin: 0 auto 24px;
+  line-height: 1.7;
+}
+.hero-tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.hero-tag {
+  padding: 5px 16px;
+  border-radius: var(--radius-xl);
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+.hero-tag.teal { background: rgba(6, 182, 212, 0.10); color: #0891B2; border-color: rgba(6, 182, 212, 0.20); }
+.hero-tag.blue { background: rgba(99, 102, 241, 0.10); color: #0D9488; border-color: rgba(99, 102, 241, 0.20); }
+.hero-tag.coral { background: rgba(245, 158, 11, 0.10); color: #EA580C; border-color: rgba(245, 158, 11, 0.20); }
+.hero-tag.purple { background: rgba(244, 114, 182, 0.10); color: #F472B6; border-color: rgba(244, 114, 182, 0.20); }
+
+/* ===== Section ===== */
+.series-section, .articles-section, .skills-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.section-sub {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-bottom: 24px;
+}
+
+/* ===== Series Cards ===== */
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.series-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.series-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--card-accent, var(--color-primary-600));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.series-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+.series-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.series-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.series-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-xl);
+  letter-spacing: 0.5px;
+}
+.series-card h3 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.series-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.series-card-count {
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+/* ===== Article Cards ===== */
+.filter-pills {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.filter-pill {
+  padding: 5px 16px;
+  border-radius: var(--radius-xl);
+  font-size: 13px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+.filter-pill.active {
+  background: linear-gradient(135deg, #14B8A6, #38BDF8);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.25);
+}
+.filter-pill:hover:not(.active) {
+  border-color: var(--border-hover);
+  color: var(--color-primary-600);
+}
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.article-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.article-card::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 4px;
+  background: var(--card-accent, var(--color-primary-600));
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+.article-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+.article-card:hover::before { opacity: 1; }
+.article-card.hidden { display: none; }
+.article-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.article-part-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-xl);
+}
+.article-ch-num {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  font-family: var(--font-mono);
+}
+.article-card h4 {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.article-card p {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.expand-btn-wrapper {
+  text-align: center;
+  margin-top: 24px;
+}
+.expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+.expand-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--color-primary-600);
+  background: var(--color-primary-50);
+  box-shadow: var(--shadow-md);
+}
+.expand-btn svg { transition: transform 0.2s; }
+.expand-btn.expanded svg { transform: rotate(180deg); }
+
+/* ===== Skills Page ===== */
+.skills-hero {
+  margin-top: var(--topbar-h);
+  padding: 56px 24px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #F0FDFA 0%, #E0F2FE 30%, #FDF4FF 70%, #FCE7F3 100%);
+  position: relative;
+  overflow: hidden;
+}
+.skills-hero::before {
+  content: '';
+  position: absolute;
+  top: -30%; left: 10%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 60%);
+  filter: blur(40px);
+  z-index: 0;
+}
+.skills-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; right: 5%;
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.10) 0%, transparent 60%);
+  filter: blur(40px);
+  z-index: 0;
+}
+.skills-hero > * { position: relative; z-index: 1; }
+.skills-hero h1 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #14B8A6, #38BDF8, #F472B6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.skills-hero p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-hover);
+}
+.skill-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.skill-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  background: var(--skill-bg, var(--color-primary-50));
+}
+.skill-tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-xl);
+  background: var(--skill-bg, var(--color-primary-50));
+  color: var(--skill-color, var(--color-primary-600));
+}
+.skill-card h4 {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.skill-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.skill-card-cat {
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+.skills-filter {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+/* ===== Reading Layout ===== */
+.reading-page { padding-top: var(--topbar-h); }
+.reading-section { border-top: 1px solid var(--border); }
+.doc-layout {
+  max-width: calc(var(--sidebar-w) + var(--reading-w) + var(--toc-w) + 80px);
+  margin: 0 auto;
+  padding: 24px 24px 48px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* Left sidebar */
+.doc-sidebar {
+  flex: 0 0 var(--sidebar-w);
+  position: sticky;
+  top: calc(var(--topbar-h) + 16px);
+  max-height: calc(100vh - var(--topbar-h) - 32px);
+  overflow: hidden;
+}
+.doc-sidebar-inner {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  max-height: calc(100vh - var(--topbar-h) - 32px);
+  overflow-y: auto;
+  position: sticky;
+  top: calc(var(--topbar-h) + 16px);
+  box-shadow: var(--shadow-sm);
+}
+.doc-sidebar-inner::-webkit-scrollbar { width: 4px; }
+.doc-sidebar-inner::-webkit-scrollbar-track { background: transparent; }
+.doc-sidebar-inner::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.sidebar-header {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 1px;
+  padding: 6px 8px 8px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 4px;
+}
+.sidebar-part { margin-bottom: 2px; }
+.sidebar-part-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.sidebar-part-header:hover { background: var(--bg-soft); }
+.sidebar-part-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.sidebar-part-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sidebar-part-chevron {
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+  transition: transform 0.2s;
+}
+.sidebar-part.expanded .sidebar-part-chevron { transform: rotate(90deg); }
+.sidebar-chapters {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  padding-left: 16px;
+}
+.sidebar-part.expanded .sidebar-chapters,
+.sidebar-part.active .sidebar-chapters { max-height: 600px; }
+.sidebar-chapter {
+  display: block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.15s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sidebar-chapter:hover {
+  background: var(--color-primary-50);
+  color: var(--color-primary-600);
+}
+.sidebar-chapter.active {
+  background: var(--color-primary-100);
+  color: var(--color-primary-600);
+  font-weight: 500;
+}
+.sidebar-back {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  margin-top: 8px;
+  border-top: 1px solid var(--border-light);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s;
+}
+.sidebar-back:hover { color: var(--color-primary-600); background: var(--color-primary-50); }
+
+/* Center content */
+.doc-main {
+  flex: 1;
+  min-width: 0;
+  max-width: var(--reading-w);
+}
+.part-banner {
+  padding: 24px 0 16px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 20px;
+}
+.part-banner-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--text-tertiary);
+  margin-bottom: 4px;
+}
+.part-banner h3 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.part-banner p {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+.chapter {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  scroll-margin-top: calc(var(--topbar-h) + 16px);
+  box-shadow: var(--shadow-sm);
+}
+.chapter-header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+.chapter-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--text-tertiary);
+  margin-bottom: 4px;
+}
+.chapter-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.chapter-title-line {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #14B8A6, #38BDF8);
+  border-radius: 2px;
+}
+.chapter-body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 3000px;
+}
+.chapter-body h1 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 20px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-light);
+}
+.chapter-body h2 {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 20px 0 8px;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-primary-400);
+}
+.chapter-body h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 16px 0 6px;
+}
+.chapter-body p { margin-bottom: 10px; color: var(--text-secondary); }
+.chapter-body img {
+  display: block;
+  margin: 14px auto;
+  border-radius: var(--radius-sm);
+  max-width: 100%;
+  border: 1px solid var(--border-light);
+}
+.chapter-body ul, .chapter-body ol {
+  padding-left: 24px;
+  margin-bottom: 10px;
+}
+.chapter-body li { margin-bottom: 4px; color: var(--text-secondary); }
+.chapter-body code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--color-primary-50);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--color-primary-600);
+}
+.chapter-body pre {
+  background: #1E1B2E;
+  color: #E2E8F0;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.chapter-body pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+.chapter-body blockquote {
+  border-left: 3px solid var(--color-primary-600);
+  padding: 8px 16px;
+  margin: 12px 0;
+  background: var(--color-primary-50);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--text-secondary);
+}
+.chapter-body a {
+  color: var(--color-primary-600);
+  text-decoration: underline;
+  text-decoration-color: rgba(124, 58, 237, 0.3);
+  text-underline-offset: 2px;
+}
+.chapter-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 13px;
+}
+.chapter-body th, .chapter-body td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+}
+.chapter-body th {
+  background: var(--bg-soft);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Prev/Next nav */
+.prev-next-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.prev-next-nav a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+.prev-next-nav a:hover {
+  background: var(--color-primary-50);
+  color: var(--color-primary-600);
+}
+.prev-next-nav .pn-label { font-size: 11px; color: var(--text-tertiary); }
+.prev-next-nav .pn-title { font-weight: 500; }
+.prev-next-nav .pn-next { text-align: right; }
+
+/* Chapter progress bar */
+.chapter-progress {
+  margin-top: 12px;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--border-light);
+}
+.chapter-progress-bar {
+  height: 4px;
+  background: var(--bg-soft);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.chapter-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #14B8A6, #38BDF8, #14B8A6);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+.chapter-progress-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* Right TOC */
+.doc-toc {
+  flex: 0 0 var(--toc-w);
+  position: sticky;
+  top: calc(var(--topbar-h) + 16px);
+  max-height: calc(100vh - var(--topbar-h) - 32px);
+  overflow: hidden;
+}
+.doc-toc-inner {
+  position: sticky;
+  top: calc(var(--topbar-h) + 16px);
+  max-height: calc(100vh - var(--topbar-h) - 32px);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.doc-toc-inner::-webkit-scrollbar { width: 3px; }
+.doc-toc-inner::-webkit-scrollbar-track { background: transparent; }
+.doc-toc-inner::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.toc-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 1px;
+  padding: 6px 0 8px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 6px;
+}
+.toc-page-group { display: none; }
+.toc-page-group.active { display: block; }
+.toc-heading {
+  display: block;
+  padding: 4px 0 4px 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.15s;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.toc-heading:hover {
+  color: var(--color-primary-600);
+  border-left-color: var(--color-primary-100);
+}
+.toc-heading.active {
+  color: var(--color-primary-600);
+  border-left-color: var(--color-primary-600);
+  font-weight: 500;
+}
+.toc-heading.level-3 {
+  padding-left: 24px;
+  font-size: 11px;
+}
+/* TOC footer */
+.toc-footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light);
+}
+.toc-progress-label {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-bottom: 4px;
+}
+.toc-progress-bar {
+  height: 4px;
+  background: var(--bg-soft);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.toc-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #14B8A6, #38BDF8);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+.toc-back-top {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.toc-back-top:hover { color: var(--color-primary-600); }
+
+/* ===== Back to Top Button ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #14B8A6, #38BDF8);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s;
+  z-index: 99;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.4);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 24px;
+  text-align: center;
+  background: var(--bg-card);
+}
+.footer-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.footer-qr {
+  width: 200px; height: 296px;
+  margin: 0 auto 16px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+.footer-qr img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  display: block;
+}  object-fit: cover;
+}
+.footer-text h3 {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.footer-text p {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: 2px;
+}
+
+.footer-contact {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+.footer-contact-title {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.footer-contact-item .label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.footer-contact-item .value {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1199px) {
+  .doc-toc { display: none; }
+  .doc-layout {
+    max-width: calc(var(--sidebar-w) + var(--reading-w) + 48px);
+  }
+}
+@media (max-width: 900px) {
+  .doc-sidebar { display: none; }
+  .doc-layout {
+    max-width: 720px;
+    padding: 16px 16px 32px;
+  }
+  .chapter { padding: 20px 16px; }
+  .topbar-inner { padding: 0 8px; }
+  .part-nav { display: none; }
+  .skills-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 48px 16px 32px; }
+  .hero-name { font-size: 24px; }
+  .hero-tagline { font-size: 13px; }
+  .series-section, .articles-section, .skills-section { padding-left: 16px; padding-right: 16px; }
+  .series-grid, .article-grid { grid-template-columns: 1fr; }
+  .filter-pills, .skills-filter { overflow-x: auto; flex-wrap: nowrap; }
+  .filter-pill, .skill-tag { white-space: nowrap; }
+  .breadcrumb { display: none; }
+  .chapter { padding: 16px 12px; }
+  .prev-next-nav { flex-direction: column; gap: 12px; }
+  .prev-next-nav .pn-next { text-align: left; }
+  .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+}
+
+
+/* ===== 资源库页面组件 ===== */
+.res-hero {
+  background: linear-gradient(135deg, #F0FDFA 0%, #ECFEFF 45%, #F5F3FF 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  margin-bottom: 16px;
+}
+.res-hero h1 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.res-hero .res-sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; }
+.res-stats { display: flex; gap: 36px; flex-wrap: wrap; }
+.res-stat { display: flex; flex-direction: column; }
+.res-stat b { font-family: var(--font-mono); font-size: 26px; color: var(--color-primary-600); line-height: 1.2; }
+.res-stat span { font-size: 12px; color: var(--text-tertiary); }
+
+/* 粘性工具条 */
+.res-toolbar {
+  position: sticky;
+  top: var(--topbar-h, 56px);
+  z-index: 20;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+}
+.res-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.res-tab {
+  font-family: inherit;
+  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.res-tab:hover { border-color: var(--border-hover); color: var(--color-primary-600); }
+.res-tab.active { background: var(--color-primary-600); border-color: var(--color-primary-600); color: #fff; }
+.res-tab b { font-weight: 600; margin-left: 4px; opacity: 0.75; }
+.res-search { position: relative; }
+.res-search input {
+  width: 100%;
+  padding: 9px 14px 9px 36px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--text-primary);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.res-search input:focus { border-color: var(--color-primary-400); background: var(--bg-card); }
+.res-search svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-tertiary); }
+.res-hint { font-size: 12px; color: var(--text-tertiary); margin-top: 8px; min-height: 16px; }
+
+/* 区块 */
+.res-section { display: none; scroll-margin-top: 170px; }
+.res-section.active { display: block; }
+.sec-intro { margin-bottom: 14px; }
+.sec-intro p { font-size: 14px; color: var(--text-secondary); }
+
+.sub-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.sub-chip {
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.18s;
+}
+.sub-chip:hover { background: var(--color-primary-50); color: var(--color-primary-600); }
+.sub-chip b { color: var(--text-tertiary); font-weight: 500; margin-left: 2px; }
+
+h2.anchor-h2 {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 26px 0 6px;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-primary-400);
+  scroll-margin-top: 160px;
+}
+.cat-count {
+  float: right;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-tertiary);
+  background: var(--bg-soft);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.cat-desc { font-size: 13px; color: var(--text-tertiary); margin-bottom: 12px; }
+
+/* 指令 / 模板 */
+.prompt-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+.prompt-item {
+  background: var(--bg-soft);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  transition: border-color 0.18s, background 0.18s;
+}
+.prompt-item:hover { border-color: var(--border-hover); background: var(--bg-card); }
+.pi-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+.pi-name { font-size: 13px; font-weight: 600; color: var(--text-primary); min-width: 84px; }
+.pi-code { font-family: var(--font-mono); font-size: 13px; line-height: 1.7; color: var(--text-secondary); word-break: break-word; }
+.pi-code .ph, .tpl-code .ph, .case-cmd .ph {
+  color: var(--color-primary-600); background: var(--color-primary-50); padding: 0 3px; border-radius: 3px;
+}
+.copy-btn {
+  flex: 0 0 auto;
+  font-family: inherit; font-size: 12px; padding: 3px 12px;
+  border-radius: 999px; border: 1px solid var(--border);
+  background: var(--bg-card); color: var(--text-tertiary);
+  cursor: pointer; transition: all 0.18s;
+}
+.copy-btn:hover { border-color: var(--color-primary-400); color: var(--color-primary-600); background: var(--color-primary-50); }
+.copy-btn.done { background: var(--color-primary-600); border-color: var(--color-primary-600); color: #fff; }
+
+.tpl-card {
+  background: var(--bg-soft); border: 1px solid var(--border-light);
+  border-radius: var(--radius-md); padding: 14px 18px; margin-bottom: 10px;
+  transition: border-color 0.18s, background 0.18s;
+}
+.tpl-card:hover { border-color: var(--border-hover); background: var(--bg-card); }
+.tpl-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.tpl-no { font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: var(--color-primary-600); background: var(--color-primary-50); padding: 2px 8px; border-radius: 4px; }
+.tpl-name { font-size: 14px; font-weight: 600; color: var(--text-primary); flex: 1; }
+.tpl-code {
+  font-size: 13px; line-height: 1.85; color: var(--text-secondary);
+  background: var(--bg-card); border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm); padding: 12px 14px; word-break: break-word;
+}
+.tpl-scene { font-size: 12px; color: var(--text-tertiary); margin-top: 8px; }
+.ts-label {
+  display: inline-block; font-size: 11px; color: var(--text-tertiary);
+  border: 1px solid var(--border); border-radius: 3px; padding: 0 6px; margin-right: 8px;
+}
+
+/* 案例 */
+.case-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.case-card {
+  background: var(--bg-soft); border: 1px solid var(--border-light);
+  border-radius: var(--radius-md); padding: 14px 18px;
+  transition: border-color 0.18s, background 0.18s;
+}
+.case-card:hover { border-color: var(--border-hover); background: var(--bg-card); }
+.case-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.case-no { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); background: var(--bg-card); border: 1px solid var(--border); padding: 1px 7px; border-radius: 4px; }
+.case-name { font-size: 14px; font-weight: 600; color: var(--text-primary); flex: 1; min-width: 120px; }
+.case-tag { font-size: 11px; color: var(--c-coral, #FB923C); background: #FFF7ED; border: 1px solid #FED7AA; padding: 1px 8px; border-radius: 999px; }
+.case-cmd {
+  font-family: var(--font-mono); font-size: 13px; line-height: 1.75; color: var(--text-secondary);
+  background: var(--bg-card); border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 8px; word-break: break-word;
+}
+.case-effect { font-size: 12px; color: var(--text-tertiary); line-height: 1.7; }
+.case-meta { font-size: 12px; color: var(--text-secondary); margin-bottom: 10px; }
+.cm-label {
+  display: inline-block; font-size: 11px;
+  background: var(--color-primary-50); color: var(--color-primary-600);
+  padding: 1px 8px; border-radius: 3px; margin-right: 8px;
+}
+.case-block { margin-bottom: 10px; }
+.case-block.is-detail .case-cmd { background: #F0FDFA; border-color: var(--border-hover); }
+.cb-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 5px; }
+.cb-label { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.3px; }
+
+/* 实操 */
+.ops-src { font-size: 12px; color: var(--text-tertiary); margin-bottom: 12px; }
+.ops-steps { display: flex; flex-direction: column; gap: 2px; margin: 14px 0; }
+.ops-step { display: flex; gap: 14px; position: relative; padding-bottom: 16px; }
+.ops-step:not(:last-child)::before {
+  content: ""; position: absolute; left: 13px; top: 30px; bottom: 0;
+  width: 1px; background: var(--border);
+}
+.ops-step-n {
+  flex: 0 0 27px; height: 27px; border-radius: 50%;
+  background: var(--color-primary-600); color: #fff;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center; z-index: 1;
+}
+.ops-step-body { flex: 1; min-width: 0; }
+.ops-step-body h4 { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+.ops-step-body p { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
+
+/* 概念 */
+.core-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 14px 0 20px; }
+.core-grid.four { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+.core-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 16px 18px;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.core-card:hover { border-color: var(--border-hover); box-shadow: var(--shadow-sm); }
+.core-no { font-family: var(--font-mono); font-size: 11px; color: var(--color-primary-600); background: var(--color-primary-50); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; }
+.core-name { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+.core-tag { font-size: 11px; color: var(--text-tertiary); margin-bottom: 8px; }
+.core-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+/* 通用正文（本页内容不在 .chapter-body 内，需单独定义） */
+.res-section p { font-size: 14px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 10px; }
+.res-section h3 { font-size: 14px; font-weight: 600; color: var(--text-primary); margin: 18px 0 6px; }
+.res-section ul { padding-left: 24px; margin-bottom: 10px; }
+.res-section li { font-size: 14px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 4px; }
+.res-section code {
+  font-family: var(--font-mono); font-size: 13px;
+  background: var(--color-primary-50); padding: 2px 6px;
+  border-radius: 4px; color: var(--color-primary-600);
+}
+.res-section blockquote {
+  border-left: 3px solid var(--color-primary-600);
+  padding: 8px 16px; margin: 12px 0;
+  background: var(--color-primary-50);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--text-secondary); font-size: 13px; line-height: 1.75;
+}
+.res-section blockquote strong { color: var(--text-primary); }
+.res-section table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+.res-section th, .res-section td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+.res-section th { background: var(--bg-soft); font-weight: 600; color: var(--text-primary); }
+.res-section td { color: var(--text-secondary); line-height: 1.7; }
+.res-section a { color: var(--color-primary-600); text-decoration: underline; text-underline-offset: 2px; }
+
+/* FAQ 折叠 */
+.faq-item {
+  border: 1px solid var(--border); border-radius: var(--radius-md);
+  margin-bottom: 8px; background: var(--bg-card); overflow: hidden;
+}
+.faq-item summary {
+  padding: 12px 16px; font-size: 14px; font-weight: 600;
+  color: var(--text-primary); cursor: pointer; list-style: none;
+  display: flex; align-items: center; gap: 10px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::before {
+  content: "+"; font-family: var(--font-mono);
+  color: var(--color-primary-600); font-size: 17px; line-height: 1; flex: 0 0 auto;
+}
+.faq-item[open] summary::before { content: "–"; }
+.faq-item summary:hover { background: var(--color-primary-50); }
+.faq-body { padding: 0 16px 14px 36px; font-size: 13px; line-height: 1.8; color: var(--text-secondary); }
+
+.no-hit { display: none !important; }
+@media (max-width: 768px) {
+  .res-hero { padding: 24px 20px; }
+  .res-stats { gap: 22px; }
+  .res-toolbar { padding: 10px 12px; }
+}
+
+</style>
+</head>
+<body class="reading-page">
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="blog-logo">
+      <span class="blog-logo-icon">W</span>
+      <span>小饭的 AI 实战笔记</span>
+    </a>
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="index.html">首页</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="resources.html" class="current">实战资源库</a>
+    </nav>
+    <div class="topbar-actions">
+      <div class="part-nav">
+<a href="part1.html" class="">使用手册</a>
+<a href="part2.html" class="">案例篇</a>
+<a href="part3.html" class="">进阶篇</a>
+<a href="part4.html" class="">岗位与行业落地</a>
+      </div>
+      <a href="resources.html" class="active">资源库</a>
+      <a href="ai-tools.html">AI工具</a>
+      <a href="llm-compare.html">大模型</a>
+      <a href="ai-industry.html">行业落地</a>
+      <a href="skills.html" class="dropdown-trigger" style="text-decoration:none;">Skills</a>
+      <a href="xiaoe-agent-blog.html">小鹅通</a>
+      <a href="ai-agent-cases.html">AI案例</a>
+      <a href="opc/">超级OPC</a>
+    </div>
+  </div>
+</nav>
+
+<div id="top"></div>
+
+<section class="reading-section">
+  <div class="doc-layout">
+    <div class="doc-main" style="max-width: 960px; margin: 0 auto;">
+
+      <div class="res-hero">
+        <h1>WorkBuddy 实战资源库</h1>
+        <p class="res-sub">8 份 WorkBuddy 教程逐条拆过之后，把真正能用的部分攒在了一起。全部可一键复制。</p>
+        <div class="res-stats">
+          <div class="res-stat"><b>125</b><span>通用指令</span></div>
+          <div class="res-stat"><b>20</b><span>Prompt 模板</span></div>
+          <div class="res-stat"><b>65</b><span>真实案例</span></div>
+          <div class="res-stat"><b>3</b><span>完整实操</span></div>
+          <div class="res-stat"><b>14</b><span>入门章节</span></div>
+        </div>
+      </div>
+
+      <div class="res-toolbar">
+        <div class="res-tabs" id="resTabs">
+                    <button class="res-tab active" data-sec="cmd">指令<b>125</b></button>
+          <button class="res-tab" data-sec="tpl">模板<b>20</b></button>
+          <button class="res-tab" data-sec="case">案例<b>65</b></button>
+          <button class="res-tab" data-sec="ops">实操<b>3</b></button>
+          <button class="res-tab" data-sec="core">入门<b>14</b></button>
+        </div>
+        <div class="res-search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="resSearch" placeholder="搜索，例如：周报、PDF 水印、竞品、知识库…" autocomplete="off">
+        </div>
+        <p class="res-hint" id="resHint"></p>
+      </div>
+<div class="res-section active" id="sec-cmd">
+<div class="sec-intro"><p>通用指令是「一句话能说清、WorkBuddy 直接开干」的短指令。方括号 <code>[ ]</code> 里是占位符，替换成你的实际内容就能用。</p></div>
+<div class="sub-chips">
+<a href="#cmd-1" class="sub-chip">基础操作 <b>12</b></a>
+<a href="#cmd-2" class="sub-chip">专业场景 <b>20</b></a>
+<a href="#cmd-3" class="sub-chip">高级技巧 <b>9</b></a>
+<a href="#cmd-4" class="sub-chip">技术开发 <b>12</b></a>
+<a href="#cmd-5" class="sub-chip">数据分析 <b>12</b></a>
+<a href="#cmd-6" class="sub-chip">创意内容 <b>12</b></a>
+<a href="#cmd-7" class="sub-chip">工作流优化 <b>12</b></a>
+<a href="#cmd-8" class="sub-chip">个性化定制 <b>12</b></a>
+<a href="#cmd-9" class="sub-chip">效率组合 <b>12</b></a>
+<a href="#cmd-10" class="sub-chip">移动办公 <b>12</b></a>
+</div>
+<h2 id="cmd-1" class="anchor-h2">1. 基础操作<span class="cat-count">12 条</span></h2>
+<p class="cat-desc">任务管理 / 日程安排 / 文档处理</p>
+<h3>任务管理</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="基础操作任务管理创建任务 帮我创建一个[任务名称]任务，优先级[高/中/低]，截止日期[日期]">
+        <div class="pi-head"><span class="pi-name">创建任务</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">帮我创建一个<span class="ph">[任务名称]</span>任务，优先级<span class="ph">[高/中/低]</span>，截止日期<span class="ph">[日期]</span></div>
+      </div>
+      <div class="prompt-item" data-search="基础操作任务管理任务分配 将[任务名称]分配给[团队成员]，需要[具体要求]">
+        <div class="pi-head"><span class="pi-name">任务分配</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">将<span class="ph">[任务名称]</span>分配给<span class="ph">[团队成员]</span>，需要<span class="ph">[具体要求]</span></div>
+      </div>
+      <div class="prompt-item" data-search="基础操作任务管理任务更新 更新[任务名称]的进度为[百分比]，当前状态[进行中/已完成]">
+        <div class="pi-head"><span class="pi-name">任务更新</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">更新<span class="ph">[任务名称]</span>的进度为<span class="ph">[百分比]</span>，当前状态<span class="ph">[进行中/已完成]</span></div>
+      </div>
+      <div class="prompt-item" data-search="基础操作任务管理任务查询 查看我今天/本周/本月的所有任务">
+        <div class="pi-head"><span class="pi-name">任务查询</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">查看我今天/本周/本月的所有任务</div>
+      </div>
+</div>
+<h3>日程安排</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="基础操作日程安排创建会议 安排一个[会议主题]会议，时间[日期时间]，参会人[名单]">
+        <div class="pi-head"><span class="pi-name">创建会议</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">安排一个<span class="ph">[会议主题]</span>会议，时间<span class="ph">[日期时间]</span>，参会人<span class="ph">[名单]</span></div>
+      </div>
+      <div class="prompt-item" data-search="基础操作日程安排会议提醒 设置[会议名称]的提前[分钟数]提醒">
+        <div class="pi-head"><span class="pi-name">会议提醒</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">设置<span class="ph">[会议名称]</span>的提前<span class="ph">[分钟数]</span>提醒</div>
+      </div>
+      <div class="prompt-item" data-search="基础操作日程安排日程查询 查看我[日期]的日程安排">
+        <div class="pi-head"><span class="pi-name">日程查询</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">查看我<span class="ph">[日期]</span>的日程安排</div>
+      </div>
+      <div class="prompt-item" data-search="基础操作日程安排时间冲突检查 检查[时间段]是否有时间冲突">
+        <div class="pi-head"><span class="pi-name">时间冲突检查</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">检查<span class="ph">[时间段]</span>是否有时间冲突</div>
+      </div>
+</div>
+<h3>文档处理</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="基础操作文档处理创建文档 新建一个[文档类型]文档，标题为[标题]">
+        <div class="pi-head"><span class="pi-name">创建文档</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">新建一个<span class="ph">[文档类型]</span>文档，标题为<span class="ph">[标题]</span></div>
+      </div>
+      <div class="prompt-item" data-search="基础操作文档处理文档总结 总结[文档名称]的核心要点，不超过[字数]">
+        <div class="pi-head"><span class="pi-name">文档总结</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">总结<span class="ph">[文档名称]</span>的核心要点，不超过<span class="ph">[字数]</span></div>
+      </div>
+      <div class="prompt-item" data-search="基础操作文档处理格式转换 将[文件]转换为[格式]">
+        <div class="pi-head"><span class="pi-name">格式转换</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">将<span class="ph">[文件]</span>转换为<span class="ph">[格式]</span></div>
+      </div>
+      <div class="prompt-item" data-search="基础操作文档处理文档搜索 在[文件夹]中搜索包含[关键词]的文档">
+        <div class="pi-head"><span class="pi-name">文档搜索</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">在<span class="ph">[文件夹]</span>中搜索包含<span class="ph">[关键词]</span>的文档</div>
+      </div>
+</div>
+<h2 id="cmd-2" class="anchor-h2">2. 专业场景<span class="cat-count">20 条</span></h2>
+<p class="cat-desc">项目管理 / 数据分析 / 市场营销 / 人力资源 / 财务管理</p>
+<h3>项目管理</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="专业场景项目管理项目计划 制定[项目名称]的项目计划，包含里程碑和时间表">
+        <div class="pi-head"><span class="pi-name">项目计划</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">制定<span class="ph">[项目名称]</span>的项目计划，包含里程碑和时间表</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景项目管理风险评估 分析[项目名称]的潜在风险，提出应对方案">
+        <div class="pi-head"><span class="pi-name">风险评估</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">分析<span class="ph">[项目名称]</span>的潜在风险，提出应对方案</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景项目管理进度报告 生成[项目名称]的周/月进度报告">
+        <div class="pi-head"><span class="pi-name">进度报告</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">生成<span class="ph">[项目名称]</span>的周/月进度报告</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景项目管理资源分配 为[项目阶段]分配合适的人员和资源">
+        <div class="pi-head"><span class="pi-name">资源分配</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">为<span class="ph">[项目阶段]</span>分配合适的人员和资源</div>
+      </div>
+</div>
+<h3>数据分析</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="专业场景数据分析数据整理 整理[数据文件]，清洗异常值，标准化格式">
+        <div class="pi-head"><span class="pi-name">数据整理</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">整理<span class="ph">[数据文件]</span>，清洗异常值，标准化格式</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景数据分析图表生成 用[数据]生成[图表类型]，突出显示[关键指标]">
+        <div class="pi-head"><span class="pi-name">图表生成</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用<span class="ph">[数据]</span>生成<span class="ph">[图表类型]</span>，突出显示<span class="ph">[关键指标]</span></div>
+      </div>
+      <div class="prompt-item" data-search="专业场景数据分析趋势分析 分析[数据集]的趋势变化，预测未来[时间段]">
+        <div class="pi-head"><span class="pi-name">趋势分析</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">分析<span class="ph">[数据集]</span>的趋势变化，预测未来<span class="ph">[时间段]</span></div>
+      </div>
+      <div class="prompt-item" data-search="专业场景数据分析报告撰写 基于[分析结果]撰写数据分析报告">
+        <div class="pi-head"><span class="pi-name">报告撰写</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">基于<span class="ph">[分析结果]</span>撰写数据分析报告</div>
+      </div>
+</div>
+<h3>市场营销</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="专业场景市场营销竞品分析 分析[竞品名称]的产品特点和市场策略">
+        <div class="pi-head"><span class="pi-name">竞品分析</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">分析<span class="ph">[竞品名称]</span>的产品特点和市场策略</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景市场营销营销方案 制定[产品名称]的季度营销方案">
+        <div class="pi-head"><span class="pi-name">营销方案</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">制定<span class="ph">[产品名称]</span>的季度营销方案</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景市场营销内容策划 策划[主题]的社交媒体内容日历">
+        <div class="pi-head"><span class="pi-name">内容策划</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">策划<span class="ph">[主题]</span>的社交媒体内容日历</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景市场营销效果评估 评估[营销活动]的ROI和转化率">
+        <div class="pi-head"><span class="pi-name">效果评估</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">评估<span class="ph">[营销活动]</span>的ROI和转化率</div>
+      </div>
+</div>
+<h3>人力资源</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="专业场景人力资源招聘需求 撰写[职位名称]的招聘需求描述">
+        <div class="pi-head"><span class="pi-name">招聘需求</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">撰写<span class="ph">[职位名称]</span>的招聘需求描述</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景人力资源面试问题 生成[职位名称]的面试问题清单">
+        <div class="pi-head"><span class="pi-name">面试问题</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">生成<span class="ph">[职位名称]</span>的面试问题清单</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景人力资源绩效评估 制定[员工姓名]的绩效评估标准">
+        <div class="pi-head"><span class="pi-name">绩效评估</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">制定<span class="ph">[员工姓名]</span>的绩效评估标准</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景人力资源培训计划 设计[部门名称]的季度培训计划">
+        <div class="pi-head"><span class="pi-name">培训计划</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">设计<span class="ph">[部门名称]</span>的季度培训计划</div>
+      </div>
+</div>
+<h3>财务管理</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="专业场景财务管理预算编制 编制[部门/项目]的年度预算">
+        <div class="pi-head"><span class="pi-name">预算编制</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">编制<span class="ph">[部门/项目]</span>的年度预算</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景财务管理费用分析 分析[时间段]的费用支出情况">
+        <div class="pi-head"><span class="pi-name">费用分析</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">分析<span class="ph">[时间段]</span>的费用支出情况</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景财务管理财务报告 生成[季度/年度]财务报告">
+        <div class="pi-head"><span class="pi-name">财务报告</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">生成<span class="ph">[季度/年度]</span>财务报告</div>
+      </div>
+      <div class="prompt-item" data-search="专业场景财务管理成本控制 提出[项目名称]的成本控制建议">
+        <div class="pi-head"><span class="pi-name">成本控制</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">提出<span class="ph">[项目名称]</span>的成本控制建议</div>
+      </div>
+</div>
+<h2 id="cmd-3" class="anchor-h2">3. 高级技巧<span class="cat-count">9 条</span></h2>
+<p class="cat-desc">组合指令 / 条件判断 / 模板生成</p>
+<h3>组合指令</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="高级技巧组合指令复杂任务分解 将[复杂任务]分解为可执行的子任务，分配责任人，设置时间节点">
+        <div class="pi-head"><span class="pi-name">复杂任务分解</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">将<span class="ph">[复杂任务]</span>分解为可执行的子任务，分配责任人，设置时间节点</div>
+      </div>
+      <div class="prompt-item" data-search="高级技巧组合指令多文档处理 同时处理[文档1]、[文档2]、[文档3]，提取共同主题，生成综合报告">
+        <div class="pi-head"><span class="pi-name">多文档处理</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">同时处理<span class="ph">[文档1]</span>、<span class="ph">[文档2]</span>、<span class="ph">[文档3]</span>，提取共同主题，生成综合报告</div>
+      </div>
+      <div class="prompt-item" data-search="高级技巧组合指令跨部门协作 协调[部门A]和[部门B]完成[协作项目]，明确分工和交付物">
+        <div class="pi-head"><span class="pi-name">跨部门协作</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">协调<span class="ph">[部门A]</span>和<span class="ph">[部门B]</span>完成<span class="ph">[协作项目]</span>，明确分工和交付物</div>
+      </div>
+</div>
+<h3>条件判断</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="高级技巧条件判断智能提醒 如果[任务]在[时间]前未完成，自动发送提醒给[负责人]">
+        <div class="pi-head"><span class="pi-name">智能提醒</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">如果<span class="ph">[任务]</span>在<span class="ph">[时间]</span>前未完成，自动发送提醒给<span class="ph">[负责人]</span></div>
+      </div>
+      <div class="prompt-item" data-search="高级技巧条件判断自动升级 当[问题]超过[时间]未解决，自动升级给[上级领导]">
+        <div class="pi-head"><span class="pi-name">自动升级</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">当<span class="ph">[问题]</span>超过<span class="ph">[时间]</span>未解决，自动升级给<span class="ph">[上级领导]</span></div>
+      </div>
+      <div class="prompt-item" data-search="高级技巧条件判断条件执行 如果[条件成立]，则执行[操作]，否则执行[备选方案]">
+        <div class="pi-head"><span class="pi-name">条件执行</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">如果<span class="ph">[条件成立]</span>，则执行<span class="ph">[操作]</span>，否则执行<span class="ph">[备选方案]</span></div>
+      </div>
+</div>
+<h3>模板生成</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="高级技巧模板生成会议纪要模板 生成标准会议纪要模板，包含议题、决议、行动项">
+        <div class="pi-head"><span class="pi-name">会议纪要模板</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">生成标准会议纪要模板，包含议题、决议、行动项</div>
+      </div>
+      <div class="prompt-item" data-search="高级技巧模板生成项目报告模板 创建项目进度报告模板，有数据可视化区域">
+        <div class="pi-head"><span class="pi-name">项目报告模板</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">创建项目进度报告模板，有数据可视化区域</div>
+      </div>
+      <div class="prompt-item" data-search="高级技巧模板生成工作总结模板 设计周/月工作总结模板，便于快速填写">
+        <div class="pi-head"><span class="pi-name">工作总结模板</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">设计周/月工作总结模板，便于快速填写</div>
+      </div>
+</div>
+<h2 id="cmd-4" class="anchor-h2">4. 技术开发<span class="cat-count">12 条</span></h2>
+<p class="cat-desc">代码相关 / 系统运维 / 产品设计</p>
+<h3>代码相关</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="技术开发代码相关代码审查 审查[代码文件]，指出潜在问题和改进建议">
+        <div class="pi-head"><span class="pi-name">代码审查</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">审查<span class="ph">[代码文件]</span>，指出潜在问题和改进建议</div>
+      </div>
+      <div class="prompt-item" data-search="技术开发代码相关API文档 为[API接口]生成详细的文档说明">
+        <div class="pi-head"><span class="pi-name">API文档</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">为<span class="ph">[API接口]</span>生成详细的文档说明</div>
+      </div>
+      <div class="prompt-item" data-search="技术开发代码相关技术方案 设计[功能需求]的技术实现方案">
+        <div class="pi-head"><span class="pi-name">技术方案</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">设计<span class="ph">[功能需求]</span>的技术实现方案</div>
+      </div>
+      <div class="prompt-item" data-search="技术开发代码相关性能优化 分析[系统]的性能瓶颈，提出优化方案">
+        <div class="pi-head"><span class="pi-name">性能优化</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">分析<span class="ph">[系统]</span>的性能瓶颈，提出优化方案</div>
+      </div>
+</div>
+<h3>系统运维</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="技术开发系统运维故障排查 排查[系统故障]的可能原因和解决方案">
+        <div class="pi-head"><span class="pi-name">故障排查</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">排查<span class="ph">[系统故障]</span>的可能原因和解决方案</div>
+      </div>
+      <div class="prompt-item" data-search="技术开发系统运维监控设置 设置[系统指标]的监控告警规则">
+        <div class="pi-head"><span class="pi-name">监控设置</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">设置<span class="ph">[系统指标]</span>的监控告警规则</div>
+      </div>
+      <div class="prompt-item" data-search="技术开发系统运维备份策略 制定[数据/系统]的备份和恢复策略">
+        <div class="pi-head"><span class="pi-name">备份策略</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">制定<span class="ph">[数据/系统]</span>的备份和恢复策略</div>
+      </div>
+      <div class="prompt-item" data-search="技术开发系统运维安全加固 提出[系统/应用]的安全加固建议">
+        <div class="pi-head"><span class="pi-name">安全加固</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">提出<span class="ph">[系统/应用]</span>的安全加固建议</div>
+      </div>
+</div>
+<h3>产品设计</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="技术开发产品设计需求分析 分析[用户需求]，转化为产品功能点">
+        <div class="pi-head"><span class="pi-name">需求分析</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">分析<span class="ph">[用户需求]</span>，转化为产品功能点</div>
+      </div>
+      <div class="prompt-item" data-search="技术开发产品设计原型设计 设计[功能模块]的交互原型">
+        <div class="pi-head"><span class="pi-name">原型设计</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">设计<span class="ph">[功能模块]</span>的交互原型</div>
+      </div>
+      <div class="prompt-item" data-search="技术开发产品设计用户测试 制定[产品功能]的用户测试方案">
+        <div class="pi-head"><span class="pi-name">用户测试</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">制定<span class="ph">[产品功能]</span>的用户测试方案</div>
+      </div>
+      <div class="prompt-item" data-search="技术开发产品设计迭代规划 规划[产品]的下个版本迭代内容">
+        <div class="pi-head"><span class="pi-name">迭代规划</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">规划<span class="ph">[产品]</span>的下个版本迭代内容</div>
+      </div>
+</div>
+<h2 id="cmd-5" class="anchor-h2">5. 数据分析<span class="cat-count">12 条</span></h2>
+<p class="cat-desc">Excel处理 / SQL查询 / Python分析</p>
+<h3>Excel处理</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="数据分析Excel处理数据透视 对[数据表]创建数据透视表，分析[维度]和[指标]">
+        <div class="pi-head"><span class="pi-name">数据透视</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">对<span class="ph">[数据表]</span>创建数据透视表，分析<span class="ph">[维度]</span>和<span class="ph">[指标]</span></div>
+      </div>
+      <div class="prompt-item" data-search="数据分析Excel处理公式应用 在[单元格范围]应用[公式类型]计算">
+        <div class="pi-head"><span class="pi-name">公式应用</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">在<span class="ph">[单元格范围]</span>应用<span class="ph">[公式类型]</span>计算</div>
+      </div>
+      <div class="prompt-item" data-search="数据分析Excel处理条件格式 为[数据范围]设置条件格式，突出显示[条件]">
+        <div class="pi-head"><span class="pi-name">条件格式</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">为<span class="ph">[数据范围]</span>设置条件格式，突出显示<span class="ph">[条件]</span></div>
+      </div>
+      <div class="prompt-item" data-search="数据分析Excel处理图表制作 用[数据范围]制作[图表类型]，添加[标题和标签]">
+        <div class="pi-head"><span class="pi-name">图表制作</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用<span class="ph">[数据范围]</span>制作<span class="ph">[图表类型]</span>，添加<span class="ph">[标题和标签]</span></div>
+      </div>
+</div>
+<h3>SQL查询</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="数据分析SQL查询数据查询 从[表名]查询[字段]，条件为[条件]，排序按[字段]">
+        <div class="pi-head"><span class="pi-name">数据查询</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">从<span class="ph">[表名]</span>查询<span class="ph">[字段]</span>，条件为<span class="ph">[条件]</span>，排序按<span class="ph">[字段]</span></div>
+      </div>
+      <div class="prompt-item" data-search="数据分析SQL查询数据统计 统计[表名]中[分组字段]的[聚合指标]">
+        <div class="pi-head"><span class="pi-name">数据统计</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">统计<span class="ph">[表名]</span>中<span class="ph">[分组字段]</span>的<span class="ph">[聚合指标]</span></div>
+      </div>
+      <div class="prompt-item" data-search="数据分析SQL查询关联查询 关联[表1]和[表2]，查询[关联条件]的数据">
+        <div class="pi-head"><span class="pi-name">关联查询</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">关联<span class="ph">[表1]</span>和<span class="ph">[表2]</span>，查询<span class="ph">[关联条件]</span>的数据</div>
+      </div>
+      <div class="prompt-item" data-search="数据分析SQL查询数据更新 更新[表名]中[条件]的数据，设置[新值]">
+        <div class="pi-head"><span class="pi-name">数据更新</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">更新<span class="ph">[表名]</span>中<span class="ph">[条件]</span>的数据，设置<span class="ph">[新值]</span></div>
+      </div>
+</div>
+<h3>Python分析</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="数据分析Python分析数据清洗 用pandas清洗[数据集]，处理缺失值和异常值">
+        <div class="pi-head"><span class="pi-name">数据清洗</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用pandas清洗<span class="ph">[数据集]</span>，处理缺失值和异常值</div>
+      </div>
+      <div class="prompt-item" data-search="数据分析Python分析可视化 用matplotlib/seaborn可视化[数据]，展示[分析结果]">
+        <div class="pi-head"><span class="pi-name">可视化</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用matplotlib/seaborn可视化<span class="ph">[数据]</span>，展示<span class="ph">[分析结果]</span></div>
+      </div>
+      <div class="prompt-item" data-search="数据分析Python分析机器学习 用scikit-learn对[数据]进行[算法]分析">
+        <div class="pi-head"><span class="pi-name">机器学习</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用scikit-learn对<span class="ph">[数据]</span>进行<span class="ph">[算法]</span>分析</div>
+      </div>
+      <div class="prompt-item" data-search="数据分析Python分析报告生成 用jupyter生成数据分析报告，包含代码和解释">
+        <div class="pi-head"><span class="pi-name">报告生成</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用jupyter生成数据分析报告，包含代码和解释</div>
+      </div>
+</div>
+<h2 id="cmd-6" class="anchor-h2">6. 创意内容<span class="cat-count">12 条</span></h2>
+<p class="cat-desc">文案创作 / 设计辅助 / 视频脚本</p>
+<h3>文案创作</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="创意内容文案创作广告文案 为[产品]创作吸引人的广告文案，突出[卖点]">
+        <div class="pi-head"><span class="pi-name">广告文案</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">为<span class="ph">[产品]</span>创作吸引人的广告文案，突出<span class="ph">[卖点]</span></div>
+      </div>
+      <div class="prompt-item" data-search="创意内容文案创作社交媒体 撰写[平台]的社交媒体文案，风格[正式/轻松]">
+        <div class="pi-head"><span class="pi-name">社交媒体</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">撰写<span class="ph">[平台]</span>的社交媒体文案，风格<span class="ph">[正式/轻松]</span></div>
+      </div>
+      <div class="prompt-item" data-search="创意内容文案创作产品描述 编写[产品]的详细描述，包含功能特点和优势">
+        <div class="pi-head"><span class="pi-name">产品描述</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">编写<span class="ph">[产品]</span>的详细描述，包含功能特点和优势</div>
+      </div>
+      <div class="prompt-item" data-search="创意内容文案创作新闻稿 撰写[事件]的新闻稿，符合媒体发布要求">
+        <div class="pi-head"><span class="pi-name">新闻稿</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">撰写<span class="ph">[事件]</span>的新闻稿，符合媒体发布要求</div>
+      </div>
+</div>
+<h3>设计辅助</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="创意内容设计辅助设计说明 为[设计需求]编写详细的设计说明文档">
+        <div class="pi-head"><span class="pi-name">设计说明</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">为<span class="ph">[设计需求]</span>编写详细的设计说明文档</div>
+      </div>
+      <div class="prompt-item" data-search="创意内容设计辅助配色方案 为[品牌/项目]推荐合适的配色方案">
+        <div class="pi-head"><span class="pi-name">配色方案</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">为<span class="ph">[品牌/项目]</span>推荐合适的配色方案</div>
+      </div>
+      <div class="prompt-item" data-search="创意内容设计辅助字体选择 为[设计类型]选择合适的字体组合">
+        <div class="pi-head"><span class="pi-name">字体选择</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">为<span class="ph">[设计类型]</span>选择合适的字体组合</div>
+      </div>
+      <div class="prompt-item" data-search="创意内容设计辅助布局建议 为[页面/界面]提供布局设计建议">
+        <div class="pi-head"><span class="pi-name">布局建议</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">为<span class="ph">[页面/界面]</span>提供布局设计建议</div>
+      </div>
+</div>
+<h3>视频脚本</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="创意内容视频脚本产品演示 编写[产品]的演示视频脚本，时长[分钟]">
+        <div class="pi-head"><span class="pi-name">产品演示</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">编写<span class="ph">[产品]</span>的演示视频脚本，时长<span class="ph">[分钟]</span></div>
+      </div>
+      <div class="prompt-item" data-search="创意内容视频脚本培训视频 创作[主题]的培训视频脚本，包含讲解和示例">
+        <div class="pi-head"><span class="pi-name">培训视频</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">创作<span class="ph">[主题]</span>的培训视频脚本，包含讲解和示例</div>
+      </div>
+      <div class="prompt-item" data-search="创意内容视频脚本宣传片 撰写[品牌/活动]的宣传片脚本，有情感共鸣">
+        <div class="pi-head"><span class="pi-name">宣传片</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">撰写<span class="ph">[品牌/活动]</span>的宣传片脚本，有情感共鸣</div>
+      </div>
+      <div class="prompt-item" data-search="创意内容视频脚本教程视频 制作[技能/软件]的教程视频脚本，步骤清晰">
+        <div class="pi-head"><span class="pi-name">教程视频</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">制作<span class="ph">[技能/软件]</span>的教程视频脚本，步骤清晰</div>
+      </div>
+</div>
+<h2 id="cmd-7" class="anchor-h2">7. 工作流优化<span class="cat-count">12 条</span></h2>
+<p class="cat-desc">自动化流程 / 集成指令 / 团队协作</p>
+<h3>自动化流程</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="工作流优化自动化流程邮件自动回复 设置收到[关键词]邮件时自动回复[内容]">
+        <div class="pi-head"><span class="pi-name">邮件自动回复</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">设置收到<span class="ph">[关键词]</span>邮件时自动回复<span class="ph">[内容]</span></div>
+      </div>
+      <div class="prompt-item" data-search="工作流优化自动化流程任务自动创建 当[条件触发]时自动创建[任务]">
+        <div class="pi-head"><span class="pi-name">任务自动创建</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">当<span class="ph">[条件触发]</span>时自动创建<span class="ph">[任务]</span></div>
+      </div>
+      <div class="prompt-item" data-search="工作流优化自动化流程报告自动生成 每周一自动生成上周的工作报告">
+        <div class="pi-head"><span class="pi-name">报告自动生成</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">每周一自动生成上周的工作报告</div>
+      </div>
+      <div class="prompt-item" data-search="工作流优化自动化流程数据自动同步 将[数据源]的数据自动同步到[目标系统]">
+        <div class="pi-head"><span class="pi-name">数据自动同步</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">将<span class="ph">[数据源]</span>的数据自动同步到<span class="ph">[目标系统]</span></div>
+      </div>
+</div>
+<h3>集成指令</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="工作流优化集成指令微信集成 将[任务/日程]同步到微信提醒">
+        <div class="pi-head"><span class="pi-name">微信集成</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">将<span class="ph">[任务/日程]</span>同步到微信提醒</div>
+      </div>
+      <div class="prompt-item" data-search="工作流优化集成指令邮件集成 通过邮件发送[报告/通知]给[收件人]">
+        <div class="pi-head"><span class="pi-name">邮件集成</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">通过邮件发送<span class="ph">[报告/通知]</span>给<span class="ph">[收件人]</span></div>
+      </div>
+      <div class="prompt-item" data-search="工作流优化集成指令日历集成 将[会议/日程]同步到[日历应用]">
+        <div class="pi-head"><span class="pi-name">日历集成</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">将<span class="ph">[会议/日程]</span>同步到<span class="ph">[日历应用]</span></div>
+      </div>
+      <div class="prompt-item" data-search="工作流优化集成指令文档集成 将[数据]自动导入到[文档模板]">
+        <div class="pi-head"><span class="pi-name">文档集成</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">将<span class="ph">[数据]</span>自动导入到<span class="ph">[文档模板]</span></div>
+      </div>
+</div>
+<h3>团队协作</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="工作流优化团队协作分工协作 为[项目]分配团队成员角色和职责">
+        <div class="pi-head"><span class="pi-name">分工协作</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">为<span class="ph">[项目]</span>分配团队成员角色和职责</div>
+      </div>
+      <div class="prompt-item" data-search="工作流优化团队协作进度同步 定期同步团队成员的[任务/项目]进度">
+        <div class="pi-head"><span class="pi-name">进度同步</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">定期同步团队成员的<span class="ph">[任务/项目]</span>进度</div>
+      </div>
+      <div class="prompt-item" data-search="工作流优化团队协作问题协调 协调解决团队遇到的[问题/障碍]">
+        <div class="pi-head"><span class="pi-name">问题协调</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">协调解决团队遇到的<span class="ph">[问题/障碍]</span></div>
+      </div>
+      <div class="prompt-item" data-search="工作流优化团队协作成果分享 分享团队[时间段]的工作成果和经验">
+        <div class="pi-head"><span class="pi-name">成果分享</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">分享团队<span class="ph">[时间段]</span>的工作成果和经验</div>
+      </div>
+</div>
+<h2 id="cmd-8" class="anchor-h2">8. 个性化定制<span class="cat-count">12 条</span></h2>
+<p class="cat-desc">风格调整 / 角色扮演 / 知识库训练</p>
+<h3>风格调整</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="个性化定制风格调整正式风格 用正式专业的语言处理[内容]">
+        <div class="pi-head"><span class="pi-name">正式风格</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用正式专业的语言处理<span class="ph">[内容]</span></div>
+      </div>
+      <div class="prompt-item" data-search="个性化定制风格调整轻松风格 用轻松友好的语气撰写[文案]">
+        <div class="pi-head"><span class="pi-name">轻松风格</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用轻松友好的语气撰写<span class="ph">[文案]</span></div>
+      </div>
+      <div class="prompt-item" data-search="个性化定制风格调整简洁风格 用简洁明了的表达总结[信息]">
+        <div class="pi-head"><span class="pi-name">简洁风格</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用简洁明了的表达总结<span class="ph">[信息]</span></div>
+      </div>
+      <div class="prompt-item" data-search="个性化定制风格调整详细风格 提供详细完整的[说明/报告]">
+        <div class="pi-head"><span class="pi-name">详细风格</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">提供详细完整的<span class="ph">[说明/报告]</span></div>
+      </div>
+</div>
+<h3>角色扮演</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="个性化定制角色扮演项目经理 以项目经理身份处理[项目事务]">
+        <div class="pi-head"><span class="pi-name">项目经理</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">以项目经理身份处理<span class="ph">[项目事务]</span></div>
+      </div>
+      <div class="prompt-item" data-search="个性化定制角色扮演技术专家 以技术专家角度分析[技术问题]">
+        <div class="pi-head"><span class="pi-name">技术专家</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">以技术专家角度分析<span class="ph">[技术问题]</span></div>
+      </div>
+      <div class="prompt-item" data-search="个性化定制角色扮演市场总监 以市场总监视角制定[营销策略]">
+        <div class="pi-head"><span class="pi-name">市场总监</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">以市场总监视角制定<span class="ph">[营销策略]</span></div>
+      </div>
+      <div class="prompt-item" data-search="个性化定制角色扮演财务顾问 以财务顾问身份提供[财务建议]">
+        <div class="pi-head"><span class="pi-name">财务顾问</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">以财务顾问身份提供<span class="ph">[财务建议]</span></div>
+      </div>
+</div>
+<h3>知识库训练</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="个性化定制知识库训练学习文档 学习[文档/资料]的内容，掌握相关知识">
+        <div class="pi-head"><span class="pi-name">学习文档</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">学习<span class="ph">[文档/资料]</span>的内容，掌握相关知识</div>
+      </div>
+      <div class="prompt-item" data-search="个性化定制知识库训练记忆要点 记住[关键信息]，在相关场景中应用">
+        <div class="pi-head"><span class="pi-name">记忆要点</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">记住<span class="ph">[关键信息]</span>，在相关场景中应用</div>
+      </div>
+      <div class="prompt-item" data-search="个性化定制知识库训练更新知识 更新关于[主题]的最新知识和信息">
+        <div class="pi-head"><span class="pi-name">更新知识</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">更新关于<span class="ph">[主题]</span>的最新知识和信息</div>
+      </div>
+      <div class="prompt-item" data-search="个性化定制知识库训练专业深化 深入学习[专业领域]的深度知识">
+        <div class="pi-head"><span class="pi-name">专业深化</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">深入学习<span class="ph">[专业领域]</span>的深度知识</div>
+      </div>
+</div>
+<h2 id="cmd-9" class="anchor-h2">9. 效率组合<span class="cat-count">12 条</span></h2>
+<p class="cat-desc">晨间工作流 / 项目启动 / 报告生成</p>
+<h3>晨间工作流</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="效率组合晨间工作流查看日程 查看今日日程安排">
+        <div class="pi-head"><span class="pi-name">查看日程</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">查看今日日程安排</div>
+      </div>
+      <div class="prompt-item" data-search="效率组合晨间工作流任务规划 规划今日重点工作任务">
+        <div class="pi-head"><span class="pi-name">任务规划</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">规划今日重点工作任务</div>
+      </div>
+      <div class="prompt-item" data-search="效率组合晨间工作流邮件处理 快速处理重要邮件">
+        <div class="pi-head"><span class="pi-name">邮件处理</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">快速处理重要邮件</div>
+      </div>
+      <div class="prompt-item" data-search="效率组合晨间工作流会议准备 准备今日会议材料和议程">
+        <div class="pi-head"><span class="pi-name">会议准备</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">准备今日会议材料和议程</div>
+      </div>
+</div>
+<h3>项目启动组合</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="效率组合项目启动组合需求确认 确认项目需求和目标">
+        <div class="pi-head"><span class="pi-name">需求确认</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">确认项目需求和目标</div>
+      </div>
+      <div class="prompt-item" data-search="效率组合项目启动组合团队组建 组建项目团队和分工">
+        <div class="pi-head"><span class="pi-name">团队组建</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">组建项目团队和分工</div>
+      </div>
+      <div class="prompt-item" data-search="效率组合项目启动组合计划制定 制定详细项目计划">
+        <div class="pi-head"><span class="pi-name">计划制定</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">制定详细项目计划</div>
+      </div>
+      <div class="prompt-item" data-search="效率组合项目启动组合资源准备 准备项目所需资源">
+        <div class="pi-head"><span class="pi-name">资源准备</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">准备项目所需资源</div>
+      </div>
+</div>
+<h3>报告生成组合</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="效率组合报告生成组合数据收集 收集报告所需数据">
+        <div class="pi-head"><span class="pi-name">数据收集</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">收集报告所需数据</div>
+      </div>
+      <div class="prompt-item" data-search="效率组合报告生成组合分析处理 分析处理收集的数据">
+        <div class="pi-head"><span class="pi-name">分析处理</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">分析处理收集的数据</div>
+      </div>
+      <div class="prompt-item" data-search="效率组合报告生成组合报告撰写 撰写完整的分析报告">
+        <div class="pi-head"><span class="pi-name">报告撰写</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">撰写完整的分析报告</div>
+      </div>
+      <div class="prompt-item" data-search="效率组合报告生成组合汇报准备 准备报告汇报材料">
+        <div class="pi-head"><span class="pi-name">汇报准备</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">准备报告汇报材料</div>
+      </div>
+</div>
+<h2 id="cmd-10" class="anchor-h2">10. 移动办公<span class="cat-count">12 条</span></h2>
+<p class="cat-desc">语音指令 / 快捷操作 / 离线功能</p>
+<h3>语音指令</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="移动办公语音指令语音创建 用语音创建[任务/日程/提醒]">
+        <div class="pi-head"><span class="pi-name">语音创建</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用语音创建<span class="ph">[任务/日程/提醒]</span></div>
+      </div>
+      <div class="prompt-item" data-search="移动办公语音指令语音查询 用语音查询[信息/状态/进度]">
+        <div class="pi-head"><span class="pi-name">语音查询</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用语音查询<span class="ph">[信息/状态/进度]</span></div>
+      </div>
+      <div class="prompt-item" data-search="移动办公语音指令语音更新 用语音更新[任务/项目]状态">
+        <div class="pi-head"><span class="pi-name">语音更新</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用语音更新<span class="ph">[任务/项目]</span>状态</div>
+      </div>
+      <div class="prompt-item" data-search="移动办公语音指令语音总结 用语音总结[会议/文档]要点">
+        <div class="pi-head"><span class="pi-name">语音总结</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">用语音总结<span class="ph">[会议/文档]</span>要点</div>
+      </div>
+</div>
+<h3>快捷操作</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="移动办公快捷操作快速回复 快速回复[消息/邮件]的模板">
+        <div class="pi-head"><span class="pi-name">快速回复</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">快速回复<span class="ph">[消息/邮件]</span>的模板</div>
+      </div>
+      <div class="prompt-item" data-search="移动办公快捷操作一键生成 一键生成[日报/周报/月报]">
+        <div class="pi-head"><span class="pi-name">一键生成</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">一键生成<span class="ph">[日报/周报/月报]</span></div>
+      </div>
+      <div class="prompt-item" data-search="移动办公快捷操作智能提醒 智能提醒[重要事项/截止时间]">
+        <div class="pi-head"><span class="pi-name">智能提醒</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">智能提醒<span class="ph">[重要事项/截止时间]</span></div>
+      </div>
+      <div class="prompt-item" data-search="移动办公快捷操作自动同步 自动同步[数据/文件/日程]">
+        <div class="pi-head"><span class="pi-name">自动同步</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">自动同步<span class="ph">[数据/文件/日程]</span></div>
+      </div>
+</div>
+<h3>离线功能</h3>
+<div class="prompt-list">
+      <div class="prompt-item" data-search="移动办公离线功能离线创建 离线状态下创建[任务/文档]">
+        <div class="pi-head"><span class="pi-name">离线创建</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">离线状态下创建<span class="ph">[任务/文档]</span></div>
+      </div>
+      <div class="prompt-item" data-search="移动办公离线功能本地搜索 在本地文件中搜索[关键词]">
+        <div class="pi-head"><span class="pi-name">本地搜索</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">在本地文件中搜索<span class="ph">[关键词]</span></div>
+      </div>
+      <div class="prompt-item" data-search="移动办公离线功能缓存处理 处理缓存的[数据/消息]">
+        <div class="pi-head"><span class="pi-name">缓存处理</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">处理缓存的<span class="ph">[数据/消息]</span></div>
+      </div>
+      <div class="prompt-item" data-search="移动办公离线功能同步准备 准备需要同步的[内容/文件]">
+        <div class="pi-head"><span class="pi-name">同步准备</span><button class="copy-btn" type="button">复制</button></div>
+        <div class="pi-code">准备需要同步的<span class="ph">[内容/文件]</span></div>
+      </div>
+</div>
+</div>
+<div class="res-section" id="sec-tpl">
+<div class="sec-intro"><p>通用指令解决「让 AI 动起来」，模板解决「让 AI 交出能直接发出去的东西」。<code>【 】</code> 内替换成你的内容，复制到 WorkBuddy 就能用。</p></div>
+<div class="sub-chips">
+<a href="#tpl-1" class="sub-chip">周报类 <b>4</b></a>
+<a href="#tpl-2" class="sub-chip">邮件类 <b>4</b></a>
+<a href="#tpl-3" class="sub-chip">汇报类 <b>3</b></a>
+<a href="#tpl-4" class="sub-chip">总结类 <b>4</b></a>
+<a href="#tpl-5" class="sub-chip">沟通类 <b>3</b></a>
+<a href="#tpl-6" class="sub-chip">创意类 <b>2</b></a>
+</div>
+<h2 id="tpl-1" class="anchor-h2">1. 周报类<span class="cat-count">4 个</span></h2>
+    <div class="tpl-card" data-search="周报类周报结构化输出每周五写周报，5分钟出初稿 我是【岗位】，本周做了【3件事】：1.……2.……3.……。下周计划：【3件事】。请按「本周成果+数据+下周计划」格式帮我整理成一份简洁周报，重点突出我做得好的部分，字数控制在300字以内。">
+      <div class="tpl-head"><span class="tpl-no">模板 01</span><span class="tpl-name">周报结构化输出</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">我是<span class="ph">【岗位】</span>，本周做了<span class="ph">【3件事】</span>：1.……2.……3.……。下周计划：<span class="ph">【3件事】</span>。请按「本周成果+数据+下周计划」格式帮我整理成一份简洁周报，重点突出我做得好的部分，字数控制在300字以内。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>每周五写周报，5分钟出初稿</div>
+    </div>
+    <div class="tpl-card" data-search="周报类数据型周报有具体数据指标的岗位 我是运营，本周核心数据：【拉新200人/转化率15%/活跃度提升8%】。请结合这些数据写一份周报，重点说明数据背后的原因和下周优化方向，用数据讲故事，不要流水账。">
+      <div class="tpl-head"><span class="tpl-no">模板 02</span><span class="tpl-name">数据型周报</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">我是运营，本周核心数据：<span class="ph">【拉新200人/转化率15%/活跃度提升8%】</span>。请结合这些数据写一份周报，重点说明数据背后的原因和下周优化方向，用数据讲故事，不要流水账。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>有具体数据指标的岗位</div>
+    </div>
+    <div class="tpl-card" data-search="周报类项目进展汇报需要定期向领导汇报项目进展 项目名称：【XXX】，当前进度：【XX%】，本周完成：【事项列表】，遇到的问题：【问题描述】，下周计划：【计划】。请按「进度-成果-问题-计划」格式整理成项目周报，控制在200字内发给领导。">
+      <div class="tpl-head"><span class="tpl-no">模板 03</span><span class="tpl-name">项目进展汇报</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">项目名称：<span class="ph">【XXX】</span>，当前进度：<span class="ph">【XX%】</span>，本周完成：<span class="ph">【事项列表】</span>，遇到的问题：<span class="ph">【问题描述】</span>，下周计划：<span class="ph">【计划】</span>。请按「进度-成果-问题-计划」格式整理成项目周报，控制在200字内发给领导。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>需要定期向领导汇报项目进展</div>
+    </div>
+    <div class="tpl-card" data-search="周报类跨部门周报同步需要与其他部门协作配合的工作 我们部门本周完成了【事项】，对贵部门的影响是【说明】。需要贵部门配合的是【具体需求】，期望完成时间是【时间】。请帮我写一段200字以内的跨部门周报同步文字，语言专业但不高高在上。">
+      <div class="tpl-head"><span class="tpl-no">模板 04</span><span class="tpl-name">跨部门周报同步</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">我们部门本周完成了<span class="ph">【事项】</span>，对贵部门的影响是<span class="ph">【说明】</span>。需要贵部门配合的是<span class="ph">【具体需求】</span>，期望完成时间是<span class="ph">【时间】</span>。请帮我写一段200字以内的跨部门周报同步文字，语言专业但不高高在上。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>需要与其他部门协作配合的工作</div>
+    </div>
+<h2 id="tpl-2" class="anchor-h2">2. 邮件类<span class="cat-count">4 个</span></h2>
+    <div class="tpl-card" data-search="邮件类工作请示邮件需要领导决策的工作请示 领导好，关于【事项】我有两个方案：A方案【优点/缺点】；B方案【优点/缺点】。我的建议是【选择方案+理由】。请您在百忙中抽空确认，谢谢。">
+      <div class="tpl-head"><span class="tpl-no">模板 05</span><span class="tpl-name">工作请示邮件</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">领导好，关于<span class="ph">【事项】</span>我有两个方案：A方案<span class="ph">【优点/缺点】</span>；B方案<span class="ph">【优点/缺点】</span>。我的建议是<span class="ph">【选择方案+理由】</span>。请您在百忙中抽空确认，谢谢。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>需要领导决策的工作请示</div>
+    </div>
+    <div class="tpl-card" data-search="邮件类客户跟进邮件客户关系维护和跟进 您好，我是【你的名字】，负责【项目/产品】。上次沟通后我们完成了【进展】，目前的状态是【现状】。想跟您确认一下：【需要确认的问题】。期待您的反馈，祝好。">
+      <div class="tpl-head"><span class="tpl-no">模板 06</span><span class="tpl-name">客户跟进邮件</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">您好，我是<span class="ph">【你的名字】</span>，负责<span class="ph">【项目/产品】</span>。上次沟通后我们完成了<span class="ph">【进展】</span>，目前的状态是<span class="ph">【现状】</span>。想跟您确认一下：<span class="ph">【需要确认的问题】</span>。期待您的反馈，祝好。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>客户关系维护和跟进</div>
+    </div>
+    <div class="tpl-card" data-search="邮件类会议邀请邮件组织会议前的邀请发送 您好，邀请您参加【会议名称】，时间：【具体时间】，时长约【XX分钟】，方式：【线下/线上链接】。本次会议议程：1.……2.……3.……，预计需要讨论【需要对方提前准备的内容】。请确认是否参加，谢谢。">
+      <div class="tpl-head"><span class="tpl-no">模板 07</span><span class="tpl-name">会议邀请邮件</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">您好，邀请您参加<span class="ph">【会议名称】</span>，时间：<span class="ph">【具体时间】</span>，时长约<span class="ph">【XX分钟】</span>，方式：<span class="ph">【线下/线上链接】</span>。本次会议议程：1.……2.……3.……，预计需要讨论<span class="ph">【需要对方提前准备的内容】</span>。请确认是否参加，谢谢。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>组织会议前的邀请发送</div>
+    </div>
+    <div class="tpl-card" data-search="邮件类方案发送邮件发送方案、提案后的说明邮件 您好，附件是我们为【项目】准备的方案，主要包含【核心内容概述】。有几个关键点想特别说明：【1-2个重点】。期待您的反馈，如有疑问随时沟通，谢谢。">
+      <div class="tpl-head"><span class="tpl-no">模板 08</span><span class="tpl-name">方案发送邮件</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">您好，附件是我们为<span class="ph">【项目】</span>准备的方案，主要包含<span class="ph">【核心内容概述】</span>。有几个关键点想特别说明：<span class="ph">【1-2个重点】</span>。期待您的反馈，如有疑问随时沟通，谢谢。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>发送方案、提案后的说明邮件</div>
+    </div>
+<h2 id="tpl-3" class="anchor-h2">3. 汇报类<span class="cat-count">3 个</span></h2>
+    <div class="tpl-card" data-search="汇报类述职报告季度/年度述职 我是【岗位】，在岗【X年/X月】。本季度我的核心成果是【3个成果+数据支撑】，遇到的挑战是【挑战描述+解决方案】，下季度目标是【目标】。请帮我整理成一份3分钟的述职报告，重点说成果，简洁不啰嗦。">
+      <div class="tpl-head"><span class="tpl-no">模板 09</span><span class="tpl-name">述职报告</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">我是<span class="ph">【岗位】</span>，在岗<span class="ph">【X年/X月】</span>。本季度我的核心成果是<span class="ph">【3个成果+数据支撑】</span>，遇到的挑战是<span class="ph">【挑战描述+解决方案】</span>，下季度目标是<span class="ph">【目标】</span>。请帮我整理成一份3分钟的述职报告，重点说成果，简洁不啰嗦。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>季度/年度述职</div>
+    </div>
+    <div class="tpl-card" data-search="汇报类工作复盘项目结束后的结构化复盘 项目/任务：【名称】，最终结果：【结果】，计划 vs 实际：【对比】。做得好的地方：【原因分析】；需要改进的地方：【原因分析+下次做法】。这件事给我的核心启示是：【1句话总结】。">
+      <div class="tpl-head"><span class="tpl-no">模板 10</span><span class="tpl-name">工作复盘</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">项目/任务：<span class="ph">【名称】</span>，最终结果：<span class="ph">【结果】</span>，计划 vs 实际：<span class="ph">【对比】</span>。做得好的地方：<span class="ph">【原因分析】</span>；需要改进的地方：<span class="ph">【原因分析+下次做法】</span>。这件事给我的核心启示是：<span class="ph">【1句话总结】</span>。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>项目结束后的结构化复盘</div>
+    </div>
+    <div class="tpl-card" data-search="汇报类需求汇报向上级或客户提需求 我需要向【对象：领导/客户/同事】汇报【需求名称】。背景是【背景描述】，我的诉求是【具体诉求】，期望结果是【期望结果】。请帮我用「背景-现状-诉求-期望」结构写一段2分钟的口头汇报稿，语言简洁有说服力。">
+      <div class="tpl-head"><span class="tpl-no">模板 11</span><span class="tpl-name">需求汇报</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">我需要向<span class="ph">【对象：领导/客户/同事】</span>汇报<span class="ph">【需求名称】</span>。背景是<span class="ph">【背景描述】</span>，我的诉求是<span class="ph">【具体诉求】</span>，期望结果是<span class="ph">【期望结果】</span>。请帮我用「背景-现状-诉求-期望」结构写一段2分钟的口头汇报稿，语言简洁有说服力。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>向上级或客户提需求</div>
+    </div>
+<h2 id="tpl-4" class="anchor-h2">4. 总结类<span class="cat-count">4 个</span></h2>
+    <div class="tpl-card" data-search="总结类会议纪要整理会议结束后快速整理纪要 以下是会议记录：【粘贴记录内容】。请帮我整理成结构化纪要，包含：会议结论（确定的）、待办事项（负责人+截止时间）、未解决问题（需要继续跟进）、下次会议时间。格式要清晰，便于分享。">
+      <div class="tpl-head"><span class="tpl-no">模板 12</span><span class="tpl-name">会议纪要整理</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">以下是会议记录：<span class="ph">【粘贴记录内容】</span>。请帮我整理成结构化纪要，包含：会议结论（确定的）、待办事项（负责人+截止时间）、未解决问题（需要继续跟进）、下次会议时间。格式要清晰，便于分享。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>会议结束后快速整理纪要</div>
+    </div>
+    <div class="tpl-card" data-search="总结类读书/学习笔记学习后快速沉淀 我刚学了【内容主题】，作者/来源是【来源】。核心观点是：【1-2句话概括】。对我最有用的点是：【具体启发】。我可以马上用起来的是：【马上能做的1件事】。请帮我整理成一张知识卡片，包含观点+启发+行动。">
+      <div class="tpl-head"><span class="tpl-no">模板 13</span><span class="tpl-name">读书/学习笔记</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">我刚学了<span class="ph">【内容主题】</span>，作者/来源是<span class="ph">【来源】</span>。核心观点是：<span class="ph">【1-2句话概括】</span>。对我最有用的点是：<span class="ph">【具体启发】</span>。我可以马上用起来的是：<span class="ph">【马上能做的1件事】</span>。请帮我整理成一张知识卡片，包含观点+启发+行动。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>学习后快速沉淀</div>
+    </div>
+    <div class="tpl-card" data-search="总结类月度总结月度复盘和总结 我是【岗位】，这个月完成了【主要成果，数据支撑】。对比上个月，进步的地方是【进步】，做得不够好的地方是【不足+原因】。下个月我重点要提升的是【方向】，具体计划是【计划】。请帮我整理成一份月度总结，800字左右，有数据有分析。">
+      <div class="tpl-head"><span class="tpl-no">模板 14</span><span class="tpl-name">月度总结</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">我是<span class="ph">【岗位】</span>，这个月完成了<span class="ph">【主要成果，数据支撑】</span>。对比上个月，进步的地方是<span class="ph">【进步】</span>，做得不够好的地方是<span class="ph">【不足+原因】</span>。下个月我重点要提升的是<span class="ph">【方向】</span>，具体计划是<span class="ph">【计划】</span>。请帮我整理成一份月度总结，800字左右，有数据有分析。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>月度复盘和总结</div>
+    </div>
+    <div class="tpl-card" data-search="总结类项目结项总结项目结束后的完整复盘 项目：【名称】，时间：【周期】，目标：【目标】，实际结果：【结果】，投入产出：【说明】。请帮我按「项目概述-核心成果-关键动作-经验沉淀-待改进」格式写一份结项总结，重点说经验，为以后做参考。">
+      <div class="tpl-head"><span class="tpl-no">模板 15</span><span class="tpl-name">项目结项总结</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">项目：<span class="ph">【名称】</span>，时间：<span class="ph">【周期】</span>，目标：<span class="ph">【目标】</span>，实际结果：<span class="ph">【结果】</span>，投入产出：<span class="ph">【说明】</span>。请帮我按「项目概述-核心成果-关键动作-经验沉淀-待改进」格式写一份结项总结，重点说经验，为以后做参考。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>项目结束后的完整复盘</div>
+    </div>
+<h2 id="tpl-5" class="anchor-h2">5. 沟通类<span class="cat-count">3 个</span></h2>
+    <div class="tpl-card" data-search="沟通类拒绝/婉拒回复无法接受请求时的专业回复 您好，关于【对方的请求】，感谢您的信任。目前我手上有【现有工作说明】，在这个时间段内无法承接【请求内容】。我的建议是【替代方案或推荐人选】。希望有机会下次合作，谢谢理解。">
+      <div class="tpl-head"><span class="tpl-no">模板 16</span><span class="tpl-name">拒绝/婉拒回复</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">您好，关于<span class="ph">【对方的请求】</span>，感谢您的信任。目前我手上有<span class="ph">【现有工作说明】</span>，在这个时间段内无法承接<span class="ph">【请求内容】</span>。我的建议是<span class="ph">【替代方案或推荐人选】</span>。希望有机会下次合作，谢谢理解。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>无法接受请求时的专业回复</div>
+    </div>
+    <div class="tpl-card" data-search="沟通类批评反馈需要给同事或下属提意见 我想给你一个反馈，关于【具体事件】。我观察到的情况是【描述行为，不评价人】，这对【影响】产生了影响。我希望的是【具体期望】。我相信你可以做好，这只是过程中的一点调整。">
+      <div class="tpl-head"><span class="tpl-no">模板 17</span><span class="tpl-name">批评反馈</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">我想给你一个反馈，关于<span class="ph">【具体事件】</span>。我观察到的情况是<span class="ph">【描述行为，不评价人】</span>，这对<span class="ph">【影响】</span>产生了影响。我希望的是<span class="ph">【具体期望】</span>。我相信你可以做好，这只是过程中的一点调整。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>需要给同事或下属提意见</div>
+    </div>
+    <div class="tpl-card" data-search="沟通类感谢信/表扬信感谢同事、客户、合作伙伴 我想感谢【人名】，他是【岗位/角色】。在【具体事件】中，他【具体做了什么】，这件事对我的帮助是【帮助描述】，最终结果是【结果】。他的这种做法让我感受到【感受】。请帮我写一封真诚的感谢信，200字以内。">
+      <div class="tpl-head"><span class="tpl-no">模板 18</span><span class="tpl-name">感谢信/表扬信</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">我想感谢<span class="ph">【人名】</span>，他是<span class="ph">【岗位/角色】</span>。在<span class="ph">【具体事件】</span>中，他<span class="ph">【具体做了什么】</span>，这件事对我的帮助是<span class="ph">【帮助描述】</span>，最终结果是<span class="ph">【结果】</span>。他的这种做法让我感受到<span class="ph">【感受】</span>。请帮我写一封真诚的感谢信，200字以内。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>感谢同事、客户、合作伙伴</div>
+    </div>
+<h2 id="tpl-6" class="anchor-h2">6. 创意类<span class="cat-count">2 个</span></h2>
+    <div class="tpl-card" data-search="创意类方案头脑风暴需要创意方案时 我需要解决【问题/挑战】。背景是【背景描述】，约束条件是【预算/时间/资源限制】。请帮我提供至少5个不同方向的解决方案，每个方案说明：核心思路、预估效果、需要的资源、潜在风险。最后推荐一个最值得尝试的方案。">
+      <div class="tpl-head"><span class="tpl-no">模板 19</span><span class="tpl-name">方案头脑风暴</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">我需要解决<span class="ph">【问题/挑战】</span>。背景是<span class="ph">【背景描述】</span>，约束条件是<span class="ph">【预算/时间/资源限制】</span>。请帮我提供至少5个不同方向的解决方案，每个方案说明：核心思路、预估效果、需要的资源、潜在风险。最后推荐一个最值得尝试的方案。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>需要创意方案时</div>
+    </div>
+    <div class="tpl-card" data-search="创意类内容选题内容创作前的选题策划 我的公众号/账号定位是【定位】，目标读者是【人群】，本周我想写一篇关于【主题】的文章。请帮我提供5个标题选项（每个不同角度），并说明每个标题的切入角度和预期效果。最后推荐一个最值得写的。">
+      <div class="tpl-head"><span class="tpl-no">模板 20</span><span class="tpl-name">内容选题</span><button class="copy-btn" type="button">复制</button></div>
+      <div class="tpl-code">我的公众号/账号定位是<span class="ph">【定位】</span>，目标读者是<span class="ph">【人群】</span>，本周我想写一篇关于<span class="ph">【主题】</span>的文章。请帮我提供5个标题选项（每个不同角度），并说明每个标题的切入角度和预期效果。最后推荐一个最值得写的。</div>
+      <div class="tpl-scene"><span class="ts-label">适用场景</span>内容创作前的选题策划</div>
+    </div>
+</div>
+<div class="res-section" id="sec-case">
+<div class="sec-intro"><p>65 个可以直接照着说的真实指令。每条都标注了「说了什么」和「WorkBuddy 实际做了什么」，方括号内容替换成你的场景即可。</p></div>
+<h2 id="case-0" class="anchor-h2">先掌握基本流程</h2>
+<p>下指令前先记住这四步，比记案例本身更重要。</p>
+<div class="ops-steps">
+  <div class="ops-step"><div class="ops-step-n">1</div><div class="ops-step-body"><h4>下达指令</h4><p>用自然语言描述任务，越具体越好</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">2</div><div class="ops-step-body"><h4>确认计划</h4><p>AI 解析并展示执行步骤，用户确认后开始执行</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">3</div><div class="ops-step-body"><h4>执行反馈</h4><p>在沙箱环境中运行，实时显示进度</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">4</div><div class="ops-step-body"><h4>交付结果</h4><p>生成文件、图表或报告，可直接使用</p></div></div>
+</div>
+<h3>指令撰写技巧</h3>
+<ul>
+<li>指定路径：明确文件或文件夹的完整路径</li>
+<li>明确格式：指定输出格式（PDF、Excel、PPT 等）</li>
+<li>说明要求：描述具体需求（图表类型、分析维度等）</li>
+<li>从简单开始：先尝试简单任务，再逐步尝试复杂任务</li>
+</ul>
+<div class="sub-chips">
+<a href="#case-1" class="sub-chip">自动化办公 <b>8</b></a>
+<a href="#case-2" class="sub-chip">内容创作与视觉生成 <b>7</b></a>
+<a href="#case-3" class="sub-chip">本地知识库构建与检索 <b>3</b></a>
+<a href="#case-4" class="sub-chip">跨平台远程协同 <b>4</b></a>
+<a href="#case-5" class="sub-chip">信息检索与调研 <b>4</b></a>
+<a href="#case-6" class="sub-chip">自动化定时任务 <b>3</b></a>
+<a href="#case-7" class="sub-chip">网站与应用开发 <b>2</b></a>
+<a href="#case-8" class="sub-chip">旅游规划 <b>5</b></a>
+<a href="#case-9" class="sub-chip">教育与学术 <b>1</b></a>
+<a href="#case-10" class="sub-chip">PDF 处理与文档管理 <b>13</b></a>
+<a href="#case-11" class="sub-chip">包装印刷行业 <b>15</b></a>
+</div>
+<h2 id="case-1" class="anchor-h2">1. 自动化办公<span class="cat-count">8 个</span></h2>
+<div class="case-list">
+<div class="case-card" data-search="自动化办公 自动生成销售日报 自动从本地 Excel 或企业微信表格中提取数据，调用内置报表模板生成 PDF 并发送至指定群组。 PDF 日报 汇总 D:/销售/ 上周的 Excel 数据，按产品线统计销售额和环比，生成一页 PDF 日报，发到企业微信销售群">
+  <div class="case-head"><span class="case-no">01</span><span class="case-name">自动生成销售日报</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>PDF 日报</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">生成上周销售日报</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">汇总 D:/销售/ 上周的 Excel 数据，按产品线统计销售额和环比，生成一页 PDF 日报，发到企业微信销售群</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动从本地 Excel 或企业微信表格中提取数据，调用内置报表模板生成 PDF 并发送至指定群组。</div>
+</div>
+<div class="case-card" data-search="自动化办公 整理会议纪要 调取飞书/钉钉会议录音转文字结果，识别发言角色与关键结论，结构化输出带时间戳的摘要文档。 结构化纪要文档 读取今天会议的转写文本，按【议题 / 结论 / 待办（负责人 + 截止时间）】整理，输出 Markdown">
+  <div class="case-head"><span class="case-no">02</span><span class="case-name">整理会议纪要</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>结构化纪要文档</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">整理会议纪要</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">读取今天会议的转写文本，按<span class="ph">【议题 / 结论 / 待办（负责人 + 截止时间）】</span>整理，输出 Markdown</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>调取飞书/钉钉会议录音转文字结果，识别发言角色与关键结论，结构化输出带时间戳的摘要文档。</div>
+</div>
+<div class="case-card" data-search="自动化办公 同步客户信息至 CRM 在浏览器中自动打开 CRM 网页端，将剪贴板中的姓名、电话、意向等级等字段逐项填入对应表单并提交。 CRM 已录入 打开 CRM 新建客户页，把剪贴板里的客户信息（姓名 / 电话 / 意向等级）逐条录入并提交">
+  <div class="case-head"><span class="case-no">03</span><span class="case-name">同步客户信息至 CRM</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>CRM 已录入</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">同步客户信息至CRM</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">打开 CRM 新建客户页，把剪贴板里的客户信息（姓名 / 电话 / 意向等级）逐条录入并提交</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>在浏览器中自动打开 CRM 网页端，将剪贴板中的姓名、电话、意向等级等字段逐项填入对应表单并提交。</div>
+</div>
+<div class="case-card" data-search="自动化办公 Excel 数据处理 自动合并多个 Excel 文件，生成可视化图表和分析报告。 合并表 + 图表 + 分析报告">
+  <div class="case-head"><span class="case-no">04</span><span class="case-name">Excel 数据处理</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>合并表 + 图表 + 分析报告</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">把桌面&quot;2026Q1销售数据&quot;里所有Excel合并，生成柱状图+分析报告</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动合并多个 Excel 文件，生成可视化图表和分析报告。</div>
+</div>
+<div class="case-card" data-search="自动化办公 文档批量转换 批量转换文件格式，自动按日期规则重命名。 批量 PDF">
+  <div class="case-head"><span class="case-no">05</span><span class="case-name">文档批量转换</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>批量 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">把D盘&quot;周报&quot;文件夹里所有Word转PDF，并按日期重命名</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>批量转换文件格式，自动按日期规则重命名。</div>
+</div>
+<div class="case-card" data-search="自动化办公 定时自动化任务 设置定时任务，每天自动执行文件汇总、转换和发送。 每日自动推送">
+  <div class="case-head"><span class="case-no">06</span><span class="case-name">定时自动化任务</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>每日自动推送</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">每天9点自动汇总D盘「周报」文件夹内Word文档，转PDF并按&#x27;日报_YYYYMMDD&#x27;命名，发送至企业微信「行政群」</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>设置定时任务，每天自动执行文件汇总、转换和发送。</div>
+</div>
+<div class="case-card" data-search="自动化办公 简历信息提取 自动识别简历中的姓名、教育背景、工作经历等关键信息，生成结构化表格。 结构化表格 分析 D:/招聘/ 里所有简历，提取姓名、最高学历、工作年限、最近公司、核心技能，汇总成 Excel 并按岗位匹配度排序">
+  <div class="case-head"><span class="case-no">07</span><span class="case-name">简历信息提取</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>结构化表格</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">分析这份简历，提取关键信息生成表格</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">分析 D:/招聘/ 里所有简历，提取姓名、最高学历、工作年限、最近公司、核心技能，汇总成 Excel 并按岗位匹配度排序</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动识别简历中的姓名、教育背景、工作经历等关键信息，生成结构化表格。</div>
+</div>
+<div class="case-card" data-search="自动化办公 文件整理归档 智能扫描杂乱的下载文件夹，按日期规则自动分类归档。 分类文件夹 扫描 Downloads 里的图片，按拍摄日期建 2026-01、2026-02 这样的子文件夹归位，重复文件单独放到 duplicates">
+  <div class="case-head"><span class="case-no">08</span><span class="case-name">文件整理归档</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>分类文件夹</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">整理 Downloads 文件夹里的图片，按日期分类</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">扫描 Downloads 里的图片，按拍摄日期建 2026-01、2026-02 这样的子文件夹归位，重复文件单独放到 duplicates</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>智能扫描杂乱的下载文件夹，按日期规则自动分类归档。</div>
+</div>
+</div>
+<h2 id="case-2" class="anchor-h2">2. 内容创作与视觉生成<span class="cat-count">7 个</span></h2>
+<div class="case-list">
+<div class="case-card" data-search="内容创作与视觉生成 海报设计 调用海报生成 Skill，自动匹配品牌色系、插入产品图、生成 Slogan 文案并导出 PNG 文件。 PNG 海报 为 3 月 15 日春季新品发布会设计主视觉海报，品牌色 #14B8A6，尺寸 1080×1920，主标题『春启新程』，导出 PNG">
+  <div class="case-head"><span class="case-no">09</span><span class="case-name">海报设计</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>PNG 海报</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">为春季新品发布会设计一张主视觉海报</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">为 3 月 15 日春季新品发布会设计主视觉海报，品牌色 #14B8A6，尺寸 1080×1920，主标题『春启新程』，导出 PNG</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>调用海报生成 Skill，自动匹配品牌色系、插入产品图、生成 Slogan 文案并导出 PNG 文件。</div>
+</div>
+<div class="case-card" data-search="内容创作与视觉生成 营销邮件撰写 基于用户画像库选择语气风格，嵌入版本变更要点，生成带 CTA 按钮的 HTML 邮件草稿。 HTML 邮件草稿 写一封面向 18-26 岁用户的 App 3.2 版本更新通知，突出新增的语音速记功能，语气轻松，结尾带一个『立即更新』按钮">
+  <div class="case-head"><span class="case-no">10</span><span class="case-name">营销邮件撰写</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>HTML 邮件草稿</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">写一封面向Z世代用户的APP更新通知邮件</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">写一封面向 18-26 岁用户的 App 3.2 版本更新通知，突出新增的语音速记功能，语气轻松，结尾带一个『立即更新』按钮</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>基于用户画像库选择语气风格，嵌入版本变更要点，生成带 CTA 按钮的 HTML 邮件草稿。</div>
+</div>
+<div class="case-card" data-search="内容创作与视觉生成 小红书风格改写 识别原文逻辑结构，替换专业术语为口语化表达，添加 emoji 分隔符与话题标签。 小红书文案 把本周周报改写成小红书风格，加 emoji 分隔和 5 个话题标签，控制在 800 字内">
+  <div class="case-head"><span class="case-no">11</span><span class="case-name">小红书风格改写</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>小红书文案</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">把这份周报改写成小红书风格</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">把本周周报改写成小红书风格，加 emoji 分隔和 5 个话题标签，控制在 800 字内</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>识别原文逻辑结构，替换专业术语为口语化表达，添加 emoji 分隔符与话题标签。</div>
+</div>
+<div class="case-card" data-search="内容创作与视觉生成 PPT 自动生成 自动分析会议内容，生成结构化演示文稿，包含标题、要点、图表等。 演示文稿 根据产品评审会纪要生成 10 页 PPT，每页只表达一个结论，最后一页放待办清单">
+  <div class="case-head"><span class="case-no">12</span><span class="case-name">PPT 自动生成</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>演示文稿</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">根据这份会议纪要生成一个PPT</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">根据产品评审会纪要生成 10 页 PPT，每页只表达一个结论，最后一页放待办清单</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动分析会议内容，生成结构化演示文稿，包含标题、要点、图表等。</div>
+</div>
+<div class="case-card" data-search="内容创作与视觉生成 商业演示文稿 生成专业商业计划书 PPT，包含数据图表和分析内容。 商业计划书 PPT">
+  <div class="case-head"><span class="case-no">13</span><span class="case-name">商业演示文稿</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>商业计划书 PPT</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">生成一个面向投资人的产品介绍演示文稿，包含市场规模、产品功能、竞争优势和财务预测四个板块</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>生成专业商业计划书 PPT，包含数据图表和分析内容。</div>
+</div>
+<div class="case-card" data-search="内容创作与视觉生成 长文创作 生成结构完整、语言通俗的科普文章。 科普文章">
+  <div class="case-head"><span class="case-no">14</span><span class="case-name">长文创作</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>科普文章</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">写一篇关于人工智能在医疗领域应用趋势的科普文章，面向普通读者，2000字左右</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>生成结构完整、语言通俗的科普文章。</div>
+</div>
+<div class="case-card" data-search="内容创作与视觉生成 数据图表生成 自动分析数据特征，选择合适图表类型，生成可视化图表。 可视化图表 用 2026Q1 销售数据做折线图展示三个月趋势，标注峰值和谷值出现的日期">
+  <div class="case-head"><span class="case-no">15</span><span class="case-name">数据图表生成</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>可视化图表</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">根据这些数据做一个图表展示销售趋势</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">用 2026Q1 销售数据做折线图展示三个月趋势，标注峰值和谷值出现的日期</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动分析数据特征，选择合适图表类型，生成可视化图表。</div>
+</div>
+</div>
+<h2 id="case-3" class="anchor-h2">3. 本地知识库构建与检索<span class="cat-count">3 个</span></h2>
+<div class="case-list">
+<div class="case-card" data-search="本地知识库构建与检索 构建 HR 制度知识库 自动解析文件结构，提取条款、责任主体、生效日期等实体，建立向量索引。 可检索知识库">
+  <div class="case-head"><span class="case-no">16</span><span class="case-name">构建 HR 制度知识库</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>可检索知识库</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">把这27份HR制度文件建成知识库</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动解析文件结构，提取条款、责任主体、生效日期等实体，建立向量索引。</div>
+</div>
+<div class="case-card" data-search="本地知识库构建与检索 知识库语义检索 在本地知识库中进行语义匹配，定位到对应制度条款，高亮显示金额上限与票据要求。 定位到的条款 在『公司制度』知识库里查最新的差旅报销标准，把金额上限和票据要求原文列出来">
+  <div class="case-head"><span class="case-no">17</span><span class="case-name">知识库语义检索</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>定位到的条款</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">最新差旅报销标准是什么</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">在『公司制度』知识库里查最新的差旅报销标准，把金额上限和票据要求原文列出来</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>在本地知识库中进行语义匹配，定位到对应制度条款，高亮显示金额上限与票据要求。</div>
+</div>
+<div class="case-card" data-search="本地知识库构建与检索 邮件内容检索 扫描本地 Outlook 或 Foxmail 邮件数据库，返回匹配邮件列表及上下文片段。 匹配邮件列表 扫描本地邮件，找出所有提到『试用期延长』的邮件，按日期列出标题、发件人和关键片段">
+  <div class="case-head"><span class="case-no">18</span><span class="case-name">邮件内容检索</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>匹配邮件列表</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">找出所有提及&#x27;试用期延长&#x27;的邮件</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">扫描本地邮件，找出所有提到『试用期延长』的邮件，按日期列出标题、发件人和关键片段</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>扫描本地 Outlook 或 Foxmail 邮件数据库，返回匹配邮件列表及上下文片段。</div>
+</div>
+</div>
+<h2 id="case-4" class="anchor-h2">4. 跨平台远程协同<span class="cat-count">4 个</span></h2>
+<div class="case-list">
+<div class="case-card" data-search="跨平台远程协同 远程查询项目进度 自动登录邮箱并筛选发件人与关键词，返回摘要结果。 摘要结果">
+  <div class="case-head"><span class="case-no">19</span><span class="case-name">远程查询项目进度</span><span class="case-tag">企业微信语音</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>摘要结果</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">查一下张经理今天有没有发过项目进度</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动登录邮箱并筛选发件人与关键词，返回摘要结果。</div>
+</div>
+<div class="case-card" data-search="跨平台远程协同 合同 OCR 转换 立即下载附件，调用 OCR 技能识别文字，保留原始段落格式输出 DOCX。 可编辑 DOCX">
+  <div class="case-head"><span class="case-no">20</span><span class="case-name">合同 OCR 转换</span><span class="case-tag">QQ 群发送</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>可编辑 DOCX</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">把刚传的合同扫描件转成可编辑Word</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>立即下载附件，调用 OCR 技能识别文字，保留原始段落格式输出 DOCX。</div>
+</div>
+<div class="case-card" data-search="跨平台远程协同 远程调试 在桌面端 VS Code 中定位文件，运行调试器并截图错误堆栈回传。 错误堆栈截图">
+  <div class="case-head"><span class="case-no">21</span><span class="case-name">远程调试</span><span class="case-tag">飞书移动端</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>错误堆栈截图</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">打开调试窗口，检查昨天报错的Python脚本</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>在桌面端 VS Code 中定位文件，运行调试器并截图错误堆栈回传。</div>
+</div>
+<div class="case-card" data-search="跨平台远程协同 跨设备文件分析 几分钟后分析报告回传手机，实现跨设备任务协作。 对比分析报告">
+  <div class="case-head"><span class="case-no">22</span><span class="case-name">跨设备文件分析</span><span class="case-tag">小程序语音</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>对比分析报告</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">和电脑上项目文件夹里的报价单一起看，整理一份对比意见</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>几分钟后分析报告回传手机，实现跨设备任务协作。</div>
+</div>
+</div>
+<h2 id="case-5" class="anchor-h2">5. 信息检索与调研<span class="cat-count">4 个</span></h2>
+<div class="case-list">
+<div class="case-card" data-search="信息检索与调研 结构化行业调研 自动检索网络信息，提取关键内容，生成结构化表格报告。 Markdown 表格报告">
+  <div class="case-head"><span class="case-no">23</span><span class="case-name">结构化行业调研</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>Markdown 表格报告</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">请检索近30天内人工智能大模型在金融风控领域的应用案例，提取5个典型场景，按&#x27;场景名称｜技术要点｜落地效果&#x27;格式整理成表格，输出为Markdown</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动检索网络信息，提取关键内容，生成结构化表格报告。</div>
+</div>
+<div class="case-card" data-search="信息检索与调研 调研结果修正 在已有调研结果基础上补充详细信息。 补充后的调研表">
+  <div class="case-head"><span class="case-no">24</span><span class="case-name">调研结果修正</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>补充后的调研表</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">补充第3条场景中的实施周期与团队规模信息</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>在已有调研结果基础上补充详细信息。</div>
+</div>
+<div class="case-card" data-search="信息检索与调研 行业趋势报告 自动搜集行业信息，分析趋势，生成完整调研报告。 调研报告 检索 2026 年 AI Agent 在企业办公场景的落地案例，按行业分类整理，输出 3000 字报告并附数据来源">
+  <div class="case-head"><span class="case-no">25</span><span class="case-name">行业趋势报告</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>调研报告</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">调研一下2024年AI行业趋势，写一份报告</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">检索 2026 年 AI Agent 在企业办公场景的落地案例，按行业分类整理，输出 3000 字报告并附数据来源</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动搜集行业信息，分析趋势，生成完整调研报告。</div>
+</div>
+<div class="case-card" data-search="信息检索与调研 数据榜单整理 抓取网络数据，整理成结构化 Excel 表格。 结构化 Excel 抓取最新的 AI 应用收入榜前 50，整理成 Excel，含排名、应用名、月收入、环比变化四列">
+  <div class="case-head"><span class="case-no">26</span><span class="case-name">数据榜单整理</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>结构化 Excel</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">抓一份AI应用营收榜单并整理成Excel</div>
+  </div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">抓取最新的 AI 应用收入榜前 50，整理成 Excel，含排名、应用名、月收入、环比变化四列</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>抓取网络数据，整理成结构化 Excel 表格。</div>
+</div>
+</div>
+<h2 id="case-6" class="anchor-h2">6. 自动化定时任务<span class="cat-count">3 个</span></h2>
+<div class="case-list">
+<div class="case-card" data-search="自动化定时任务 科技热点日报 设置云端定时任务，每天自动采集热点、生成日报、推送消息。 每日热点日报">
+  <div class="case-head"><span class="case-no">27</span><span class="case-name">科技热点日报</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>每日热点日报</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">每天早晨8点帮我整理当天科技圈热点，生成日报推送给我</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>设置云端定时任务，每天自动采集热点、生成日报、推送消息。</div>
+</div>
+<div class="case-card" data-search="自动化定时任务 行业动态周报 周期性监控行业动态，自动生成并发送周报。 每周动态周报">
+  <div class="case-head"><span class="case-no">28</span><span class="case-name">行业动态周报</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>每周动态周报</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">每周一上午9点自动检索金融监管动态，生成周报并发送到企业微信指定群聊</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>周期性监控行业动态，自动生成并发送周报。</div>
+</div>
+<div class="case-card" data-search="自动化定时任务 热点采集日报自动化 一条提示词搞定三大平台热点采集 + 日报生成 + 邮件推送，全程不写一行代码。 三平台日报 + 邮件 每天早上 8 点采集微博、知乎、公众号三个平台的 AI 热榜，去重后生成日报发到我邮箱">
+  <div class="case-head"><span class="case-no">29</span><span class="case-name">热点采集日报自动化</span><span class="case-tag">特色案例</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>三平台日报 + 邮件</div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">每天早上 8 点采集微博、知乎、公众号三个平台的 AI 热榜，去重后生成日报发到我邮箱</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>一条提示词搞定三大平台热点采集 + 日报生成 + 邮件推送，全程不写一行代码。</div>
+</div>
+</div>
+<h2 id="case-7" class="anchor-h2">7. 网站与应用开发<span class="cat-count">2 个</span></h2>
+<div class="case-list">
+<div class="case-card" data-search="网站与应用开发 个人作品网站 零代码搭建完整网站，包含多个页面和响应式设计。 多页响应式网站">
+  <div class="case-head"><span class="case-no">30</span><span class="case-name">个人作品网站</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>多页响应式网站</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">帮我做一个个人作品展示网站，简约风格，有首页、作品集、联系方式三个板块</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>零代码搭建完整网站，包含多个页面和响应式设计。</div>
+</div>
+<div class="case-card" data-search="网站与应用开发 商业官网搭建 0 代码半天上线 OPC 一人商业闭环官网，完整官网搭建实战。 完整官网 搭一个一人公司官网，包含首页、服务介绍、案例展示、联系方式四个页面，风格简约，适配手机">
+  <div class="case-head"><span class="case-no">31</span><span class="case-name">商业官网搭建</span><span class="case-tag">特色案例</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>完整官网</div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">搭一个一人公司官网，包含首页、服务介绍、案例展示、联系方式四个页面，风格简约，适配手机</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>0 代码半天上线 OPC 一人商业闭环官网，完整官网搭建实战。</div>
+</div>
+</div>
+<h2 id="case-8" class="anchor-h2">8. 旅游规划<span class="cat-count">5 个</span></h2>
+<div class="case-list">
+<div class="case-card" data-search="旅游规划 美食智能搜索 智能搜索并筛选符合条件的餐厅，提供详细信息。 餐厅清单">
+  <div class="case-head"><span class="case-no">32</span><span class="case-name">美食智能搜索</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>餐厅清单</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">帮我在成都找几家正宗且适合家庭聚餐的火锅店，要评价好、环境不太吵</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>智能搜索并筛选符合条件的餐厅，提供详细信息。</div>
+</div>
+<div class="case-card" data-search="旅游规划 酒店智能推荐 根据景点分布推荐最优住宿位置。 住宿推荐">
+  <div class="case-head"><span class="case-no">33</span><span class="case-name">酒店智能推荐</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>住宿推荐</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">根据这几个景点位置帮我选一家交通方便的酒店</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>根据景点分布推荐最优住宿位置。</div>
+</div>
+<div class="case-card" data-search="旅游规划 多景点路线规划 智能规划最优路线，考虑交通状况和特殊需求。 路线方案">
+  <div class="case-head"><span class="case-no">34</span><span class="case-name">多景点路线规划</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>路线方案</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">规划一条从宽窄巷子到大熊猫基地再到锦里的路线，避开拥堵，把腿脚不好的老人也考虑进去</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>智能规划最优路线，考虑交通状况和特殊需求。</div>
+</div>
+<div class="case-card" data-search="旅游规划 完整行程设计 一句话生成完整行程安排，包含景点、餐饮、住宿建议。 三日行程表">
+  <div class="case-head"><span class="case-no">35</span><span class="case-name">完整行程设计</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>三日行程表</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">设计一个成都三日游行程，包含大熊猫基地、火锅体验和博物馆，适合老人出行，不要爬山</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>一句话生成完整行程安排，包含景点、餐饮、住宿建议。</div>
+</div>
+<div class="case-card" data-search="旅游规划 目的地穿搭提醒 查询天气并提供穿衣建议。 天气 + 穿搭建议">
+  <div class="case-head"><span class="case-no">36</span><span class="case-name">目的地穿搭提醒</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>天气 + 穿搭建议</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">成都4月初的天气怎么样？该穿什么衣服？</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>查询天气并提供穿衣建议。</div>
+</div>
+</div>
+<h2 id="case-9" class="anchor-h2">9. 教育与学术<span class="cat-count">1 个</span></h2>
+<div class="case-list">
+<div class="case-card" data-search="教育与学术 论文格式检查与修复 一句话搞定毕业论文格式检查 + 自动修复 + 对比报告生成。 问题清单 + 修复后文档 按学校模板检查论文初稿的标题层级、参考文献格式、页眉页码，列出问题清单并自动修复">
+  <div class="case-head"><span class="case-no">37</span><span class="case-name">论文格式检查与修复</span><span class="case-tag">特色案例</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>问题清单 + 修复后文档</div>
+  <div class="case-block is-detail">
+    <div class="cb-head"><span class="cb-label">更具体的说法</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">按学校模板检查论文初稿的标题层级、参考文献格式、页眉页码，列出问题清单并自动修复</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>一句话搞定毕业论文格式检查 + 自动修复 + 对比报告生成。</div>
+</div>
+</div>
+<h2 id="case-10" class="anchor-h2">10. PDF 处理与文档管理<span class="cat-count">13 个</span></h2>
+<div class="case-list">
+<div class="case-card" data-search="PDF 处理与文档管理 PDF 批量合并 自动扫描指定文件夹，按文件名排序后合并为单个 PDF，保留原始页码顺序。 单个合并 PDF">
+  <div class="case-head"><span class="case-no">38</span><span class="case-name">PDF 批量合并</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>单个合并 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">把桌面&quot;合同文档&quot;文件夹里所有PDF合并成一个文件，按文件名排序</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动扫描指定文件夹，按文件名排序后合并为单个 PDF，保留原始页码顺序。</div>
+</div>
+<div class="case-card" data-search="PDF 处理与文档管理 PDF 拆分提取 智能拆分 PDF，可按页码范围、奇偶页、章节等多种方式提取。 指定页 PDF">
+  <div class="case-head"><span class="case-no">39</span><span class="case-name">PDF 拆分提取</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>指定页 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">把这份200页的报告PDF拆分成单页，提取第10-20页单独保存</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>智能拆分 PDF，可按页码范围、奇偶页、章节等多种方式提取。</div>
+</div>
+<div class="case-card" data-search="PDF 处理与文档管理 PDF 添加水印 自动生成斜向水印层，叠加到每一页，支持自定义透明度、角度、字体。 带水印 PDF">
+  <div class="case-head"><span class="case-no">40</span><span class="case-name">PDF 添加水印</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>带水印 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">给这份报价单PDF添加&quot;内部资料&quot;水印，透明度30%，斜向排列</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动生成斜向水印层，叠加到每一页，支持自定义透明度、角度、字体。</div>
+</div>
+<div class="case-card" data-search="PDF 处理与文档管理 PDF 批量加密 批量设置 PDF 权限密码，限制打印、复制、编辑等操作。 加密 PDF">
+  <div class="case-head"><span class="case-no">41</span><span class="case-name">PDF 批量加密</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>加密 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">把&quot;合同&quot;文件夹里所有PDF加密，密码统一为&quot;company2026&quot;，禁止打印和复制</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>批量设置 PDF 权限密码，限制打印、复制、编辑等操作。</div>
+</div>
+<div class="case-card" data-search="PDF 处理与文档管理 PDF 解密解锁 移除 PDF 密码保护，生成无限制的新文件。 无限制 PDF">
+  <div class="case-head"><span class="case-no">42</span><span class="case-name">PDF 解密解锁</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>无限制 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">这份PDF密码是123456，帮我解锁后另存</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>移除 PDF 密码保护，生成无限制的新文件。</div>
+</div>
+<div class="case-card" data-search="PDF 处理与文档管理 PDF 页面旋转 自动检测页面方向，批量旋转修正。 方向修正 PDF">
+  <div class="case-head"><span class="case-no">43</span><span class="case-name">PDF 页面旋转</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>方向修正 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">把这份扫描PDF里所有横向页面旋转正向</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动检测页面方向，批量旋转修正。</div>
+</div>
+<div class="case-card" data-search="PDF 处理与文档管理 PDF 压缩优化 智能压缩图片分辨率，移除冗余元数据，显著减小文件体积。 压缩后 PDF">
+  <div class="case-head"><span class="case-no">44</span><span class="case-name">PDF 压缩优化</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>压缩后 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">压缩这份50MB的产品手册PDF，目标大小10MB以下，保持清晰度</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>智能压缩图片分辨率，移除冗余元数据，显著减小文件体积。</div>
+</div>
+<div class="case-card" data-search="PDF 处理与文档管理 PDF 转 Word/Excel OCR 识别 + 表格结构还原，生成可编辑的 Excel 文件。 可编辑 Excel">
+  <div class="case-head"><span class="case-no">45</span><span class="case-name">PDF 转 Word/Excel</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>可编辑 Excel</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">把这份表格PDF转成可编辑的Excel，保留格式</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>OCR 识别 + 表格结构还原，生成可编辑的 Excel 文件。</div>
+</div>
+<div class="case-card" data-search="PDF 处理与文档管理 PDF 文字提取 精准提取 PDF 内嵌文字，支持多语言识别。 TXT 文本">
+  <div class="case-head"><span class="case-no">46</span><span class="case-name">PDF 文字提取</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>TXT 文本</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">提取这份PDF里所有文字，保存为TXT</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>精准提取 PDF 内嵌文字，支持多语言识别。</div>
+</div>
+<div class="case-card" data-search="PDF 处理与文档管理 PDF 表格提取 智能识别表格边界，提取数据并生成结构化 Excel。 合并 Excel">
+  <div class="case-head"><span class="case-no">47</span><span class="case-name">PDF 表格提取</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>合并 Excel</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">从这份财务报表PDF里提取所有表格，合并到一个Excel</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>智能识别表格边界，提取数据并生成结构化 Excel。</div>
+</div>
+<div class="case-card" data-search="PDF 处理与文档管理 扫描件 OCR 识别 OCR 文字识别层叠加，生成可搜索、可复制的 PDF。 可搜索 PDF">
+  <div class="case-head"><span class="case-no">48</span><span class="case-name">扫描件 OCR 识别</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>可搜索 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">这份扫描合同看不清，帮我OCR识别成可搜索PDF</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>OCR 文字识别层叠加，生成可搜索、可复制的 PDF。</div>
+</div>
+<div class="case-card" data-search="PDF 处理与文档管理 PDF 对比查重 逐页逐字对比，高亮显示新增、删除、修改内容，生成差异报告。 差异报告">
+  <div class="case-head"><span class="case-no">49</span><span class="case-name">PDF 对比查重</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>差异报告</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">对比这两份合同PDF，标注出差异内容</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>逐页逐字对比，高亮显示新增、删除、修改内容，生成差异报告。</div>
+</div>
+<div class="case-card" data-search="PDF 处理与文档管理 PDF 版本比较报告 智能分析两版差异，生成结构化的版本变更说明。 修改说明文档">
+  <div class="case-head"><span class="case-no">50</span><span class="case-name">PDF 版本比较报告</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>修改说明文档</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">对比&quot;方案v1.pdf&quot;和&quot;方案v2.pdf&quot;，生成修改说明文档</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>智能分析两版差异，生成结构化的版本变更说明。</div>
+</div>
+</div>
+<h2 id="case-11" class="anchor-h2">11. 包装印刷行业<span class="cat-count">15 个</span></h2>
+<div class="case-list">
+<div class="case-card" data-search="包装印刷行业 印前规范自动检查 自动解析 PDF 元数据，检查分辨率、色彩模式、出血位、字体嵌入、专色通道等关键参数，生成结构化检查报告。 检查报告">
+  <div class="case-head"><span class="case-no">51</span><span class="case-name">印前规范自动检查</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>检查报告</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">检查&quot;牙膏盒设计稿&quot;文件夹里所有PDF，验证印前规范：分辨率不低于300dpi、色彩模式为CMYK、出血位不小于3mm、字体是否转曲、是否有专色通道</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动解析 PDF 元数据，检查分辨率、色彩模式、出血位、字体嵌入、专色通道等关键参数，生成结构化检查报告。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 批量添加印前水印 批量处理设计稿，添加状态水印便于版本管理，原文件保留。 带状态水印 PDF">
+  <div class="case-head"><span class="case-no">52</span><span class="case-name">批量添加印前水印</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>带状态水印 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">给&quot;待审核&quot;文件夹里所有设计稿PDF添加&quot;待客户确认&quot;水印，透明度30%，斜向排列，另存到&quot;已水印&quot;文件夹</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>批量处理设计稿，添加状态水印便于版本管理，原文件保留。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 条码批量生成 自动计算 EAN-13 第13位校验码，批量递增生成，输出符合印刷标准的条码 PDF。 可打印条码 PDF">
+  <div class="case-head"><span class="case-no">53</span><span class="case-name">条码批量生成</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>可打印条码 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">为产品批次生成100个EAN-13条码，起始编码6901234567890，输出为PDF，每个条码间隔10mm</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动计算 EAN-13 第13位校验码，批量递增生成，输出符合印刷标准的条码 PDF。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 包装结构图尺寸标注 识别结构图中的尺寸标注，生成包含长宽高、材质、工艺要求的物料清单。 BOM 清单">
+  <div class="case-head"><span class="case-no">54</span><span class="case-name">包装结构图尺寸标注</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>BOM 清单</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">分析这份包装盒结构图，提取所有尺寸标注，生成BOM清单</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>识别结构图中的尺寸标注，生成包含长宽高、材质、工艺要求的物料清单。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 专色通道分析 解析 PDF 专色通道，识别白墨、UV、烫金等工艺通道。 专色清单">
+  <div class="case-head"><span class="case-no">55</span><span class="case-name">专色通道分析</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>专色清单</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">分析这份包装设计稿的专色通道，列出所有专色名称和用途</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>解析 PDF 专色通道，识别白墨、UV、烫金等工艺通道。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 多版本设计稿对比 逐页对比设计稿，高亮差异区域，生成客户确认用的修改说明文档。 修改说明">
+  <div class="case-head"><span class="case-no">56</span><span class="case-name">多版本设计稿对比</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>修改说明</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">对比&quot;设计稿v1.pdf&quot;和&quot;设计稿v2.pdf&quot;，标注图文变化，生成修改说明</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>逐页对比设计稿，高亮差异区域，生成客户确认用的修改说明文档。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 印刷色彩检测 扫描 PDF 色彩空间，识别 RGB、Lab 等非印刷色彩模式对象，输出修正建议。 修正建议">
+  <div class="case-head"><span class="case-no">57</span><span class="case-name">印刷色彩检测</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>修正建议</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">检查这份设计稿是否使用了RGB颜色，列出所有非CMYK对象</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>扫描 PDF 色彩空间，识别 RGB、Lab 等非印刷色彩模式对象，输出修正建议。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 出血位自动添加 自动扩展页面边界，智能延伸背景图案至出血区域。 含出血 PDF">
+  <div class="case-head"><span class="case-no">58</span><span class="case-name">出血位自动添加</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>含出血 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">给这份设计稿添加3mm出血位，扩展背景图案</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>自动扩展页面边界，智能延伸背景图案至出血区域。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 包装刀模线提取 识别并提取刀模线图层，生成供模切机使用的刀模文件。 刀模文件">
+  <div class="case-head"><span class="case-no">59</span><span class="case-name">包装刀模线提取</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>刀模文件</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">从这份包装PDF中提取刀模线，单独输出为刀模图</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>识别并提取刀模线图层，生成供模切机使用的刀模文件。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 印刷报价单生成 分析设计规格，结合印刷参数计算成本，生成详细报价单。 报价单">
+  <div class="case-head"><span class="case-no">60</span><span class="case-name">印刷报价单生成</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>报价单</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">根据这份包装设计稿，计算印刷数量10000张的报价单，包含纸张、油墨、工艺成本</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>分析设计规格，结合印刷参数计算成本，生成详细报价单。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 包装文件规范化重命名 智能识别文件内容，按规范格式批量重命名，建立文件索引。 规范命名 + 索引">
+  <div class="case-head"><span class="case-no">61</span><span class="case-name">包装文件规范化重命名</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>规范命名 + 索引</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">整理&quot;包装项目&quot;文件夹，按&quot;客户名_产品名_版本号_日期&quot;格式批量重命名所有设计稿</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>智能识别文件内容，按规范格式批量重命名，建立文件索引。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 印前预检报告生成 全面检查所有印前参数，生成包含问题列表、修正建议、检查清单的预检报告。 预检报告 PDF">
+  <div class="case-head"><span class="case-no">62</span><span class="case-name">印前预检报告生成</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>预检报告 PDF</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">对&quot;新品包装&quot;项目所有设计稿执行印前预检，生成完整预检报告PDF</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>全面检查所有印前参数，生成包含问题列表、修正建议、检查清单的预检报告。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 包装物料清单生成 扫描项目文件，识别物料类型，生成结构化 BOM 表格。 BOM 表格">
+  <div class="case-head"><span class="case-no">63</span><span class="case-name">包装物料清单生成</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>BOM 表格</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">分析这个包装项目，生成物料清单，包含面纸、内托、说明书、标签等所有物料</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>扫描项目文件，识别物料类型，生成结构化 BOM 表格。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 印刷工艺单生成 分析设计文件，自动生成印刷厂使用的工艺作业指导单。 工艺作业指导单">
+  <div class="case-head"><span class="case-no">64</span><span class="case-name">印刷工艺单生成</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>工艺作业指导单</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">根据这份包装设计稿生成印刷工艺单，包含色序、工艺要求、质量标准</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>分析设计文件，自动生成印刷厂使用的工艺作业指导单。</div>
+</div>
+<div class="case-card" data-search="包装印刷行业 包装项目归档整理 智能分类项目文件，建立规范化目录结构，生成项目档案索引。 分类目录 + 索引">
+  <div class="case-head"><span class="case-no">65</span><span class="case-name">包装项目归档整理</span></div>
+  <div class="case-meta"><span class="cm-label">输出</span>分类目录 + 索引</div>
+  <div class="case-block">
+    <div class="cb-head"><span class="cb-label">原文指令</span><button class="copy-btn" type="button">复制</button></div>
+    <div class="case-cmd">整理这个包装项目的所有文件，按&quot;设计稿/刀模图/印刷文件/合同文档&quot;分类归档，生成项目索引</div>
+  </div>
+  <div class="case-effect"><span class="ts-label">实际效果</span>智能分类项目文件，建立规范化目录结构，生成项目档案索引。</div>
+</div>
+</div>
+</div>
+<div class="res-section" id="sec-ops">
+<div class="sec-intro"><p>三套完整跑通过的实操流程，每一步都有具体指令和注意事项。这些不是概念演示，是原作者真机跑出来的结果。</p></div>
+<div class="sub-chips">
+<a href="#ops-1" class="sub-chip">公众号自动化发文</a>
+<a href="#ops-2" class="sub-chip">ima 知识库自动喂养</a>
+<a href="#ops-3" class="sub-chip">多 Agent 团队协作</a>
+</div>
+<h2 id="ops-1" class="anchor-h2">1. 公众号自动化发文：一句话从选题到草稿入库</h2>
+<p class="ops-src">来源：《从0到1搭建公众号自动化生成爆文保姆级教程》｜原作者实测：一句话，不到 10 分钟，推文进草稿箱</p>
+<p>以前手动写稿、排版、上传，怎么也要 30-60 分钟。这套流程跑通后，你只需要做两件事：提供 AppID 和 AppSecret，在后台添加一个 IP 白名单。</p>
+<div class="ops-steps">
+  <div class="ops-step"><div class="ops-step-n">1</div><div class="ops-step-body"><h4>Step 1 · 自动搜索资料</h4><p>WorkBuddy 没有直接开始写，而是先去网上检索了最新的操作步骤，还顺带查了公众号自动发布的 API 接口文档。这一步保证了文章内容有据可查，不是 AI 瞎编的。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">2</div><div class="ops-step-body"><h4>Step 2 · 生成完整推文</h4><p>资料搜集完成后，自动生成结构完整的推文，包含：更换前的准备事项、5 步标准操作流程、紧急申诉方案、6 个高频问题 Q&amp;A、一张操作速查表格。全文约 2000 字，开箱即用。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">3</div><div class="ops-step-body"><h4>Step 3 · 引导配置 API 权限</h4><p>写完内容后，WorkBuddy 主动提示需要提供公众号的 AppID 和 AppSecret，并说明在哪里找到。注意：AppSecret 在微信开发者平台「开发密钥」区生成，管理员扫码后自动生成，一定要保存好，这是自动发文章的重要凭证。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">4</div><div class="ops-step-body"><h4>Step 4 · 自动处理 IP 白名单</h4><p>第一次调用微信 API 时，遇到了 IP 白名单拦截。WorkBuddy 直接给出解决方案，并告诉你需要添加哪个 IP 地址。按提示操作，不到 1 分钟搞定。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">5</div><div class="ops-step-body"><h4>Step 5 · 自动生成封面图</h4><p>用代码生成了一张渐变风格的封面图，风格简洁专业，并自动上传至公众号永久素材库。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">6</div><div class="ops-step-body"><h4>Step 6 · 一键创建图文草稿</h4><p>最后调用微信草稿箱接口，封面、标题、摘要、正文全部打包上传，草稿直接出现在公众号后台 —— 你只需要点一下「发布」。</p></div></div>
+</div>
+<blockquote>有边界感：遇到平台限制（比如未认证订阅号无法 API 群发），WorkBuddy 会如实告诉你，不会忽悠你。</blockquote>
+<h2 id="ops-2" class="anchor-h2">2. ima 知识库自动喂养：让知识库自己长起来</h2>
+<p class="ops-src">来源：《ima知识库+WorkBuddy》与《还在手动整理ima？》两篇合并｜原作者实测：早上醒来，知识库已经被喂饱了</p>
+<p>知识库不是存储问题，是喂养问题。收藏了 100 篇文章不叫知识管理，叫数字囤积。这套流程把「喂养权」交给 WorkBuddy，你只负责看。</p>
+<div class="ops-steps">
+  <div class="ops-step"><div class="ops-step-n">1</div><div class="ops-step-body"><h4>Step 1 · 连接 ima 知识库</h4><p>进入 ima.qq.com/agent-interface 获取 API Key 和 Client ID，把安装提示词复制给 WorkBuddy 部署 ima skills，再把 Key 和 ID 发过去完成授权。最后在 ima 里创建一个知识库，用来存放搜到的内容。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">2</div><div class="ops-step-body"><h4>Step 2 · 安装微信公众号查询 Skill</h4><p>在 WorkBuddy 技能页面搜索 wechat-article-search 并安装。使用时在对话框里同时选中 ima-skill 和 Wechat Article Search 两个技能。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">3</div><div class="ops-step-body"><h4>Step 3 · 说出你想关注什么</h4><p>像给助理派活一样下指令。原文示例：「看一下腾讯、腾讯云、微信派、元宝、ima.copilot、腾讯安全、鹅厂技术派、QQ浏览器公众号最新的报道（域名必须是 mp.weixin.qq.com），把其中跟 claw、龙虾相关的内容加入到我的 ima 的『龙虾知识库』里。」几秒钟后，知识库就被符合要求的信息填满了。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">4</div><div class="ops-step-body"><h4>Step 4 · 设置定时自动化推送</h4><p>在 WorkBuddy 里点「自动化」→「添加」，输入提示词、选择时间，保存即可。以后每天早上你什么都不用做，到点就能收到一份整理好的「今日情报」。</p></div></div>
+</div>
+<blockquote>可以照抄的自动化场景：每周一上午 10 点，把上周 ima 知识库里新增的行业报告汇总成摘要发给我；每天早上 8 点半，整理 ima「竞品动态」知识库的最新资料发给我；每天下班前 6 点，把今天存进 ima 的信息按主题分类发给我。</blockquote>
+<h2 id="ops-3" class="anchor-h2">3. 多 Agent 团队协作：把大项目拆给一支 AI 小队</h2>
+<p class="ops-src">来源：《Workbuddy进阶教程_多 Agent 团队协作》｜难度：进阶</p>
+<p>WorkBuddy 支持启动多个 Agent 并行工作，就像一支专业团队 —— 研究员收集信息、分析师处理数据、设计师输出成果，同步进行，把完成时间从「所有任务相加」压缩到「最长那条子任务」。</p>
+<div class="ops-steps">
+  <div class="ops-step"><div class="ops-step-n">1</div><div class="ops-step-body"><h4>Step 1 · 让 AI 创建团队</h4><p>直接下指令：「我有一个大任务：制作一份完整的竞品分析报告，包括市场调研、数据分析和 PPT 输出。请帮我创建一个多 Agent 团队，合理分工并行完成。」</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">2</div><div class="ops-step-body"><h4>Step 2 · AI 自动分配角色</h4><p>WorkBuddy 会自动规划角色，例如：研究员 Agent 负责市场数据收集与竞品信息爬取，分析师 Agent 负责数据处理与对比分析，设计师 Agent 负责 PPT 框架和视觉设计，主 Agent 负责汇总结果和最终输出。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">3</div><div class="ops-step-body"><h4>Step 3 · 监控各 Agent 进度</h4><p>随时问一句「请列出各 Agent 的当前任务状态」，就能看到并行工作的进展。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">4</div><div class="ops-step-body"><h4>实战 · 竞品分析报告</h4><p>Agent-A（调研员）搜集 3 家竞品公司的公开信息：官网、产品、定价、用户评价，整理成结构化数据表；Agent-B（分析师）基于 A 的数据做 SWOT 分析，找出差距和机会点；Agent-C（报告撰写）整合以上分析，撰写 15 页竞品分析报告并输出 Word。A 和 B 可并行，两者完成后 C 开始工作。</p></div></div>
+</div>
+<h3>单 Agent vs 多 Agent</h3>
+<table><thead><tr><th>维度</th><th>单 Agent</th><th>多 Agent 团队</th></tr></thead><tbody>
+<tr><td>任务执行方式</td><td>串行，一步一步完成</td><td>并行，多路同时推进</td></tr>
+<tr><td>适合场景</td><td>简单任务、有依赖链的任务</td><td>可拆分的复杂大项目</td></tr>
+<tr><td>时间效率</td><td>取决于任务总时长</td><td>可缩短至最长子任务时间</td></tr>
+<tr><td>资源使用</td><td>单线程</td><td>多线程并发</td></tr>
+<tr><td>协调成本</td><td>无需协调</td><td>需要设计任务分工</td></tr>
+</tbody></table>
+<h3>常见多 Agent 场景模板</h3>
+<table><thead><tr><th>场景</th><th>Agent 分工</th><th>预期收益</th></tr></thead><tbody>
+<tr><td>竞品分析</td><td>调研 / 分析 / 报告撰写 3 个 Agent</td><td>3 倍速度提升</td></tr>
+<tr><td>软件开发</td><td>前端 / 后端 / 测试 3 个 Agent</td><td>并行开发减少等待</td></tr>
+<tr><td>内容批量生产</td><td>多个写作 Agent 同时产出</td><td>N 倍产出</td></tr>
+<tr><td>数据清洗 + 分析</td><td>清洗 / 分析 / 可视化 3 个 Agent</td><td>流水线提速</td></tr>
+<tr><td>多语言文档</td><td>多个翻译 Agent 同时工作</td><td>N 种语言同时输出</td></tr>
+</tbody></table>
+<blockquote>多 Agent 最大的价值是并行处理互相独立的子任务。设计分工时，务必确保各 Agent 的输入输出清晰定义，减少协调成本。</blockquote>
+</div>
+<div class="res-section" id="sec-core">
+<div class="sec-intro"><p>从「这是什么」到「怎么装、怎么用、怎么避坑」，8 份教程里关于 WorkBuddy 本身的知识都整理在这了。</p></div>
+<div class="sub-chips">
+<a href="#core-1" class="sub-chip">是什么</a>
+<a href="#core-2" class="sub-chip">快速上手</a>
+<a href="#core-3" class="sub-chip">工作模式</a>
+<a href="#core-4" class="sub-chip">核心模块</a>
+<a href="#core-5" class="sub-chip">插件与技能</a>
+<a href="#core-6" class="sub-chip">专家</a>
+<a href="#core-7" class="sub-chip">自动化</a>
+<a href="#core-8" class="sub-chip">远程控制</a>
+<a href="#core-9" class="sub-chip">协同案例</a>
+<a href="#core-10" class="sub-chip">进阶技巧</a>
+<a href="#core-11" class="sub-chip">描述四要素</a>
+<a href="#core-12" class="sub-chip">常见错误</a>
+<a href="#core-13" class="sub-chip">FAQ</a>
+<a href="#core-14" class="sub-chip">资源</a>
+</div>
+<h2 id="core-1" class="anchor-h2">1. WorkBuddy 是什么</h2>
+<p>官方定位是「全场景职场 AI 智能体桌面工作台」。用人话翻译：你把任务交给它，它会自己规划步骤、操作电脑、处理文件，最后把结果交给你。</p>
+<div class="core-grid">
+  <div class="core-card"><div class="core-name">理解自然语言指令</div><p>一句话描述任务，AI 自动拆解并执行多步骤操作</p></div>
+  <div class="core-card"><div class="core-name">自主规划与交付</div><p>AI 自主完成需求拆解、步骤规划与执行，直接交付可用结果</p></div>
+  <div class="core-card"><div class="core-name">多模态内容生成</div><p>自动生成文档、表格、图表、PPT 等多种格式办公成果</p></div>
+  <div class="core-card"><div class="core-name">多 Agent 并行处理</div><p>支持多个 Agent 同时协作处理不同子任务</p></div>
+  <div class="core-card"><div class="core-name">远程控制 Claw</div><p>通过企业微信 / QQ / 飞书 / 钉钉绑定，手机端远程操控电脑</p></div>
+  <div class="core-card"><div class="core-name">本地运行</div><p>任务在本地执行，数据不出本地机器</p></div>
+</div>
+<blockquote>它不是在和你聊天，而是真的在帮你干活。</blockquote>
+<h2 id="core-2" class="anchor-h2">2. 快速上手</h2>
+<h3>系统与配置要求</h3>
+<table><thead><tr><th>项目</th><th>要求</th></tr></thead><tbody>
+<tr><td>操作系统</td><td>Windows 10/11 或 macOS 10.15+</td></tr>
+<tr><td>存储空间</td><td>约 150-180 MB</td></tr>
+<tr><td>内存建议</td><td>8 GB 以上，处理复杂任务时更流畅</td></tr>
+<tr><td>网络</td><td>需要稳定的网络连接</td></tr>
+<tr><td>可选环境</td><td>Node.js（LTS 版）和 Git —— 部分插件技能的必要环境，只体验基础功能可先不装</td></tr>
+</tbody></table>
+<h3>下载与安装</h3>
+<div class="ops-steps">
+  <div class="ops-step"><div class="ops-step-n">1</div><div class="ops-step-body"><h4>下载</h4><p>访问 WorkBuddy 官方下载页 codebuddy.cn/work/，Windows 下载 .exe，Mac 下载 .dmg 安装包。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">2</div><div class="ops-step-body"><h4>安装</h4><p>双击安装包按提示完成，桌面会出现 WorkBuddy 图标。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">3</div><div class="ops-step-body"><h4>登录</h4><p>支持微信扫码登录（推荐）和账号密码登录两种方式，建议使用企业微信或 QQ 账号。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">4</div><div class="ops-step-body"><h4>授权</h4><p>首次使用需授权 WorkBuddy 访问本地文件夹。</p></div></div>
+</div>
+<h2 id="core-3" class="anchor-h2">3. 三种工作模式</h2>
+<p>输入框上方可以切换，选对模式比写对指令更省事。</p>
+<div class="core-grid">
+  <div class="core-card"><div class="core-name">Craft</div><div class="core-tag">直接开干</div><p>AI 接到任务立刻规划并执行。适合目标明确、容错高的日常任务。</p></div>
+  <div class="core-card"><div class="core-name">Plan</div><div class="core-tag">先看方案再放行</div><p>AI 先输出执行方案，你确认后再执行。适合涉及文件操作、重要数据的任务。</p></div>
+  <div class="core-card"><div class="core-name">Ask</div><div class="core-tag">只问不动手</div><p>只回答问题、给建议，不执行任何操作。适合拿不准、想先探探路的场景。</p></div>
+</div>
+<blockquote>刚开始用，先试试 Craft 模式感受 AI 的执行能力；碰到重要任务，切换到 Plan 模式，先看方案再放行 —— 这样出错率低很多。</blockquote>
+<h2 id="core-4" class="anchor-h2">4. 七大核心模块</h2>
+<div class="core-grid">
+  <div class="core-card">
+    <div class="core-no">01</div>
+    <div class="core-name">AI 对话</div>
+    <div class="core-tag">基础功能</div>
+    <p>自带三种工作模式：Craft 直接开干、Plan 先看方案再放行、Ask 只问不动手。刚开始用建议先试 Craft 感受执行能力，碰到重要任务切到 Plan，出错率低很多。</p>
+  </div>
+  <div class="core-card">
+    <div class="core-no">02</div>
+    <div class="core-name">任务执行</div>
+    <div class="core-tag">核心能力</div>
+    <p>描述一个完整任务，它自动拆解步骤、逐步执行、最后交付结果。说得越清楚，做得越准。</p>
+  </div>
+  <div class="core-card">
+    <div class="core-no">03</div>
+    <div class="core-name">插件 Plugins / MCP</div>
+    <div class="core-tag">扩展操作能力</div>
+    <p>基于 MCP 协议运行，安装后在后台静默待命。你直接提需求就行，不用特意说「用某某插件」，AI 会自己判断和调用。</p>
+  </div>
+  <div class="core-card">
+    <div class="core-no">04</div>
+    <div class="core-name">技能 Skills</div>
+    <div class="core-tag">注入专业知识</div>
+    <p>如果说插件扩展的是 AI 的能力边界，那技能扩展的是知识深度。社区技能安装前，务必先用 skill-vetter 做安全审查 —— 技能本质是代码，来路不明的可能有风险。</p>
+  </div>
+  <div class="core-card">
+    <div class="core-no">05</div>
+    <div class="core-name">专家 Experts</div>
+    <div class="core-tag">给 AI 一个专业身份</div>
+    <p>有名字和人设的垂直领域顾问。它不是通用 AI 在泛泛而谈，而是懂行的人在认真回答你的专业问题。</p>
+  </div>
+  <div class="core-card">
+    <div class="core-no">06</div>
+    <div class="core-name">自动化 Automations</div>
+    <div class="core-tag">让任务自己跑</div>
+    <p>给任务设一个定时器，到点自动执行，结果还能推送到企业微信。设置好之后，这些事就从你的待办列表里消失了。</p>
+  </div>
+  <div class="core-card">
+    <div class="core-no">07</div>
+    <div class="core-name">Claw 远程控制</div>
+    <div class="core-tag">手机指挥电脑</div>
+    <p>通过微信 / 企业微信绑定，人在外面发一条消息，办公室的电脑自动干活。建议用专门的微信小号或企业微信接入，隔离风险。</p>
+  </div>
+</div>
+<h2 id="core-5" class="anchor-h2">5. 插件与技能：别搞混了</h2>
+<p>这两个概念最容易混淆，但区别很关键。</p>
+<table><thead><tr><th>对比维度</th><th>插件 Plugins</th><th>技能 Skills</th></tr></thead><tbody>
+<tr><td>本质</td><td>插件 = 扩展 AI 的操作能力</td><td>技能 = 给 AI 注入专业知识</td></tr>
+<tr><td>解决的问题</td><td>让 AI「能够做」某件事</td><td>让 AI「懂得怎么做更好」</td></tr>
+<tr><td>运行方式</td><td>基于 MCP 协议，安装后后台静默待命</td><td>按需加载，注入领域知识和工作流</td></tr>
+<tr><td>调用方式</td><td>直接提需求即可，AI 自己判断是否调用</td><td>在对话框选中技能，或由 AI 自动匹配</td></tr>
+<tr><td>安装入口</td><td>左侧边栏「插件」→ 插件市场</td><td>技能面板「安装技能」，粘贴社区安装指令</td></tr>
+</tbody></table>
+<h3>安装社区技能的安全提醒</h3>
+<p>技能本质上是代码，来路不明的技能可能存在安全风险。安装任何社区技能前，务必先用 <code>skill-vetter</code> 做安全审查，它会自动扫描这些红旗信号：</p>
+<ul>
+<li>有没有异常的网络访问行为</li>
+<li>有没有索要 API 密钥或密码</li>
+<li>有没有访问敏感目录（如 ~/.ssh）</li>
+</ul>
+<blockquote>遇到高风险提示，坚决不装。</blockquote>
+<h2 id="core-6" class="anchor-h2">6. 专家怎么用</h2>
+<div class="ops-steps">
+  <div class="ops-step"><div class="ops-step-n">1</div><div class="ops-step-body"><p>在任务页面顶部找到「专家」入口，点击进入专家中心。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">2</div><div class="ops-step-body"><p>按领域浏览，找到需要的专家，点击「立即召唤」。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">3</div><div class="ops-step-body"><p>在对话框里告诉他你的需求，越具体越好。</p></div></div>
+</div>
+<p><strong>推荐指令格式</strong>：我的身份 + 我的目标 + 具体问题 + 希望的输出格式</p>
+<div class="tpl-card"><div class="tpl-head"><span class="tpl-name">指令示例</span><button class="copy-btn" type="button">复制</button></div><div class="tpl-code">我是一个做 AI 工具科普的公众号博主，本周想写一篇对比文章。帮我分析目前 5 款主流 AI 写作工具的差异，生成一份对比表格，文字简洁，适合公众号排版。</div></div>
+<h2 id="core-7" class="anchor-h2">7. 自动化怎么配</h2>
+<div class="ops-steps">
+  <div class="ops-step"><div class="ops-step-n">1</div><div class="ops-step-body"><p>在左侧导航找到「自动化」模块，点击「新建自动化」。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">2</div><div class="ops-step-body"><p>填写任务内容，和正常任务描述一样。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">3</div><div class="ops-step-body"><p>设置触发条件：定时触发（每天 / 每周 / 自定义时间）或单次触发（设置一个具体日期时间，只执行一次）。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">4</div><div class="ops-step-body"><p>配置通知，可以推送到企业微信。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">5</div><div class="ops-step-body"><p>保存，自动化就生效了。</p></div></div>
+</div>
+<p>设置好之后，这些事情就从你的待办列表里消失了 —— 机器会帮你记。</p>
+<ul>
+<li>每天早上 9 点自动抓取行业热点，整理成摘要推送到企业微信</li>
+<li>每周五下午 5 点自动生成本周工作总结</li>
+<li>每天晚上 11 点自动备份今天新建的文件</li>
+</ul>
+<h2 id="core-8" class="anchor-h2">8. 远程控制 Claw</h2>
+<p>你人在外面，电脑在办公室。发一条微信，电脑自动执行任务。</p>
+<div class="ops-steps">
+  <div class="ops-step"><div class="ops-step-n">1</div><div class="ops-step-body"><p>打开 WorkBuddy，进入右上角「个人中心」，点击「Claw 设置」。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">2</div><div class="ops-step-body"><p>选择绑定的通讯工具：微信客服号接入（支持个人用户）或企业微信接入（适合企业 / 团队）。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">3</div><div class="ops-step-body"><p>按提示完成扫码授权。配置好之后，你在微信里给 WorkBuddy 发消息，电脑就会执行。</p></div></div>
+</div>
+<p>配置好之后可以这样说：</p>
+<div class="prompt-list">
+  <div class="prompt-item"><div class="pi-code">把桌面上的《周报.docx》发到我的文件传输助手</div></div>
+  <div class="prompt-item"><div class="pi-code">帮我查一下今天下午的会议安排</div></div>
+  <div class="prompt-item"><div class="pi-code">把那份数据表格整理成图表，发我微信</div></div>
+</div>
+<p>企业微信接入还做了底层稳定性优化，支持断网后自动重连，IP 配置流程也简化了不少。安全起见，建议用专门的微信小号或企业微信接入，别用主微信号。</p>
+<h2 id="core-9" class="anchor-h2">9. 三者协同：一个完整案例</h2>
+<p>假设你是一个内容博主，想要每周自动收集行业动态并发布：</p>
+<div class="ops-steps">
+  <div class="ops-step"><div class="ops-step-n">1</div><div class="ops-step-body"><h4>插件打底</h4><p>安装微信公众号搜索插件、网页浏览插件，让 AI 能搜集内容。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">2</div><div class="ops-step-body"><h4>技能提升</h4><p>启用 summarize（快速总结）、humanizer（优化文笔）。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">3</div><div class="ops-step-body"><h4>专家加持</h4><p>召唤内容创作专家，让他以专业内容人的视角把信息组织成高质量推文。</p></div></div>
+  <div class="ops-step"><div class="ops-step-n">4</div><div class="ops-step-body"><h4>自动化收口</h4><p>把这整套流程设置成每周一自动触发，结果推送到企业微信。</p></div></div>
+</div>
+<blockquote><strong>插件是手，技能是脑，专家是人格。</strong>插件给 AI 装上工具手，让它能操作外部系统；技能给 AI 注入专业知识，让它懂得怎么做得更好；专家给 AI 一个专业身份，让它以专业视角来回答你。WorkBuddy 最大的价值不是单一功能的强大，而是各模块协同之后的整体效率提升。</blockquote>
+<h2 id="core-10" class="anchor-h2">10. 五个进阶技巧</h2>
+<div class="core-grid">
+  <div class="core-card"><div class="core-name">任务描述要包含四个要素</div><p>身份、目标、范围、格式。描述越具体，结果越准，返工率越低。</p></div>
+  <div class="core-card"><div class="core-name">用 Plan 模式处理重要任务</div><p>涉及文件操作、重要数据的任务，先用 Plan 模式看方案，确认没问题再执行。这个习惯能避免很多麻烦。</p></div>
+  <div class="core-card"><div class="core-name">技能要组合使用</div><p>不要单独用一个技能，试试组合：feishu-doc 读取飞书文档 → summarize 提取关键信息 → humanizer 优化表达 → xiaohongshu 生成平台适配版本。</p></div>
+  <div class="core-card"><div class="core-name">善用追问</div><p>做完第一步不满意，直接追问：「这个太长了，帮我压缩到 500 字」「换一种更轻松的表达方式」「把第二部分的逻辑重新梳理一下」。WorkBuddy 支持多轮对话，互动越多结果越好。</p></div>
+  <div class="core-card"><div class="core-name">定期整理技能库</div><p>装了一堆技能但不用，会影响 AI 的判断效率。定期进去看一眼，把用不上的禁用或卸载。</p></div>
+</div>
+<h2 id="core-11" class="anchor-h2">11. 任务描述四要素</h2>
+<p>下指令前，检查这四样是否齐全。描述越具体，结果越准，返工率越低。</p>
+<div class="core-grid four">
+  <div class="core-card"><div class="core-name">身份</div><p>你是谁，做什么工作</p></div>
+  <div class="core-card"><div class="core-name">目标</div><p>最终要达到什么效果</p></div>
+  <div class="core-card"><div class="core-name">范围</div><p>涉及哪些文件 / 数据 / 范围</p></div>
+  <div class="core-card"><div class="core-name">格式</div><p>希望输出什么样的结果</p></div>
+</div>
+<h2 id="core-12" class="anchor-h2">12. 指令使用原则与常见错误</h2>
+<h3>提示词优化原则</h3>
+<ul>
+<li><strong>具体明确</strong>：避免模糊，提供具体信息</li>
+<li><strong>结构清晰</strong>：使用标准格式，便于解析</li>
+<li><strong>目标导向</strong>：明确想要达到的效果</li>
+<li><strong>适度详细</strong>：提供足够但不冗余的信息</li>
+</ul>
+<h3>常见错误避免</h3>
+<ul>
+<li><strong>过于简略</strong>：信息不足导致理解偏差</li>
+<li><strong>过于复杂</strong>：信息过多影响处理效率</li>
+<li><strong>格式混乱</strong>：非标准格式难以解析</li>
+<li><strong>目标模糊</strong>：不清楚想要什么结果</li>
+</ul>
+<h3>进阶学习路径</h3>
+<ul>
+<li><strong>基础掌握</strong>：熟练使用常用提示词</li>
+<li><strong>组合应用</strong>：学会组合多个提示词</li>
+<li><strong>个性化</strong>：定制适合自己工作的提示词</li>
+<li><strong>创新探索</strong>：尝试创造新的提示词用法</li>
+</ul>
+<blockquote>记住：好的提示词 = 明确目标 + 具体信息 + 标准格式。WorkBuddy 是工具，你是大脑。</blockquote>
+<h2 id="core-13" class="anchor-h2">13. 常见问题</h2>
+  <details class="faq-item"><summary>WorkBuddy 完全免费吗？</summary><div class="faq-body">基础功能免费，腾讯会赠送初始积分额度，具体以官网当前活动为准。积分用完后可通过日常活跃获取，或购买额外积分。</div></details>
+  <details class="faq-item"><summary>数据安全吗？文件会上传到服务器吗？</summary><div class="faq-body">WorkBuddy 所有任务在本地运行，数据不出本地机器。官方承诺不收集用户的文件数据。需要注意的是，安装第三方技能时要谨慎，记得用 skill-vetter 先审查。</div></details>
+  <details class="faq-item"><summary>WorkBuddy 和 OpenClaw 是什么关系？</summary><div class="faq-body">WorkBuddy 基于开源框架 OpenClaw 构建，完全兼容 OpenClaw 的技能生态，之前用过 OpenClaw 的话技能可以无缝迁移。两者最大的区别是：OpenClaw 更偏技术用户，需要一定的部署能力；WorkBuddy 面向普通用户，下载即用，无需配置。</div></details>
+  <details class="faq-item"><summary>电脑配置要求高吗？</summary><div class="faq-body">普通的 Windows / Mac 电脑都能运行。建议内存 8 GB 以上，处理复杂任务时响应更流畅。</div></details>
+  <details class="faq-item"><summary>远程控制功能安全吗？</summary><div class="faq-body">任务在本地执行，微信只是触发器，不传输文件内容。但建议不要用主微信号，专门用一个微信小号或企业微信号来接入，隔离风险。</div></details>
+  <details class="faq-item"><summary>技能安装失败了怎么办？</summary><div class="faq-body">先检查 Node.js 和 Git 是否已安装并正确配置，然后检查网络连接。如果持续失败，可以重启 WorkBuddy 再试，或查阅官方文档的报错排查章节。</div></details>
+<h2 id="core-14" class="anchor-h2">14. 相关资源</h2>
+<ul>
+<li><a href="https://www.codebuddy.cn/work/" target="_blank" rel="noopener">WorkBuddy 官网</a> —— https://www.codebuddy.cn/work/</li>
+<li><a href="https://cloud.tencent.com/developer" target="_blank" rel="noopener">腾讯云开发者社区</a> —— https://cloud.tencent.com/developer</li>
+<li><a href="https://openclaw.org/" target="_blank" rel="noopener">OpenClaw 技能社区</a> —— https://openclaw.org/</li>
+</ul>
+</div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var tabs = document.getElementById('resTabs');
+  var secs = Array.prototype.slice.call(document.querySelectorAll('.res-section'));
+  var input = document.getElementById('resSearch');
+  var hint = document.getElementById('resHint');
+  var items = Array.prototype.slice.call(document.querySelectorAll('[data-search]'));
+  var timer = null;
+  var current = 'cmd';
+
+  function show(key) {
+    current = key;
+    secs.forEach(function (s) { s.classList.toggle('active', s.id === 'sec-' + key); });
+    Array.prototype.forEach.call(tabs.querySelectorAll('.res-tab'), function (b) {
+      b.classList.toggle('active', b.getAttribute('data-sec') === key);
+    });
+    apply();
+  }
+
+  tabs.addEventListener('click', function (e) {
+    var b = e.target.closest('.res-tab');
+    if (b) show(b.getAttribute('data-sec'));
+  });
+
+  function apply() {
+    var q = input.value.trim().toLowerCase();
+    var sec = document.getElementById('sec-' + current);
+    var scope = sec ? Array.prototype.slice.call(sec.querySelectorAll('[data-search]')) : items;
+    var hit = 0;
+
+    // 搜索时跨全库匹配，自动切到命中最多的一区
+    if (q) {
+      var best = null, bestN = 0;
+      secs.forEach(function (s) {
+        var n = 0;
+        Array.prototype.forEach.call(s.querySelectorAll('[data-search]'), function (el) {
+          if (el.getAttribute('data-search').toLowerCase().indexOf(q) !== -1) n++;
+        });
+        if (n > bestN) { bestN = n; best = s; }
+      });
+      if (best && best.id !== 'sec-' + current) {
+        current = best.id.replace('sec-', '');
+        secs.forEach(function (s) { s.classList.toggle('active', s === best); });
+        Array.prototype.forEach.call(tabs.querySelectorAll('.res-tab'), function (b) {
+          b.classList.toggle('active', b.getAttribute('data-sec') === current);
+        });
+        scope = Array.prototype.slice.call(best.querySelectorAll('[data-search]'));
+      }
+    }
+
+    items.forEach(function (el) { el.style.display = ''; });
+    scope.forEach(function (el) {
+      var ok = !q || el.getAttribute('data-search').toLowerCase().indexOf(q) !== -1;
+      el.style.display = ok ? '' : 'none';
+      if (ok) hit++;
+    });
+
+    if (!q) hint.textContent = '';
+    else if (hit === 0) hint.textContent = '没有匹配的内容，换个关键词试试';
+    else hint.textContent = '在当前分区匹配到 ' + hit + ' 条';
+  }
+
+  input.addEventListener('input', function () {
+    clearTimeout(timer);
+    timer = setTimeout(apply, 130);
+  });
+
+  // 支持 #sec-cmd 这类锚点从其他页面直达对应分区
+  function fromHash(smooth) {
+    var m = (location.hash || '').match(/^#sec-([a-z]+)$/);
+    if (!m) return false;
+    var el = document.getElementById('sec-' + m[1]);
+    if (!el) return false;
+    show(m[1]);
+    setTimeout(function () {
+      el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+    }, 60);
+    return true;
+  }
+  window.addEventListener('hashchange', function () { fromHash(true); });
+  if (!fromHash(false)) show('cmd');
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.copy-btn');
+    if (!btn) return;
+    var box = btn.closest('.prompt-item, .tpl-card, .case-block');
+    if (!box) return;
+    var code = box.querySelector('.pi-code, .tpl-code, .case-cmd');
+    if (!code) return;
+    var text = code.textContent;
+    var done = function () {
+      btn.textContent = '已复制';
+      btn.classList.add('done');
+      setTimeout(function () { btn.textContent = '复制'; btn.classList.remove('done'); }, 1400);
+    };
+    var fallback = function () {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); } catch (err) {}
+      document.body.removeChild(ta);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
