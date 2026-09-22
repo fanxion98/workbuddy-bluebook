@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+Disallow: /DESIGN.md
+
+# 搜索引擎
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# 生成式引擎（GEO）
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.simouxuan.com/xiaoe/sitemap.xml
