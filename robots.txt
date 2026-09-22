@@ -9,3 +9,22 @@ User-agent: Googlebot
 Allow: /
 
 Sitemap: https://www.simouxuan.com/sitemap.xml
+
+# 小鹅通服务商站（子目录）—— 保留在站内的独立 sitemap
+Sitemap: https://www.simouxuan.com/xiaoe/sitemap.xml
+
+# AI 搜索引擎 / 生成式引擎：显式放行，便于被 AI 搜索引用
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
