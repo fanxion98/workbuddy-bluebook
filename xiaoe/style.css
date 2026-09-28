@@ -403,6 +403,9 @@ section[id],header[id]{scroll-margin-top:88px}
 .footer-legal p{font-size:12.5px;line-height:1.75;color:rgba(255,255,255,.46);margin:0}
 .footer-legal b{color:rgba(255,255,255,.72);font-weight:600}
 .footer-bottom{padding-top:26px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.42)}
+.footer-bottom a{color:rgba(255,255,255,.62);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);transition:color .2s,border-color .2s}
+.footer-bottom a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.55)}
+.footer-bottom .icp{white-space:nowrap}
 
 /* ============ 滚动动画 ============ */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
