@@ -96,6 +96,7 @@ section[id],header[id]{scroll-margin-top:88px}
 .nav.scrolled{border-bottom-color:var(--line);box-shadow:0 2px 20px rgba(13,27,51,.06)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
 .logo{display:flex;align-items:center;gap:8px;font-size:17px;font-weight:800;letter-spacing:-.01em;white-space:nowrap}
+.logo-img{width:28px;height:28px;flex:0 0 auto}
 .logo-mark{
   width:36px;height:36px;border-radius:11px;flex-shrink:0;
   background:linear-gradient(135deg,var(--brand),var(--brand-2));
