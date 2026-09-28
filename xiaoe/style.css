@@ -770,6 +770,7 @@ html{scroll-behavior:smooth}
 body{line-height:1.75;text-rendering:optimizeLegibility}
 .wrap{padding:0 clamp(18px,3.6vw,32px)}
 h1,h2,h3,h4,.sec-title,.hero h1,.page-hero h1{text-wrap:balance}
+.hero h1 .eyebrow{display:flex;width:fit-content;margin:0 0 18px;line-height:1.75}
 section[id],header[id]{scroll-margin-top:96px}
 
 /* ---------- 2. 分区与标题层级 ---------- */
@@ -1122,3 +1123,12 @@ a.sol-card:hover h3{color:var(--brand)}
 
 /* ===== 无障碍（SEO/GEO）：屏幕阅读器可见、视觉隐形的标题 ===== */
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ---------- 相关行业方案（内链） ---------- */
+.related-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.related-links a{display:inline-block;padding:9px 17px;border-radius:999px;background:#fff;
+  border:1px solid var(--line);font-size:14px;color:var(--ink-2);text-decoration:none;
+  transition:border-color .2s,color .2s,transform .2s,box-shadow .2s}
+.related-links a:hover{border-color:var(--brand);color:var(--brand);
+  transform:translateY(-1px);box-shadow:0 4px 14px rgba(83,58,253,.12)}
+@media(max-width:640px){.related-links a{font-size:13px;padding:8px 14px}}
