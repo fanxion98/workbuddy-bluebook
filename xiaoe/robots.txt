@@ -28,4 +28,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://www.simouxuan.com/xiaoe/sitemap.xml
+Sitemap: https://www.xczhe.com/sitemap.xml
